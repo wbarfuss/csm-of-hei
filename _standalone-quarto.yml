@@ -1,0 +1,28 @@
+bibliography: CSMofHEI.bib
+format:
+  pdf:
+    papersize: A4
+    geometry: 
+      - top=20mm
+      - left=20mm
+      - right=20mm
+      - bottom=25mm
+    fig-width: 9
+    fig-height: 7
+    include-in-header: 
+      text: |
+        \usepackage{amsmath,mathtools,amsfonts,dsfont,amssymb}
+        % break long lines of code
+        \usepackage{fvextra} 
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}  
+        \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
+        \usepackage{listings}
+        \lstset{
+        basicstyle=\small\ttfamily,
+        columns=flexible,
+        breaklines=true
+        }
+    block-headings: false
+    link-citations: true
+    number-depth: 2
+    toc-depth: 2
