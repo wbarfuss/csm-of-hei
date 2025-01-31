@@ -1,0 +1,90 @@
+project:
+  type: book
+  output-dir: __output
+
+csl: apa7.csl
+bibliography: CSMofHEI.bib
+
+book:
+  title: Complex Systems Modeling of Human-Environment Interactions
+  author: Wolfram Barfuss
+  date: last-modified
+  date-format: long
+  downloads: [pdf]
+  # repo-url: https://github.com/wbarfuss/collective-cooperative-intelligence
+  sidebar:
+    style: floating
+    logo: images/CSMofHEI_Logo.drawio.png
+    collapse-level: 2
+  chapters:
+    - index.ipynb
+    - text: Intoduction
+      href: 01.01-Introduction.ipynb
+    - part: 02-DynamicSystems.ipynb
+      chapters: 
+        - 02.01-Nonlinearity.ipynb
+        - 02.02-TippingElements.ipynb
+        - 02.03-Resilience.ipynb
+        - 02.04-StateTransitions.ipynb
+    - part: 03-TargetEquilibria.ipynb
+      chapters:
+        - 03.01-SequentialDecisions.ipynb
+        - 03.02-StrategicInteractions.ipynb
+        - 03.03-DynamicInteractions.ipynb
+    - part: 04-TransformationAgency.ipynb
+      chapters:
+        - 04.01-BehavioralAgency.ipynb
+        - 04.02-IndividualLearning.ipynb
+        - 04.03-LearningDynamics.ipynb
+    - References.ipynb
+  appendices:
+    - part: Exercises
+      chapters:
+      - 01.02ex-IntroToPython.ipynb
+      - 02.01ex-Nonlinearity.ipynb      
+      - 02.02ex-TippingElements.ipynb
+      - 02.03ex-Resilience.ipynb
+      - 02.04ex-StateTransitions.ipynb
+      - 03.01ex-SequentialDecisions.ipynb
+      - 03.02ex-StrategicInteractions.ipynb
+      - 03.03ex-DynamicInteractions.ipynb
+      - 04.01ex-BehavioralAgency.ipynb
+      - 04.02ex-IndividualLearning.ipynb
+      - 04.03ex-LearningDynamics.ipynb
+
+format:
+  html:
+    theme: Zephyr # Cosmo 
+    toc: true
+    number-sections: true
+    number-depth: 2
+    toc-expand: true
+    toc-location: right
+
+  pdf:
+    documentclass: scrreprt
+    papersize: A4
+    geometry: 
+      - top=20mm
+      - left=20mm
+      - right=20mm
+      - bottom=25mm
+    fig-width: 9
+    fig-height: 7
+    # mathspec: true
+    include-in-header: 
+      text: |
+        \usepackage{mathtools,amsfonts,dsfont,amsmath,amssymb}
+        \usepackage{lscape}
+        \newcommand{\blandscape}{\begin{landscape}{\tiny}
+        \newcommand{\elandscape}{\end{landscape}}}
+        %
+        % break long lines of code
+        \usepackage{fvextra} 
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}  
+        \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
+    block-headings: false
+    link-citations: true
+    number-depth: 2
+    toc-depth: 2
+	

@@ -1,0 +1,20 @@
+name: iw-dev
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - matplotlib=3.8.0
+  - ipympl
+  - sympy
+  - scipy
+  - pandas
+  - jupyterlab
+  - ipywidgets
+  - pip
+  - pip:
+    - jupyter_copilot
+    - nbdev # to clean ipynb files
+    - pre-commit # for https://nbdev.fast.ai/tutorials/pre_commit.html
+    - git+https://github.com/barfusslab/pyCRLD.git
