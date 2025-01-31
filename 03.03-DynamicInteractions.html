@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.544">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Complex Systems Modeling of Human-Environment Interactions - 8&nbsp; Dynamic Interactions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-TransformationAgency.html" rel="next">
+<link href="./03.02-StrategicInteractions.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-TargetEquilibria.html">Target Equilibria</a></li><li class="breadcrumb-item"><a href="./03.03-DynamicInteractions.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Complex-Systems-Modeling-of-Human-Environment-Interactions.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-TargetEquilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Target Equilibria</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03-DynamicInteractions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-TransformationAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transformation Agency</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Behavioral agency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02ex-IntroToPython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01ex-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Nonlinearity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02ex-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Tipping elements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03ex-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Resilience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04ex-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | State transitions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01ex-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Sequential Decisions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02ex-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Strategic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03ex-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Dynamic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01ex-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Behavioral Agency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02ex-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Individual Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Learning Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#motivation-futures-and-environments" id="toc-motivation-futures-and-environments" class="nav-link active" data-scroll-target="#motivation-futures-and-environments"><span class="header-section-number">8.1</span> Motivation | <strong>Futures and environments</strong></a>
+  <ul class="collapse">
+  <li><a href="#advantages-of-dynamic-games" id="toc-advantages-of-dynamic-games" class="nav-link" data-scroll-target="#advantages-of-dynamic-games"><strong>Advantages</strong> of dynamic games</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><strong>Learning goals</strong></a></li>
+  </ul></li>
+  <li><a href="#dynamic-games-strategic-interactions-with-environmental-consequences" id="toc-dynamic-games-strategic-interactions-with-environmental-consequences" class="nav-link" data-scroll-target="#dynamic-games-strategic-interactions-with-environmental-consequences"><span class="header-section-number">8.2</span> Dynamic games | <strong>Strategic interactions with environmental consequences</strong></a></li>
+  <li><a href="#application-ecological-public-good" id="toc-application-ecological-public-good" class="nav-link" data-scroll-target="#application-ecological-public-good"><span class="header-section-number">8.3</span> Application | <strong>Ecological public good</strong></a>
+  <ul class="collapse">
+  <li><a href="#states-agents-and-actions" id="toc-states-agents-and-actions" class="nav-link" data-scroll-target="#states-agents-and-actions">States, agents and actions</a></li>
+  <li><a href="#transitions-environmental-dynamics" id="toc-transitions-environmental-dynamics" class="nav-link" data-scroll-target="#transitions-environmental-dynamics"><strong>Transitions</strong> | Environmental dynamics</a></li>
+  <li><a href="#rewards-short-term-welfare" id="toc-rewards-short-term-welfare" class="nav-link" data-scroll-target="#rewards-short-term-welfare"><strong>Rewards</strong> | Short-term welfare</a></li>
+  <li><a href="#deepdive-subsituting-parameter-values" id="toc-deepdive-subsituting-parameter-values" class="nav-link" data-scroll-target="#deepdive-subsituting-parameter-values"><strong>DeepDive</strong> | Subsituting parameter values</a></li>
+  <li><a href="#policies-strategic-choices" id="toc-policies-strategic-choices" class="nav-link" data-scroll-target="#policies-strategic-choices"><strong>Policies</strong> | Strategic choices</a></li>
+  <li><a href="#state-values-long-term-welbeing" id="toc-state-values-long-term-welbeing" class="nav-link" data-scroll-target="#state-values-long-term-welbeing"><strong>State values</strong> | Long-term welbeing</a></li>
+  <li><a href="#critical-curves" id="toc-critical-curves" class="nav-link" data-scroll-target="#critical-curves">Critical curves</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  </ul></li>
+  <li><a href="#learning-goals-revisited" id="toc-learning-goals-revisited" class="nav-link" data-scroll-target="#learning-goals-revisited"><span class="header-section-number">8.4</span> Learning goals <strong>revisited</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-TargetEquilibria.html">Target Equilibria</a></li><li class="breadcrumb-item"><a href="./03.03-DynamicInteractions.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<section id="motivation-futures-and-environments" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="motivation-futures-and-environments"><span class="header-section-number">8.1</span> Motivation | <strong>Futures and environments</strong></h2>
+<p>Prototypical models did not explicitly consider future environmental consequences of strategic interactions (<a href="#fig-environmental-dynamics" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>).</p>
+<div id="fig-environmental-dynamics" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-environmental-dynamics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/03.03-EnvironmentalDynamics.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-environmental-dynamics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Environmental dynamics are relevant to consider
+</figcaption>
+</figure>
+</div>
+<p>However, many real-world scenarios involve strategic interactions with environmental consequences. For example, the tragedy of the commons, agreements, and threshold public goods can be extended to include ecological consequences. In this lecture, we will introduce <strong>dynamic games</strong>, particularly <em>stochastic</em> or <em>Markov games</em>, to model strategic interactions with environmental consequences.</p>
+<p><em>Stochastic games</em> integrate <a href="./02.04-StateTransitions.html"><em>Markov chains</em></a>, <a href="./03.01-SequentialDecisions.html"><em>Markov decision processes</em></a>, and <a href="./03.01-SequentialDecisions.html"><em>game theory</em></a> to model strategic interactions in dynamic environments. They are particularly useful for modeling human-environment interactions, where the environment is affected by human actions and, in turn, affects human behavior.</p>
+<section id="advantages-of-dynamic-games" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-of-dynamic-games"><strong>Advantages</strong> of dynamic games</h3>
+<p>Using <strong>dynamic games</strong>, particularly <em>stochastic games</em> to model strategic interactions with environmental consequences has several advantages:</p>
+<ul>
+<li><strong>inherently stochastic</strong> - to account for uncertainty</li>
+<li><strong>nonlinear</strong> - to account for structural changes</li>
+<li><strong>agency</strong> - to account for human behavior</li>
+<li><strong>interactions</strong> - to account for strategic interactions</li>
+<li><strong>future-looking</strong> - to account for the trade-off between short-term and long-term</li>
+<li><strong>feedback</strong> - between multiple agents and the environment</li>
+</ul>
+<p>Stochastic games also have structural benefits that make them compatible with numerical computer modeling due to their discrete action and state sets, as well as their advancement in discrete time intervals.</p>
+</section>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals"><strong>Learning goals</strong></h3>
+<p>After this lecture, students will be able to:</p>
+<ul>
+<li>Describe the elements of a stochastic game</li>
+<li>Apply stochastic games to model human-environment interactions</li>
+<li>Analyze the strategic interactions in stochastic games</li>
+</ul>
+<div id="cell-8" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="dynamic-games-strategic-interactions-with-environmental-consequences" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="dynamic-games-strategic-interactions-with-environmental-consequences"><span class="header-section-number">8.2</span> Dynamic games | <strong>Strategic interactions with environmental consequences</strong></h2>
+<div id="fig-multiagent-environment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiagent-environment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/03.03-MultiAgentEnvironment.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiagent-environment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Multiagent-Environment Interface
+</figcaption>
+</figure>
+</div>
+<p>Here, we focus on environments with a discrete state set in discrete time. These specifications are commonly called <strong>stochastic</strong> or <strong>Markov games</strong>. They consist of the following elements:</p>
+<ul>
+<li>A discrete set of environmental <strong>contexts</strong> or <strong>states</strong> <span class="math inline">\(\mathcal S = \{S_1, \dots, S_Z\}\)</span>.
+<ul>
+<li>We denote an environmental state by <span class="math inline">\(s \in \mathcal S\)</span>.</li>
+</ul></li>
+<li>A finate set of <span class="math inline">\(N\)</span> agents <span class="math inline">\(\mathcal I = \{2,\dots, N\}\)</span> participating in an interaction.</li>
+<li>For each agent <span class="math inline">\(i\in\mathcal I\)</span>, a discrete set of <strong>options</strong> or <strong>actions</strong> <span class="math inline">\(\mathcal A^i = \{A^i_1, \dots, A^i_M\}\)</span>.
+<ul>
+<li>Let’s denote the joint action set by <span class="math inline">\(\mathbf{\mathcal A} = \mathcal A^1 \times \dots \times A^N\)</span>.</li>
+<li>An action profile <span class="math inline">\(\mathbf a = (a^1,\dots,a^N) \in \mathbf{\mathcal A}\)</span> is a joint action of all agents.</li>
+</ul></li>
+</ul>
+<p>Time <span class="math inline">\(t\)</span> advances in discrete steps <span class="math inline">\(t=0,1,2,\dots\)</span>, and agents choose their actions simultaneously.</p>
+<ul>
+<li>We denote the state at time <span class="math inline">\(t\)</span> by <span class="math inline">\(s_t\)</span> and the joint action by <span class="math inline">\(\mathbf a_t\)</span>.</li>
+</ul>
+<p>The transitions tensor <span class="math inline">\(T: \mathcal S \times \mathbf{\mathcal A} \times \mathcal S \to [0,1]\)</span> defines the <strong>environmental dynamics</strong>.</p>
+<ul>
+<li><span class="math inline">\(T(s, \mathbf a, s')\)</span> is the probability of transitioning from state <span class="math inline">\(s\in\mathcal S\)</span> to <span class="math inline">\(s'\in\mathcal S\)</span> given the joint action <span class="math inline">\(\mathbf a\)</span>.</li>
+<li>Thus, <span class="math inline">\(\sum_{s'} T(s, \mathbf a, s') = 1\)</span> most hold for all <span class="math inline">\(s\in\mathcal S\)</span> and <span class="math inline">\(\mathbf a\in\mathbf{\mathcal A}\)</span>.</li>
+</ul>
+<p>The reward tensor <span class="math inline">\(\mathbf R: \mathcal I \times \mathcal S \times \mathbf{\mathcal A} \times \mathcal S \to \mathbb R\)</span> defines the agents’ <strong>short-term</strong> <strong>welfare</strong>, <strong>utility</strong>, <strong>rewards</strong>, or <strong>payoffs</strong>.</p>
+<ul>
+<li><span class="math inline">\(R^i(s, \mathbf a, s')\)</span> is the reward agent <span class="math inline">\(i\)</span> receives for transitioning from state <span class="math inline">\(s\)</span> to <span class="math inline">\(s'\)</span> given the joint action <span class="math inline">\(\mathbf a\)</span>.</li>
+<li>We assume that it is each agent <span class="math inline">\(i\)</span>’s goal to maximize their expected discounted sum of future rewards, <span class="math inline">\(G^i = \sum_{t=0}^\infty (\gamma^i)^t R^i(s_t, \mathbf a_t, s_{t+1})\)</span>, where <span class="math inline">\(\gamma^i\in[0,1)\)</span> is the discount factor.</li>
+</ul>
+<p>We assume that agents can condition their probabilities of choosing actions on the current state <span class="math inline">\(s_t\)</span>, yielding so-called Markov <strong>policies</strong> or <strong>strategies</strong>, <span class="math inline">\(\mathbf x: \mathcal I \times \mathcal S  \times \mathcal A^i \to [0, 1]\)</span>.</p>
+<ul>
+<li><span class="math inline">\(x^i(s, a)\)</span> is the probability agent <span class="math inline">\(i\)</span> chooses action <span class="math inline">\(a\)</span> in state <span class="math inline">\(s\)</span>.</li>
+</ul>
+</section>
+<section id="application-ecological-public-good" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="application-ecological-public-good"><span class="header-section-number">8.3</span> Application | <strong>Ecological public good</strong></h2>
+<p>We apply the stochastic game framework to integrate the fact that we are embedded in a shared environment and care about the future to some extent. We do so by considering a public good game with ecological consequences (<a href="#fig-ecological-public-good" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>), which allows us to answer how the strategic incentives depend on their level of care for future rewards.</p>
+<div id="fig-ecological-public-good" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ecological-public-good-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/03.03-EcologicalPublicGood.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ecological-public-good-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: Ecological public good collective decision-making environment
+</figcaption>
+</figure>
+</div>
+<section id="states-agents-and-actions" class="level3">
+<h3 class="anchored" data-anchor-id="states-agents-and-actions">States, agents and actions</h3>
+<p>The environment consists of two states, <span class="math inline">\(\mathcal S = \{\textsf{p}, \textsf{d}\}\)</span>, representing a <strong>prosperous</strong> and a <strong>degraded</strong> state of the environment.</p>
+<div id="cell-21" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>state_set <span class="op">=</span> [<span class="st">'prosperous,'</span> <span class="st">'degraded'</span>]<span class="op">;</span> p<span class="op">=</span><span class="dv">0</span><span class="op">;</span> g<span class="op">=</span><span class="dv">1</span><span class="op">;</span> Z<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We also defined two Python variable <code>p=0</code> and <code>g=1</code> to serves as readable and memorable indices to represent the environmental contexts.</p>
+<p>There are <span class="math inline">\(2\)</span> identical agents. In each state <span class="math inline">\(s \in \mathcal S\)</span>, each agent <span class="math inline">\(i \in \{1, 2\}\)</span> can choose within their action set between either <strong>cooperation</strong> or <strong>defection</strong>, <span class="math inline">\(\mathcal A^i = \{\mathsf{c,d}\}\)</span>.</p>
+<div id="cell-24" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>action_sets <span class="op">=</span> [<span class="st">'cooperate'</span>, <span class="st">'defect'</span>]<span class="op">;</span> c<span class="op">=</span><span class="dv">0</span><span class="op">;</span> d<span class="op">=</span><span class="dv">1</span><span class="op">;</span> M<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Likewise, we define two Python variables, <code>c=0</code> and <code>d=1</code>, to serve as readable and memorable indices to represent the agents’ actions.</p>
+<p>We denote the number of cooperating agents by <span class="math inline">\(N_c\)</span>. The number of defecting agents is <span class="math inline">\(N_d = N - N_c\)</span>.</p>
+</section>
+<section id="transitions-environmental-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="transitions-environmental-dynamics"><strong>Transitions</strong> | Environmental dynamics</h3>
+<p>We represent the <strong>environmental dynamics</strong>, i.e., the transitions between environmental state contexts, in a <span class="math inline">\(Z \times M \times M \times Z\)</span> tensor, where <span class="math inline">\(Z\)</span> is the number of states and <span class="math inline">\(M\)</span> is the number of actions. In this representation,</p>
+<ul>
+<li>the first dimension corresponds to the <strong>current state</strong>,</li>
+<li>the second to the action profile of the <strong>first agent</strong>,</li>
+<li>the third to the action profile of the <strong>other agent</strong>, and</li>
+<li>the fourth and last dimension corresponds to the <strong>next state</strong>.</li>
+</ul>
+<div id="cell-29" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor <span class="op">=</span> np.zeros((Z, M, M, Z), dtype<span class="op">=</span><span class="bu">object</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <em>environmental dynamics</em> are then governed by two parameters: a collapse leverage, <span class="math inline">\(q_c\)</span>, and a recovery probability, <span class="math inline">\(p_r\)</span>.</p>
+<div id="cell-31" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>qc, pr <span class="op">=</span> sp.symbols(<span class="st">'q_c p_r'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A collapse from the prosperous to the degraded state occurs with a transition probability</p>
+<p><span class="math display">\[T(\mathsf p, \mathbf a, \mathsf g) = \frac{N_d}{N}  q_c. \]</span></p>
+<div id="cell-33" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, c, c, g] <span class="op">=</span> <span class="dv">0</span>  <span class="co"># no agent defects</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, d, c, g] <span class="op">=</span> qc<span class="op">/</span><span class="dv">2</span>  <span class="co"># one agent defects</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, c, d, g] <span class="op">=</span> qc<span class="op">/</span><span class="dv">2</span>  <span class="co"># other agent defects</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, d, d, g] <span class="op">=</span> qc  <span class="co"># all agents defect</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Thus, if all agents defect, the environment collapses with probability <span class="math inline">\(q_c\)</span>. The collapse leverage indicates how much impact a defecting agent exerts on the environment. The environment remains within the prosperous state with probability, <span class="math inline">\(T(\mathsf p, \mathbf a, \mathsf p) = 1 - \frac{N_d}{N}  q_c\)</span>.</p>
+<div id="cell-35" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, : , :, p] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> TransitionTensor[p, : , :, g]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the degraded state, we set the recovery to occur with probability,</p>
+<p><span class="math display">\[T(\mathsf g, \mathbf a, \mathsf p) = p_r,\]</span></p>
+<p>independent of the agents’ actions.</p>
+<div id="cell-37" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[g, :, :, p] <span class="op">=</span> pr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The probability that the environment remains in the degraded state is then, <span class="math inline">\(T(\mathsf g, \mathbf a, \mathsf g) = 1 - p_r\)</span>.</p>
+<div id="cell-39" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[g, :, :, g] <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>pr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Together</strong>, our transition tensor is then given by</p>
+<div id="cell-41" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sp.Array(TransitionTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
+<p><span class="math inline">\(\displaystyle \left[\begin{matrix}\left[\begin{matrix}1 &amp; 0\\1 - \frac{q_{c}}{2} &amp; \frac{q_{c}}{2}\end{matrix}\right] &amp; \left[\begin{matrix}1 - \frac{q_{c}}{2} &amp; \frac{q_{c}}{2}\\1 - q_{c} &amp; q_{c}\end{matrix}\right]\\\left[\begin{matrix}p_{r} &amp; 1 - p_{r}\\p_{r} &amp; 1 - p_{r}\end{matrix}\right] &amp; \left[\begin{matrix}p_{r} &amp; 1 - p_{r}\\p_{r} &amp; 1 - p_{r}\end{matrix}\right]\end{matrix}\right]\)</span></p>
+</div>
+</div>
+<p>Last, we make sure that our transition tensor is normalized, i.e., the sum of all transition probabilities from a state-joint-action pair to all possible next states equals one, <span class="math inline">\(\sum_{s'} T(s, \mathbf a, s') = 1\)</span>.</p>
+<div id="cell-43" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor.<span class="bu">sum</span>(<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>array([[[1, 1],
+        [1, 1]],
+
+       [[1, 1],
+        [1, 1]]], dtype=object)</code></pre>
+</div>
+</div>
+</section>
+<section id="rewards-short-term-welfare" class="level3">
+<h3 class="anchored" data-anchor-id="rewards-short-term-welfare"><strong>Rewards</strong> | Short-term welfare</h3>
+<div id="cell-45" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>RewardTensor <span class="op">=</span> np.zeros((<span class="dv">2</span>, Z, M, M, Z), dtype<span class="op">=</span><span class="bu">object</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Rewards in the prosperous state follow the standard public goods game with a synergy factor <span class="math inline">\(r\)</span> and a cost of cooperation <span class="math inline">\(c\)</span>.</p>
+<div id="cell-47" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>r, cost <span class="op">=</span> sp.symbols(<span class="st">'r c'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The rewards for cooperating and defecting agents are then given by</p>
+<p><span class="math display">\[ R^i(\mathsf p, a^i, a^{-i}, \mathsf p) = \begin{cases} \frac{r c (N_c +1)}{N}  - c, &amp; \text{if } a^i = \mathsf c, \\ \frac{r c N_c}{N}, &amp; \text{if } a^i = \mathsf d. \end{cases} \]</span></p>
+<div id="cell-49" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, c, c, p] <span class="op">=</span> r<span class="op">*</span>cost <span class="op">-</span> cost</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, d, d, p] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>RewardTensor[<span class="dv">0</span>, p, c, d, p] <span class="op">=</span> RewardTensor[<span class="dv">1</span>, p, d, c, p] <span class="op">=</span> r<span class="op">*</span>cost<span class="op">/</span><span class="dv">2</span> <span class="op">-</span> cost</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>RewardTensor[<span class="dv">0</span>, p, d, c, p] <span class="op">=</span> RewardTensor[<span class="dv">1</span>, p, c, d, p] <span class="op">=</span> r<span class="op">*</span>cost<span class="op">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When a state transition involves the degraded state, <span class="math inline">\(\mathsf{g}\)</span>, the agents only receive an environmental collapse impact <span class="math inline">\(m\)</span>:</p>
+<div id="cell-51" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> sp.symbols(<span class="st">'m'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="math display">\[R^i(\mathsf p, \mathbf a, \mathsf g) = R^i(\mathsf g, \mathbf a, \mathsf g) = R^i(\mathsf g, \mathbf a, \mathsf p) = m, \quad \text{for all} \ \mathbf a, i.\]</span></p>
+<div id="cell-53" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, :, :, g] <span class="op">=</span> RewardTensor[:, g, :, :, g] <span class="op">=</span> RewardTensor[:, g, :, :, p] <span class="op">=</span> m </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Together</strong>, our reward tensor is then given by</p>
+<div id="cell-55" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sp.Array(RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="18">
+<p><span class="math inline">\(\displaystyle \left[\begin{matrix}\left[\begin{matrix}\left[\begin{matrix}c r - c &amp; m\\\frac{c r}{2} - c &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}\frac{c r}{2} &amp; m\\0 &amp; m\end{matrix}\right]\\\left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right]\end{matrix}\right] &amp; \left[\begin{matrix}\left[\begin{matrix}c r - c &amp; m\\\frac{c r}{2} &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}\frac{c r}{2} - c &amp; m\\0 &amp; m\end{matrix}\right]\\\left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right]\end{matrix}\right]\end{matrix}\right]\)</span></p>
+</div>
+</div>
+</section>
+<section id="deepdive-subsituting-parameter-values" class="level3">
+<h3 class="anchored" data-anchor-id="deepdive-subsituting-parameter-values"><strong>DeepDive</strong> | Subsituting parameter values</h3>
+<p>In this chapter, we defined the transition and reward tensors as general <code>numpy</code> arrays with data types <code>object</code>, which we filled with symbolic expressions from <code>sympy</code>. To manipulate and substitute these expressions, we can use the <code>sympy.subs</code> method, however, not directly on the <code>numpy</code> array. Instead, we define a helper function <code>substitute_in_array</code> that takes a <code>numpy</code> array and a dictionary of substitutions and returns a new array with the substitutions applied.</p>
+<div id="cell-58" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> substitute_in_array(array, subs_dict):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> array.copy()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index,_ <span class="kw">in</span> np.ndenumerate(array):</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(array[index], sp.Basic):</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            result[index] <span class="op">=</span> array[index].subs(subs_dict)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To make this work, it seems to be of critical importance that the subsitution dictionary is given as a dictionary in the form of <code>{&lt;symbol_variable&gt;: &lt;subsitution&gt;, ...}</code> and <em>not</em> as <code>dict(&lt;symbol_variable&gt;=&lt;subsitution&gt;, ...)</code>. For example,</p>
+<div id="cell-60" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>substitute_in_array(TransitionTensor, {pr:<span class="fl">0.01</span>, qc:<span class="fl">0.2</span>}).astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>array([[[[1.  , 0.  ],
+         [0.9 , 0.1 ]],
+
+        [[0.9 , 0.1 ],
+         [0.8 , 0.2 ]]],
+
+
+       [[[0.01, 0.99],
+         [0.01, 0.99]],
+
+        [[0.01, 0.99],
+         [0.01, 0.99]]]])</code></pre>
+</div>
+</div>
+</section>
+<section id="policies-strategic-choices" class="level3">
+<h3 class="anchored" data-anchor-id="policies-strategic-choices"><strong>Policies</strong> | Strategic choices</h3>
+<p>The <strong>crucial question</strong> is <strong>whether</strong> or not the agents should <strong>cooperate</strong> or defect in the <strong>prosperous state</strong>, <span class="math inline">\(\mathsf p\)</span>, under the assumption that agents are <strong>anonymous</strong> - and how to answer depends on the parameter conditions <span class="math inline">\(q_c\)</span>, <span class="math inline">\(p_r\)</span>, <span class="math inline">\(\gamma\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(m\)</span>.</p>
+<p>Anonymity means that agents do not consider the game’s history, i.e., behave according to a Markov policy. We analyze the two extreme cases: An agent can either cooperate or defect in the prosperous state, <span class="math inline">\(\mathsf p\)</span>.</p>
+<p>Generally, a single agent’s policy is represented by a <span class="math inline">\(Z \times M\)</span> tensor. The cooperative policy is then given by</p>
+<div id="cell-63" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Xsa_coo <span class="op">=</span>  <span class="fl">0.5</span> <span class="op">*</span> np.ones((Z, M))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Xsa_coo[p, c] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>Xsa_coo[p, d] <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The defective policy is given by</p>
+<div id="cell-65" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Xsa_def <span class="op">=</span>  <span class="fl">0.5</span> <span class="op">*</span> np.ones((Z, M))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Xsa_def[p, c] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>Xsa_def[p, d] <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To obtain the incentive regimes, we need to calculate the long-term values of the four policy combinations:</p>
+<ul>
+<li>mutual cooperation <span class="math inline">\((\mathsf c \mathsf c)\)</span>, i.e.&nbsp;both agents cooperate,</li>
+<li>unilateral defection <span class="math inline">\((\mathsf d \mathsf c)\)</span>, i.e.&nbsp;one agent defects, and the other cooperates,</li>
+<li>unilateral cooperation <span class="math inline">\((\mathsf c \mathsf d)\)</span>, i.e.&nbsp;one agent cooperates, and the other defects, and</li>
+<li>mutual defection <span class="math inline">\((\mathsf d \mathsf d)\)</span>, i.e.&nbsp;both agents defect.</li>
+</ul>
+<p>They can also be represented by a <em>meta-game</em> payoff matrix, where the rows represent the focal agent’s policies, and the columns represent the opponent’s policies,</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(\mathsf c\)</span></th>
+<th><span class="math inline">\(\mathsf d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathsf c\)</span></td>
+<td><span class="math inline">\(v_{\mathsf c \mathsf c}\)</span></td>
+<td><span class="math inline">\(v_{\mathsf c \mathsf d}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathsf d\)</span></td>
+<td><span class="math inline">\(v_{\mathsf d \mathsf c}\)</span></td>
+<td><span class="math inline">\(v_{\mathsf d \mathsf d}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>We summarize these respecitve joint policies in four <span class="math inline">\(N \times Z \times M\)</span> tensors,</p>
+<div id="cell-69" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>Xisa_cc <span class="op">=</span> np.array([Xsa_coo, Xsa_coo])</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>Xisa_cd <span class="op">=</span> np.array([Xsa_coo, Xsa_def])</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>Xisa_dc <span class="op">=</span> np.array([Xsa_def, Xsa_coo])</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>Xisa_dd <span class="op">=</span> np.array([Xsa_def, Xsa_def])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="state-values-long-term-welbeing" class="level3">
+<h3 class="anchored" data-anchor-id="state-values-long-term-welbeing"><strong>State values</strong> | Long-term welbeing</h3>
+<p>Long-term values are defined precisely like in the single-agent case (<a href="./03.01-SequentialDecisions.html">03.01-SequentialDecisions</a>) except that they now depend on the <strong>joint policy</strong> <span class="math inline">\(\mathbf x\)</span> and each agent <span class="math inline">\(i\)</span> holds their own values.</p>
+<p>Given a joint policy <span class="math inline">\(\mathbf x\)</span>, we define the <strong>state value</strong> for agent <span class="math inline">\(i\)</span>, <span class="math inline">\(v^i_{\mathbf x}(s)\)</span>, as the expected gain, <span class="math inline">\(\mathbb E_\mathbf{x}[ G^i_t | S_t = s]\)</span>, when starting in state <span class="math inline">\(s\)</span> and the following the policy <span class="math inline">\(\mathbf x\)</span>,</p>
+<p><span class="math display">\[
+v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \mathbb E_\mathbf{x}\left[\sum_{\tau=t}^\infty (\gamma^i)^\tau R^i_{t+\tau+1} | S_t = s\right], \quad \text{for all } s \in \mathcal S,
+\]</span></p>
+<p>They are also computable like in the single-agent case (<a href="./03.01-SequentialDecisions.html">03.01-SequentialDecisions</a>) by solving the <strong>Bellman equations</strong> in matrix form,</p>
+<p><span class="math display">\[\mathbf v^i_\mathbf{x} = (1-\gamma^i) (\mathbf 1_Z - \gamma^i\underline{\mathbf T}_\mathbf{x})^{-1} \mathbf R^i_\mathbf{x}.\]</span></p>
+<p>Before we solve this equation, we focus on computing the effective <strong>transition matrix</strong> <span class="math inline">\(\underline{\mathbf T}_\mathbf{x}\)</span> and the <strong>average reward</strong> <span class="math inline">\(\mathbf R^i_\mathbf{x}\)</span>, given a joint policy <span class="math inline">\(\mathbf x\)</span>.</p>
+<p>The <strong>transition matrix</strong> <span class="math inline">\(\underline{\mathbf T}_\mathbf{x}\)</span> is a <span class="math inline">\(Z \times Z\)</span> matrix, where the element <span class="math inline">\(T_\mathbf{x}(s,s')\)</span> is the probability of transitioning from state <span class="math inline">\(s\)</span> to <span class="math inline">\(s'\)</span> under the joint policy <span class="math inline">\(\mathbf x\)</span>. It is computed as</p>
+<p><span class="math display">\[T_\mathbf{x}(s,s') = \sum_{a^1 \in \mathcal A^1} \dots \sum_{a^N \in \mathcal A^N} x^1(s, a^1) \dots x^N(s, a^N) T(s, a^1, \dots, a^N, s').\]</span></p>
+<p>For <span class="math inline">\(N=2\)</span>, we implement in Python as follows:</p>
+<div id="cell-76" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_TransitionMatrix_Tss(policy_Xisa, </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                                          transitions_Tsas):</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    s, a, b, s_ <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>  <span class="co"># defining indices for convenience</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    Tss <span class="op">=</span> sp.Matrix(np.einsum(policy_Xisa[<span class="dv">0</span>], [s, a], </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                              policy_Xisa[<span class="dv">1</span>], [s, b],</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                              transitions_Tsas, [s, a, b, s_], </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                              [s,s_]))   </span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Tss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, the transition matrix for the joint policy <span class="math inline">\(\mathbf x = (\mathsf d, \mathsf c)\)</span> is then given by</p>
+<div id="cell-78" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>compute_symbolic_TransitionMatrix_Tss(Xisa_dc, TransitionTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="25">
+<p><span class="math inline">\(\displaystyle \left[\begin{matrix}1.0 - 0.5 q_{c} &amp; 0.5 q_{c}\\1.0 p_{r} &amp; 1.0 - 1.0 p_{r}\end{matrix}\right]\)</span></p>
+</div>
+</div>
+<p>The <strong>average reward</strong> <span class="math inline">\(\mathbf R^i_\mathbf{x}\)</span> is a <span class="math inline">\(N \times Z\)</span>-matrix, where the element <span class="math inline">\(R_\mathbf{x}^i(s)\)</span> is the expected reward agent <span class="math inline">\(i\)</span> receives in state <span class="math inline">\(s\)</span> under the joint policy <span class="math inline">\(\mathbf x\)</span>. It is computed as</p>
+<p><span class="math display">\[ R_\mathbf{x}^i(s) = \sum_{a^1 \in \mathcal A^1} \dots \sum_{a^N \in \mathcal A^N} x^1(s, a^1) \dots x^N(s, a^N) T(s, a^1, \dots, a^N, s') R^i(s, a^1, \dots, a^N, s').\]</span></p>
+<p>For <span class="math inline">\(N=2\)</span>, we implement in Python as follows:</p>
+<div id="cell-81" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_AverageReward_Ris(policy_Xisa, </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                                       transitions_Tsas, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                                       rewards_Risas):</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    i, s, a, b, s_ <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span> <span class="co"># defining indices for convenience</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    Ris <span class="op">=</span> sp.Array(np.einsum(policy_Xisa[<span class="dv">0</span>], [s, a], </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>                             policy_Xisa[<span class="dv">1</span>], [s, b],</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>                             transitions_Tsas, [s, a, b, s_], </span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                             rewards_Risas, [i, s, a, b, s_],</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                             [i, s]))</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Ris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, the average reward under the joint policy <span class="math inline">\(\mathbf x = (\mathsf d, \mathsf c)\)</span> is then given by</p>
+<div id="cell-83" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>compute_symbolic_AverageReward_Ris(Xisa_dc, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="27">
+<p><span class="math inline">\(\displaystyle \left[\begin{matrix}- \frac{c r \left(0.5 q_{c} - 1.0\right)}{2} + 0.5 m q_{c} &amp; 1.0 m\\- \frac{c \left(0.5 q_{c} - 1.0\right) \left(r - 2\right)}{2} + 0.5 m q_{c} &amp; 1.0 m\end{matrix}\right]\)</span></p>
+</div>
+</div>
+<p>With the transition matrix <span class="math inline">\(\underline{\mathbf T}_\mathbf{x}\)</span> and the average reward <span class="math inline">\(\mathbf R^i_\mathbf{x}\)</span>, we can now solve the Bellman equation for the state values <span class="math inline">\(\mathbf v^i_\mathbf{x}\)</span>. For convenience, we assume a homogeneous discount factor <span class="math inline">\(\gamma^i = \gamma\)</span> for all agents <span class="math inline">\(i\)</span>.</p>
+<div id="cell-85" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>dcf <span class="op">=</span> sp.symbols(<span class="st">'gamma'</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_statevalues(policy_Xisa, </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                                 transitions_Tsas, </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>                                 rewards_Risas, </span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                                 discountfactor<span class="op">=</span>dcf):</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    i, s, a, s_ <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>  <span class="co"># defining indices for convenience</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    Tss <span class="op">=</span> compute_symbolic_TransitionMatrix_Tss(</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        policy_Xisa, transitions_Tsas)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    Ris <span class="op">=</span> compute_symbolic_AverageReward_Ris(</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>        policy_Xisa, transitions_Tsas, rewards_Risas)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    inv <span class="op">=</span> (sp.eye(<span class="dv">2</span>) <span class="op">-</span> discountfactor<span class="op">*</span>Tss).inv()<span class="op">;</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    inv.simplify()  <span class="co"># sp.simplify() often helps </span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    Vis <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>discountfactor) <span class="op">*\</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>        sp.Matrix(np.einsum(inv, [s,s_], Ris, [i, s_], [i, s]))<span class="op">;</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Vis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With the help of the function <code>compute_symbolic_statevalues</code>, we can now compute the state values for all four joint policies.</p>
+<section id="mutual-cooperation" class="level4">
+<h4 class="anchored" data-anchor-id="mutual-cooperation">Mutual cooperation</h4>
+<p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf c, \mathsf c)\)</span> is given by</p>
+<div id="cell-89" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_cc <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    Xisa_cc, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-90" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Vcc_p <span class="op">=</span> statevalues_Vis_cc[<span class="dv">0</span>, p]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>Vcc_g <span class="op">=</span> statevalues_Vis_cc[<span class="dv">0</span>, g]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>Vcc_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="30">
+<p><span class="math inline">\(\displaystyle 1.0 c \left(r - 1\right)\)</span></p>
+</div>
+</div>
+</section>
+<section id="unilateral-defection" class="level4">
+<h4 class="anchored" data-anchor-id="unilateral-defection">Unilateral defection</h4>
+<p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf d, \mathsf c)\)</span> is given by</p>
+<div id="cell-93" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_dc <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    Xisa_dc, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-94" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Vdc_p <span class="op">=</span> statevalues_Vis_dc[<span class="dv">0</span>, p]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>Vdc_g <span class="op">=</span> statevalues_Vis_dc[<span class="dv">0</span>, g]</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>Vdc_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="32">
+<p><span class="math inline">\(\displaystyle \frac{- 0.5 c \gamma p_{r} q_{c} r + 1.0 c \gamma p_{r} r + 0.5 c \gamma q_{c} r - 1.0 c \gamma r - 0.5 c q_{c} r + 1.0 c r + 1.0 \gamma m p_{r} q_{c} + 1.0 m q_{c}}{2.0 \gamma p_{r} + 1.0 \gamma q_{c} - 2.0 \gamma + 2.0}\)</span></p>
+</div>
+</div>
+</section>
+<section id="unilateral-cooperation" class="level4">
+<h4 class="anchored" data-anchor-id="unilateral-cooperation">Unilateral cooperation</h4>
+<p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf c, \mathsf d)\)</span> is given by</p>
+<div id="cell-97" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_cd <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    Xisa_cd, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-98" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Vcd_p <span class="op">=</span> statevalues_Vis_cd[<span class="dv">0</span>, p]</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>Vcd_g <span class="op">=</span> statevalues_Vis_cd[<span class="dv">0</span>, g]</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>Vcd_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="34">
+<p><span class="math inline">\(\displaystyle \frac{- 0.5 c \gamma p_{r} q_{c} r + 1.0 c \gamma p_{r} q_{c} + 1.0 c \gamma p_{r} r - 2.0 c \gamma p_{r} + 0.5 c \gamma q_{c} r - 1.0 c \gamma q_{c} - 1.0 c \gamma r + 2.0 c \gamma - 0.5 c q_{c} r + 1.0 c q_{c} + 1.0 c r - 2.0 c + 1.0 \gamma m p_{r} q_{c} + 1.0 m q_{c}}{2.0 \gamma p_{r} + 1.0 \gamma q_{c} - 2.0 \gamma + 2.0}\)</span></p>
+</div>
+</div>
+</section>
+<section id="mutual-defection" class="level4">
+<h4 class="anchored" data-anchor-id="mutual-defection">Mutual defection</h4>
+<p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf d, \mathsf d)\)</span> is given by</p>
+<div id="cell-101" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_dd <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    Xisa_dd, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-102" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Vdd_p <span class="op">=</span> statevalues_Vis_dd[<span class="dv">0</span>, p]</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>Vdd_g <span class="op">=</span> statevalues_Vis_dd[<span class="dv">0</span>, g]</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>Vdd_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="36">
+<p><span class="math inline">\(\displaystyle \frac{1.0 m q_{c} \left(\gamma p_{r} + 1\right)}{\gamma p_{r} + \gamma q_{c} - \gamma + 1}\)</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="critical-curves" class="level3">
+<h3 class="anchored" data-anchor-id="critical-curves">Critical curves</h3>
+<p>Finally, we can compute the critical conditions on the model parameters where the agents’ incentives change. The three conditions are:</p>
+<ul>
+<li><strong>Dilemma</strong>: The agents are indifferent between all cooperating and all defecting, <span class="math inline">\(v_{cc} = v_{dd}\)</span>,</li>
+<li><strong>Greed</strong>: Each individual agent is indifferent between cooperating and defecting, given all others cooperate, <span class="math inline">\(v_{cc} = v_{dc}\)</span>, and</li>
+<li><strong>Fear</strong>: Each individual agent is indifferent between cooperating and defecting, given all agents defect, <span class="math inline">\(v_{cd} = v_{dd}\)</span>.</li>
+</ul>
+<p>Without greed the action situation becomes a coordination challenge between two pure equilibria of mutual cooperation and mutual defection. Without greed and fear the only Nash equilibrium left is mutual cooperation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/03.02-SocialDilemmaDimensions.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Dimensions of a social dilemma with ordinal payoffs and Nash equilibira shown in boxes from 03.02-StrategicInteractions.</figcaption>
+</figure>
+</div>
+<section id="dilemma" class="level4">
+<h4 class="anchored" data-anchor-id="dilemma">Dilemma</h4>
+<p>The critical curve at which collapse avoidance becomes collectively optimal is obtained by setting <span class="math inline">\(v_{cc} = v_{dd}\)</span>. Solving for the collapse impact <span class="math inline">\(m\)</span> yields,</p>
+<div id="cell-108" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dilemma_m <span class="op">=</span> sp.solve(Vdd_p <span class="op">-</span> Vcc_p, m)[<span class="dv">0</span>]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>dilemma_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="37">
+<p><span class="math inline">\(\displaystyle \frac{c \left(\gamma p_{r} r - \gamma p_{r} + \gamma q_{c} r - \gamma q_{c} - \gamma r + \gamma + r - 1.0\right)}{q_{c} \left(\gamma p_{r} + 1.0\right)}\)</span></p>
+</div>
+</div>
+<p>We verify that the dilemma condition does not depend on environmental state by computing it also for the degraded state.</p>
+<div id="cell-110" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vdd_g <span class="op">-</span> Vcc_g, m)[<span class="dv">0</span>] <span class="op">-</span> dilemma_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="38">
+<p><span class="math inline">\(\displaystyle 0\)</span></p>
+</div>
+</div>
+</section>
+<section id="greed" class="level4">
+<h4 class="anchored" data-anchor-id="greed">Greed</h4>
+<p>The critical curve at which agents become indifferent to greed, i.e., exactly where cooperators are indifferent to cooperation and defection, given all other actors cooperate, is obtained by setting <span class="math inline">\(v_{cc} = v_{dc}\)</span>. Solving for the collapse impact <span class="math inline">\(m\)</span> yields,</p>
+<div id="cell-113" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>greed_m <span class="op">=</span> sp.solve(Vdc_p <span class="op">-</span> Vcc_p, m)[<span class="dv">0</span>] </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>greed_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="39">
+<p><span class="math inline">\(\displaystyle \frac{0.5 c \left(\gamma p_{r} q_{c} r + 2.0 \gamma p_{r} r - 4.0 \gamma p_{r} + \gamma q_{c} r - 2.0 \gamma q_{c} - 2.0 \gamma r + 4.0 \gamma + q_{c} r + 2.0 r - 4.0\right)}{q_{c} \left(\gamma p_{r} + 1.0\right)}\)</span></p>
+</div>
+</div>
+<p>We verify that the greed condition does not depend on the environmental state by computing it also for the degraded state.</p>
+<div id="cell-115" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vdc_g <span class="op">-</span> Vcc_g, m)[<span class="dv">0</span>] <span class="op">-</span> greed_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="40">
+<p><span class="math inline">\(\displaystyle 0\)</span></p>
+</div>
+</div>
+</section>
+<section id="fear" class="level4">
+<h4 class="anchored" data-anchor-id="fear">Fear</h4>
+<p>The critical curve at which actors are indifferent to fear, i.e., exactly where defectors are indifferent to cooperation and defection, given all other actors defect, is obtained by setting <span class="math inline">\(v_{cd} = v_{dd}\)</span>. Solving for the collapse impact <span class="math inline">\(m\)</span> yields,</p>
+<div id="cell-118" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fear_m <span class="op">=</span> sp.solve(Vcd_g <span class="op">-</span> Vdd_g, m)[<span class="dv">0</span>]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>fear_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="41">
+<p><span class="math inline">\(\displaystyle \frac{0.5 c \left(- \gamma p_{r} q_{c} r + 2.0 \gamma p_{r} q_{c} + 2.0 \gamma p_{r} r - 4.0 \gamma p_{r} - \gamma q_{c}^{2} r + 2.0 \gamma q_{c}^{2} + 3.0 \gamma q_{c} r - 6.0 \gamma q_{c} - 2.0 \gamma r + 4.0 \gamma - q_{c} r + 2.0 q_{c} + 2.0 r - 4.0\right)}{q_{c} \left(\gamma p_{r} + 1.0\right)}\)</span></p>
+</div>
+</div>
+<p>We verify that also the fear condition does not depend on the environmental state by computing it also for the degraded state.</p>
+<div id="cell-120" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vcd_g <span class="op">-</span> Vdd_g, m)[<span class="dv">0</span>] <span class="op">-</span> fear_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="42">
+<p><span class="math inline">\(\displaystyle 0\)</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="visualization" class="level3">
+<h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
+<p>Having obtained symbolic expressions for the critical curves, we can now visualize them as a function of the discount factor <span class="math inline">\(\gamma\)</span>, indicating how much the agents value future rewards.</p>
+<section id="parameter-values" class="level4">
+<h4 class="anchored" data-anchor-id="parameter-values">Parameter values</h4>
+<p>Let us apply the model to the case of global sustainability. We set public goods synergy factors <span class="math inline">\(r=1.2\)</span> and the cost of cooperation to <span class="math inline">\(5\)</span>.</p>
+<div id="cell-125" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>vr <span class="op">=</span> <span class="fl">1.2</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>vc <span class="op">=</span> <span class="dv">5</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Regarding the transition probabilities, we apply the conversion rule developed in <a href="./02.04-StateTransitions.html">02.04-StateTransitions</a> to set the collapse leverage, <span class="math inline">\(q_c\)</span> and the recovery probability <span class="math inline">\(p_r\)</span>, in terms of typical timescales. Under current business-as-usual policies, there are about 50 years left to avert the collapse <span class="citation" data-cites="RockstromEtAl2017">(<a href="References.html#ref-RockstromEtAl2017" role="doc-biblioref">Rockström et al., 2017</a>)</span>. After a collapse, there is a potential lock-in into an unfavorable Earth system state for a timescale up to millennia <span class="citation" data-cites="SteffenEtAl2018">(<a href="References.html#ref-SteffenEtAl2018" role="doc-biblioref">Steffen et al., 2018</a>)</span>. Interpreting a time step as one year, we set the collapse leverage to <span class="math inline">\(q_r = 1/50 = 0.02\)</span> and the recovery probability to <span class="math inline">\(p_r = 1/10000 = 0.0001\)</span>.</p>
+<div id="cell-127" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>vqc <span class="op">=</span> <span class="fl">0.02</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>vqr <span class="op">=</span> <span class="fl">0.0001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="final-graphic" class="level4">
+<h4 class="anchored" data-anchor-id="final-graphic">Final graphic</h4>
+<p>We convert the symbolic expressions to numerical functions using <code>lambdify</code>.</p>
+<div id="cell-130" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>Fdilemma_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), dilemma_m, <span class="st">'numpy'</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>Fgreed_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), greed_m, <span class="st">'numpy'</span>)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>Ffear_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), fear_m, <span class="st">'numpy'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-131" class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>dcf_values <span class="op">=</span> np.linspace(<span class="fl">0.95</span>, <span class="fl">1.0</span>, <span class="dv">100</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>plt.plot(dcf_values, Fdilemma_m(vr, vc, vqc, vqr, dcf_values), </span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>         c<span class="op">=</span><span class="st">'k'</span>, label<span class="op">=</span><span class="st">'Dilemma'</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.plot(dcf_values, Fgreed_m(vr, vc, vqc, vqr, dcf_values),</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>         c<span class="op">=</span><span class="st">'b'</span>, label<span class="op">=</span><span class="st">'Greed'</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.plot(dcf_values, Ffear_m(vr, vc, vqc, vqr, dcf_values),</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>         c<span class="op">=</span><span class="st">'g'</span>, label<span class="op">=</span><span class="st">'Fear'</span>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>plt.fill_between(dcf_values, <span class="dv">0</span>, <span class="dv">4</span>, color<span class="op">=</span><span class="st">'gray'</span>, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">"Tragedy"</span>, (<span class="fl">0.975</span>, <span class="op">-</span><span class="fl">1.6</span>), ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">"Coordination"</span>, (<span class="fl">0.987</span>, <span class="op">-</span><span class="dv">4</span>), ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">"Comedy"</span>, (<span class="fl">0.996</span>, <span class="op">-</span><span class="dv">6</span>), ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">"Collapse avoidance suboptimal"</span>, </span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>             (<span class="fl">0.9999</span>, <span class="fl">2.5</span>), ha<span class="op">=</span><span class="st">'right'</span>, va<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'center left'</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">3</span>)<span class="op">;</span> plt.xlim(<span class="fl">0.955</span>, <span class="fl">1.0</span>)<span class="op">;</span></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Discount factor $\gamma$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Collapse impact $m$'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03.03-DynamicInteractions_files/figure-html/cell-46-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot is a precise reproduction of the result by <span class="citation" data-cites="BarfussEtAl2020">(<a href="References.html#ref-BarfussEtAl2020" role="doc-biblioref">Barfuss et al., 2020</a>)</span>. It highlights that</p>
+<ul>
+<li>the <strong>same <em>care for the future</em></strong> that makes <strong>individual decision-making</strong> apt for the long-term also positively impacts collective decision-making.</li>
+<li>This <strong><em>care for the future</em> alone can turn a tragedy into a comedy</strong>, where individual incentives are fully aligned with the collective interest - completely resolving the social dilemma.</li>
+<li>This is true, <strong>given the anticipated collapse impact is sufficiently severe</strong>. Thus, agents need to consider the catastrophic impact and, at the same time, be immensely future-oriented.</li>
+<li><strong>No other mechanism is required</strong>: Agents are anonymous, cannot reciprocate, and cannot make any agreements.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="learning-goals-revisited" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">8.4</span> Learning goals <strong>revisited</strong></h2>
+<p>In this chapter,</p>
+<ul>
+<li>we introduced the concept of dynamic games and described the elements of a stochastic game.</li>
+<li>We applied the stochastic games framework to model human-environment interactions on the question, how the individual care for future consequences and the fact that we all are embedded into a shared environment impacts collective decision-making.</li>
+<li>We analyze the strategic interactions in this stochastic game model and found that caring for the future can turn a tragedy into a commedy of the commons.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-BarfussEtAl2020" class="csl-entry" role="listitem">
+Barfuss, W., Donges, J. F., Vasconcelos, V. V., Kurths, J., &amp; Levin, S. A. (2020). Caring for the future can turn tragedy into comedy for long-term collective action under risk of collapse. <em>Proceedings of the National Academy of Sciences</em>, <em>117</em>(23), 12915–12922. <a href="https://doi.org/10.1073/pnas.1916545117">https://doi.org/10.1073/pnas.1916545117</a>
+</div>
+<div id="ref-RockstromEtAl2017" class="csl-entry" role="listitem">
+Rockström, J., Gaffney, O., Rogelj, J., Meinshausen, M., Nakicenovic, N., &amp; Schellnhuber, H. J. (2017). A roadmap for rapid decarbonization. <em>Science</em>. <a href="https://doi.org/10.1126/science.aah3443">https://doi.org/10.1126/science.aah3443</a>
+</div>
+<div id="ref-SteffenEtAl2018" class="csl-entry" role="listitem">
+Steffen, W., Rockström, J., Richardson, K., Lenton, T. M., Folke, C., Liverman, D., Summerhayes, C. P., Barnosky, A. D., Cornell, S. E., Crucifix, M., Donges, J. F., Fetzer, I., Lade, S. J., Scheffer, M., Winkelmann, R., &amp; Schellnhuber, H. J. (2018). Trajectories of the <span>Earth System</span> in the <span>Anthropocene</span>. <em>Proceedings of the National Academy of Sciences</em>, <em>115</em>(33), 8252–8259. <a href="https://doi.org/10.1073/pnas.1810141115">https://doi.org/10.1073/pnas.1810141115</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03.02-StrategicInteractions.html" class="pagination-link  aria-label=" &lt;span="" interactions&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-TransformationAgency.html" class="pagination-link" aria-label="Transformation Agency">
+        <span class="nav-page-text">Transformation Agency</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

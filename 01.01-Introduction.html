@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.544">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Complex Systems Modeling of Human-Environment Interactions - 1&nbsp; Sustainability Systems Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-DynamicSystems.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01.01-Introduction.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Complex-Systems-Modeling-of-Human-Environment-Interactions.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-TargetEquilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Target Equilibria</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-TransformationAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transformation Agency</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Behavioral agency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02ex-IntroToPython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01ex-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Nonlinearity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02ex-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Tipping elements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03ex-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Resilience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04ex-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | State transitions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01ex-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Sequential Decisions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02ex-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Strategic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03ex-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Dynamic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01ex-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Behavioral Agency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02ex-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Individual Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Learning Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#human-environment-interactions-for-sustainability-transitions" id="toc-human-environment-interactions-for-sustainability-transitions" class="nav-link" data-scroll-target="#human-environment-interactions-for-sustainability-transitions"><span class="header-section-number">1.1</span> Human-environment interactions for sustainability transitions</a>
+  <ul class="collapse">
+  <li><a href="#the-state-of-the-planet" id="toc-the-state-of-the-planet" class="nav-link" data-scroll-target="#the-state-of-the-planet">The state of the planet</a></li>
+  <li><a href="#why-are-we-not-acting" id="toc-why-are-we-not-acting" class="nav-link" data-scroll-target="#why-are-we-not-acting">Why are we not acting?</a></li>
+  <li><a href="#a-failure-of-systems-thinking" id="toc-a-failure-of-systems-thinking" class="nav-link" data-scroll-target="#a-failure-of-systems-thinking">A failure of systems thinking</a></li>
+  </ul></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling"><span class="header-section-number">1.2</span> Modeling</a>
+  <ul class="collapse">
+  <li><a href="#we-cannot-not-model" id="toc-we-cannot-not-model" class="nav-link" data-scroll-target="#we-cannot-not-model">We cannot not model</a></li>
+  <li><a href="#all-models-are-wrong" id="toc-all-models-are-wrong" class="nav-link" data-scroll-target="#all-models-are-wrong">All models are wrong</a></li>
+  <li><a href="#some-models-are-useful" id="toc-some-models-are-useful" class="nav-link" data-scroll-target="#some-models-are-useful">Some models are useful</a></li>
+  <li><a href="#some-models-are-good" id="toc-some-models-are-good" class="nav-link" data-scroll-target="#some-models-are-good">Some models are good</a></li>
+  </ul></li>
+  <li><a href="#systems-reductionism" id="toc-systems-reductionism" class="nav-link" data-scroll-target="#systems-reductionism"><span class="header-section-number">1.3</span> Systems reductionism</a>
+  <ul class="collapse">
+  <li><a href="#classical-reductionism" id="toc-classical-reductionism" class="nav-link" data-scroll-target="#classical-reductionism">Classical reductionism</a></li>
+  <li><a href="#the-problem-with-experts" id="toc-the-problem-with-experts" class="nav-link" data-scroll-target="#the-problem-with-experts">The problem with experts</a></li>
+  <li><a href="#complex-systems" id="toc-complex-systems" class="nav-link" data-scroll-target="#complex-systems">Complex systems</a></li>
+  <li><a href="#systems-reductionism-1" id="toc-systems-reductionism-1" class="nav-link" data-scroll-target="#systems-reductionism-1">Systems reductionism</a></li>
+  </ul></li>
+  <li><a href="#sustainability-systems-modeling" id="toc-sustainability-systems-modeling" class="nav-link" data-scroll-target="#sustainability-systems-modeling"><span class="header-section-number">1.4</span> Sustainability Systems Modeling</a>
+  <ul class="collapse">
+  <li><a href="#structural-challenges" id="toc-structural-challenges" class="nav-link" data-scroll-target="#structural-challenges">Structural challenges</a></li>
+  <li><a href="#three-types-of-models" id="toc-three-types-of-models" class="nav-link" data-scroll-target="#three-types-of-models">Three types of models</a></li>
+  </ul></li>
+  <li><a href="#learning-goals-revisited" id="toc-learning-goals-revisited" class="nav-link" data-scroll-target="#learning-goals-revisited"><span class="header-section-number">1.5</span> Learning goals revisited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Sustainability Systems Science</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<blockquote class="blockquote">
+<p>This chapter introduces the basic rationale for <strong>sustainability systems science</strong>, i.e., complex systems modeling and its application to human-environment interactions and sustainability transitions.</p>
+</blockquote>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning goals</h3>
+<p>After this chapter, students will be able to <strong>explain</strong>:</p>
+<ul>
+<li>Why sustainability transitions require a coupled systems approach.</li>
+<li>Why we must model, and how do it well?</li>
+<li>Systems reductionism and its relation to complex systems.</li>
+<li>Structural challenges for sustainability transitions and three types of models to tackle them.</li>
+</ul>
+</section>
+<section id="human-environment-interactions-for-sustainability-transitions" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="human-environment-interactions-for-sustainability-transitions"><span class="header-section-number">1.1</span> Human-environment interactions for sustainability transitions</h2>
+<section id="the-state-of-the-planet" class="level3">
+<h3 class="anchored" data-anchor-id="the-state-of-the-planet">The state of the planet</h3>
+<p>Watch <a href="https://www.youtube.com/watch?v=Vl6VhCAeEfQ">this TED talk</a> by Johan Rockström, who offers the 2024 scientific assessment of the state of the planet and explains what must be done to preserve Earth’s resilience to human pressure.</p>
+<p>While watching, ask yourself the following questions (and make notes around your answers):</p>
+<ul>
+<li>What are the main challenges facing humanity in the 21st century?</li>
+<li>In which ways humans and the environment are interconnected?</li>
+<li>What is the most impressive fact you learned from the talk?</li>
+</ul>
+<div id="0aed4567" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="13">
+
+        <iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/Vl6VhCAeEfQ?si=mIYOmtV0maEjxUkh" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+</section>
+<section id="why-are-we-not-acting" class="level3">
+<h3 class="anchored" data-anchor-id="why-are-we-not-acting">Why are we not acting?</h3>
+<p>Given the rather grim assessment of the planet’s state, the question arises: <strong>Why are we not acting more toward a safe and just future for all</strong></p>
+<ul>
+<li>despite all the scientific progress we have made so far,</li>
+<li>despite all the knowledge about the risks and undesirable consequences ahead if we do not change our course of action,</li>
+<li>despite all the knowledge we have obtained about possible solutions?</li>
+</ul>
+<p><strong>Reflect on this question on your own.</strong> Come up with a list of factors most relevant to you.</p>
+</section>
+<section id="a-failure-of-systems-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="a-failure-of-systems-thinking">A failure of systems thinking</h3>
+<p>According to <a href="(https://mitmgmtfaculty.mit.edu/jsterman/)">John Sterman</a>, professor and director of the MIT System Dynamics Group, the underlying issue of inaction in the sustainability crises is a <strong>massive failure of systems thinking</strong>.</p>
+<p>Watch the part of his <a href="https://mitmgmtfaculty.mit.edu/jsterman/">talk</a> (from minutes 12:19 until 14:17) where he explains this failure and <strong>compare his assessment with your own from above</strong>. Did he miss some critical factors? How can we complement his assessment?</p>
+<div id="049a8404" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="14">
+
+        <iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/yMNElsUDHXA?si=DKBolC8yLH08Jjku&amp;end=858;&amp;start=739" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>This book offers a comprehensive and opinionated, but foremost, practical introduction to the field of complex systems modeling applied to human-environment interactions and sustainability transitions.</p>
+</section>
+</section>
+<section id="modeling" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="modeling"><span class="header-section-number">1.2</span> Modeling</h2>
+<section id="we-cannot-not-model" class="level3">
+<h3 class="anchored" data-anchor-id="we-cannot-not-model">We cannot not model</h3>
+<p>In information theory, a bit (i.e., a <code>0</code> or a <code>1</code>) stores the answer to a yes-or-no question. We can measure the rate of information transmitted with the number of bits per second.</p>
+<div id="fig-we-cannot-not-model" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-we-cannot-not-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-WeCannotNotModel.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-we-cannot-not-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: We cannot not model - Human physiology requires simplification
+</figcaption>
+</figure>
+</div>
+<p>For example, it is known that our senses gather some 11 million bits per second from the environment (<a href="https://www.britannica.com/science/information-theory/Physiology">britannica.com</a>). When applied to the human brain, you expect it to show tremendous information processing capability.</p>
+<p>Interestingly, when researchers attempted to assess information processing capabilities during “intelligent” or “conscious” activities—like reading or playing the piano—they found a maximum capability of under 50 bits per second (<a href="#fig-we-cannot-not-model" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>). <em>For instance</em>, a typical reading speed of 300 words per minute translates to about five words per second. Assuming an average of five characters per word and roughly two bits per character results in that 50 bits per second figure. The precise number can vary based on assumptions and may differ according to the individual and the specific task.</p>
+<p>Thus, a tremendous amount of compression occurs if 11 million bits are reduced to less than 50. <strong>Our human physiology requires simplifaction. We model all the time.</strong> Note that the discrepancy between the amount of information being transmitted and the amount of information being processed is so large that any inaccuracy in the measurements is insignificant.</p>
+</section>
+<section id="all-models-are-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="all-models-are-wrong">All models are wrong</h3>
+<blockquote class="blockquote">
+<p>A model is a simplified representation of reality.</p>
+</blockquote>
+<p>A model’s simplification is necessary to make the phenomenon under question tractable and understandable. Simplifaction here is a feature, not a bug <span class="citation" data-cites="Smaldino2017">(<a href="References.html#ref-Smaldino2017" role="doc-biblioref">Smaldino, 2017</a>)</span>. <strong>The purpose of a model is to be wrong</strong>.</p>
+<p><strong>The models we use come in different forms or media.</strong></p>
+<div id="fig-model-media" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-media-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-ModelMedia.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-media-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Different model forms or media
+</figcaption>
+</figure>
+</div>
+<p>Some are <em>informal</em> and <em>qualitative</em>, while others are more <em>formal</em> and <em>quantitative</em> (<a href="#fig-model-media" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>). <strong>Mental models</strong> are intuitive and often subconscious. <strong>Verbal models</strong> describe concepts through language. Both model media can be vague and open to multiple interpretations, giving an <em>illusion of understanding</em> without precise clarity <span class="citation" data-cites="Smaldino2017">(<a href="References.html#ref-Smaldino2017" role="doc-biblioref">Smaldino, 2017</a>)</span>. Furthermore, the last 100,000 years of evolution have shaped Homo sapiens in ways that make it difficult for us to comprehend a dynamic, unstable, and unpredictable world. Our <em>brains evolved to manage immediate, short-term situations</em> and <em>anticipate gradual, linear changes</em> with a tendency to seek <em>balance and stability</em> <span class="citation" data-cites="Raworth2017">(<a href="References.html#ref-Raworth2017" role="doc-biblioref">Raworth, 2017</a>)</span>. Thus, we must make a conscious effort to overcome these cognitive priors. Formal models can help with that.</p>
+<p><strong>Pictorial models</strong> enhance understanding through visual representations. Take, for example, maps, and diagrams, but also artistic paintings. <strong>Mathematical models</strong> use equations to quantify relationships, providing greater precision. <strong>Computer models</strong> require the highest level of precision; all entities and causal mechanisms must be defined unambiguously to allow a computer simulation to operate. This high level of precision makes them essential for scientific research and understanding. However, our subconscious mental models often have the highest impact on how we perceive and act in the world.</p>
+<p>Thus, we will develop primarily formal mathematical and computational models in this book. However, this will automatically refine our mental and verbal models.</p>
+<p>To illustrate the power of mental models, consider the following riddle:</p>
+<blockquote class="blockquote">
+<p>A father and son are in a horrible car crash that kills the dad. The son is rushed to the hospital; just as he’s about to go under the knife, the surgeon says, “I can’t operate – that boy is my son!”   <em>How can this be?</em></p>
+</blockquote>
+<p>Regardless of how obvious (or not) the answer appears to you, watch <a href="https://www.youtube.com/watch?v=d4KmvA9hXwA">this video</a> in which people in Vienna are asked this question (Autotranslation helps if you do not speak German). <strong>Observe their reactions when their mental models are updated</strong> (from minute 1:38 on).</p>
+<div id="9440c21b-edee-4713-a3aa-faa2c9a55f7f" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="15">
+
+        <iframe width="100%" height="450" src="https://www.youtube.com/embed/d4KmvA9hXwA?si=FRoT2TUIVxGeyQOC&amp;end=140" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>We observe that <strong>modeling is an iterative process</strong>. When recognizing a mismatch between our models and reality, we get the opportunity to refine our models, and so gradually, we might become <strong>less wrong</strong> <span class="citation" data-cites="Smaldino2017">(<a href="References.html#ref-Smaldino2017" role="doc-biblioref">Smaldino, 2017</a>)</span>. Creating formal models of the systems we care about is the only method to achieve this in a structured, deliberate, and controlled manner.</p>
+<p>However, as it is the defining feature of a model to simplify or, in other words, to be wrong, making them <em>more true</em> cannot be the purpose of a model per se. But, <strong>what makes a model useful?</strong></p>
+</section>
+<section id="some-models-are-useful" class="level3">
+<h3 class="anchored" data-anchor-id="some-models-are-useful">Some models are useful</h3>
+<p>There is no universally agreed-upon classification of model use cases. I tend to distinguish between four clusters of model use cases (<a href="#fig-model-uses" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>): 1) Understanding &amp; explaining, 2) Communication &amp; learning, 3) Prediction &amp; forecasting, and 4) Decision-making &amp; action.</p>
+<div id="fig-model-uses" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-uses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-ModelUses.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-uses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: Possible model use cases
+</figcaption>
+</figure>
+</div>
+<section id="understanding-explaining" class="level4">
+<h4 class="anchored" data-anchor-id="understanding-explaining">Understanding &amp; Explaining</h4>
+<p>Understanding and explaining phenomena may occur in various ways. For example, models help <strong>clarify assumptions</strong> <span class="citation" data-cites="Smaldino2017">(<a href="References.html#ref-Smaldino2017" role="doc-biblioref">Smaldino, 2017</a>)</span>, allowing for a more transparent assessment of their implications and conclusions. Models help us to <strong>reason</strong>, i.e., to identify conditions and deduce logical implications. They also can provide (testable) <strong>explanations</strong> for empirical phenomena. <span class="citation" data-cites="Page2018">(<a href="References.html#ref-Page2018" role="doc-biblioref">Page, 2018</a>)</span> And, models are helpful to <strong>explore</strong>, i.e., to consider different “what if” scenarios to investigate possibilities and hypotheticals <span class="citation" data-cites="Smaldino2017 Page2018">(<a href="References.html#ref-Page2018" role="doc-biblioref">Page, 2018</a>; <a href="References.html#ref-Smaldino2017" role="doc-biblioref">Smaldino, 2017</a>)</span>.</p>
+</section>
+<section id="communication-learning" class="level4">
+<h4 class="anchored" data-anchor-id="communication-learning">Communication &amp; Learning</h4>
+<p>Formal models can serve as tools to <strong>overcome our cognitive limitations</strong>. They help in <strong>systematizing</strong> and <strong>synchronizing</strong> our understanding, ensuring that we discuss the same concepts and avoiding ambiguity that often accompanies verbal models.<span class="citation" data-cites="Smaldino2017">(<a href="References.html#ref-Smaldino2017" role="doc-biblioref">Smaldino, 2017</a>)</span> Models can <strong>guide scientific questions</strong>. The precise specification of components and their relationships in a model helps clarify scientific questions and distinguishes them from unfalsifiable pseudo-theories <span class="citation" data-cites="Smaldino2017">(<a href="References.html#ref-Smaldino2017" role="doc-biblioref">Smaldino, 2017</a>)</span>.</p>
+</section>
+<section id="prediction-forcasting" class="level4">
+<h4 class="anchored" data-anchor-id="prediction-forcasting">Prediction &amp; Forcasting</h4>
+<p><strong>Prediction</strong> refers to making numerical and categorical predictions of future and unknown phenomena. Historically, explanation and prediction were often linked closely together. However, <strong>prediction differs from explanation</strong>. A model can predict without explaining. Deep learning algorithms can predict product sales, tomorrow’s weather, price trends, and specific health outcomes; however, they provide minimal explanation. Also, a model can explain without predicting. Ecology models can explain speciation patterns but cannot predict new species <span class="citation" data-cites="Page2018">(<a href="References.html#ref-Page2018" role="doc-biblioref">Page, 2018</a>)</span>. Related concepts to prediction are <strong>forecasting</strong> and <strong>projections</strong>, which can mean various things in different contexts.</p>
+</section>
+<section id="decicion-making-action" class="level4">
+<h4 class="anchored" data-anchor-id="decicion-making-action">Decicion-making &amp; Action</h4>
+<p>Formal models help <strong>design</strong> institutions, policies, and rules by providing frameworks for contemplating the implications of choices. Combining this process with empirical data, formal models are helpful for <strong>action, guiding policy choices</strong> and strategic actions of governments, corporations, and nonprofits <span class="citation" data-cites="Page2018">(<a href="References.html#ref-Page2018" role="doc-biblioref">Page, 2018</a>)</span>. Likewise, good <a href="https://fs.blog/mental-models/">mental models</a> are helpful for good actions in our everyday lives.</p>
+<p><strong>It is important to note that, in general, a single model does not fulfill all use cases.</strong> Some models might do, like, for example, Newtonian mechanics. It explains the motion of objects, predicts their future positions, guides the design of machines, and is learned in schools worldwide. However, in most instances, this is not the case. A model might explain a phenomenon but cannot predict it or vice versa. A helpful model for decision-making might neither make accurate predictions nor explain the underlying mechanisms. Take macroeconomic models as an example.</p>
+<p>Beyon being useful or not, are there some quality criteria a <em>good</em> model should fulfill?</p>
+</section>
+</section>
+<section id="some-models-are-good" class="level3">
+<h3 class="anchored" data-anchor-id="some-models-are-good">Some models are good</h3>
+<p>I argue that there are some quality criteria that make a model a <em>good</em> model. A good model must be</p>
+<ul>
+<li>coherent</li>
+<li>transparent, and</li>
+<li>sparse.</li>
+</ul>
+<section id="coherence" class="level4">
+<h4 class="anchored" data-anchor-id="coherence">Coherence</h4>
+<p>Coherence means that the model is consistent. It does not contain contradictions or logical errors. For example, many proverbs are contradictory <span class="citation" data-cites="Page2018">(<a href="References.html#ref-Page2018" role="doc-biblioref">Page, 2018</a>)</span>:</p>
+<blockquote class="blockquote">
+<p>Proverb: Tie yourself to the mast <br> Opposite: Keep your options open</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Proverb: The perfect is the enemy of the good <br> Opposite: Do it well or not at all</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Proverb: Actions speak louder than words <br> Opposite: The pen is mightier than the sword</p>
+</blockquote>
+<p>A model can resolve these contradictions by specifying the conditions under which a particular statement holds. For example, under some conditions, it is best to <em>tie yourself to the mast</em>, while under others, it is best to <em>keep your options open</em>. A model can help to clarify these conditions.</p>
+<p>This requirement of coherence or consistency <strong>imposes a set of helpful <a href="https://www.quantamagazine.org/pondering-the-bits-that-build-space-time-and-brains-20220420/">constraints</a></strong> within which the model development can take place.</p>
+</section>
+<section id="transparency" class="level4">
+<h4 class="anchored" data-anchor-id="transparency">Transparency</h4>
+<p>A good model makes its <strong>assumptions explicit</strong> and transparent. It also openly discusses its <strong>limitations</strong>. Bonus points if the model is transparent about <strong>uncertainty</strong> in empirical data, parameters, and processes. Transparency is a prerequisite for a model to be useful for communication and learning.</p>
+</section>
+<section id="sparsity" class="level4">
+<h4 class="anchored" data-anchor-id="sparsity">Sparsity</h4>
+<p>You should take the simpler model if you have two competing models of equal quality regarding their use case. This is also known under the term <a href="https://en.wikipedia.org/wiki/Occam's_razor">Occam’s razor</a> or the <strong>principle of parsimony</strong>. This principle helps us avoid going overboard with introducing new assumptions, entities, and processes into our models, making our models overly complex and difficult to understand without further benefit. However, sometimes, during the modeling process, we are unsure whether a newly introduced assumption is helpful to explain the phenomenon under question. Thus, for model development, the principle of parsimony is a guideline, not a strict rule. As the famous saying goes</p>
+<blockquote class="blockquote">
+<p>You should make things as simple as possible, but not simpler.</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="systems-reductionism" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="systems-reductionism"><span class="header-section-number">1.3</span> Systems reductionism</h2>
+<p>Given that we cannot not model, how should we make sense of the world?</p>
+<section id="classical-reductionism" class="level3">
+<h3 class="anchored" data-anchor-id="classical-reductionism">Classical reductionism</h3>
+<p>With <em>classical reductionism</em>, I refer to the ideas of rationalism and empiricism that have dominated Western science since the last great transformation, the Enlightenment. Replacing religious dogmatism, this view argues, that</p>
+<blockquote class="blockquote">
+<p><strong>the whole can be understood from its parts</strong>.</p>
+</blockquote>
+<p>For example, this approach has been highly successful in physics and chemistry, where the behavior of atoms and molecules can be understood by studying their interactions.</p>
+<p>As a result, scientific disciplines tend to be hierarchically clustered around specific parts of the whole. For example, the German Research Association (DFG) clusters disciplines around the engineering, life, natural, and humanities and social sciences (<a href="#fig-scientific-disciplines" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>). Within each cluster, there are multiple disciplines with subdisciplines.</p>
+<div id="fig-scientific-disciplines" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scientific-disciplines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-ScientificDisciplines.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scientific-disciplines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: DFG classification of scientific disciplines
+</figcaption>
+</figure>
+</div>
+<p><strong>Classical reductionism produced a lot of experts</strong>. Together, they drove the massive increase in wealth, health, and knowledge in the last 200 years.</p>
+</section>
+<section id="the-problem-with-experts" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem-with-experts">The problem with experts</h3>
+<p>Experts carry a risk of overrating the importance of their area of expertise <span class="citation" data-cites="Brockmann2021">(<a href="References.html#ref-Brockmann2021" role="doc-biblioref">Brockmann, 2021</a>)</span>. At the same time, experts tend to overlook the interactions within and beyond the system under investigation (<a href="#fig-experts" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>).</p>
+<div id="fig-experts" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-experts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-ProblemWithExperts.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-experts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: The problem with experts
+</figcaption>
+</figure>
+</div>
+<p>These problems with classical experts become particularly problematic in <strong>complex systems</strong>, which are characterized by their <strong>interactions</strong>.</p>
+</section>
+<section id="complex-systems" class="level3">
+<h3 class="anchored" data-anchor-id="complex-systems">Complex systems</h3>
+<p>The study of complex systems started around the 1950s and has been a diverse endeavor since then. See, for example, the <a href="https://www.art-sciencefactory.com/complexity-map_feb09.html">map of complexity science</a>.</p>
+<p>In a complex system,</p>
+<blockquote class="blockquote">
+<p>the whole is more than the sum of its parts.</p>
+</blockquote>
+<p>The whole, the so-called macro-level, <strong>emerges</strong> from and <strong>feeds backs</strong> to the so-called micro-level, in which (often many, heterogeneous) entities or agents <strong>interact</strong> (in often non-linear ways) in a shared environment. Both levels are out-of-equilibrium, continuously evolving (<a href="#fig-complex-system" class="quarto-xref">Figure&nbsp;<span>1.6</span></a>).</p>
+<div id="fig-complex-system" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-complex-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-ComplexSystem.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-complex-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.6: Properties of a complex system
+</figcaption>
+</figure>
+</div>
+<p>To illustrate the idea of emergence, where the whole is more than the sum of its parts, consider the following quote:</p>
+<blockquote class="blockquote">
+<p>“There’s no love in a carbon atom, <br> No hurricane in a water molecule, <br> No financial collapse in a dollar bill.” <br> – Peter Dodds</p>
+</blockquote>
+<p>To observe a complex system in action, enjoy a <a href="https://www.youtube.com/watch?v=V4f_1_r80RY">video of bird flocking behavior</a>. A century ago, the wonders of these highly coordinated yet leaderless flocks led people to believe that telepathy might be what guided these birds (<a href="https://phys.org/news/2011-10-secrets-flocking-revealed.html">phys.org</a>).</p>
+<div id="92298c65-7be6-4155-bac6-08682eb8faaa" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+        <iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/V4f_1_r80RY?si=ahtk-6i9JNFYOR1R" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>See <a href="https://complexityexplained.github.io/">complexityexplained.github.io</a> for more background information on complexity science.</p>
+<p><strong>So, what can we do to make sense of complex systems, given our limited information processing capacity and the consequences that we cannot not model?</strong></p>
+</section>
+<section id="systems-reductionism-1" class="level3">
+<h3 class="anchored" data-anchor-id="systems-reductionism-1">Systems reductionism</h3>
+<p>To quote one of the founding fathers of complexity science,</p>
+<blockquote class="blockquote">
+<p>“It may not be entirely vain, however, to search for common properties among diverse kinds of complex systems” <br> – Herbert Simon</p>
+</blockquote>
+<p>As it turns out, flocking behavior, for example, can be explained by just three rules: separation, alignment, and cohesion (<a href="https://en.wikipedia.org/wiki/Boids">wikipedia.org/boids</a>, <a href="#fig-flocking-rules" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>).</p>
+<div id="fig-flocking-rules" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-flocking-rules-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-FlockingRules.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flocking-rules-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.7: The three rules to produce flocking behavior
+</figcaption>
+</figure>
+</div>
+<p><strong>Systems and classic reductionism complement each other</strong> (<a href="#fig-reductionisms" class="quarto-xref">Figure&nbsp;<span>1.8</span></a>). While classical reductionism helps understand the parts of a system, systems reductionism helps understand the interactions between these parts. <strong>Collaboration between the two approaches is key.</strong></p>
+<div id="fig-reductionisms" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reductionisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-Reductionisms.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reductionisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.8: Systems and classic reductionism complementing each other
+</figcaption>
+</figure>
+</div>
+<p>Conceptually, <strong>complex systems modeling combines the practice of (formal) modeling with the ideas of systems reductionism</strong>.</p>
+</section>
+</section>
+<section id="sustainability-systems-modeling" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sustainability-systems-modeling"><span class="header-section-number">1.4</span> Sustainability Systems Modeling</h2>
+<p>This section conceptually synthesizes the practice of complex system modeling applied to the problem field of sustainability transitions and human-environment interactions.</p>
+<section id="structural-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="structural-challenges">Structural challenges</h3>
+<p>To operationalize systems thinking for human-environment modeling, we require a collection of the structural elements and processes that either hinder or may foster action toward sustainability.</p>
+<p>Summarizing many fantastic review and perspective papers <span class="citation" data-cites="SchillEtAl2019 ElsawahEtAl2020 MullerEtAl2020a ConstantinoEtAl2021 LevinXepapadeas2021 FarahbakhshEtAl2022 GiupponiEtAl2022">(<a href="References.html#ref-ConstantinoEtAl2021" role="doc-biblioref">Constantino et al., 2021</a>; <a href="References.html#ref-ElsawahEtAl2020" role="doc-biblioref">Elsawah et al., 2020</a>; <a href="References.html#ref-FarahbakhshEtAl2022" role="doc-biblioref">Farahbakhsh et al., 2022</a>; <a href="References.html#ref-GiupponiEtAl2022" role="doc-biblioref">Giupponi et al., 2022</a>; <a href="References.html#ref-LevinXepapadeas2021" role="doc-biblioref">Levin &amp; Xepapadeas, 2021</a>; <a href="References.html#ref-MullerEtAl2020a" role="doc-biblioref">Müller et al., 2020</a>; <a href="References.html#ref-SchillEtAl2019" role="doc-biblioref">Schill et al., 2019</a>)</span> we obtain the following list of structural challenges for sustainability transitions (<a href="#fig-structural-challenges" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>): <em>Complex system models of human-environment interactions</em> must account for the <strong>dynamics</strong> of the <strong>collective behavior</strong> emerging from <strong>cognitive agents</strong> within an <strong>environmental context</strong> <span class="citation" data-cites="BarfussEtAl2024a">(<a href="References.html#ref-BarfussEtAl2024a" role="doc-biblioref">Barfuss et al., 2024</a>)</span>. They must also adhere to the <strong>good modeling practices</strong> of <em>coherence</em>, <em>transparency</em>, and <em>sparsity</em>, as discussed above.</p>
+<div id="fig-structural-challenges" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-structural-challenges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-StructuralChallenges.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-structural-challenges-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.9: Structural challanges for sustainability transitions
+</figcaption>
+</figure>
+</div>
+<section id="cognitive-agency" class="level4">
+<h4 class="anchored" data-anchor-id="cognitive-agency">Cognitive agency 🧠</h4>
+<p>Improving the representation of human behavior in models of social-ecological systems and human-environment interactions is a critical challenge <span class="citation" data-cites="SchillEtAl2019 ConstantinoEtAl2021 SchluterEtAl2017">(<a href="References.html#ref-ConstantinoEtAl2021" role="doc-biblioref">Constantino et al., 2021</a>; <a href="References.html#ref-SchillEtAl2019" role="doc-biblioref">Schill et al., 2019</a>; <a href="References.html#ref-SchluterEtAl2017" role="doc-biblioref">Schlüter et al., 2017</a>)</span>. Humans are neither hyper-rational nor overly simplistic, as many models assume. At the very least, they are cognitive agents who <em>perceive</em> their current environmental context, <em>evaluate</em> it and their options, <em>make decisions</em>, and <em>act</em> accordingly.</p>
+</section>
+<section id="environmental-context" class="level4">
+<h4 class="anchored" data-anchor-id="environmental-context">Environmental context 🌳</h4>
+<p>The environmental context refers to the decision-making challenge the agents face. The environmental context is not static. It may change <em>smoothly</em> or <em>abruptly</em>, based on human activities or via inherent dynamics. For example, climate damages gradually worsen with increasing global mean temperature. And crossing climate tipping points may abruptly lead to catastrophic outcomes. Furthermore, these changes are <em>not certain</em> but stochastic in nature and may only be partially observable by humans. And often, the consequences of action are heavily delayed, impacting future generations. All these attributes make collective action for sustainability transitions tremendously challenging.</p>
+<p>The environmental context includes the biophysical environment, such as the climate, biodiversity, and resources, as well as the social environment, out of which the collective behavior emerges.</p>
+</section>
+<section id="collective-behavior" class="level4">
+<h4 class="anchored" data-anchor-id="collective-behavior">Collective behavior 👥</h4>
+<p>From cognitive agents within an environmental context, collective behavior emerges. This collective behavior depends on the <em>social context</em>, the <em>heterogeneity</em> of the agents, the <em>interaction structure</em> between them, and the scale on which they operate. Collective behavior refers to the dynamics of the system as a whole, which are not easily reducible to the characteristics of individual agents.</p>
+</section>
+<section id="dynamics" class="level4">
+<h4 class="anchored" data-anchor-id="dynamics">Dynamics 🚀</h4>
+<p>Our primary goal is to comprehend and advance sustainability transitions. Transitions are fundamentally dynamic in nature, so our modeling approach must reflect this dynamism, integrating <em>non-linear feedback loops</em> and <em>critical transitions</em>. Furthermore, the concepts of <em>stability</em> and <em>resilience</em> demand a dynamic viewpoint. Before a system reaches stability, its <em>transient evolution</em> offers crucial insights into the sustainability transitions itself.</p>
+<p><strong>How can we begin to make sense of this all?</strong></p>
+<p><strong>What precisely do all of these elements mean?</strong></p>
+<p><strong>And how do all of these elements relate to each other?</strong></p>
+<p>These questions will guide us through the following chapters.</p>
+<p>We will tackle them with the help of a useful framework from transdisciplinary research: the <strong>three types of knowledge</strong>, applied to modeling.</p>
+</section>
+</section>
+<section id="three-types-of-models" class="level3">
+<h3 class="anchored" data-anchor-id="three-types-of-models">Three types of models</h3>
+<p>When addressing societal challenges, the concept of the <em>three types of knowledge</em> helps to produce not only knowledge on problems but also knowledge that helps to overcome those problems (<a href="https://i2insights.org/2021/02/11/three-types-of-knowledge/">Buser &amp; Schneider, 2021</a>). In general, the concept applies to all research methodologies. We will specifically discuss it in the context of formal modeling, transforming it into <em>three types of models</em> (<a href="#fig-three-types-of-models" class="quarto-xref">Figure&nbsp;<span>1.10</span></a>).</p>
+<div id="fig-three-types-of-models" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-three-types-of-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/01.01-ThreeTypesOfModels.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-types-of-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.10: Three types of models based on three types of knowledge for transdisciplinary reserach
+</figcaption>
+</figure>
+</div>
+<p>The three types of models are:</p>
+<section id="dynamic-systems-models" class="level4">
+<h4 class="anchored" data-anchor-id="dynamic-systems-models">Dynamic-systems models</h4>
+<p>Dynamic-systems models operationalize <strong>systems knowledge</strong>, typically understood as knowledge concerning the existing system or issue. This understanding is primarily analytical and descriptive. For instance, in the context of sustainability transitions, systems knowledge assesses the risk triggering climate tipping points, biodiversity loss dynamics, or a specific region’s social-ecological dynamics. Systems knowledge is strongly associated with <strong>facts</strong> and asks <strong>what is?</strong></p>
+<p>In this regard, <strong>dynamic-systems models</strong> are often used to understand the system’s behavior under specific conditions.</p>
+<p>We will discuss dynamic-systems modeling in the first part of the book, covering</p>
+<ul>
+<li>Nonlinearity and feedback loops in <a href="./02.01-Nonlinearity.html">Chapter 02.01</a></li>
+<li>Tipping elements and regime shifts in <a href="./02.02-TippingElements.html">Chapter 02.02</a></li>
+<li>Resilience in <a href="./02.03-Resilience.html">Chapter 02.03</a>, and</li>
+<li>Stochastic state transitions in <a href="./02.04-StateTransitions.html">Chapter 02.04</a>.</li>
+</ul>
+</section>
+<section id="target-equilibrium-models" class="level4">
+<h4 class="anchored" data-anchor-id="target-equilibrium-models">Target-equilibrium models</h4>
+<p>Target-equilibrium models operationalize <strong>target knowledge</strong>, which is knowledge about the desired future and the values that indicate which direction to take. It relies on deliberation by different societal actors and is based on values and norms. In sustainability transitions, ways of producing target knowledge include participatory vision, scenario development with a wide range of stakeholders, and the public discourse at large. Target knowledge is strongly associated with <strong>values</strong> and asks <strong>what ought to be?</strong>.</p>
+<p><strong>Target-equilibrium</strong> (or <em>equilibrium-based models applied to sustainability transitions</em>) are primarily used in economics. In theory, the equilibrium is the outcome of an optimization procedure where the specified normative target is reached.</p>
+<p>We will discuss target-equilibrium modeling in the second part of the book, covering</p>
+<ul>
+<li>Sequential decisions of a single agent in a dynamic environment in <a href="./03.01-SequentialDecisions.html">Chapter 03.01</a></li>
+<li>Strategic interactions of multiple agents in a static envrionment in <a href="./03.02-StrategicInteractions.html">Chapter 03.02</a>, and</li>
+<li>Dynamic interactions of multiple agents in a dynamic environment in <a href="./03.03-DynamicInteractions.html">Chapter 03.03</a>.</li>
+</ul>
+</section>
+<section id="transformation-agency-models" class="level4">
+<h4 class="anchored" data-anchor-id="transformation-agency-models">Transformation-agency models</h4>
+<p>Transformation-agency models operationalize <strong>transformation knowledge</strong>, which is knowledge about how to move from the existing system to the desired future. This knowledge includes concrete strategies and steps to take. In sustainability transitions, producing transformation knowledge could involve developing policy instruments, designing new institutions, or implementing new technologies. Transformation knowledge is strongly associated with <strong>agency</strong> and asks <strong>how to?</strong>.</p>
+<p><strong>Transformation-agency models</strong> (or <em>agent-based models applied to sustainability transitions</em>) are a flexible tool that <em>combines</em> the <em>dynamics</em> of how to get to a desired outcome with <em>agency</em> that defines what is desirable and possible to do.</p>
+<p>We will discuss transformation-agency modeling in the third part of the book, covering</p>
+<ul>
+<li>Rule-based behavioral agency in agent-based models in <a href="./04.01-BehavioralAgency.html">Chapter 04.01</a></li>
+<li>Individual reinforcement learning in <a href="./04.02-IndividualLearning.html">Chapter 04.02</a>, and</li>
+<li>The non-linear dynamics of reinforcement learning in <a href="./04.03-LearningDynamics.html">Chapter 04.03</a>.</li>
+</ul>
+<p>It is important to note that the three knowledge types are interdependent. For example, knowledge about ‘how to’ would be of limited use or even dangerous if it was not oriented toward desirable target values and based on sound facts. In the same vein, we will integrate the different types of models toward the end of this book.</p>
+</section>
+</section>
+</section>
+<section id="learning-goals-revisited" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">1.5</span> Learning goals revisited</h2>
+<ul>
+<li>Understanding and promoting <strong>sustainability transitions</strong> requires a <strong>coupled human-environment systems approach</strong>, as the <strong>challenges</strong> and possible <strong>solutions</strong> are <strong>tightly coupled</strong> between humans and the biosphere.</li>
+<li>Limited human information processing demands us to model the world around us. <strong>Formal models help overcome imprecise mental models and cognitive limitations</strong>. Models are <strong>helpful</strong> for <em>understanding</em>, <em>communicating</em>, <em>predicting</em>, and <em>making decisions</em>. <strong>Good models</strong> are <em>coherent</em>, <em>transparent</em>, and <em>sparse</em>.</li>
+<li><strong>Systems reductionism complements classical reductionism</strong> to <strong>avoid unintended side effects</strong> in complex systems. Complex systems are characterized by <strong>interactions, emergent properties, and feedback loops</strong>.</li>
+<li>Complex systems models of human-environment interactions must account for the <strong>dynamics</strong> of the <strong>collective behavior</strong> emerging from <strong>cognitive agents</strong> in <strong>environmental contexts</strong>. Three types of models, <em>dynamic-systems model</em>, <em>target-equilibria models</em>, and <em>transformation-agency</em> (agent-based) model, will help us achieve these desiderata.</li>
+</ul>
+<p>The <a href="./01.02ex-IntroToPython.html">exercises for this chapter</a> offer a thorough introduction to the programming language <code>Python</code>, preparing you for the modeling exercises in the subsequent chapters.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-BarfussEtAl2024a" class="csl-entry" role="listitem">
+Barfuss, W., Flack, J. C., Gokhale, C. S., Hammond, L., Hilbe, C., Hughes, E., Leibo, J. Z., Lenaerts, T., Levin, S. A., Madhushani Sehwag, U., McAvoy, A., Meylahn, J. M., &amp; Santos, F. P. (2024). Collective <span>Cooperative Intelligence</span>. <em>Forthcomming in the Proceedings of the National Academy of Sciences</em>.
+</div>
+<div id="ref-Brockmann2021" class="csl-entry" role="listitem">
+Brockmann, D. (2021). <em><span class="nocase">Im Wald vor lauter B<span class="nocase">ä</span>umen: Unsere komplexe Welt besser verstehen</span></em>. Deutscher Taschenbuch Verlag.
+</div>
+<div id="ref-ConstantinoEtAl2021" class="csl-entry" role="listitem">
+Constantino, S. M., Schlüter, M., Weber, E. U., &amp; Wijermans, N. (2021). Cognition and behavior in context: A framework and theories to explain natural resource use decisions in social-ecological systems. <em>Sustainability Science</em>, <em>16</em>(5), 1651–1671. <a href="https://doi.org/10.1007/s11625-021-00989-w">https://doi.org/10.1007/s11625-021-00989-w</a>
+</div>
+<div id="ref-ElsawahEtAl2020" class="csl-entry" role="listitem">
+Elsawah, S., Filatova, T., Jakeman, A. J., Kettner, A. J., Zellner, M. L., Athanasiadis, I. N., Hamilton, S. H., Axtell, R. L., Brown, D. G., Gilligan, J. M., Janssen, M. A., Robinson, D. T., Rozenberg, J., Ullah, I. I. T., &amp; Lade, S. J. (2020). Eight grand challenges in socio-environmental systems modeling. <em>Socio-Environmental Systems Modelling</em>, <em>2</em>, 16226–16226. <a href="https://doi.org/10.18174/sesmo.2020a16226">https://doi.org/10.18174/sesmo.2020a16226</a>
+</div>
+<div id="ref-FarahbakhshEtAl2022" class="csl-entry" role="listitem">
+Farahbakhsh, I., Bauch, C. T., &amp; Anand, M. (2022). Modelling coupled human–environment complexity for the future of the biosphere: Strengths, gaps and promising directions. <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em>, <em>377</em>(1857), 20210382. <a href="https://doi.org/10.1098/rstb.2021.0382">https://doi.org/10.1098/rstb.2021.0382</a>
+</div>
+<div id="ref-GiupponiEtAl2022" class="csl-entry" role="listitem">
+Giupponi, C., Ausseil, A.-G., Balbi, S., Cian, F., Fekete, A., Gain, A. K., Essenfelder, A. H., Martínez-López, J., Mojtahed, V., Norf, C., Relvas, H., &amp; Villa, F. (2022). Integrated modelling of social-ecological systems for climate change adaptation. <em>Socio-Environmental Systems Modelling</em>, <em>3</em>, 18161–18161. <a href="https://doi.org/10.18174/sesmo.18161">https://doi.org/10.18174/sesmo.18161</a>
+</div>
+<div id="ref-LevinXepapadeas2021" class="csl-entry" role="listitem">
+Levin, S., &amp; Xepapadeas, A. (2021). On the <span>Coevolution</span> of <span>Economic</span> and <span>Ecological Systems</span>. <em>Annual Review of Resource Economics</em>, <em>13</em>(1), 355–377. <a href="https://doi.org/10.1146/annurev-resource-103020-083100">https://doi.org/10.1146/annurev-resource-103020-083100</a>
+</div>
+<div id="ref-MullerEtAl2020a" class="csl-entry" role="listitem">
+Müller, B., Hoffmann, F., Heckelei, T., Müller, C., Hertel, T. W., Polhill, J. G., van Wijk, M., Achterbosch, T., Alexander, P., Brown, C., Kreuer, D., Ewert, F., Ge, J., Millington, J. D. A., Seppelt, R., Verburg, P. H., &amp; Webber, H. (2020). Modelling food security: <span>Bridging</span> the gap between the micro and the macro scale. <em>Global Environmental Change</em>, <em>63</em>, 102085. <a href="https://doi.org/10.1016/j.gloenvcha.2020.102085">https://doi.org/10.1016/j.gloenvcha.2020.102085</a>
+</div>
+<div id="ref-Page2018" class="csl-entry" role="listitem">
+Page, S. E. (2018). <em>The model thinker: <span>What</span> you need to know to make data work for you</em>. Basic Books.
+</div>
+<div id="ref-Raworth2017" class="csl-entry" role="listitem">
+Raworth, K. (2017). <em>Doughnut economics: Seven ways to think like a 21st-century economist</em>. Chelsea Green Publishing.
+</div>
+<div id="ref-SchillEtAl2019" class="csl-entry" role="listitem">
+Schill, C., Anderies, J. M., Lindahl, T., Folke, C., Polasky, S., Cárdenas, J. C., Crépin, A.-S., Janssen, M. A., Norberg, J., &amp; Schlüter, M. (2019). A more dynamic understanding of human behaviour for the <span>Anthropocene</span>. <em>Nature Sustainability</em>, <em>2</em>(12), 1075–1082.
+</div>
+<div id="ref-SchluterEtAl2017" class="csl-entry" role="listitem">
+Schlüter, M., Baeza, A., Dressler, G., Frank, K., Groeneveld, J., Jager, W., Janssen, M. A., McAllister, R. R. J., Müller, B., Orach, K., Schwarz, N., &amp; Wijermans, N. (2017). A framework for mapping and comparing behavioural theories in models of social-ecological systems. <em>Ecological Economics</em>, <em>131</em>, 21–35. <a href="https://doi.org/10.1016/j.ecolecon.2016.08.008">https://doi.org/10.1016/j.ecolecon.2016.08.008</a>
+</div>
+<div id="ref-Smaldino2017" class="csl-entry" role="listitem">
+Smaldino, P. E. (2017). Models <span>Are Stupid</span>, and <span>We Need More</span> of <span>Them</span>. In R. R. Vallacher, S. J. Read, &amp; A. Nowak (Eds.), <em>Computational <span>Social Psychology</span></em> (1st ed., pp. 311–331). Routledge. <a href="https://doi.org/10.4324/9781315173726-14">https://doi.org/10.4324/9781315173726-14</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link  aria-label=" preface"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-DynamicSystems.html" class="pagination-link" aria-label="Dynamic Systems">
+        <span class="nav-page-text">Dynamic Systems</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

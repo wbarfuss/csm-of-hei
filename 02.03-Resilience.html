@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.544">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Complex Systems Modeling of Human-Environment Interactions - 4&nbsp; Resilience</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02.04-StateTransitions.html" rel="next">
+<link href="./02.02-TippingElements.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-DynamicSystems.html">Dynamic Systems</a></li><li class="breadcrumb-item"><a href="./02.03-Resilience.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Complex-Systems-Modeling-of-Human-Environment-Interactions.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-Resilience.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-TargetEquilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Target Equilibria</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-TransformationAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transformation Agency</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Behavioral agency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02ex-IntroToPython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01ex-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Nonlinearity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02ex-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Tipping elements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03ex-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Resilience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04ex-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | State transitions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01ex-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Sequential Decisions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02ex-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Strategic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03ex-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Dynamic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01ex-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Behavioral Agency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02ex-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Individual Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Learning Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#motivation-resilience-in-sustainability-contexts" id="toc-motivation-resilience-in-sustainability-contexts" class="nav-link active" data-scroll-target="#motivation-resilience-in-sustainability-contexts"><span class="header-section-number">4.1</span> <strong>Motivation</strong> | Resilience in sustainability contexts</a>
+  <ul class="collapse">
+  <li><a href="#resilience-everywhere" id="toc-resilience-everywhere" class="nav-link" data-scroll-target="#resilience-everywhere">Resilience everywhere</a></li>
+  <li><a href="#resilience-vs.-dynamics" id="toc-resilience-vs.-dynamics" class="nav-link" data-scroll-target="#resilience-vs.-dynamics">Resilience vs.&nbsp;dynamics</a></li>
+  <li><a href="#resilience-in-the-sustainability-sciences" id="toc-resilience-in-the-sustainability-sciences" class="nav-link" data-scroll-target="#resilience-in-the-sustainability-sciences">Resilience in the <strong>sustainability sciences</strong></a></li>
+  <li><a href="#resilience-of-what-to-what" id="toc-resilience-of-what-to-what" class="nav-link" data-scroll-target="#resilience-of-what-to-what">Resilience of what to what?</a></li>
+  <li><a href="#specified-vs.-general-resilience" id="toc-specified-vs.-general-resilience" class="nav-link" data-scroll-target="#specified-vs.-general-resilience"><strong>Specified vs.&nbsp;general</strong> resilience</a></li>
+  <li><a href="#example-resilience-of-farming-systems" id="toc-example-resilience-of-farming-systems" class="nav-link" data-scroll-target="#example-resilience-of-farming-systems">Example | <strong>Resilience of farming systems</strong></a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#resilience-types" id="toc-resilience-types" class="nav-link" data-scroll-target="#resilience-types"><span class="header-section-number">4.2</span> Resilience types</a>
+  <ul class="collapse">
+  <li><a href="#robustness-resilience" id="toc-robustness-resilience" class="nav-link" data-scroll-target="#robustness-resilience">Robustness resilience</a></li>
+  </ul></li>
+  <li><a href="#adaptation-resilience" id="toc-adaptation-resilience" class="nav-link" data-scroll-target="#adaptation-resilience"><span class="header-section-number">4.3</span> Adaptation resilience</a>
+  <ul class="collapse">
+  <li><a href="#adaptation-ball-and-cup-diagram" id="toc-adaptation-ball-and-cup-diagram" class="nav-link" data-scroll-target="#adaptation-ball-and-cup-diagram">Adaptation | <strong>Ball-and-cup diagram</strong></a></li>
+  <li><a href="#adaptation-system-dynamics" id="toc-adaptation-system-dynamics" class="nav-link" data-scroll-target="#adaptation-system-dynamics">Adaptation | <strong>System dynamics</strong></a></li>
+  <li><a href="#adaptation-feedback-mechanism" id="toc-adaptation-feedback-mechanism" class="nav-link" data-scroll-target="#adaptation-feedback-mechanism">Adaptation | <strong>Feedback mechanism</strong></a></li>
+  <li><a href="#adaptation-real-world-examples" id="toc-adaptation-real-world-examples" class="nav-link" data-scroll-target="#adaptation-real-world-examples">Adaptation | <strong>Real-world examples</strong></a></li>
+  </ul></li>
+  <li><a href="#transformation-resilience" id="toc-transformation-resilience" class="nav-link" data-scroll-target="#transformation-resilience"><span class="header-section-number">4.4</span> Transformation resilience</a>
+  <ul class="collapse">
+  <li><a href="#transformation-ball-and-cup-diagram" id="toc-transformation-ball-and-cup-diagram" class="nav-link" data-scroll-target="#transformation-ball-and-cup-diagram">Transformation | <strong>Ball-and-cup diagram</strong></a></li>
+  <li><a href="#transformation-alternative-stable-states-system" id="toc-transformation-alternative-stable-states-system" class="nav-link" data-scroll-target="#transformation-alternative-stable-states-system">Transformation | <strong>Alternative-stable-states system</strong></a></li>
+  <li><a href="#transformation-potential-function" id="toc-transformation-potential-function" class="nav-link" data-scroll-target="#transformation-potential-function">Transformation | <strong>Potential function</strong></a></li>
+  <li><a href="#transformation-bifurcation-diagram" id="toc-transformation-bifurcation-diagram" class="nav-link" data-scroll-target="#transformation-bifurcation-diagram">Transformation | <strong>Bifurcation diagram</strong></a></li>
+  <li><a href="#transformation-combined-analysis" id="toc-transformation-combined-analysis" class="nav-link" data-scroll-target="#transformation-combined-analysis">Transformation | <strong>Combined analysis</strong></a></li>
+  <li><a href="#transformation-real-world-examples" id="toc-transformation-real-world-examples" class="nav-link" data-scroll-target="#transformation-real-world-examples">Transformation | <strong>Real-world examples</strong></a></li>
+  </ul></li>
+  <li><a href="#quantifying-resilience" id="toc-quantifying-resilience" class="nav-link" data-scroll-target="#quantifying-resilience"><span class="header-section-number">4.5</span> Quantifying resilience</a>
+  <ul class="collapse">
+  <li><a href="#critical-slowing-down" id="toc-critical-slowing-down" class="nav-link" data-scroll-target="#critical-slowing-down">Critical slowing down</a></li>
+  <li><a href="#early-warning-signals" id="toc-early-warning-signals" class="nav-link" data-scroll-target="#early-warning-signals">Early-warning signals</a></li>
+  <li><a href="#example-greenland-ice-sheet" id="toc-example-greenland-ice-sheet" class="nav-link" data-scroll-target="#example-greenland-ice-sheet">Example | Greenland Ice Sheet</a></li>
+  </ul></li>
+  <li><a href="#learning-goals-revisited" id="toc-learning-goals-revisited" class="nav-link" data-scroll-target="#learning-goals-revisited"><span class="header-section-number">4.6</span> Learning goals revisited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-DynamicSystems.html">Dynamic Systems</a></li><li class="breadcrumb-item"><a href="./02.03-Resilience.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<section id="motivation-resilience-in-sustainability-contexts" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="motivation-resilience-in-sustainability-contexts"><span class="header-section-number">4.1</span> <strong>Motivation</strong> | Resilience in sustainability contexts</h2>
+<p>Think of the term “resilience” in the context of sustainability and human-environment interactions. What does it mean to you? How can we model it? How can we measure it? What are the key challenges and opportunities in this field?</p>
+<section id="resilience-everywhere" class="level3">
+<h3 class="anchored" data-anchor-id="resilience-everywhere">Resilience everywhere</h3>
+<blockquote class="blockquote">
+<p><em>Capacity of a system to cope with shocks</em></p>
+</blockquote>
+<p>from <a href="https://en.wiktionary.org/wiki/resilience#Etymology">latin</a> <strong>resiliō</strong> (“to spring back”)</p>
+<p>Resilience is a widly used term in many different fields, from psychology to engineering, from ecology to social-ecological systems.</p>
+<section id="psychology" class="level5">
+<h5 class="anchored" data-anchor-id="psychology">Psychology</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.mind-berry.com/wp-content/uploads/2023/06/Resilience-image.png" class="img-fluid figure-img"></p>
+<figcaption>https://www.mind-berry.com/wp-content/uploads/2023/06/Resilience-image.png</figcaption>
+</figure>
+</div>
+<p>source: <a href="https://www.mind-berry.com/articles/what-is-resilience">mind-berry.com | What is resilience?</a></p>
+<p>Resilience is the capacity to recover from challenges and use them as learning opportunities. Resilient peole are perceived as having a positive outlook, handling difficulties calmly, and managing negative emotions effectively.</p>
+</section>
+<section id="engineering" class="level5">
+<h5 class="anchored" data-anchor-id="engineering">Engineering</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rote.se/upload/images/resilience-engineering.png" class="img-fluid figure-img"></p>
+<figcaption>Resilience engineering</figcaption>
+</figure>
+</div>
+<p>source: <a href="https://rote.se/en/areas-of-expertise/system-engineering-and-defense-logistics/resilience-engineering/">rote.se | Resilience engineering</a></p>
+<p>Resilience in engineering refers to the ability of complex systems to anticipate, adapt to, and recover from unexpected disruptions or failures. This field emphasizes not just the prevention of failures but also the capacity to maintain functionality and performance in the face of unforeseen challenges.</p>
+</section>
+<section id="ecology" class="level5">
+<h5 class="anchored" data-anchor-id="ecology">Ecology</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.resalliance.org/files/Adaptive-cycle-from-Panarchy-edited-by-Lance-H-Gunderson-and-CS-Holling-Figure_W640.jpg" class="img-fluid figure-img"></p>
+<figcaption>Resilience in ecology | the adaptive cycle</figcaption>
+</figure>
+</div>
+<p>source: <a href="https://www.resalliance.org/adaptive-cycle">resalliance.org | Adaptive cycle</a></p>
+<p>Resilience in ecology refers to the capacity of an ecosystem to endure disturbances while preserving its core functions, structures, and processes. This concept includes the ability to recover and adapt to environmental changes, allowing ecosystems to endure challenges and thrive.</p>
+</section>
+<section id="human-environment-interactions" class="level5">
+<h5 class="anchored" data-anchor-id="human-environment-interactions">Human-environment interactions</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.03-ReyersEtAl2022SESResilience.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Resilience in human-environment interactions</figcaption>
+</figure>
+</div>
+<p>Resilience in sustainability and human-environment interactions means the ability of social and ecological systems to absorb disturbances, adapt to changes, and maintain functionality. This concept is crucial as it highlights how communities and ecosystems withstand environmental stressors like climate change, pollution, and resource depletion, but also social stressors like economic crises, conflicts, and pandemics.</p>
+<p>According to <span class="citation" data-cites="ReyersEtAl2022">(<a href="References.html#ref-ReyersEtAl2022" role="doc-biblioref">Reyers et al., 2022</a>)</span>, resilience has reshaped sustainable development in six ways by 1) shifting focus from static capitals to <strong>dynamic capacities</strong>, 2) emphasizing <strong>relational processes</strong> over isolated objects, 3) prioritizing <strong>adaptive processes</strong> over fixed outcomes, 4) considering systems as <strong>open and interconnected</strong> rather than closed, 5) tailoring interventions to specific <strong>contexts</strong> rather than applying generic solutions, and 6) recognizing <strong>complex causality</strong> over linear cause-effect relationships. These shifts have led to innovative practices that better address the complexities of sustainability, although challenges remain in aligning practice with theoretical and methodological advancements in resilience science.</p>
+</section>
+</section>
+<section id="resilience-vs.-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="resilience-vs.-dynamics">Resilience vs.&nbsp;dynamics</h3>
+<p>Resilience differs from merely being static or unchanging over time; resilient systems are often quite dynamic. Conversely, systems that remain constant over time can lack resilience. Acknowledging the <strong>difference between static stability and resilience</strong> is crucial <span class="citation" data-cites="Meadows2009">(<a href="References.html#ref-Meadows2009" role="doc-biblioref">Meadows, 2009</a>)</span>.</p>
+<ul>
+<li><strong>Static stability</strong> is observable; it can be assessed by analyzing changes in the system’s conditions over weeks or years.</li>
+<li><strong>Resilience</strong>, on the other hand, is often only noticeable when the system is pushed beyond its limits and breaks down. Because resilience may not be apparent without a systems view, individuals frequently prioritize stability, productivity, or other more immediately observable characteristics over resilience.</li>
+</ul>
+<p>For example, <strong>just-in-time deliveries</strong> of products to retailers and parts to manufacturers have minimized inventory fluctuations and lowered costs across various industries. Nonetheless, this mode of operation has rendered the production system more vulnerable to disruptions in fuel supply, computer failures, labor shortages, and other potential shocks.</p>
+<p>Another example constitutes the <strong>intensive management of European forests</strong>. Over centuries, it has transformed native ecosystems into single-age, single-species plantations, frequently composed of nonnative trees. These plantations aim to produce wood and pulp consistently over time. However, these forests have lost their resilience without multiple species interacting with each other and their environment. As a result, we are witnessing their vulnerability to threats such as industrial air pollution and pests like the bark beetle.</p>
+</section>
+<section id="resilience-in-the-sustainability-sciences" class="level3">
+<h3 class="anchored" data-anchor-id="resilience-in-the-sustainability-sciences">Resilience in the <strong>sustainability sciences</strong></h3>
+<section id="resilience-as-a-metaphor-related-to-sustainability" class="level5">
+<h5 class="anchored" data-anchor-id="resilience-as-a-metaphor-related-to-sustainability">Resilience as a <strong>metaphor related to sustainability</strong></h5>
+<p>Resilience and sustainability are closely related concepts in the context of social-ecological systems (SES). Resilience refers to the capacity of a system to absorb disturbances, adapt to changes, and maintain its core functions and structures. Sustainability, on the other hand, is the ability to meet the needs of the present without compromising the ability of future generations to meet their own needs. A resilient system can be more sustainable because it can withstand and adapt to shocks and stresses, ensuring long-term stability and functionality. Therefore, enhancing resilience is often seen as a key strategy for achieving sustainability.</p>
+</section>
+<section id="resilience-as-a-property-of-dynamic-systems" class="level5">
+<h5 class="anchored" data-anchor-id="resilience-as-a-property-of-dynamic-systems">Resilience as a <strong>property of dynamic systems</strong></h5>
+<p>Dynamic systems are those that change over time, often in response to internal or external stimuli. Resilience in these systems is about how well they can absorb shocks and continue to operate effectively. For example, an ecosystem might experience a natural disaster but still maintain its biodiversity and functionality.</p>
+</section>
+<section id="resilience-as-a-measurable-quantity" class="level5">
+<h5 class="anchored" data-anchor-id="resilience-as-a-measurable-quantity">Resilience as a <strong>measurable quantity</strong></h5>
+<p>Resilience is considered a measurable quantity through various indicators and metrics that capture the capacity of systems to absorb disturbances, adapt to changes, and maintain functionality. In field studies of social-ecological systems (SES), resilience can be assessed using indicators related to ecological, social, economic, and institutional dimensions. These indicators help researchers quantify resilience and understand how different systems respond to various stressors and shocks.</p>
+<p>It is important to <strong>acknowledge these different meanings</strong> of resilience when discussing sustainability and human-environment interactions.</p>
+</section>
+</section>
+<section id="resilience-of-what-to-what" class="level3">
+<h3 class="anchored" data-anchor-id="resilience-of-what-to-what">Resilience of what to what?</h3>
+<p>The resilience of what to what is <strong>a key question</strong> when applying the concept of resilience to sustainability and human-environment interactions <span class="citation" data-cites="CarpenterEtAl2001">(<a href="References.html#ref-CarpenterEtAl2001" role="doc-biblioref">Carpenter et al., 2001</a>)</span>.</p>
+<p>The <strong>‘of what’</strong> refers to system function or configuration to be sustained, such as biodiversity, ecosystem services, social cohesion, or economic stability.</p>
+<p>The <strong>‘to what’</strong> refers to the disturbances, shocks, or changes that the system needs to withstand, such as climate change, natural disasters, economic crises, or social conflicts.</p>
+</section>
+<section id="specified-vs.-general-resilience" class="level3">
+<h3 class="anchored" data-anchor-id="specified-vs.-general-resilience"><strong>Specified vs.&nbsp;general</strong> resilience</h3>
+<p>Another key distinction in resilience research is between specified and general resilience <span class="citation" data-cites="FolkeEtAl2010">(<a href="References.html#ref-FolkeEtAl2010" role="doc-biblioref">Folke et al., 2010</a>)</span>.</p>
+<p><strong>Specified resilience</strong> refers to the resilience of a system function to specific challenges or disturbances (i.e., a narrowly defined <em>what</em> to <em>what</em>). <em>For example</em>, - a community might have specified resilience to flooding by building dams and flood protection walls; - a farmer might use pest-resistant crops to increase resilience to specific pest infestations; or - an individual might get vaccinated against a particular disease to increase resilience to that disease.</p>
+<p><strong>Generalized resilience</strong> refers to the system’s capacity to deal with the unknown, uncertainty, and surprise (i.e., a broadly defined <em>what</em> to <em>what</em>). <em>For example</em>, - a community or society with functioning institutions and social networks has generalized resilience to various shocks and stresses; - a framer with a healthy business model and diversified crops has generalized resilience to various economic and environmental changes; - a functioning immune system can provide generalized resilience to a wide range of diseases;</p>
+</section>
+<section id="example-resilience-of-farming-systems" class="level3">
+<h3 class="anchored" data-anchor-id="example-resilience-of-farming-systems">Example | <strong>Resilience of farming systems</strong></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.03-MeuwissenEtAl2019Framework.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Framework to assess resilience of farming systems</figcaption>
+</figure>
+</div>
+</section>
+<section id="challenges" class="level3">
+<h3 class="anchored" data-anchor-id="challenges">Challenges</h3>
+<p>A lot of resilience scholarship utilizes <strong>qualitative methods, case studies, and conceptual frameworks</strong> (i.e., mental, verbal and pictorial models) to understand the dynamics of social-ecological systems. While these approaches are invaluable for generating diverse insights and hypotheses, they have <strong>difficulty</strong> in providing a <strong>precise understanding</strong> of resilience that allows for <strong>quantitative predictions</strong> and <strong>generalizable results</strong> in the sense of identifying universal system structures of relevance.</p>
+<p>Here, the mathematics of stochastic dynamics and bifurcations can help.</p>
+</section>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning goals</h3>
+<p>After this lecture, students will be able to:</p>
+<ul>
+<li><strong>Explain</strong> how <strong>resilience concepts</strong> related within the context of <strong>sustainability science</strong>.</li>
+<li><strong>Implement</strong> and <strong>simulate</strong> nosiy dynamic system models to <strong>illustrate different resilience types</strong> using Python.</li>
+<li><strong>Quantify</strong> changes in resilience to <strong>measure when a systems approaches a tipping point</strong>.</li>
+</ul>
+</section>
+</section>
+<section id="resilience-types" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="resilience-types"><span class="header-section-number">4.2</span> Resilience types</h2>
+<p>While resilience, in general, is defined as the capacity of a system to absorb disturbances, adapt to changes, and maintain functionality, it is useful to differentiate between three types of resilience that can be distinguished based on the system’s response to stressors and shocks.</p>
+<p>These three types are are often illustrated by ball-and-cup diagrams</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.03-MeuwissenEtAl2019BallsAndCups.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Resilience types</figcaption>
+</figure>
+</div>
+<p>How to formalize these concepts?</p>
+<p>We start by importing the necessary libraries and setting up the plotting environment.</p>
+<div id="197f617c" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, fixed</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="robustness-resilience" class="level3">
+<h3 class="anchored" data-anchor-id="robustness-resilience">Robustness resilience</h3>
+<blockquote class="blockquote">
+<p>The capacity to resist (or absorb) change and continue to function in its present state</p>
+</blockquote>
+<p>Robustness resilience (sometime only called robustness <span class="citation" data-cites="AnderiesEtAl2013">(<a href="References.html#ref-AnderiesEtAl2013" role="doc-biblioref">Anderies et al., 2013</a>)</span>) is the <strong>most established</strong> and <strong>straightforward</strong> type of resilience. It refers to the system’s ability to resist or absorb changes and <strong>continue to function in its present state</strong>. A system with high robustness resilience can withstand disturbances and shocks without significant changes to its structure or function. This type of resilience is often associated with stability and persistence in the face of external stressors.</p>
+<p>While it is the simplest form of resilience, it acknowledges that the <strong>future is inherently unpredictable</strong>. We cannot observe the current state to full precision. And we cannot process and extrapolate all the information and uncertainty. Therefore, robustness resilience is a key concept in the context of <strong>uncertainty</strong> and <strong>complexity</strong>.</p>
+<section id="robustness-ball-and-cup-diagram" class="level4">
+<h4 class="anchored" data-anchor-id="robustness-ball-and-cup-diagram">Robustness | <strong>Ball-and-cup diagram</strong></h4>
+<p>The <strong>ball-and-cup pictorial model</strong> of the robustness resilience portrays a fixed cup (reprensting the potential) and a ball (representing the system state)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.03-MeuwissenEtAl2019Robustness.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Robustness resilience</figcaption>
+</figure>
+</div>
+<p>External shocks change the system state along the x-axis.</p>
+<p>However, this pictorial model leaves crucial questions unanswered:</p>
+<ul>
+<li>How does the <strong>system</strong> state <strong>change over time</strong>?</li>
+<li>How large and frequent are the <strong>shocks</strong>?</li>
+<li>What happens if the system state <strong>exceeds the cup</strong>?</li>
+</ul>
+<p>Converting this pictorial model into a <strong>mathematical model</strong> requires us to become <strong>more specific</strong>.</p>
+</section>
+<section id="robustness-system-dynamics-and-potenial" class="level4">
+<h4 class="anchored" data-anchor-id="robustness-system-dynamics-and-potenial">Robustness | <strong>System dynamics and potenial</strong></h4>
+<p>We formalize the idea of having a single basin of attraction by the following difference equation,</p>
+<p><span class="math display">\[\Delta x = x^3 - cx,\]</span></p>
+<p>where <span class="math inline">\(c\)</span> is a parameter that controls the system’s stability and <span class="math inline">\(x\)</span> is the system state. As a side note, this model is also known as the normal form of a subcritical pitchfork bifurcation in dynamical systems theory (see <a href="./02.02ex-TippingElements.html">exercise on Tipping Elements</a>).</p>
+<p>Integrating the negative difference equation, we obtain the <strong>potenial function</strong> <span class="math inline">\(G(x)\)</span> by <span class="math inline">\(\Delta x =  - G(x)/dx\)</span> as</p>
+<p><span class="math display">\[G(x) = \frac{c}{2}x^2 - \frac{1}{4}x^4.\]</span></p>
+<p>Converting the potential function into Python yields,</p>
+<div id="6a7de20b-cd23-4dc1-9e56-d9b02c3f4db1" class="cell" data-editable="true" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_robustness(x, c): <span class="cf">return</span> c<span class="op">/</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We devise a function to plot the potential function, togehter with the system’s equilibirum points and their stability (if <span class="math inline">\(c&gt;0\)</span>, <span class="math inline">\(x_e=0\)</span> is stable and <span class="math inline">\(x_e = \sqrt{c}\)</span> and <span class="math inline">\(x_e= -\sqrt{c}\)</span> are unstable; if <span class="math inline">\(c&lt;0\)</span>, <span class="math inline">\(x_e=0\)</span> is unstable; see the <a href="./02.02ex-TippingElements.html">exercise on Tipping Elements</a>).</p>
+<div id="1a3ddfcf" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_robustness_potential(c<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    xs<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">101</span>)<span class="op">;</span> plt.plot(xs, G_robustness(xs, c), <span class="st">'--'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"System state $x$"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"Potential $G(x)$"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> c<span class="op">&gt;</span><span class="dv">0</span>:  <span class="co"># draw fixed points</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        xs<span class="op">=</span>np.linspace(<span class="op">-</span>np.sqrt(c), np.sqrt(c), <span class="dv">101</span>)<span class="op">;</span> plt.plot(xs, G_robustness(xs, c), color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        plt.scatter(np.sqrt(c), G_robustness(np.sqrt(c), c), s<span class="op">=</span><span class="dv">200</span>,  c<span class="op">=</span><span class="st">'w'</span>, edgecolor<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        plt.scatter(<span class="op">-</span>np.sqrt(c), G_robustness(<span class="op">-</span>np.sqrt(c), c), s<span class="op">=</span><span class="dv">200</span>,  c<span class="op">=</span><span class="st">'w'</span>, edgecolor<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        plt.scatter(<span class="dv">0</span>, G_robustness(<span class="dv">0</span>, c), s<span class="op">=</span><span class="dv">200</span>,  color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        plt.scatter(<span class="dv">0</span>, G_robustness(<span class="dv">0</span>, c), s<span class="op">=</span><span class="dv">200</span>,  c<span class="op">=</span><span class="st">'w'</span>, edgecolor<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="e310c85d" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We observe a <strong>single basin of attraction</strong> for the system state <span class="math inline">\(x\)</span>. For <span class="math inline">\(c&gt;0\)</span>, the unstable fixed points indicate where boundaries of the <em>cup</em> lie.</p>
+</section>
+<section id="robustness-stochastic-dynamics" class="level4">
+<h4 class="anchored" data-anchor-id="robustness-stochastic-dynamics">Robustness | <strong>Stochastic dynamics</strong></h4>
+<p>To <strong>account for shocks</strong> or external changes to the system, we <strong>refine the update equation</strong> as follows,</p>
+<p><span class="math display">\[x_{t+1} = F_N(x_{t}) = F_D(x_{t}) + n\eta_{t} =  x_{t} + (cx_{t} + x_{t}^3) + n\eta_{t}.\]</span></p>
+<p>The new stochastic or nosiy udpate equation <span class="math inline">\(F_N(x_t)\)</span> is composed of the orignial <strong>deterministic map <span class="math inline">\(F_D\)</span>, plus a stochastic random variable <span class="math inline">\(\eta_{t}\)</span></strong> of mean zero. The paramter <span class="math inline">\(n\)</span> regulates the <strong>strength</strong> of the noise term.</p>
+<p>We model the shocks by a <strong>normally distributed</strong> random variable <span class="math inline">\(n_{t}\)</span> with mean zero and unit variance. The corresponding Python function is,</p>
+<div id="cdd21d90-2fbd-493b-ac41-90f0e832a3d7" class="cell" data-editable="true" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_robustness_noise(x, c, n): <span class="cf">return</span> x <span class="op">+</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> c<span class="op">*</span>x <span class="op">+</span> n<span class="op">*</span>np.random.randn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We define a plotting function to illustrate the system dynamics under stochasticity. It also shows the basin of attraction, i.e., the region where the system state converges to the stable fixed point under the purely deterministic dynamics.</p>
+<div id="b7d2630e-17d9-4fff-97b8-ba56858a6109" class="cell" data-editable="true" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.1</span>, c<span class="op">=</span><span class="fl">1.0</span>, xinit<span class="op">=</span><span class="fl">0.5</span>):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    iters<span class="op">=</span><span class="dv">250</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span><span class="bu">dict</span>(c<span class="op">=</span>c, n<span class="op">=</span>noiselevel)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> xinit  <span class="co"># re-storing the initial values</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    trajectory <span class="op">=</span> [x]  <span class="co"># container to store the trajectory</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(iters):  <span class="co"># looping through the iterations</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> F_robustness_noise(x, <span class="op">**</span>params)  <span class="co"># the ** notation extracts the dict. into the func. as parameters</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(x)<span class="op">&gt;</span><span class="dv">3</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        trajectory.append(x_)  <span class="co"># storing the new state in the container</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_  <span class="co"># the new state of the system `x_` becomes the current state `x`</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    plt.plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'system state'</span>)<span class="op">;</span>  <span class="co"># makes plot nice</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    plt.fill_between([<span class="dv">0</span>, iters], [<span class="op">-</span>np.sqrt(c), <span class="op">-</span>np.sqrt(c)],  [np.sqrt(c), np.sqrt(c)], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="dv">0</span>,<span class="dv">250</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If the noise level is low, the system is resilient to shocks and remains in the basin of attraction.</p>
+<div id="9be67255" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>However, if the noise level is high, the system can escape the basin of attraction and diverge.</p>
+<div id="e28d30a2" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The level of <strong>resilience</strong> of the system is the width between the unstable fixed points. This quantity gives the maximum magnitude of a shock the system can still tolerate.</p>
+<p>However, resilience in <strong>(social-)ecological systems</strong> is <strong>not always adequately described</strong> by this form of resilience.</p>
+<p>This has lead scholars to broaden the meaning of resilience.</p>
+</section>
+<section id="robustness-real-world-examples" class="level4">
+<h4 class="anchored" data-anchor-id="robustness-real-world-examples">Robustness | <strong>Real-world examples</strong></h4>
+<p><strong>Infrastructure</strong> and <strong>technial systems</strong>, such as bridges, buildings, and buildings, are often engineered for robustness with a <strong>safety margin</strong> to withstand natural disasters like earthquakes or hurricanes. For example, buildings in earthquake-prone areas are constructed with materials and designs that allow them to absorb and dissipate seismic energy, minimizing damage and maintaining structural integrity. Or an elevater can carry more weight than its maximum load capacity to account for unexpected situations. However, these systems are not able to adapt to changing conditions or recover from severe damage without external intervention.</p>
+<p>Robust <strong>software systems</strong> are often designed to maintain functionality in the face of errors or unexpected inputs. However, this robustness might be achieved through <strong>rigid error-handling mechanisms</strong> that don’t necessarily scale or adapt to the severity of the issue. For instance, in <strong>cyber security</strong>, multi-layered security protocols, such as encryption, two-factor authentication, and fraud detection algorithms, help maintain the security and reliability of digital systems. However, these systems might not be able to adapt quickly to new types of cyber threats or changing regulatory requirements without significant investment and effort.</p>
+<p>In the <strong>mobility sector</strong>, the german car industry’s adherence on <strong>combustion engines</strong> can also be seen as robustness resilience. The industry has been able to maintain its market share and profitability for some time despite increasing pressure to transition to electric vehicles. However, this robustness might not be sustainable in the long term as the industry faces challenges related to climate change, air pollution, and changing consumer preferences.</p>
+</section>
+</section>
+</section>
+<section id="adaptation-resilience" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="adaptation-resilience"><span class="header-section-number">4.3</span> Adaptation resilience</h2>
+<blockquote class="blockquote">
+<p>Capacity of a system to adjust its responses to changing external drivers and continue developing within the current stability domain or basin of attraction</p>
+</blockquote>
+<section id="adaptation-ball-and-cup-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="adaptation-ball-and-cup-diagram">Adaptation | <strong>Ball-and-cup diagram</strong></h3>
+<p>The <strong>ball-and-cup pictorial model</strong> of the adaptation resilience portrays a <strong>variable</strong> cup (reprensting the potential) and a ball (representing the system state). As before, shocks change the system state along the x-axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.03-MeuwissenEtAl2019Adaptation.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Adaptation resilience</figcaption>
+</figure>
+</div>
+<p>In adaptation resilience, the system can <strong>adjust its responses</strong> to changing external impacts. The capacity of a system to absorb shocks is <strong>linked</strong> to the strenght of the shocks. Adaptation resilience makes the resilience concept more flexible and adequate for (social-)ecological systems.</p>
+<p>However, this pictorial model leaves the <strong>crucial question</strong> of <strong>how</strong> the system adjusts its responses unanswered.</p>
+<p>Converting this pictorial model into a <strong>mathematical model</strong> requires us to become <strong>more specific</strong>. How could we convert the adaptation ball-and-cup diagram into a mathematical model?</p>
+</section>
+<section id="adaptation-system-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="adaptation-system-dynamics">Adaptation | <strong>System dynamics</strong></h3>
+<p>We start from our previous dynamic systems model,</p>
+<p><span class="math display">\[x_{t+1} =  x_{t} + (x_{t}^3 - cx_{t}) + n\eta_{t},\]</span></p>
+<p>where <span class="math inline">\(x\)</span> is the system state, <span class="math inline">\(c\)</span> is the parameter that controls the system’s stability, and <span class="math inline">\(n\)</span> is the parameter that regulates the strength of the noise term <span class="math inline">\(\eta_t\)</span>.</p>
+<p>To link the system’s responses to the external drivers, we introduce a <strong>feedback mechanism</strong> that adjusts the parameter <span class="math inline">\(c\)</span> based on the <strong>magnitude of the shock</strong>. In other words, the parameter <span class="math inline">\(c\)</span> becomes a <strong>function of the shock’s strength</strong> <span class="math inline">\(c(n)\)</span>.</p>
+<p><span class="math display">\[x_{t+1} =  x_{t} + (x_{t}^3 - c(n) x_{t}) + n\eta_{t}.\]</span></p>
+</section>
+<section id="adaptation-feedback-mechanism" class="level3">
+<h3 class="anchored" data-anchor-id="adaptation-feedback-mechanism">Adaptation | <strong>Feedback mechanism</strong></h3>
+<p>The crucial question is how to <strong>formulate the feedback mechanism</strong> that adjusts the parameter <span class="math inline">\(c\)</span> based on the magnitude of the shock <span class="math inline">\(n\)</span>.</p>
+<p>From a <strong>stability analysis</strong> of the subcritical pitchfork bifurcation, we know that the system is stable for <span class="math inline">\(0&lt;c&lt;2\)</span> (see <a href="./02.02ex-TippingElements.html">Tipping Elements Exercise</a>). Thus, we want the <strong>maximal value</strong> of <span class="math inline">\(c(n)\)</span> to be <span class="math inline">\(2\)</span>. This is an upper limit of how much noise the system can tolerate beyond which it cannot adapt anymore. We use the tanh function <span class="math inline">\(\tanh(x)\)</span> to achieve this, which results in values from <span class="math inline">\(-1\)</span> to <span class="math inline">\(1\)</span>. Thus we shift it up by <span class="math inline">\(1\)</span>.</p>
+<p>Furthermore, we want the <strong>minimal value</strong> of <span class="math inline">\(c(n)\)</span> at <span class="math inline">\(n=0\)</span> to have a base level <span class="math inline">\(b\)</span>. This is a lower limit of how much noise the system can tolerate. Thus, we add <span class="math inline">\(b\)</span> to the tanh function and devide the <span class="math inline">\(\tanh\)</span>-part by <span class="math inline">\((2-b)/2\)</span> to scale it to the interval <span class="math inline">\([b,2]\)</span>.</p>
+<p>Last, we model the location where the <span class="math inline">\(\tanh\)</span> function switches from <span class="math inline">\(b\)</span> to <span class="math inline">\(2\)</span> by the parameter <span class="math inline">\(l\)</span> and controll the steepness of the transition by the parameter <span class="math inline">\(s\)</span>.</p>
+<p>Together, the feedback mechanism is formulated as,</p>
+<p><span class="math display">\[c(a; b, s, l) = b + \left(1+\tanh\big(s(a-l)\big)\right)\frac{(2-b)}{2}.\]</span></p>
+<p>In Python, this function is implemented as,</p>
+<div id="2b0550ae" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cfunc(n, base, loc, steep): <span class="cf">return</span> base <span class="op">+</span> ((<span class="dv">1</span><span class="op">+</span>np.tanh(steep<span class="op">*</span>(n<span class="op">-</span>loc))))<span class="op">*</span>(<span class="dv">2</span><span class="op">-</span>base)<span class="op">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Visualizing the function c(a) for different parameters yields</p>
+<div id="f3b5a8cf" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_cfunc(n, base<span class="op">=</span><span class="fl">0.25</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="dv">5</span>): </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    plt.plot(n, cfunc(n, base, loc, steep), label<span class="op">=</span><span class="ss">f"b=</span><span class="sc">{</span>base<span class="sc">}</span><span class="ss">, l=</span><span class="sc">{</span>loc<span class="sc">}</span><span class="ss">, s=</span><span class="sc">{</span>steep<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"Noise level $n$"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"Control function $c(n)$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="96ce2bfc" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">101</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.6</span>, loc<span class="op">=</span><span class="fl">0.6</span>, steep<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.4</span>, loc<span class="op">=</span><span class="fl">0.8</span>, steep<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.2</span>, loc<span class="op">=</span><span class="fl">1.0</span>, steep<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">2.05</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We include this feedback mechanism in the dynamic systems update,</p>
+<div id="65100b2a-5a5c-423b-9a1d-56d6495fa5d0" class="cell" data-editable="true" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_adaptation_noise(x, n, base, loc, steep): </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> cfunc(n,base,loc,steep)<span class="op">*</span>x <span class="op">+</span> n<span class="op">*</span>np.random.randn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and define a plotting function which illustrates the feedback mechansim of how the control parameter <span class="math inline">\(c\)</span> responds to the noise strength <span class="math inline">\(a\)</span> together with the time evolution of the system under stochasticity.</p>
+<div id="beea9b81-433b-44d7-b746-81dacb907f34" class="cell" data-editable="true" data-tags="[]" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.75</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    iters<span class="op">=</span><span class="dv">250</span><span class="op">;</span> xinit <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">2.01</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span><span class="bu">dict</span>(n<span class="op">=</span>noiselevel, base<span class="op">=</span>base, loc<span class="op">=</span>loc, steep<span class="op">=</span>steep)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    basinstyle <span class="op">=</span> {<span class="st">'color'</span>:<span class="st">'blue'</span>, <span class="st">'alpha'</span>:<span class="fl">0.25</span>}</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                     </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)                     </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(n, cfunc(n, base, loc, steep), label<span class="op">=</span><span class="st">'$c(n)$'</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    plt.plot(n, np.sqrt(cfunc(n, base, loc, steep)), label<span class="op">=</span><span class="st">'$\sqrt{c(n)}$'</span>, <span class="op">**</span>basinstyle)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    plt.plot(n, <span class="op">-</span>np.sqrt(cfunc(n, base, loc, steep)), <span class="op">**</span>basinstyle)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    plt.plot([noiselevel, noiselevel], [<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>], <span class="st">'k--'</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    plt.ylim(ylim)<span class="op">;</span> plt.xlabel(<span class="st">'Noise level $n$'</span>)<span class="op">;</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)                     </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> xinit  <span class="co"># re-storing the initial values</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    trajectory <span class="op">=</span> [x]  <span class="co"># container to store the trajectory</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(iters):  <span class="co"># looping through the iterations</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> F_adaptation_noise(x, <span class="op">**</span>params)  <span class="co"># the ** notation extracts the dict. into the func. as parameters</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(x)<span class="op">&gt;</span><span class="dv">3</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        trajectory.append(x_)  <span class="co"># storing the new state in the container</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_  <span class="co"># the new state of the system `x_` becomes the current state `x`</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    plt.plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span> </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Time steps $t$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'System state $x$'</span>)<span class="op">;</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    cval <span class="op">=</span> cfunc(<span class="op">**</span>params)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    plt.fill_between([<span class="dv">0</span>, iters], [<span class="op">-</span>np.sqrt(cval), <span class="op">-</span>np.sqrt(cval)],</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>                     [np.sqrt(cval), np.sqrt(cval)], <span class="op">**</span>basinstyle)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="dv">0</span>,<span class="dv">250</span>)<span class="op">;</span> plt.ylim(ylim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For a small noise level <span class="math inline">\(n\)</span>, the system is resilient to shocks and remains in the basin of attraction, independent of the designed feedback mechanism.</p>
+<div id="6c047d35" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For large noise leves, the location <span class="math inline">\(l\)</span> where the feedback mechanism kicks in becomes crucial. If <span class="math inline">\(l\)</span> is too large, the system cannot adapt to the shocks and diverges.</p>
+<div id="5032c7d0" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.4</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Decreasing the location <span class="math inline">\(l\)</span> allows the system to adapt to the shocks and remain in the basin of attraction.</p>
+<div id="633658c2" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.2</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It is important to note, that the way we <strong>implemented</strong> adaptation resilience is just one of <strong>many possible ways</strong> to make this concept more precise. Instead of widening the basin of attraction with increased noise levels, the location of the basins minimum could be shifted gradually to areas with less noise.</p>
+<p>Adaptation resilience makes the resilience concept more flexible and adquate for (social-)ecological systems. However, sometimes, a system response to shocks by a complete <strong>reorganization</strong>, instead of just absorbing a shock.</p>
+</section>
+<section id="adaptation-real-world-examples" class="level3">
+<h3 class="anchored" data-anchor-id="adaptation-real-world-examples">Adaptation | <strong>Real-world examples</strong></h3>
+<p><strong>Natural ecosystems</strong> are being used as part of adaptation strategies to enhance resilience. For example, <strong>coastal mangrove forests</strong> show adaptation to sea level rise and storm surges. As water levels increase, mangroves accumulate sediment and organic matter to elevate their root systems, allowing them to keep pace with gradual sea level changes. This <strong>natural adaptation</strong> helps protect coastlines from erosion and storm damage (<a href="https://www.unep.org/topics/ocean-seas-and-coasts/blue-ecosystems/mangrove-forests#:~:text=Mangrove%20forests%20are%20unique%20ecosystems,in%20the%20tropics%20and%20subtropics.">UNEP</a>).</p>
+<p>Even <strong>infrastructure</strong> can be designed to adapt to changing conditions. Instead of building higher and more robust defenses, the Netherlands adopted a “<strong>Room for the River</strong>” strategy (<a href="https://www.dutchwatersector.com/news/room-for-the-river-programme">Dutch Water Sector</a>). The key idea is <em>to restore the river’s natural flood plain in places where it is least harmful in order to protect those areas that need to be defended.</em>, i.e., to live with the water instead of fighting it: the strategy includes the <em>lowering the levels of flood plains, creating water buffers, relocating levees, increasing the depth of side channels, and the construction of flood bypasses</em>.</p>
+<p>In the <strong>mobility sector</strong>, <strong>electric cars</strong> can be seen as another example of adaptation resilience. As the world shifts towards sustainable energy sources, electric vehicles are becoming more popular, replacing fossil fuel-powered cars. Yet, while the transition to electric vehicles requires a significant change in infrastructure, including charging stations, battery production, and recycling facilities, the dominance of private cars as a mode of transportation remains largely unchanged.</p>
+</section>
+</section>
+<section id="transformation-resilience" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="transformation-resilience"><span class="header-section-number">4.4</span> Transformation resilience</h2>
+<blockquote class="blockquote">
+<p>Capacity to create a fundamentally new system when ecological, economic, or social structures make the existing system untenable</p>
+</blockquote>
+<section id="transformation-ball-and-cup-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="transformation-ball-and-cup-diagram">Transformation | <strong>Ball-and-cup diagram</strong></h3>
+<p>The <strong>ball-and-cup pictorial model</strong> of the transformation resilience portrays <strong>multiple</strong> cups (reprensting the potential) and a ball (representing the system state). As before, shocks change the system state along the x-axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.03-MeuwissenEtAl2019Transformation.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Transformation resilience</figcaption>
+</figure>
+</div>
+<p>In transformation resilience, the system can <strong>reorganize into a fundamentally new regimes, or state</strong> when the existing system state or regime becomes untenable. Thus, in contrast to the other resilience types, transformation resilience conceptualized one existing state and at least one new state. There must be at least two basins of attraction.</p>
+<p>However, this pictorial model leaves the <strong>crucial questions</strong> unswered <strong>how the basins of attraction are shaped</strong>, in addition to how the system state changes over time and how large and frequent the shocks are.</p>
+<p>Converting this pictorial model into a <strong>mathematical model</strong> requires us to become <strong>more specific</strong>.</p>
+<p>How could we convert the transformation ball-and-cup diagram into a mathematical model?</p>
+<p>We need a dynamical system with multiple stable states.</p>
+</section>
+<section id="transformation-alternative-stable-states-system" class="level3">
+<h3 class="anchored" data-anchor-id="transformation-alternative-stable-states-system">Transformation | <strong>Alternative-stable-states system</strong></h3>
+<p>We refine the system from the lecture on <a href="./02.02-TippingElements.html">Tipping Elements</a> with the difference equation,</p>
+<p><span class="math display">\[\Delta x = (x - ax^3 + c + n\eta) \frac{1}{\tau},\]</span></p>
+<p>where <span class="math inline">\(\eta\)</span> represents the noise term with mean zero and <span class="math inline">\(n\)</span> the strength of the stochasticity. As before, <span class="math inline">\(\tau\)</span> represents the typical time scale of the system, and thus, inverse strength of the system’s change, and <span class="math inline">\(a\)</span> is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength). The parameter <span class="math inline">\(c\)</span> represents the external driver that can push the system over the tipping point.</p>
+<p>Again, we model the shocks by a normally distributed random variable <span class="math inline">\(\eta_{t}\)</span> with mean zero and unit variance. The corresponding Python function is,</p>
+<div id="7f6d2a43" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_tipmod_noise(x, drive, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="fl">0.1</span>, noiselevel<span class="op">=</span><span class="dv">0</span>): </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> (x <span class="op">-</span> shape<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> drive <span class="op">+</span> noiselevel<span class="op">*</span>np.random.randn())<span class="op">/</span>timescale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We define a plotting function to illustrate the system dynamics over time under stochasticity. We set the default values for the shape parameter <span class="math inline">\(a=1\)</span> and the timescale paramter <span class="math inline">\(\tau=2\)</span>.</p>
+<div id="aba33f10" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>, initalstate<span class="op">=</span><span class="fl">0.5</span>):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    iters<span class="op">=</span><span class="dv">2500</span><span class="op">;</span> params<span class="op">=</span><span class="bu">dict</span>(drive<span class="op">=</span>drive, shape<span class="op">=</span>shape, timescale<span class="op">=</span>timescale, noiselevel<span class="op">=</span>noiselevel)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> initalstate  <span class="co"># re-storing the initial values</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    trajectory <span class="op">=</span> [x]  <span class="co"># container to store the trajectory</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(iters):  <span class="co"># looping through the iterations</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> F_tipmod_noise(x, <span class="op">**</span>params)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(x)<span class="op">&gt;</span><span class="dv">3</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        trajectory.append(x_)  <span class="co"># storing the new state in the container</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_  <span class="co"># the new state of the system `x_` becomes the current state `x`</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    plt.plot(trajectory, <span class="st">'purple'</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">1.4</span>, <span class="fl">1.4</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Time steps $t$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'System state $x$'</span>)<span class="op">;</span>  <span class="co"># makes plot nice</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(trajectory)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With the right system characteristics (i.e., its parameters) we observe a noise induced transition between the two stable states.</p>
+<div id="f9a3f441" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Without noise, the system converges and remains to the positive equilibrium point.</p>
+<div id="761fc119" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Under which conditions does the system transition between the two stable states as a result of the random shocks?</p>
+<p>How can we understand better under what conditions the system switches between the two stable states under stochastic shocks?</p>
+</section>
+<section id="transformation-potential-function" class="level3">
+<h3 class="anchored" data-anchor-id="transformation-potential-function">Transformation | <strong>Potential function</strong></h3>
+<p>We make use of the potential function (see <a href="./02.02-TippingElements.html">Tipping Elements</a>) to improve our understanding of the system dynamics. As a reminder, the potential function <span class="math inline">\(G(x)\)</span> is defined as the negative integral of the system change <span class="math inline">\(\Delta x\)</span>. Thus, for the difference equation <span class="math inline">\(\Delta x = \frac{1}{\tau}(x - ax^3 + c)\)</span>, we have</p>
+<p><span class="math display">\[G(x) = - \frac{1}{\tau} \left(\frac{1}{2}x^2 - \frac{1}{4}ax^4 + cx\right).\]</span></p>
+<p>In Python, we have,</p>
+<div id="5c4d73ee" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_tipmod(x, drive, shape, timescale): <span class="cf">return</span> <span class="op">-</span> (x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span> <span class="op">-</span> shape<span class="op">*</span>x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span> <span class="op">+</span> drive<span class="op">*</span>x)<span class="op">/</span>timescale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To visualize the potential function, we define</p>
+<div id="5b7937c2" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tipmod_potential(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="fl">1.0</span>, timescale<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    xs<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>, <span class="dv">501</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>)<span class="op">;</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, G_tipmod(xs, drive, shape, timescale), color<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r'Potential $G(x)$'</span>)<span class="op">;</span> plt.xlabel(<span class="vs">r'System state $x$'</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  numerically find and plot equilibrium points</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    drive_ <span class="op">=</span> shape<span class="op">*</span>xs<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xs</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    xeq <span class="op">=</span> xs[np.isclose(drive_<span class="op">-</span>drive, <span class="fl">0.0</span>, atol<span class="op">=</span><span class="fl">0.02</span>)]</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(xeq, G_tipmod(xeq, drive, shape, timescale), <span class="st">'o'</span>, ms<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'k'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5408a681" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plot_tipmod_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="transformation-bifurcation-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="transformation-bifurcation-diagram">Transformation | <strong>Bifurcation diagram</strong></h3>
+<p>We also visualize the bifurcation diagram (see <a href="./02.02-TippingElements.html">Tipping Elements</a>) to understand the system’s stability and the location of the tipping point.</p>
+<div id="1a237b85" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_bifurcation_tipmod(shape<span class="op">=</span><span class="fl">1.0</span>, timescale<span class="op">=</span><span class="fl">2.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">1.4</span>, <span class="fl">1.4</span>]):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    xe<span class="op">=</span>np.linspace(<span class="op">*</span>cextent, <span class="dv">1001</span>) <span class="co"># equilibrium points</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    driver <span class="op">=</span> shape<span class="op">*</span>xe<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xe <span class="co"># parameter c</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(driver, xe, <span class="st">"--"</span>, color<span class="op">=</span><span class="st">'k'</span>)<span class="op">;</span> <span class="co"># equilibrim point</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># stability</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> F_(x, shape, timescale): <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> (<span class="dv">1</span><span class="op">-</span><span class="dv">3</span><span class="op">*</span>shape<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>timescale</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    cond<span class="op">=</span>np.logical_and(F_(xe, shape, timescale)<span class="op">&lt;</span><span class="dv">1</span>, F_(xe, shape, timescale)<span class="op">&gt;-</span><span class="dv">1</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(driver[cond], xe[cond], <span class="st">"."</span>, c<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r'External driver $c$'</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r'Equilibrium points $x_e$'</span>)<span class="op">;</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    plt.xlim(cextent)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="bea70c59" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plot_bifurcation_tipmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-32-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="transformation-combined-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="transformation-combined-analysis">Transformation | <strong>Combined analysis</strong></h3>
+<p>Putting all together shows us how potential, bifurcation diagramm and the noisy trajectories interact.</p>
+<div id="e4c5a249-1000-4c81-8826-ccda5d2f7f3e" class="cell" data-editable="true" data-tags="[]" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tranformation(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>, initalstate<span class="op">=</span><span class="fl">0.5</span>):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    plot_tipmod_potential(drive<span class="op">=</span>drive, shape<span class="op">=</span>shape, timescale<span class="op">=</span>timescale)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    plot_bifurcation_tipmod(shape<span class="op">=</span>shape, timescale<span class="op">=</span>timescale)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    ax2.plot([drive , drive], [<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], <span class="st">'k-'</span>) <span class="co"># include driver value</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    ax2.set_xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    ax3 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    traj <span class="op">=</span> plot_transformation_trajectory(drive<span class="op">=</span>drive, shape<span class="op">=</span>shape,</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>        timescale<span class="op">=</span>timescale, noiselevel<span class="op">=</span>noiselevel, initalstate<span class="op">=</span>initalstate)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># include trajectory in the potential    </span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    ax1.scatter(traj, G_tipmod(traj, drive<span class="op">=</span>drive, shape<span class="op">=</span>shape, timescale<span class="op">=</span>timescale), </span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>                alpha<span class="op">=</span><span class="fl">0.5</span>, s<span class="op">=</span><span class="dv">40</span>, c<span class="op">=</span>np.arange(<span class="bu">len</span>(traj)), cmap<span class="op">=</span><span class="st">'plasma_r'</span>,zorder<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># include trajectory in the bifurcation diagram    </span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    ax2.scatter(np.ones_like(traj)<span class="op">*</span>drive, traj,</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>                alpha<span class="op">=</span><span class="fl">0.5</span>, s<span class="op">=</span><span class="dv">40</span>, c<span class="op">=</span>np.arange(<span class="bu">len</span>(traj)), cmap<span class="op">=</span><span class="st">'plasma_r'</span>,zorder<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we can reanalyze our sitation from above. <strong>When there is one fixed point dominating (i.e., having a larger basin of attraction), we observe a noise-induced transition to that fixed point</strong>. The timeseries is shown in the potential and the bifurcation diagram with time going from light to dark colors.</p>
+<div id="235d8cbb" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> plot_tranformation(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-34-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Where there is only one stable fixed point, also the stochastic system will evolve around that state.</p>
+<div id="5754db72" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plot_tranformation(drive<span class="op">=-</span><span class="fl">0.42</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-35-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We observe bistable flickering when both fixed points are stable and the noise is not too small and not too large.</p>
+<div id="15240103" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> plot_tranformation(drive<span class="op">=</span><span class="dv">0</span>, noiselevel<span class="op">=</span><span class="fl">0.45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-36-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These results show that richness of phenomena that our relativly simple model can explain.</p>
+</section>
+<section id="transformation-real-world-examples" class="level3">
+<h3 class="anchored" data-anchor-id="transformation-real-world-examples">Transformation | <strong>Real-world examples</strong></h3>
+<p>In the <strong>mobility sector</strong>, moving away from system where private cars dominate to a system where public transportation, cycling, and walking are the primary modes of transportation can be seen as an example of transformation resilience. This shift requires a fundamental reorganization of the transportation system, including changes in infrastructure, policies, and social norms. While this transformation is challenging, it can lead to significant benefits, such as reduced traffic congestion, air pollution, and greenhouse gas emissions.</p>
+<p>In the <strong>energy sector</strong>, transitioning from fossil fuels to renewable energy sources, such as solar, wind, and hydropower, is another example of transformation resilience. This shift requires a fundamental reorganization of the energy system, including changes in energy production, distribution, and consumption. While this transformation is complex and costly, it can lead to significant benefits, such as reduced greenhouse gas emissions, air pollution, and dependence on finite resources.</p>
+<p>In the <strong>agriculture sector</strong>, transitioning from conventional farming practices to regenerative agriculture is another example of transformation resilience. This shift requires a fundamental reorganization of the food system, including changes in farming methods, land use, and food production. While this transformation is challenging, it can lead to significant benefits, such as improved soil health, biodiversity, and food security.</p>
+</section>
+</section>
+<section id="quantifying-resilience" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="quantifying-resilience"><span class="header-section-number">4.5</span> Quantifying resilience</h2>
+<p>So far, we <strong>conceptualized multiple facets of resilience</strong> through simple dynamical system models. While these models are crucial for understanding the underlying mechanisms of resilience, it is difficult to apply these models to real-world systems directly.</p>
+<p>For instance, critical questions around resilience, tipping elements, and regime shifts of real-world systems is <strong>how resilient is the system?</strong> and <strong>how far away is the system from a tipping point?</strong>. These questions are challenging to answer in empirical systems because we cannot and do not want to trigger the regime shift to find out. Tipping elments are often <strong>hidden</strong> and <strong>uncertain</strong>.</p>
+<p>In the following, we will discuss how we can <strong>quantify resilience</strong> and thus <strong>measure whether a system is approaching a tipping point</strong>, based on the conceptual models we discussed above.</p>
+<section id="critical-slowing-down" class="level3">
+<h3 class="anchored" data-anchor-id="critical-slowing-down">Critical slowing down</h3>
+<p>Critical slowing down describes the phenomenon that the <strong>internal time scale a system</strong> operates on <strong>increases</strong>, when the system <strong>approaches as tipping point</strong>. As a consequence, a system close to a tipping point tends to undergo <strong>larger changes in response to perturbations</strong> and takes longer to recover from them.</p>
+<p>How can we capture this phenomenon using a <strong>quantitative model</strong>?</p>
+<p>Let’s reuse the robustness resilience model, the deterministic subcritical pitch-fork bifurcation, <span class="math inline">\(\Delta x = x^3 - cx,\)</span> to illustrate that phenomenon.</p>
+<div id="bde67abd" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-38-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We know, the fixed point at <span class="math inline">\(x_e=0\)</span> is stable for <span class="math inline">\(c&gt;0\)</span>. Its basin of attraction extends from <span class="math inline">\(-\sqrt{c}\)</span> to <span class="math inline">\(\sqrt{c}\)</span>.</p>
+<p>We want to simulate how long in takes on average from all points in the basin of attraction to reach the fixed points.</p>
+<p>To do so, we have to <strong>define</strong> a notion of <strong>convergence</strong>.</p>
+<p>Let’s look an exemplary trajectory:</p>
+<div id="6e13c5d1-9717-4e6f-adb6-16a9f1bae466" class="cell" data-editable="true" data-tags="[]" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="op">-</span><span class="fl">1.2</span><span class="op">;</span> x <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> [x]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> F_robustness_noise(x, c<span class="op">=</span><span class="fl">1.2</span>, n<span class="op">=</span><span class="dv">0</span>) <span class="co"># n=0 noiseless</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    trajectory.append(x_)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x_</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> np.array(trajectory)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-40-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When it reached the equilibirum, it does not change any further.</p>
+<p>Investigating the change between timesteps on a logarithmic axis,</p>
+<div id="d83d50d0-b360-449d-bff3-12810a62c596" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.plot(np.<span class="bu">abs</span>(trajectory[<span class="dv">0</span>:<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> trajectory[<span class="dv">1</span>:]))<span class="op">;</span> plt.yscale(<span class="st">'log'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-41-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>we find, the changes do become smaller.</p>
+<p>But it is sufficient for us to set a <strong>threshold tolerance level</strong>, below which we want to consider a trajectory as converged. Let’s use <span class="math inline">\(10^{-9}\)</span>.</p>
+<div id="75d092ef-bb8a-4de0-a503-4cac2ba4db8a" class="cell" data-editable="true" data-tags="[]" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_trajectory(xinit, c, threshold<span class="op">=</span><span class="fl">10e-9</span>, maxiter<span class="op">=</span><span class="dv">10000</span>):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> xinit</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    trajectory <span class="op">=</span> [x]</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(maxiter): </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> F_robustness_noise(x, c, n<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        trajectory.append(x_)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(x<span class="op">-</span>x_) <span class="op">&lt;</span> threshold:</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(trajectory)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note, we still keep a maximum number of iterations to not get stuck here, should the threshold never be reached.</p>
+<p>Now, plotting the simulated trajectory, we observe that it automatically stopped when the threshold was reached.</p>
+<div id="7405c2db-bc5c-4fd8-a2a9-18ed17ceda84" class="cell" data-editable="true" data-tags="[]" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>plt.plot(simulate_trajectory(xinit<span class="op">=</span><span class="fl">1.0</span>, c<span class="op">=</span><span class="fl">1.2</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-43-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Using this threshold, we can set up our simulation,</p>
+<div id="3a662dff-6c26-4087-a48c-44de000d9672" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>eps <span class="op">=</span> <span class="fl">10e-9</span>  <span class="co"># The numberical threshold to be use for a small quantity</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>cvs <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span>eps, <span class="fl">0.8</span>, <span class="dv">501</span>)  <span class="co"># The external parameters a to be varried</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>average_lens <span class="op">=</span> []</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> cvs:</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.linspace(<span class="op">-</span>np.sqrt(c)<span class="op">+</span>eps, np.sqrt(c)<span class="op">-</span>eps, <span class="dv">101</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># starting slightly off the unstable fixed points  </span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    lens <span class="op">=</span> [<span class="bu">len</span>(simulate_trajectory(xinit, c, threshold<span class="op">=</span>eps, </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                                    maxiter<span class="op">=</span><span class="dv">10000</span>)) <span class="cf">for</span> xinit <span class="kw">in</span> xs]</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">max</span>(lens) <span class="op">&lt;</span> <span class="dv">10000</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    average_lens.append(np.mean(lens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>to demonstrate the phenomenon of <strong>critical slowing down</strong>,</p>
+<div id="ab0a1b36-b1b0-46e4-a273-43d7cbb96141" class="cell" data-editable="true" data-tags="[]" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.plot(cvs, average_lens, <span class="st">'.'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'&lt;Timesteps to convergence&gt;'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'External drive $c$'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When we approach the tipping point at <span class="math inline">\(c=0\)</span>, the average number of timesteps it takes to converge to the equilibirum increases sharply.</p>
+</section>
+<section id="early-warning-signals" class="level3">
+<h3 class="anchored" data-anchor-id="early-warning-signals">Early-warning signals</h3>
+<p>Next, we use the phenomenon of critical slowing down as a <strong>sign of resilience loss</strong> to create an early-warning signal. Early-warning signals are important because they allow us to <strong>anticipate critical transitions before they occur</strong>.</p>
+<p>Early-warning signals are based on <strong>statistical indicators</strong> of the system behavior. Specifically, we will use the <strong>autocorrelation</strong> of the system’s time series. Autocorrelation is the correlation of a signal with a delayed copy of itself as a function of the delay. It measures the degree of similarity between a given time series and a lagged version of itself.</p>
+<section id="conceptual-model" class="level4">
+<h4 class="anchored" data-anchor-id="conceptual-model">Conceptual model</h4>
+<p>Let’s reuse the our tipping elment model showing alternative stable states,</p>
+<p><span class="math display">\[\Delta x = (x - ax^3 + c + n\eta) \frac{1}{\tau},\]</span></p>
+<p>where <span class="math inline">\(\eta\)</span> represents the noise term with mean zero and <span class="math inline">\(n\)</span> the strength of the stochasticity. As before, <span class="math inline">\(\tau\)</span> represents the typical time scale of the system, and thus, inverse strength of the system’s change, and <span class="math inline">\(a\)</span> is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength). The parameter <span class="math inline">\(c\)</span> represents the external driver that can push the system over the tipping point.</p>
+<p>We create a synthetic time series, along which we slighlty <strong>reduce the resilience</strong> of one equilibirum by changing the drive parameter <span class="math inline">\(c\)</span> <strong>with each iteration step</strong>.</p>
+<div id="5bbdf6be-83d7-43b7-b913-50924385c92f" class="cell" data-editable="true" data-tags="[]" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>xinit<span class="op">=-</span><span class="fl">1.1</span>  <span class="co"># the system's initial condition</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>iters<span class="op">=</span><span class="dv">1000</span>  <span class="co"># how long to simulate</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>params<span class="op">=</span><span class="bu">dict</span>(b<span class="op">=</span><span class="fl">0.5</span>,c<span class="op">=</span><span class="fl">0.5</span>,d<span class="op">=</span><span class="fl">0.05</span>) <span class="co"># other parameter values</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)  <span class="co"># fixing the random seed to make this reproducible</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="dv">0</span>  <span class="co"># initial value of the 'resilience' parameter</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> []  <span class="co"># container to store the trajectory</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> xinit  <span class="co"># re-storing the initial values</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(iters):  <span class="co"># looping through the iterations</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> F_tipmod_noise(x, drive<span class="op">=</span>c, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># F(x, a=a, **params)  # the ** notation extracts the dict. into the func. as parameters</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.<span class="bu">abs</span>(x)<span class="op">&gt;</span><span class="dv">3</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    trajectory.append(x_)  <span class="co"># storing the new state in the container</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x_  <span class="co"># the new state of the system `x_` becomes the current state `x`</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    c <span class="op">+=</span> <span class="fl">0.00038</span>  <span class="co"># we slightly increase c (i.e., reduce the resilience)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="282e2658" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'time step t'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'system state x'</span>)<span class="op">;</span>  <span class="co"># makes plot nice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-47-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now imagine, that we do not know the underlying model, but only have the time series. How can we detect the loss of resilience?</p>
+</section>
+<section id="scatter-plot" class="level4">
+<h4 class="anchored" data-anchor-id="scatter-plot">Scatter plot</h4>
+<p>To <strong>visualize the autocorrelation</strong>, (lag-1 temporal autocorrelation or AR(1) to be specific), we create a scatter plot of 200 points of our time series versus the 200 points of our time series at the next time step (lag-1). In this case, 200 is the size of our data <strong>window</strong>.</p>
+<div id="ed46e640" class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatter_autocorrelation(start<span class="op">=</span><span class="dv">0</span>): </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="fl">2.8</span>))  <span class="co"># creates the two axes</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">0</span>].scatter(trajectory[start:start<span class="op">+</span><span class="dv">200</span>], trajectory[start<span class="op">+</span><span class="dv">1</span>:start<span class="op">+</span><span class="dv">201</span>], s<span class="op">=</span><span class="dv">10</span>, c<span class="op">=</span><span class="st">'blue'</span>)<span class="op">;</span> </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">0</span>].set_xlabel(<span class="vs">r'$x_{t+1}$'</span>)<span class="op">;</span> axs[<span class="dv">0</span>].set_ylabel(<span class="vs">r'$x_</span><span class="sc">{t}</span><span class="vs">$'</span>)<span class="op">;</span> <span class="co"># makes first axis nice </span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span>  <span class="co"># plot the time series</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].fill_betweenx([<span class="op">-</span><span class="fl">1.25</span>, <span class="fl">1.5</span>], [start, start], [start<span class="op">+</span><span class="dv">200</span>, start<span class="op">+</span><span class="dv">200</span>], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># show window</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].set_xlabel(<span class="st">'time steps'</span>)<span class="op">;</span> axs[<span class="dv">1</span>].set_ylabel(<span class="vs">r'system state $x$'</span>)<span class="op">;</span> axs[<span class="dv">1</span>].set_xlim(<span class="dv">0</span>, <span class="dv">1000</span>) <span class="co"># makes axis nice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>How do we see the <strong>autocorrelation</strong> in this plot?</p>
+<div id="8fcf4f47" class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-49-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The autocorrelation is the <strong>correlation</strong> between the time series and a <strong>lagged version</strong> of itself. Thus, it is the correlation between the x-axis and the y-axis of the scatter plot on the left.</p>
+<p>Then we <strong>slide</strong> our window of 200 system points <strong>through our time series</strong>. How does the scatter plot change? And what does the mean for the autocorrleation?</p>
+<div id="18c971b6" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">310</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-51-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="b53fd0db" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">620</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-52-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We visually can tell that the autocorrelation increases as we approach the tipping point.</p>
+</section>
+<section id="autocorrelation" class="level4">
+<h4 class="anchored" data-anchor-id="autocorrelation">Autocorrelation</h4>
+<p>To quantify our visual understanding, we finally calculate the lag-1 temporal autocorrelation.</p>
+<p>For that, we use the <code>numpy.corrcoef</code> function. Thus, the <strong>correlation matrix</strong> between the time series points from index 0 to 200 and from index 1 to 201 is given by,</p>
+<div id="916fb8b5-3390-48b7-8dcd-c6220d236b20" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(trajectory[<span class="dv">0</span>:<span class="dv">200</span>], trajectory[<span class="dv">1</span>:<span class="dv">201</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<pre><code>array([[1.        , 0.20713096],
+       [0.20713096, 1.        ]])</code></pre>
+</div>
+</div>
+<p>Thus, we have to <strong>extract one of the off-diagonal elements</strong>,</p>
+<div id="02cd6c40-f69d-4bde-b5cb-a35de609fe2e" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(trajectory[<span class="dv">0</span>:<span class="dv">200</span>], trajectory[<span class="dv">1</span>:<span class="dv">201</span>])[<span class="dv">0</span>,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>0.20713096137087478</code></pre>
+</div>
+</div>
+<p><strong>Sliding through the time series</strong> from the beginning until the 600nd time step,</p>
+<div id="e07a83ee-aa4a-4440-808c-b74099362837" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>AR1 <span class="op">=</span> [np.corrcoef(trajectory[start:start<span class="op">+</span><span class="dv">200</span>], trajectory[start<span class="op">+</span><span class="dv">1</span>:start<span class="op">+</span><span class="dv">201</span>])[<span class="dv">0</span>,<span class="dv">1</span>] <span class="cf">for</span> start <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">599</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2bcf1ee2" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plt.plot(AR1)<span class="op">;</span> plt.ylabel(<span class="st">'AR(1)'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'Time step $t$'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-56-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>shows a clear rise of the lag-1 autocorrelation when approching the tipping point, <strong>indicating a loss of resilience</strong>.</p>
+<p>This method <strong>can be used on time series data only</strong>. It does not require knowledge about the exact systems equation.</p>
+</section>
+</section>
+<section id="example-greenland-ice-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="example-greenland-ice-sheet">Example | Greenland Ice Sheet</h3>
+<p>A detected critical slowing down of its melt rates suggests that the western Greenland Ice Sheet is close to a tipping point <span class="citation" data-cites="BoersRypdal2021">(<a href="References.html#ref-BoersRypdal2021" role="doc-biblioref">Boers &amp; Rypdal, 2021</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.03-BoersRypdal2021Autocorrelation.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Critical slowing down in the Greenland Ice Sheet</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="learning-goals-revisited" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">4.6</span> Learning goals revisited</h2>
+<p>In this chapter, we have explored the concept of resilience in the context of sustainability science and human-environment interactions.</p>
+<p>We have studied different types of resilience, including robustness, adaptation, and transformation resilience, and how they can be modeled using dynamic systems theory.</p>
+<p>Last, we have examined how resilience can be quantified using early-warning signals based on the phenomenon of critical slowing down as indicators of system stability and resilience. By understanding these concepts and methods, we can better assess the resilience of social-ecological systems and anticipate critical transitions before they occur.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-AnderiesEtAl2013" class="csl-entry" role="listitem">
+Anderies, J. M., Folke, C., Walker, B., &amp; Ostrom, E. (2013). Aligning <span>Key Concepts</span> for <span>Global Change Policy</span>: <span>Robustness</span>, <span>Resilience</span>, and <span>Sustainability</span>. <em>Ecology and Society</em>, <em>18</em>(2). <a href="https://www.jstor.org/stable/26269292">https://www.jstor.org/stable/26269292</a>
+</div>
+<div id="ref-BoersRypdal2021" class="csl-entry" role="listitem">
+Boers, N., &amp; Rypdal, M. (2021). Critical slowing down suggests that the western <span>Greenland Ice Sheet</span> is close to a tipping point. <em>Proceedings of the National Academy of Sciences</em>, <em>118</em>(21), e2024192118. <a href="https://doi.org/10.1073/pnas.2024192118">https://doi.org/10.1073/pnas.2024192118</a>
+</div>
+<div id="ref-CarpenterEtAl2001" class="csl-entry" role="listitem">
+Carpenter, S., Walker, B., Anderies, J. M., &amp; Abel, N. (2001). From <span>Metaphor</span> to <span>Measurement</span>: <span>Resilience</span> of <span>What</span> to <span>What</span>? <em>Ecosystems</em>, <em>4</em>(8), 765–781. <a href="https://doi.org/10.1007/s10021-001-0045-9">https://doi.org/10.1007/s10021-001-0045-9</a>
+</div>
+<div id="ref-FolkeEtAl2010" class="csl-entry" role="listitem">
+Folke, C., Carpenter, S., Walker, B., Scheffer, M., Chapin, T., &amp; Rockström, J. (2010). Resilience <span>Thinking</span>: <span>Integrating Resilience</span>, <span>Adaptability</span> and <span>Transformability</span>. <em>Ecology and Society</em>, <em>15</em>(4). <a href="https://doi.org/10.5751/ES-03610-150420">https://doi.org/10.5751/ES-03610-150420</a>
+</div>
+<div id="ref-Meadows2009" class="csl-entry" role="listitem">
+Meadows, D. H. (2009). <em>Thinking in systems: A primer</em>. Earthscan.
+</div>
+<div id="ref-ReyersEtAl2022" class="csl-entry" role="listitem">
+Reyers, B., Moore, M.-L., Haider, L. J., &amp; Schlüter, M. (2022). The contributions of resilience to reshaping sustainable development. <em>Nature Sustainability</em>, 1–8. <a href="https://doi.org/10.1038/s41893-022-00889-6">https://doi.org/10.1038/s41893-022-00889-6</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02.02-TippingElements.html" class="pagination-link  aria-label=" &lt;span="" elements&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02.04-StateTransitions.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>State transitions</span>">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

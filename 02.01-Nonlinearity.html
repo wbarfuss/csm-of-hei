@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.544">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Complex Systems Modeling of Human-Environment Interactions - 2&nbsp; Nonlinearity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02.02-TippingElements.html" rel="next">
+<link href="./02-DynamicSystems.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-DynamicSystems.html">Dynamic Systems</a></li><li class="breadcrumb-item"><a href="./02.01-Nonlinearity.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Complex-Systems-Modeling-of-Human-Environment-Interactions.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-Nonlinearity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-TargetEquilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Target Equilibria</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-TransformationAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transformation Agency</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Behavioral agency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02ex-IntroToPython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01ex-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Nonlinearity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02ex-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Tipping elements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03ex-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Resilience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04ex-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | State transitions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01ex-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Sequential Decisions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02ex-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Strategic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03ex-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Dynamic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01ex-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Behavioral Agency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02ex-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Individual Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Learning Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">2.1</span> Motivation</a>
+  <ul class="collapse">
+  <li><a href="#the-issue-of-climate-change" id="toc-the-issue-of-climate-change" class="nav-link" data-scroll-target="#the-issue-of-climate-change">The issue of climate change</a></li>
+  <li><a href="#carbon-bathtub" id="toc-carbon-bathtub" class="nav-link" data-scroll-target="#carbon-bathtub">Carbon bathtub</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#dynamic-systems" id="toc-dynamic-systems" class="nav-link" data-scroll-target="#dynamic-systems"><span class="header-section-number">2.2</span> Dynamic systems</a>
+  <ul class="collapse">
+  <li><a href="#pictorial-representation" id="toc-pictorial-representation" class="nav-link" data-scroll-target="#pictorial-representation">Pictorial representation</a></li>
+  <li><a href="#mathematical-representation" id="toc-mathematical-representation" class="nav-link" data-scroll-target="#mathematical-representation">Mathematical representation</a></li>
+  <li><a href="#computational-representation" id="toc-computational-representation" class="nav-link" data-scroll-target="#computational-representation">Computational representation</a></li>
+  <li><a href="#a-general-modeling-framework" id="toc-a-general-modeling-framework" class="nav-link" data-scroll-target="#a-general-modeling-framework">A general modeling framework</a></li>
+  </ul></li>
+  <li><a href="#feedback" id="toc-feedback" class="nav-link" data-scroll-target="#feedback"><span class="header-section-number">2.3</span> Feedback</a>
+  <ul class="collapse">
+  <li><a href="#positive-feedback-loops" id="toc-positive-feedback-loops" class="nav-link" data-scroll-target="#positive-feedback-loops">Positive feedback loops</a></li>
+  <li><a href="#negative-feedback-loops" id="toc-negative-feedback-loops" class="nav-link" data-scroll-target="#negative-feedback-loops">Negative feedback loops</a></li>
+  </ul></li>
+  <li><a href="#delays" id="toc-delays" class="nav-link" data-scroll-target="#delays"><span class="header-section-number">2.4</span> Delays</a>
+  <ul class="collapse">
+  <li><a href="#example-economy-innovation-interactions" id="toc-example-economy-innovation-interactions" class="nav-link" data-scroll-target="#example-economy-innovation-interactions">Example | Economy-Innovation interactions</a></li>
+  <li><a href="#example-economy-nature-interactions" id="toc-example-economy-nature-interactions" class="nav-link" data-scroll-target="#example-economy-nature-interactions">Example | Economy-Nature interactions</a></li>
+  <li><a href="#deepdive-autonomous-first-order-systems-are-all-you-need" id="toc-deepdive-autonomous-first-order-systems-are-all-you-need" class="nav-link" data-scroll-target="#deepdive-autonomous-first-order-systems-are-all-you-need">DeepDive | Autonomous first-order systems are all you need</a></li>
+  <li><a href="#matrix-representation" id="toc-matrix-representation" class="nav-link" data-scroll-target="#matrix-representation">Matrix representation</a></li>
+  </ul></li>
+  <li><a href="#long-term-behavior-and-stability-analysis" id="toc-long-term-behavior-and-stability-analysis" class="nav-link" data-scroll-target="#long-term-behavior-and-stability-analysis"><span class="header-section-number">2.5</span> Long-term behavior and stability analysis</a>
+  <ul class="collapse">
+  <li><a href="#closed-form-solution-for-1d-systems" id="toc-closed-form-solution-for-1d-systems" class="nav-link" data-scroll-target="#closed-form-solution-for-1d-systems">Closed-form solution for 1D systems</a></li>
+  <li><a href="#cobweb-plots" id="toc-cobweb-plots" class="nav-link" data-scroll-target="#cobweb-plots">Cobweb plots</a></li>
+  <li><a href="#multi-dimensional-phase-space-vizualization" id="toc-multi-dimensional-phase-space-vizualization" class="nav-link" data-scroll-target="#multi-dimensional-phase-space-vizualization">Multi-dimensional phase space vizualization</a></li>
+  <li><a href="#closed-form-solutions-of-multi-dimensional-systems" id="toc-closed-form-solutions-of-multi-dimensional-systems" class="nav-link" data-scroll-target="#closed-form-solutions-of-multi-dimensional-systems">Closed-form solutions of multi-dimensional systems</a></li>
+  <li><a href="#summary-systems-with-linear-changes" id="toc-summary-systems-with-linear-changes" class="nav-link" data-scroll-target="#summary-systems-with-linear-changes">Summary | Systems with linear changes</a></li>
+  </ul></li>
+  <li><a href="#non-linear-changes" id="toc-non-linear-changes" class="nav-link" data-scroll-target="#non-linear-changes"><span class="header-section-number">2.6</span> Non-linear changes</a>
+  <ul class="collapse">
+  <li><a href="#finding-equilibrium-points" id="toc-finding-equilibrium-points" class="nav-link" data-scroll-target="#finding-equilibrium-points">Finding equilibrium points</a></li>
+  <li><a href="#linear-stability-in-nonlinear-systems" id="toc-linear-stability-in-nonlinear-systems" class="nav-link" data-scroll-target="#linear-stability-in-nonlinear-systems">Linear stability in nonlinear systems</a></li>
+  </ul></li>
+  <li><a href="#learning-goals-revisited" id="toc-learning-goals-revisited" class="nav-link" data-scroll-target="#learning-goals-revisited"><span class="header-section-number">2.7</span> Learning goals revisited</a>
+  <ul class="collapse">
+  <li><a href="#bibliographical-and-historical-remarks" id="toc-bibliographical-and-historical-remarks" class="nav-link" data-scroll-target="#bibliographical-and-historical-remarks">Bibliographical and Historical Remarks</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-DynamicSystems.html">Dynamic Systems</a></li><li class="breadcrumb-item"><a href="./02.01-Nonlinearity.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<section id="motivation" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">2.1</span> Motivation</h2>
+<section id="the-issue-of-climate-change" class="level3">
+<h3 class="anchored" data-anchor-id="the-issue-of-climate-change">The issue of climate change</h3>
+<p>Read the following summary, adapted from the Intergovernmental Panel on Climate Change (IPCC) Third Assessment Report’s Summary for Policymakers.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-StermanSweeney2007-TheIssueOfClimateChange.dio.png" class="img-fluid figure-img"></p>
+<figcaption>The issue of climate change</figcaption>
+</figure>
+</div>
+<p>Now consider the following questions:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-StermanSweeney2007-AScenarioOfClimateChange.dio.png" class="img-fluid figure-img"></p>
+<figcaption>A scenario of climate change</figcaption>
+</figure>
+</div>
+<p><strong>Typical responses</strong>. This experiment was conducted with MIT graduate students, a group of highly educated adults <span class="citation" data-cites="StermanSweeney2007">(<a href="References.html#ref-StermanSweeney2007" role="doc-biblioref">Sterman &amp; Sweeney, 2007</a>)</span>. Yet, they showed a widespread misunderstanding of fundamental stock and flow relationships. Most subjects believed that atmospheric greenhouse gas (GHG) can be stabilized while emissions into the atmosphere continuously exceed the removal of GHGs from it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-StermanSweeney2007-TypicalResponses.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Typical Responses</figcaption>
+</figure>
+</div>
+<p>These beliefs support wait-and-see policies and neglecting the issue climate change as a top priority for the policy agenda.</p>
+</section>
+<section id="carbon-bathtub" class="level3">
+<h3 class="anchored" data-anchor-id="carbon-bathtub">Carbon bathtub</h3>
+<p>Knowledge of climatology or calculus is not needed to respond correctly. Think of it like a bathtub: the water level represents the amount of greenhouse gases (GHGs) in the atmosphere. The water flowing into the tub is like the rate of GHG emissions, and the water flowing out is like the rate of GHG removal. If more water is flowing in than out, the water level rises. To keep the water level stable, the inflow and outflow need to be equal. This is similar to stabilizing GHG concentrations - emissions must equal removals. The balance between inflows and outflows determines how GHGs accumulate, not just the level of inflows.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-ClimateBathtub.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Carbon Bathtub</figcaption>
+</figure>
+</div>
+</section>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning goals</h3>
+<p>After this chapter, students will be able to:</p>
+<ul>
+<li>Define and describe the <strong>components of a dynamic system</strong>.</li>
+<li><strong>Represent</strong> dynamic system models in visual and mathematical form.</li>
+<li>Explain the concepts of <strong>feedback loops</strong> and <strong>delays</strong>.</li>
+<li>Explain two kinds of <strong>non-linearity</strong> and how they are related.</li>
+<li><strong>Implement</strong> dynamic system models and <strong>visualize model outputs</strong> using Python, to interpret model results.</li>
+<li><strong>Analyze</strong> the <strong>stability</strong> of equilibrium points in dynamic systems using linear stability analysis.</li>
+</ul>
+<p>After motivating this chapter, we make ourselves ready for some computations by importing some Python libraries and setting up the plotting style.</p>
+<div id="039a4f67-01f4-4cde-8de9-52a60216d901" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="dynamic-systems" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="dynamic-systems"><span class="header-section-number">2.2</span> Dynamic systems</h2>
+<blockquote class="blockquote">
+<p>A <em>dynamic system</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is a system whose state is uniquely specified by a set of variables and whose behavior is described by predefined rules.</p>
+</blockquote>
+<p>You can think of the <strong>state</strong> of the system as a collection of <strong>stocks</strong> (also known as <em>state variables</em>), and the <strong>rules</strong> as the <strong>flows</strong> that change the stocks over time. At the system boundaries, you can imagine <strong>sources</strong> and <strong>sinks</strong>, which represent in- and out-flows to the system we are currently looking at.</p>
+<p><strong>For example</strong>, in the case of the carbon bathtub, the state of the system is the amount of carbon in the atmosphere. The rules are that emissions increase and net removals decrease the amount of carbon in the atmosphere. The source is the origin of emissions, and the sink where the net removals go (i.e., mostly ocean and biosphere). Both, source and sink, are not explicitly represented in this model - but could be in another model.</p>
+<section id="pictorial-representation" class="level3">
+<h3 class="anchored" data-anchor-id="pictorial-representation">Pictorial representation</h3>
+<p>Graphically, we can compose (often called) stock-and-flow or causal (loop) diagrams via the following building blocks.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-DynamicSystem-Elements.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Graphical elements of a dynamic system</figcaption>
+</figure>
+</div>
+<p>For instance, the carbon bathtub could resemble this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-DynamicSystem-ClimateBathtub.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Graphical elements of a dynamic system</figcaption>
+</figure>
+</div>
+<p>Such pictorial models are a powerful tool to develop a dynamic systems model and communicate its structure. However, they are limited regarding specifying model details and analysis. For this, a mathematical representation is essential.</p>
+</section>
+<section id="mathematical-representation" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-representation">Mathematical representation</h3>
+<p>Mathematically, we use <strong>variables</strong> (such as <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and any other letter) as a <strong>placeholder</strong> for the value of a stock. We indicate the value at a <strong>specific time</strong> <span class="math inline">\(t\)</span> by an index (such as <span class="math inline">\(x_t\)</span>, <span class="math inline">\(y_t\)</span>, etc.), assuming that time advances in discrete steps, i.e., <span class="math inline">\(t \in \mathbb{Z}\)</span>. To describe the <strong>change of stocks</strong>, we formulate an equation (with <span class="math inline">\(+\)</span>’s and <span class="math inline">\(-\)</span>’s for positive and negative changes). In its most general form, it looks like,</p>
+<p><span class="math display">\[x_{t+1} = F(x_{t}).\]</span></p>
+<p>This means the value of the stock <span class="math inline">\(x\)</span> at time <span class="math inline">\(t+1\)</span> equals the value of the function <span class="math inline">\(F\)</span>, which depends on the value of stock at time <span class="math inline">\(t\)</span>. Note that another common name for dynamic systems in discrete time is <em>maps</em>.</p>
+<p><strong>For example</strong>, the carbon bathtub equations look like,</p>
+<p><span class="math display">\[ x_{t+1} = x_{t} + e_{t} - o_{t}, \]</span></p>
+<p>where <span class="math inline">\(x\)</span> denotes the atmospheric carbon stock, and <span class="math inline">\(e_t \geq 0\)</span> and <span class="math inline">\(o_t \geq 0\)</span> the amount of emissions and outflow at time <span class="math inline">\(t\)</span>.</p>
+<p>This equation shows that the stock at time <span class="math inline">\(t+1\)</span> equals the stock at time <span class="math inline">\(x_t\)</span> plus the inflow of emissions at time <span class="math inline">\(e_t\)</span> minus the outflow at time <span class="math inline">\(o_t\)</span>. Thus, what ultimately determines the stock at time <span class="math inline">\(t+1\)</span> is the difference between the emissions and the outflow at time <span class="math inline">\(t\)</span>. Let <span class="math inline">\(n_t = e_t - o_t\)</span> be the net flow. Then, we can rewrite the equation as</p>
+<p><span class="math display">\[ x_{t+1} = x_t + n_t.\]</span></p>
+<p>Note that <span class="math inline">\(n_t\)</span> can be positive or negative, depending on the emissions and the outflows.</p>
+<p>Sometimes, it can be handy to represent the dynamic system in its <strong>difference form</strong>, directly indicating the <strong>change of stocks</strong>,</p>
+<p><span class="math display">\[
+\Delta x = x_{t+1} - x_{t} = F(x_{t}) - x_{t}.
+\]</span></p>
+<p>In analogy to the more common <em>differential equations</em> (which work with <em>continuous time</em>), we call this form <strong>difference equations</strong>.</p>
+<p><strong>For example</strong>, the carbon bathtub difference equations look like,</p>
+<p><span class="math display">\[ \Delta x = e_{t} - o_{t}.\]</span></p>
+<section id="deepdive-why-discrete-time-models" class="level4">
+<h4 class="anchored" data-anchor-id="deepdive-why-discrete-time-models">DeepDive | Why discrete-time models</h4>
+<p>Most dynamical system models consider the continous-time case; but we will focus on discrete time.</p>
+<p>Discrete-time models are easy to understand, develop and simulate.</p>
+<ul>
+<li>Computer simulations require time-discretization anyway.</li>
+<li>Experimental data often already discret.</li>
+<li>They can represent abrupt changes.</li>
+<li>They are more expressive using fewer variables than their continuous-time counterparts.</li>
+</ul>
+<p>Discrete-time models are a cornerstone in mathematical modeling due to their simplicity and adaptability. They align naturally with computer simulations, as digital systems process time in discrete intervals. This compatibility makes them essential for precise computational analysis. Additionally, experimental data is often recorded at specific intervals, such as daily or monthly, fitting seamlessly with discrete-time models without requiring transformation processes needed for continuous-time models. These models also excel at representing abrupt changes found in real-world phenomena, such as population dynamics or financial markets, capturing these shifts more directly than continuous models. Furthermore, discrete-time models often require fewer variables, enhancing both simplicity and interpretability. This efficiency allows researchers to focus on critical system aspects, making these models powerful tools for theoretical and practical applications alike. In essence, the strengths of discrete-time models lie in their alignment with digital computation, natural fit with discrete data, ability to capture sudden changes, and efficient expressiveness, making them indispensable for scientists and engineers.</p>
+</section>
+</section>
+<section id="computational-representation" class="level3">
+<h3 class="anchored" data-anchor-id="computational-representation">Computational representation</h3>
+<p>There are, in fact, <strong>many ways</strong> to translate the pictorial and mathematical models into a computer model. We start by defining the <strong>function</strong>, <span class="math inline">\(F(x_t)\)</span>, from above but give it a more <strong>descriptive name</strong>.</p>
+<div id="7972f9b5" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_stock(stock, inflow, outflow):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    new_stock <span class="op">=</span> stock <span class="op">+</span> inflow <span class="op">-</span> outflow</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_stock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we are ready to perform our <strong>first model simulation</strong>.</p>
+<p><strong>Conceptually</strong>, we need to define the <strong>initial value</strong> of the stock. Let’s assume we start at 280 parts per million (ppm).</p>
+<div id="62cdaa69-53be-46d3-9ffa-e73f8eecca31" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> <span class="dv">280</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Technically</strong>, we must define a container to store the simulation output. We create a Python list for this purpose and store the stock’s initial value inside.</p>
+<div id="bb54382e-065b-4d32-9240-bf78ac6f703e" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>time_series <span class="op">=</span> [stock]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Conceptually</strong>, before we can start the simulation, we must decide <strong>how many time steps</strong> it should run, and on the values of <strong>inflow and outflow</strong>. Let’s simulate 150 steps, denoting yearly updates from 1850 to 2000, and assume a <strong>constant flow</strong> with an inflow of 75.6 ppm and an outflow of 75 ppm.</p>
+<p><strong>Technically</strong>, we loop over the <code>range</code> from 1851 to 2001, calling the <code>update_stock</code> function with the flow parameter values and appending the new <code>stock</code> value to the <code>time_series</code> list.</p>
+<div id="32672dcd" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1851</span>, <span class="dv">2001</span>): </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> update_stock(stock, <span class="fl">75.6</span>, <span class="dv">75</span>)<span class="op">;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    time_series.append(stock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, we can graphically investigate the output time series of our model simulation.</p>
+<div id="cell-fig-linear-growth" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1850</span>, <span class="dv">2001</span>)), time_series, <span class="st">'.-'</span>)<span class="op">;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'time [years]'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'stock [ppm]'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-linear-growth" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linear-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-linear-growth-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linear-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Linear growth
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The above code cell plots the time_series data with dots at each data point and lines connecting them.</p>
+<ul>
+<li><code>plt</code> is an alias for <code>matplotlib.pyplot</code>, a popular plotting library in Python.</li>
+<li><code>plot</code> is a function that creates a 2D line plot.</li>
+<li><code>list(range(1850, 2001))</code> represents the values to be plotted along the x-axis.</li>
+<li><code>time_series</code> is the data being plotted. It is expected to be a sequence of values (e.g., a list or a NumPy array).</li>
+<li><code>'.-'</code> is a format string that specifies the style of the plot:
+<ul>
+<li><code>'.'</code> indicates that the data points should be marked with dots.</li>
+<li><code>'-'</code> indicates that the data points should be connected with lines.</li>
+</ul></li>
+<li>The second line equips the plot with an x- and a y-label.
+<ul>
+<li>The <code>;</code> at the end of each statement allows for multiple statements in one line.</li>
+</ul></li>
+</ul>
+<p>We observe a rise in CO2 concentration from 280 ppm to 370 ppm, as in the observation data.</p>
+<p>However, the shape of the curve is different. Here, we observe just a <strong>linear trend</strong>. The change of stock equals the net flow of inflows minus outflows. If they are constant, the stock evolution is linear.</p>
+<p>Linear here means that the change in stock is proportional to the in and outflows. If they are constant, the rate of change is constant and the stock evolution is linear.</p>
+</section>
+<section id="a-general-modeling-framework" class="level3">
+<h3 class="anchored" data-anchor-id="a-general-modeling-framework">A general modeling framework</h3>
+<p>The carbon bathtub example is perhaps the simplest dynamic model one can imagine. Still, it illustrates the importance of differentiating between a stock and a flow, which is changing that stock.</p>
+<p>However, the real power of dynamic system models comes from their <strong>generality</strong> and the possibility to include <strong>feedbacks</strong> in the change of stocks.</p>
+<p>Dynamic systems are a very <strong>general modeling framework</strong>. They can model many more phenomena than the evolution of atmospheric greenhouse gas concentrations, from classic examples, such as the <em>bouncing of a ball</em>, the <em>swing of a pendulum</em>, and the <em>motions of celestial bodies</em>, to more advanced dynamics, such as the <em>evolution of populations</em>, the <em>weather and climate</em>, <em>neural networks</em> in the brain, or the <em>behavior of agents</em>.</p>
+<p><strong>For example</strong>, the <code>update_stock</code> function we defined above is entirely <strong>agnostic</strong> regarding which kind of stock it models. The Python function does not refer to the stock of atmospheric greenhouse gas concentration. It can <strong>model any system</strong> with one stock where the stock change is independent of the current level of the stock. Or, in other words, systems <strong>without feedback</strong>.</p>
+</section>
+</section>
+<section id="feedback" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="feedback"><span class="header-section-number">2.3</span> Feedback</h2>
+<p>In dynamic systems, feedback means that <strong>stock changes depend on current stock levels</strong>.</p>
+<section id="positive-feedback-loops" class="level3">
+<h3 class="anchored" data-anchor-id="positive-feedback-loops">Positive feedback loops</h3>
+<p>Consider, for example, the following system, pictorially,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-DynamicSystem-PositiveFeedback.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Positive Feedback Loop</figcaption>
+</figure>
+</div>
+<p>or mathematically,</p>
+<p><span class="math display">\[ x_{t+1} = x_{t} + rx_{t} \quad \Leftrightarrow \quad \Delta x = rx\]</span></p>
+<p>with <span class="math inline">\(r &gt; 0\)</span>.</p>
+<p><strong>Guess what will happen</strong>, given a positive initial stock value.</p>
+<ol type="1">
+<li>The stock will grow in a straight line.</li>
+<li>The stock will grow faster, i.e., on an upward-bending curve.</li>
+<li>The stock will grow slower, i.e., on a downward-bending curve.</li>
+</ol>
+<p>We will find out.</p>
+<p>Let’s first define our new <code>update_stock</code> function.</p>
+<div id="d8c61965-0bb5-425a-add3-2eea7afaf60f" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_stock(stock, rate):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    new_stock <span class="op">=</span> stock <span class="op">+</span> rate<span class="op">*</span>stock</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_stock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To run the model, i.e., to iterate the <code>update_stock</code> function, we define an <code>iterate_model</code> function.</p>
+<div id="ddf696a4" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> iterate_model(nr_timesteps, initial_value, update_func, <span class="op">**</span>update_params):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> initial_value</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> [stock]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        stock <span class="op">=</span> update_func(stock, <span class="op">**</span>update_params)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        time_series.append(stock)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(time_series)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This function takes, the number of time steps, the initial stock value as input arguments. Furthermore, it takes an <code>update_func</code> function and flexible <code>**update_params</code> as arguments, which allows us to use different stock update functions. It returns a <code>numpy</code> array of stock values over time.</p>
+<p>The stock value starts at <code>initial_value</code>. The list <code>time_series</code> is initialized with the starting stock value. This will store the stock value at each timestep.</p>
+<p>Then, a loop runs <code>nr_timesteps</code> times. The <code>update_func</code> function is called in each iteration with the current stock value and the <code>update_parameters</code>. The result is assigned to <code>stock</code>, updating its value. The new <code>stock</code> value is appended to the <code>time_series</code> list, which tracks the stock’s value at each timestep.</p>
+<p>For convenience, we will also define a <code>plot_stock_evolution</code> function, plotting the stock evolution.</p>
+<div id="deca3799-6bbd-40e5-b7d0-bab8aa556446" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stock_evolution(nr_timesteps, initial_value, update_func,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                update_func, <span class="op">**</span>update_parameters)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.-'</span>, label<span class="op">=</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Stock value"</span>)<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>plot_stock_evolution</code> function calls the <code>iterate_model</code> function with the given parameters and plots the <code>time_series</code> on the axis, with the format <code>'.-'</code> (dots connected by lines) and a legend label indicating the parameters used. The <code>str(update_parameters)[1:-1]</code> converts the <code>update_parameters</code> dictionary into a string and, with <code>[1:-1]</code>, removes the first and last characters (<code>{</code> and <code>}</code> in the case of a dictionary).</p>
+<p>Finally, the function returns the <code>time_series</code> list, which contains the stock values at each timestep.</p>
+<p><strong>For example</strong>, let’s consider the phenomenon of CO2 emissions.</p>
+<div id="b6627f29-1fd9-4f53-a777-2a1ed1d46a01" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="11">
+
+        <iframe width="100%" height="450" src="https://ourworldindata.org/explorers/co2?hideControls=true&amp;Gas+or+Warming=CO%E2%82%82&amp;Accounting=Territorial&amp;Fuel+or+Land+Use+Change=All+fossil+emissions&amp;Count=Per+country&amp;country=CHN~USA~IND~GBR~OWID_WRL&amp;tab=chart" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>Our stock will be the annual CO2 emissions. We assume that we start with 0.01 gigatons of CO2 emissions around 1750 and assume a constant growth rate of 3.3% per year. Where are we 250 years later?</p>
+<div id="f18a177c-1b5d-42c1-83ab-fc99a2c5ba57" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plot_stock_evolution(<span class="dv">250</span>, <span class="fl">0.01</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=</span><span class="fl">0.033</span>)<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Time steps [years]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Anthropogenic</span><span class="ch">\n</span><span class="st">CO2 emissions [GtC/year]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Exponential growth</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We reach a <strong>level</strong> of annual CO2 emissions that resembles the empirical observation; additionally, the <strong>trajectory</strong> aligns more closely with the empirical data than the linear growth above (<a href="#fig-linear-growth" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>).</p>
+<p>With the generality of dynamic system models in mind, we can regard the simple positive feedback loop as the <strong>meta-level systems structure of the great acceleration</strong>. The great acceleration <span class="citation" data-cites="SteffenEtAl2015a">(<a href="References.html#ref-SteffenEtAl2015a" role="doc-biblioref">Steffen et al., 2015</a>)</span> refers to the hockey-stick-like growth of many socio-economic and environmental indicators since the mid-20th century (<a href="#fig-great-acceleartion" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
+<div id="fig-great-acceleartion" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-great-acceleartion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/02.01-GreatAcceleration.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-great-acceleartion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: The great acceleration
+</figcaption>
+</figure>
+</div>
+<p>As these developments are not necessarily positive in a normative sense, positive feedback loops are better called <strong>reinforcing feedback loops</strong>.</p>
+<p>The worth of a formal model lies in enabling us to conduct <strong>“experiments” safely and at low cost</strong>. By adjusting the input parameters, we see how the output shifts. Overall, our goal is to gain deeper insights into how the output depends on the inputs.</p>
+<p><strong>For example</strong>, how does the output change if we cut the <strong>rate</strong> of change <strong>in half</strong>? How does the output change if we <strong>double</strong> the rate?</p>
+<p><strong>What do you think?</strong></p>
+<ol type="1">
+<li>A halved rate leads to about a <strong>quarter of the stock</strong> at the end, and a doubled rate leads to about <strong>four times the stock</strong> at the end.</li>
+<li>A halved rate leads to about a <strong>16th of the stock</strong> at the end, and a doubled rate leads to about <strong>four times the stock</strong> at the end.</li>
+<li>A halved rate leads to about a <strong>quarter of the stock</strong> at the end, and a doubled rate leads to about <strong>16 times of the stock</strong> at the end.</li>
+<li>A halved rate leads to about a <strong>10th of the stock</strong> at the end, and a doubled rate leads to about <strong>10 times the stock</strong> at the end.</li>
+<li>A halved rate leads to about a <strong>10th of the stock</strong> at the end, and a doubled rate leads to about <strong>100 times of the stock</strong> at the end.</li>
+<li>A halved rate leads to about a <strong>100th of the stock</strong> at the end, and a doubled rate leads to about <strong>10 times of the stock</strong> at the end.</li>
+</ol>
+<p>Let’s find out.</p>
+<div id="5a32125b-b8bc-4f3e-bf09-166a10b408d0" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ts_half <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ts_norm <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ts_doub <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span><span class="op">*</span><span class="dv">2</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Thus, a halved rate leads to about a <strong>10th of the stock</strong> at the end:</p>
+<div id="dfb3558d-b5d7-4b5a-8ba3-21031ff754a3" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ts_norm[<span class="op">-</span><span class="dv">1</span>]<span class="op">/</span>ts_half[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>11.192852530716676</code></pre>
+</div>
+</div>
+<p>And a doubled rate leads to about <strong>100 times of the stock</strong> at the end:</p>
+<div id="8c50de96-c109-4fa6-914d-01ec3c046372" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ts_doub[<span class="op">-</span><span class="dv">1</span>]<span class="op">/</span>ts_norm[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>111.82334406335414</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>“<em>The greatest shortcoming of the human race is our inability to understand the exponential function</em>” - Albert Allen Bartlett</p>
+</blockquote>
+<p><strong>In summary</strong>, in positive or reinforcing feedback loops, positive stock values cause the stock to <strong>increase</strong> proportionally to the stock level, leading to <strong>exponential growth</strong>.</p>
+</section>
+<section id="negative-feedback-loops" class="level3">
+<h3 class="anchored" data-anchor-id="negative-feedback-loops">Negative feedback loops</h3>
+<p>At first glance, negative feedback loops appear quite similar to positive ones.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-DynamicSystem-NegativeFeedback.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Negative Feedback Loop</figcaption>
+</figure>
+</div>
+<p>However, here, positive stock values cause the stock to <strong>decrease</strong> proportionally to the stock value.</p>
+<p>Mathematically, we write</p>
+<p><span class="math display">\[ x_{t+1} = x_{t} - rx_{t} \quad \Leftrightarrow \quad \Delta x = -rx\]</span></p>
+<p>with <span class="math inline">\(r &gt; 0\)</span>.</p>
+<p><strong>Guess what will happen</strong>, given a positive initial stock value.</p>
+<ol type="1">
+<li>The stock will shrink in a straight line to <span class="math inline">\(-\infty\)</span>.</li>
+<li>The stock will shrink in a straight line to 0.</li>
+<li>The stock will shrink faster, i.e., on a downward-bending curve to <span class="math inline">\(-\infty\)</span>.</li>
+<li>The stock will shrink faster, i.e., on a downward-bending curve to 0.</li>
+<li>The stock will shrink slower, i.e., on an upward-bending curve to <span class="math inline">\(-\infty\)</span>.</li>
+<li>The stock will shrink slower, i.e., on an upward-bending curve to 0.</li>
+</ol>
+<p>Let’s find out.</p>
+<p>Fortunately, there’s no need to create a new Python function. We can just insert negative growth rates into our current functions.</p>
+<div id="fab3197f-78d5-48d3-97e5-dc6f337ee68c" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ts_half <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ts_norm <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ts_doub <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span><span class="op">*</span><span class="dv">2</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Thus, the stocks shrink <strong>faster than linearly</strong> toward zero, with more negative growth rates causing faster decay. This process is also called <strong>exponential decay</strong>.</p>
+<p>Since decay isn’t inherently negative in a normative sense—consider environmental degradation—it’s more accurate to refer to negative feedback loops as <strong>balancing feedback loops</strong>.</p>
+</section>
+</section>
+<section id="delays" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="delays"><span class="header-section-number">2.4</span> Delays</h2>
+<p>So far, we have considered only <strong>instantaneous feedback</strong>. The stock change at the next step was caused directly by the current stock level. This is not always the case.</p>
+<p><strong>Delays</strong> are a common and crucial feature in many dynamic systems. They result from the time it takes for a signal to travel to a stock or, vice versa, for a stock to react to a signal.</p>
+<p><strong>How</strong> can we <strong>model</strong> the concept of delays in a dynamic system?</p>
+<p>In short, we consider <strong>systems with multiple stocks</strong>.</p>
+<section id="example-economy-innovation-interactions" class="level3">
+<h3 class="anchored" data-anchor-id="example-economy-innovation-interactions">Example | Economy-Innovation interactions</h3>
+<p><strong>For example</strong>, let’s consider the phenomenon of <strong>economic growth</strong>. The simplest model explanation is that economic development (e.g., measured by GDP) directly causes more economic development. A slightly refined model explanation might be that economic development causes more innovation (e.g., measured by number of patents), which in turn causes more economic development.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.01-EconomicGrowth.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Two models of economic growth</figcaption>
+</figure>
+</div>
+<p>Both models show a <strong>reinforcing feedback loop</strong>, so we should <strong>expect exponential growth</strong> again. But how do the rates of change relate to each other?</p>
+<p>Let’s first define a <strong>mathematical model</strong>. Let <span class="math inline">\(x_t\)</span> be the level of economic development and <span class="math inline">\(y_t\)</span> the level of innovations at time <span class="math inline">\(t\)</span>.</p>
+<p><em>Model 1</em>: <span class="math display">\[x_{t+1} = x_t + rx_t\]</span> where <span class="math inline">\(r&gt;0\)</span> denotes a positive growth rate.</p>
+<p><em>Model 2</em>: <span class="math display">\[\begin{align}
+x_{t+1} &amp;= x_t + ay_t \\
+y_{t+1} &amp;= y_t + bx_t
+\end{align}\]</span> where <span class="math inline">\(a&gt;0\)</span> denotes the rate of converting innovations to economic development and <span class="math inline">\(b&gt;0\)</span> denotes the rate of converting economic development to innovations.</p>
+<p>Now, we convert the mathematical model into a <strong>computational model</strong>.</p>
+<p>First, we define the <code>update_model</code> functions.</p>
+<div id="77a5debe-cf5b-470c-bc26-74bb2f5fffb8" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_model1(x, r):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> x <span class="op">+</span> r<span class="op">*</span>x</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="51a2cf7e-0c40-47ae-a75c-60dd99141b93" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_model2(z, a, b):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> z</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> x <span class="op">+</span> a<span class="op">*</span>y</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    y_ <span class="op">=</span> y <span class="op">+</span> b<span class="op">*</span>x</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x_, y_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Second, we define two <code>plot_evolution</code> functions, detailing the plotting of the economic development and innovation levels.</p>
+<div id="60e55b81-cff0-4f16-a576-334e3729f472" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_evolution1(initial_value, nr_timesteps, <span class="op">**</span>update_parameters):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, update_model1, </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                <span class="op">**</span>update_parameters)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.--'</span>, label<span class="op">=</span><span class="st">"Economy1 | "</span> <span class="op">+</span> <span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'purple'</span>)<span class="op">;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7c2cd58f-6285-4aba-b048-52f8532a167e" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_evolution2(initial_value_x, initial_value_y, nr_timesteps, </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> [initial_value_x, initial_value_y]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, z, update_model2, </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="op">**</span>update_parameters)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series[:, <span class="dv">0</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">"Economy2 | "</span><span class="op">+</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'red'</span>)<span class="op">;</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series[:, <span class="dv">1</span>], <span class="st">'.-'</span>, <span class="co">#label="Innovation2 | "+str(update_parameters)[1:-1],</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'blue'</span>)<span class="op">;</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Last, we define a <code>compare_model</code> function, which sets the initial levels of the economies as identical and has descriptive parameters for easy interpretation of the model results.</p>
+<div id="888df4f8-bb94-4224-ad9f-3304d55917ff" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_models(economy<span class="op">=</span><span class="fl">1.0</span>, innovation<span class="op">=</span><span class="fl">1.0</span>, timesteps<span class="op">=</span><span class="dv">20</span>, selfrate<span class="op">=</span><span class="fl">0.2</span>, innoTOecon<span class="op">=</span><span class="fl">0.01</span>, econTOinno<span class="op">=</span><span class="fl">4.0</span>,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                  ymax<span class="op">=</span><span class="dv">40</span>):</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution2(economy, innovation, timesteps, a<span class="op">=</span>innoTOecon, b<span class="op">=</span>econTOinno)<span class="op">;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution1(economy, timesteps, r<span class="op">=</span>selfrate)<span class="op">;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="dv">0</span>, ymax)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We set the default parameter so that in <em>model 1</em>, there is a default growth rate of 0.2. In <em>model 2</em>, we assume that innovations take a long time to result in economic development (i.e., the rate from innovation to the economy is small, a 20th compared to the default rate of <em>model 1</em>, to be precise). Even if the rate of converting economic development to innovation is 20 times larger than the default rate, economic growth in <em>model 2</em> is slower than in <em>model 1</em>.</p>
+<div id="cell-fig-default-economy-innovation-interactions" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-tags="[]" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>compare_models()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-default-economy-innovation-interactions" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-default-economy-innovation-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-default-economy-innovation-interactions-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-default-economy-innovation-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Default Economy-Innovation interactions
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>How could be boost growth in <em>model 2</em>?</p>
+<p>One way could be to increase the number of innovations.</p>
+<p>It would require a 20-fold increase in the number of innovations to match the growth rate of <em>model 1</em>. This is also intuitive: if it takes 20 times longer for innovations to result in economic development, we need 20 times more innovations to achieve the same growth rate. Compare <a href="#fig-economy-boosted-innovation-interactions" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> with <a href="#fig-default-economy-innovation-interactions" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>.</p>
+<div id="cell-fig-economy-boosted-innovation-interactions" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>compare_models(innovation<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-economy-boosted-innovation-interactions" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-economy-boosted-innovation-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-economy-boosted-innovation-interactions-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-economy-boosted-innovation-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Economy-Innovation interactions with a 20-fold increase in innovations
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Is there another way?</strong></p>
+<p>How much would the rate of converting economic development into innovations increase to match economic growth in <em>model 1</em>?</p>
+<p>How much would we need to change the rate of converting innovations to economic development in <em>model 2</em> to outperform the economic growth of <em>model 1</em>?</p>
+<p>We need to increase either the innovation-to-economy or the economy-to-innovation rate by a factor of approx. 1.45 to match the sizes of the economies after 20 time periods (<a href="#fig-economy-innovation-boosted-interactions" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>).</p>
+<div id="cell-fig-economy-innovation-boosted-interactions" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">121</span>) <span class="co"># LEFT PLOT</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>compare_models(econTOinno<span class="op">=</span><span class="fl">4.0</span><span class="op">*</span><span class="fl">1.45</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">122</span>) <span class="co"># RIGHT PLOT</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>compare_models(innoTOecon<span class="op">=</span><span class="fl">0.01</span><span class="op">*</span><span class="fl">1.45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-economy-innovation-boosted-interactions" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-economy-innovation-boosted-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-economy-innovation-boosted-interactions-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-economy-innovation-boosted-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Economy-Innovation interactions with a 1.45-fold increase of a single conversion rate
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Since the innovation-to-economy rate is minimal initially, this might be the more accessible lever to pull.</p>
+<blockquote class="blockquote">
+<p>A key insight for policy interventions from dynamic system models is that it can be much more effective to intervene in the systems’ dynamics than in the systems’ state variables.</p>
+</blockquote>
+</section>
+<section id="example-economy-nature-interactions" class="level3">
+<h3 class="anchored" data-anchor-id="example-economy-nature-interactions">Example | Economy-Nature interactions</h3>
+<p>One of the defining themes of this course is that we are embedded in the biosphere. Economic growth depends on an intact natural environment, whereas current economic practices negatively impact the state of nature. Let’s assume the following feedback structure.</p>
+<div id="fig-EconomyNature" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-EconomyNature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/02.01-EconomyNature.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EconomyNature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: Economy-Nature interactions
+</figcaption>
+</figure>
+</div>
+<p>Assuming the feedback structure defined in <a href="#fig-EconomyNature" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>, we can reuse our code block from above.</p>
+<p>Let’s assume that economic and natural capital start at a base level of 1. Economic growth depends positively on the state of natural capital (assuming a base rate of 0.1). In contrast, natural capital changes depend negatively on economic capital but on a slower timescale (let’s take a rate of 0.005). Of course, these parameters serve mainly illustrative purposes.</p>
+<div id="12d119a0-ba66-4605-b413-221194cd5b30" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_EconomyNature(economy<span class="op">=</span><span class="fl">1.0</span>, nature<span class="op">=</span><span class="fl">1.0</span>, timesteps<span class="op">=</span><span class="dv">100</span>, natTOecon<span class="op">=</span><span class="fl">0.1</span>, econTOnat<span class="op">=-</span><span class="fl">0.005</span>):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution2(economy, nature, timesteps, a<span class="op">=</span>natTOecon, b<span class="op">=</span>econTOnat)<span class="op">;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The economy starts growing linearly while nature degrades. At around 60 periods, the economy reaches a maximum and enters a recession while nature continues to degrade ({#fig-EconomyNature100}).</p>
+<div id="cell-fig-EconomyNature100" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plot_EconomyNature()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-economynature100" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-economynature100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-economynature100-output-1.png" id="fig-economynature100" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-economynature100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>What happens if we continue the simulation for 1000 periods?</p>
+<div id="cell-fig-EconomyNature1000" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_EconomyNature(timesteps<span class="op">=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-economynature1000" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-economynature1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-economynature1000-output-1.png" id="fig-economynature1000" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-economynature1000-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We observe ossilations in the levels of economic and natural capital. The economy grows, but the environment degrades, leading to an economic recession. The environment recovers, and the economy starts growing again, leading to another recession. This cycle repeats indefinitely.</p>
+<p>Mathematically, this behavior can be explained by the fact, that both economic and natural capital can have negative values. It is not straitforward to interpret negative values in this context. In effect, a negative value of economic capital results in a net positive effect on natural capital, and a negative value of natural capital results in a net negative effect on economic capital, i.e., when enviornmental damages are high, the economy is likely to suffer.</p>
+<p>How special is this ossilatory behavior? Is it due to the specific parameters we chose? Or is it a general feature of the model structure?</p>
+<p>To study the possible behavior of a sytem a bit of theory is useful.</p>
+</section>
+<section id="deepdive-autonomous-first-order-systems-are-all-you-need" class="level3">
+<h3 class="anchored" data-anchor-id="deepdive-autonomous-first-order-systems-are-all-you-need">DeepDive | Autonomous first-order systems are all you need</h3>
+<p>Here, we make sure that we do note forget to analyze some system structures. We show that so-called autonomous first-order systems are all we need to model any dynamic system.</p>
+<p>In this DeepDive, we answer the question of why we did not consider dynamic equations which take into account the system state of longer than just one time step ago and why we did not model systems which depend explicitly on time. The short answer is, we do not need to. These modifications will not give rise to fundamentally different behavior. We can always represent these modification by introducing additional state variables.</p>
+<p><strong>Let us first introduce some terminology.</strong></p>
+<p>A system is called <em>first-order</em> if it depends only on the state of the system at the previous time step.</p>
+<p><strong>First-order system</strong>: A difference equation whose rules involve state variables of the immediate past only, <span class="math display">\[x_t = F(x_{t-1}).\]</span></p>
+<p><strong>Higher-order system</strong>: Anything else, <span class="math display">\[x_t = F(x_{t-1}, x_{t-2}, x_{t-3}, \dots).\]</span></p>
+<p>A system is called <em>autonomous</em> if it does not depend explicitly on time.</p>
+<p><strong>Autonomous system</strong>: A dynamical equation whose rules don’t explicitly include time or any other external variables <span class="math display">\[x_t = F(x_{t-1}).\]</span></p>
+<p><strong>Non-autonomous system</strong>: A dynamical equation whose rules do include time or other external variables explicitly, <span class="math display">\[x_t = F(x_{t-1}, t).\]</span></p>
+<p>Non-autonomous, higher-order difference equations can always be converted into autonomous, first-order forms, by introducing additional state variables.</p>
+<p>For example, the <em>second-order difference equation</em>, <span class="math display">\[x_t = x_{t-1} + x_{t-2} \quad \text{aka the Fibonacci sequence}\]</span> can be converted into a first-order form by introducing a “memory” variable, <span class="math display">\[y_t = x_{t-1} \Leftrightarrow y_{t-1} = x_{t-2}\]</span></p>
+<p>Thus, the equation can be rewritten as follows</p>
+<p><span class="math display">\[\begin{align}
+x_{t} &amp;= x_{t-1} + y_{t-1} \\
+y_{t} &amp;= x_{t-1}
+\end{align}\]</span></p>
+<p><em>This conversion technique works for any higher-order equations as long as the historical dependency is finite.</em></p>
+<p>Similarly, a <em>non-autonomous equation</em> <span class="math display">\[ x_t = x_{t-1} + t\]</span> can be converted into an autonomous form by introducing a “clock” variable, <span class="math display">\[ z_t = z_{t-1} + 1, z_0 = 0\]</span></p>
+<p>Then,</p>
+<p><span class="math display">\[x_t = x_{t-1} + z_{t-1}\]</span></p>
+<p><strong>Take-home message</strong>. Autonomous first-order equations can cover all the dynamics of any non-autonomous, higher-order equations. We can safely focus on <em>autonomous first-order equations</em> without missing anything fundamental.</p>
+</section>
+<section id="matrix-representation" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-representation">Matrix representation</h3>
+<p>In this section, we will see how to represent a system of difference equations in matrix form. This representation is useful for analyzing the system’s behavior, especially when the system has multiple stocks.</p>
+<p>Let’s consider a general model with two stock variables,</p>
+<p><span class="math display">\[\begin{align}
+x_{t+1} &amp;= ax_t + by_t, \\
+y_{t+1} &amp;= dy_t + cx_t.
+\end{align}\]</span></p>
+<p>We can rewrite these equations with a matrix multiplication,</p>
+<p><span class="math display">\[
+\left(\begin{matrix}
+x_{t+1} \\
+y_{t+1}
+\end{matrix}\right) =
+\left(\begin{matrix}
+a &amp; b \\
+c &amp; d
+\end{matrix}\right)
+\left(\begin{matrix}
+x_{t} \\
+y_{t}
+\end{matrix}\right)
+\]</span></p>
+<p>This idea <strong>generalizes to any number of stock variables</strong>. Consider a system with <span class="math inline">\(n\)</span> stocks, denoted by <span class="math inline">\(x^1\)</span>, <span class="math inline">\(x^2\)</span>, …, <span class="math inline">\(x^n\)</span> and influence coefficients <span class="math inline">\(a_{ij}\)</span>, for <span class="math inline">\(i,j \in \{1,2,\dots,n\}\)</span>, denoting the influence stock <span class="math inline">\(x^{2}_t\)</span> at time <span class="math inline">\(t\)</span> has on the stock <span class="math inline">\(x^{1}_{t+1}\)</span> at time <span class="math inline">\(t+1\)</span>. We can convert this logic into the following system of update equations,</p>
+<p><span class="math display">\[\begin{align}
+x^{1}_{t+1} &amp;= a_{11} x^{1}_t + a_{12} x^{2}_t + \dots + a_{1n} x^{n}_t \\
+x^{2}_{t+1} &amp;= a_{21} x^{1}_t + a_{22} x^{2}_t + \dots + a_{2n} x^{n}_t \\
+  \vdots \quad &amp;= \quad \vdots \qquad\qquad \cdots \qquad\qquad \vdots \\  
+x^{n}_{t+1} &amp;= a_{n1} x^{1}_t + a_{n2} x^{2}_t + \dots + a_{nn} x^{n}_t.
+\end{align}\]</span></p>
+<p>Equivalently, we can summarize all stocks <span class="math inline">\(x^1\)</span>, <span class="math inline">\(x^2\)</span>, …, <span class="math inline">\(x^n\)</span> into a vector <span class="math inline">\(\mathbf{x}\)</span> and all influence coefficients into a matrix <span class="math inline">\(\mathbf A,\)</span> with</p>
+<p><span class="math display">\[
+\mathbf{x} =
+\left(\begin{matrix}
+x^1 \\
+x^2 \\
+  \vdots \\  
+x^n
+\end{matrix}\right),
+\qquad
+\mathbf{A} =
+\left(\begin{matrix}
+a_{11} &amp; a_{12} &amp; \dots  &amp;a_{1n} \\
+a_{21} &amp; a_{22} &amp; \dots &amp;a_{2n} \\
+  \vdots &amp; \vdots &amp; \cdots &amp;\vdots \\  
+a_{n1} &amp; a_{n2} &amp; \dots &amp;a_{nn}
+\end{matrix}\right).
+\]</span></p>
+<p>Doing so simplifies the form of the update equation to</p>
+<p><span class="math display">\[ \mathbf x_{t+1} = \mathbf A \mathbf x_t. \]</span></p>
+<p><em>Some definitions</em>.</p>
+<p>We call the number of state variables needed to specify the system’s state uniquely the <strong>degrees of freedom</strong>.</p>
+<p>A <strong>phase space</strong> of a dynamic system is the theoretical space where every state of the system is mapped to a unique spatial location.</p>
+<p>Thus, the degrees of freedom of a dynamic system equals the dimensionality of its phase space.</p>
+</section>
+</section>
+<section id="long-term-behavior-and-stability-analysis" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="long-term-behavior-and-stability-analysis"><span class="header-section-number">2.5</span> Long-term behavior and stability analysis</h2>
+<p>Playing with a computer model is fun, but the range of possibilities becomes enormous too quickly.</p>
+<p>In this section, we will obtain a so-called <strong>closed-form solution</strong> for the time evolution of our systems. This means we write down an equation that gives us the system state for each point in time without the need to iterate the difference equation forward. This is particularly useful if we want to understand the very <strong>long-term behavior</strong> of systems, as this would require many simulation steps. These steps are crucial to understanding what it means for a system state to be <strong>stable</strong>.</p>
+<section id="closed-form-solution-for-1d-systems" class="level3">
+<h3 class="anchored" data-anchor-id="closed-form-solution-for-1d-systems">Closed-form solution for 1D systems</h3>
+<p>For one-dimensional systems, we can write</p>
+<p><span class="math display">\[ x_{t+1} = ax_t \]</span></p>
+<p>This means the system state at time <span class="math inline">\(t=1\)</span> is <span class="math inline">\(x_1 = ax_0\)</span>. At time <span class="math inline">\(t=2\)</span>, the system state is <span class="math inline">\(x_2 = ax_1 = aax_0 = a^2 x_0\)</span>. Thus, generalizing this pattern yields the system state at time <span class="math inline">\(t\)</span> to be</p>
+<p><span class="math display">\[ x_t = x_0 a^t \]</span></p>
+<p>This means, we can directly calculate the system state at any point in time without the need to iterate the difference equation forward.</p>
+<p><strong>For example</strong>, let’s say we want to calculate only each 10th time step,</p>
+<div id="27653fc5" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">10</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>array([  0,  10,  20,  30,  40,  50,  60,  70,  80,  90, 100])</code></pre>
+</div>
+</div>
+<p>The system state is,</p>
+<div id="cb20376e" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x_0 <span class="op">=</span> <span class="fl">1.2</span><span class="op">;</span> r <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x_0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> r)<span class="op">**</span>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>array([  1.2       ,   1.95467355,   3.18395725,   5.18633085,
+         8.44798645,  13.76087974,  22.41502307,  36.51171064,
+        59.47372928,  96.87643806, 157.80150942])</code></pre>
+</div>
+</div>
+<p>Here, we made use of the element-wise exponentiation of NumPy arrays. This means that each element of the array is raised to the power of the corresponding element of the other array. This a very convenient feature of NumPy, as it allows us to perform operations on arrays without the need for explicit loops.</p>
+<p>To check, whether our closed-form solution works, we compare it to the simulation results.</p>
+<div id="20246f4b" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_solutions(initial_value<span class="op">=</span><span class="fl">1.2</span>, nr_timesteps<span class="op">=</span><span class="dv">100</span>, rate<span class="op">=</span><span class="fl">0.05</span>):</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(initial_value<span class="op">=</span>initial_value, nr_timesteps<span class="op">=</span>nr_timesteps,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                         update_func<span class="op">=</span>update_stock, rate<span class="op">=</span>rate)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.arange(<span class="dv">0</span>, nr_timesteps<span class="op">+</span><span class="dv">1</span>, <span class="dv">5</span>)<span class="op">;</span> </span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(t, initial_value<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>rate)<span class="op">**</span>t, <span class="st">'X'</span>, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Analytical solution'</span>)<span class="op">;</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5a91547f" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-tags="[]" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>compare_solutions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-36-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Try it out with different parameter values and observe that the closed-form solution matches the simulation results perfectly.</strong></p>
+</section>
+<section id="cobweb-plots" class="level3">
+<h3 class="anchored" data-anchor-id="cobweb-plots">Cobweb plots</h3>
+<p>Cobweb plots are a graphical tool to understand the dynamics of one-dimensional systems.</p>
+<p>The idea is to plot the system state at time <span class="math inline">\(t+1\)</span> against the system state at time <span class="math inline">\(t\)</span>. Including the system’s udpate function <span class="math inline">\(F(x_t)\)</span>, together with the identity line, <span class="math inline">\(y=x\)</span>, allows us to see how the system evolves over time. The next system state is obtained by a vertical line from the current state to the system update function. From this point, a horizontal line to the identity line makes the <em>next</em> system state, the <em>current</em> system state. Thus, the system evolution is represented by horizontal and vertical lines, hence the name, because the resulting picture resembles a cobweb.</p>
+<div id="d597f5d2-c3a4-4b39-8280-77982ba2353e" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb(update_func, initial_value, nr_timesteps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>update_params):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>initial_value<span class="op">;</span> h<span class="op">=</span>[x]<span class="op">;</span> v<span class="op">=</span>[x]<span class="op">;</span>  <span class="co"># lists for (h)orizontal and (v)ertical points</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):  <span class="co"># iterate the dynamical system</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> update_func(x, <span class="op">**</span>update_params)  <span class="co"># get the next system's state </span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        h.append(x)<span class="op">;</span> v.append(x_)  <span class="co"># going vertically (changing v)</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        h.append(x_)<span class="op">;</span> v.append(x_)  <span class="co"># going horizontially (changing h)</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_  <span class="co"># the new system state becomes the current state</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>) <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">None</span>, ax  <span class="co"># get ax</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    ax.plot(h, v, <span class="st">'k-'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)  <span class="co"># plot on ax</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.allclose(h[<span class="op">-</span><span class="dv">2</span>],h[<span class="op">-</span><span class="dv">1</span>]) <span class="kw">and</span> np.allclose(v[<span class="op">-</span><span class="dv">1</span>],v[<span class="op">-</span><span class="dv">2</span>]):</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if last points are close, assume convergence</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>        ax.plot([h[<span class="op">-</span><span class="dv">1</span>]], [v[<span class="op">-</span><span class="dv">1</span>]], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)  <span class="co"># plot dot</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> h, v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We study the simple system <span class="math inline">\(x_{t+1} = ax_t\)</span>.</p>
+<div id="e3e1bbb4-52bd-421d-83c7-4541798692ab" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-tags="[]" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Flin(x, a): <span class="cf">return</span> a<span class="op">*</span>x</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotF(a, x0<span class="op">=</span><span class="fl">1.4</span>):   </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.5</span>))<span class="op">;</span>  <span class="co"># axes and limits</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>), ax[<span class="dv">1</span>].set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">101</span>)<span class="op">;</span> <span class="co"># plot F(x) and x</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(xs, Flin(xs, a), label<span class="op">=</span><span class="st">"F(x)"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].legend()<span class="op">;</span> ax[<span class="dv">0</span>].set_xlabel(<span class="st">'system state x'</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">'system state x'</span>)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    h,v <span class="op">=</span> cobweb(update_func<span class="op">=</span>Flin, initial_value<span class="op">=</span>x0, a<span class="op">=</span>a, nr_timesteps<span class="op">=</span><span class="dv">20</span>, ax<span class="op">=</span>ax[<span class="dv">0</span>])<span class="op">;</span>  <span class="co"># include cobweb</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(initial_value<span class="op">=</span>x0, nr_timesteps<span class="op">=</span><span class="dv">20</span>, update_func<span class="op">=</span>Flin, a<span class="op">=</span>a)<span class="op">;</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.tight_layout()  <span class="co"># make axis fit nicely</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, with <span class="math inline">\(a=0.8\)</span>, we observe the cobweb plot in <a href="#fig-cobweb-a0o8" class="quarto-xref">Figure&nbsp;<span>2.9</span></a>.</p>
+<div id="cell-fig-cobweb-a0o8" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plotF(a<span class="op">=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-cobweb-a0o8" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cobweb-a0o8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-cobweb-a0o8-output-1.png" id="fig-cobweb-a0o8" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-cobweb-a0o8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.9
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Convince yourself about the following <strong>observations</strong>:</p>
+<ul>
+<li><span class="math inline">\(\ \ \ 1 &lt; a \qquad \ {}\)</span>: Divergences to infinity</li>
+<li><span class="math inline">\(\qquad \ a= \ \ \ 1\)</span>: Conserved behavior</li>
+<li><span class="math inline">\(\ \ \ 0 &lt; a&lt; \ \ \ 1\)</span>: Convergence to fixed point</li>
+<li><span class="math inline">\(-1&lt;a&lt; \ \ \ 0\)</span>: Convergence to fixed point with transient oscillatory behavior</li>
+<li><span class="math inline">\(\qquad \ a=-1\)</span>: Conserved oscillatory behavior</li>
+<li><span class="math inline">\(\qquad \ a&lt;-1\)</span>: Divergend ossiliaroty behavior</li>
+</ul>
+<p>We can summarize these observations into <strong>three qualitatively distinct cases</strong> for the asymptotic behavior of linear systems.</p>
+<ol type="1">
+<li><span class="math inline">\(|a|&lt;1\)</span>: The system converges to fixed point</li>
+<li><span class="math inline">\(|a|&gt;1\)</span>: The system diverges to infinity</li>
+<li><span class="math inline">\(|a|=1\)</span>: The system is conserved</li>
+</ol>
+<p>How do these observations generalize to multi-dimensional systems?</p>
+</section>
+<section id="multi-dimensional-phase-space-vizualization" class="level3">
+<h3 class="anchored" data-anchor-id="multi-dimensional-phase-space-vizualization">Multi-dimensional phase space vizualization</h3>
+<p>Let us first create a general, multi-dimensional update function.</p>
+<div id="d9aaf459" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_general_model(x, A): <span class="cf">return</span> A<span class="op">@</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here, the <code>@</code> operator is used for matrix multiplication.</p>
+<p>Then, we create a <code>plot_flow</code> function, using the <code>matplotlib.quiver</code> function.</p>
+<div id="86214eaf" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow(A, extent<span class="op">=</span><span class="dv">10</span>, nr_points<span class="op">=</span><span class="dv">11</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>: _, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> y <span class="op">=</span> np.linspace(<span class="op">-</span>extent, extent, nr_points)  <span class="co"># the x and y grid points</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    X, Y <span class="op">=</span> np.meshgrid(x, y)  <span class="co"># transformed into a meshgrid</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    dX <span class="op">=</span> np.ones_like(X)<span class="op">;</span> dY <span class="op">=</span> np.ones_like(Y)  <span class="co"># containers for the changes</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x)):  <span class="co"># looping through the x grid points</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(y)):  <span class="co"># looping through the y grid points</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>            s <span class="op">=</span> np.array([x[i], y[j]]) <span class="co"># the current state</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>            s_ <span class="op">=</span> update_general_model(s, A) <span class="co"># the next state</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>            ds <span class="op">=</span> s_ <span class="op">-</span> s <span class="co"># the change in state</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>            dX[j,i] <span class="op">=</span> ds[<span class="dv">0</span>]  <span class="co"># capturing the change along the x-dimension</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>            dY[j,i] <span class="op">=</span> ds[<span class="dv">1</span>]  <span class="co"># captuaring the change along the y-dimension</span></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> ax.quiver(X, Y, dX, dY, angles<span class="op">=</span><span class="st">'xy'</span>)  <span class="co"># plot the result</span></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'x-stock level'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'y-stock level'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s test our <code>plot_flow</code> function with a random two-by-two matrix.</p>
+<div id="73403629" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.random.randn(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>plot_flow(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-44-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, we can visualize the flow of any two-dimensional system, including a trajectory, in the phase space.</p>
+<p>We create a <code>plot_flow_trajectory</code> function, which plots the flow of a system with a given matrix, and the trajectory of the system over time.</p>
+<div id="45bafce8" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow_trajectory(a<span class="op">=</span><span class="dv">1</span>,b<span class="op">=</span><span class="fl">0.05</span>,c<span class="op">=-</span><span class="fl">0.05</span>,d<span class="op">=</span><span class="dv">1</span>, nr_timesteps<span class="op">=</span><span class="dv">200</span>):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))<span class="op">;</span>  <span class="co"># axes and limits</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ax[0].set_xlim(-1,2); ax[0].set_ylim(-1,2), ax[1].set_ylim(-1,2)</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> np.array([[a, b], [c, d]])</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> iterate_model(nr_timesteps, [<span class="dv">3</span>, <span class="dv">2</span>], update_general_model, A<span class="op">=</span>A)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    plot_flow(A, ax<span class="op">=</span>ax[<span class="dv">0</span>])</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(ts[:,<span class="dv">0</span>], ts[:,<span class="dv">1</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Model trajectory'</span>, color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].plot(ts[:,<span class="dv">0</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'x-stock level'</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].plot(ts[:,<span class="dv">1</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'y-stock level'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].legend()</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c3e4e961-ac93-44e5-ab83-de3fcd21598e" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>plot_flow_trajectory()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-47-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Such a phase space visulaization is a powerful tool, connecting the time-evolution of a dynamic systems with a <strong>geometrical representation</strong>.</p>
+<p>It allows us to understand the <strong>long-term behavior</strong> of a system, and eventually, how a system’s fate <strong>depends on its initial state</strong>.</p>
+</section>
+<section id="closed-form-solutions-of-multi-dimensional-systems" class="level3">
+<h3 class="anchored" data-anchor-id="closed-form-solutions-of-multi-dimensional-systems">Closed-form solutions of multi-dimensional systems</h3>
+<p>Similarly to one-dimensional systems with direct feedback only, a <strong>closed-form solution</strong> to the time evolution of multi-dimensional systems with delays, <span class="math inline">\(\mathbf x_{t+1} = \mathbf A \mathbf x_{t}\)</span>, has the form,</p>
+<p><span class="math display">\[ \mathbf x_{k} = \mathbf A^k \mathbf x_0\]</span></p>
+<p>to calculate the system state at time <span class="math inline">\(k\)</span> and study how the system behaves when <span class="math inline">\(k \rightarrow \infty\)</span>. The only problem is <strong>how to calculate the exponential of a matrix</strong>, <span class="math inline">\(\mathbf A^t\)</span>.</p>
+<p>To study the long-term behavior of multi-dimensional systems with delays, we turn the equation <span class="math inline">\(\mathbf x_k = \mathbf A^k \mathbf x_0\)</span> into a more manageable form. For this purpose, we utilize the <strong>eigenvalues and eigenvectors</strong> of matrix <span class="math inline">\(\mathbf A\)</span>. To recap, eigenvalues <span class="math inline">\(\lambda_i\)</span> and eigenvectors <span class="math inline">\(\mathbf v_i\)</span> of <span class="math inline">\(\mathbf A\)</span> are the scalars and vectors satisfying,</p>
+<p><span class="math display">\[ \mathbf A \mathbf v_i = \lambda_i \mathbf v_i.\]</span></p>
+<p>Thus, when applying an eigenvector to its matrix effectively turns the matrix into a scalar number (the corresponding eigenvalue). Raising a scalar number to a power is easy. If we repeatedly apply this technique, we get</p>
+<p><span class="math display">\[ \mathbf A^k \mathbf v_i = \mathbf A^{k-1} \lambda_i \mathbf v_i = \mathbf A^{k-2} \lambda_i^2 \mathbf v_i = \dots = \lambda_i^k \mathbf v_i.\]</span></p>
+<p><strong>Decomposable components</strong>. Last, we need to <strong>represent</strong> the <strong>initial system state</strong> <span class="math inline">\(\mathbf x_0\)</span> using the <strong>eigenvectors</strong> of matrix <span class="math inline">\(\mathbf A\)</span> as the basis vectors, i.e.,</p>
+<p><span class="math display">\[\mathbf x_0 = c_1 \mathbf v_1 + c_2 \mathbf v_2 + \dots + c_n \mathbf v_n,\]</span></p>
+<p>where <span class="math inline">\(n\)</span> is the dimension of the state space and the coefficients <span class="math inline">\(c_1, c_2, \dots, c_n\)</span> represent the vector <span class="math inline">\(\mathbf x_0\)</span> in the eigenvector basis of the <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(\mathbf A\)</span>.</p>
+<p>In practice, most <span class="math inline">\(n \times n\)</span> matrices are diagonalizable<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and thus have <span class="math inline">\(n\)</span> linearly independent eigenvectors. Therefore, we assume we can use them as the basis vectors to represent any initial state <span class="math inline">\(\mathbf x_0\)</span>. Representing <span class="math inline">\(\mathbf x_0\)</span> in the eigenbasis of <span class="math inline">\(\mathbf A\)</span> gives us</p>
+<p><span class="math display">\[\begin{align}
+\mathbf x_{k} &amp;= \mathbf A^k \mathbf x_0 \\
+&amp;=  \mathbf A^k (c_1 \mathbf v_1 + c_2 \mathbf v_2 + \dots + c_n \mathbf v_n) \\
+&amp;=  c_1 \mathbf A^k \mathbf v_1 + c_2 \mathbf A^k \mathbf v_2 + \dots + c_n \mathbf A^k \mathbf v_n \\
+&amp;=  c_1 \lambda_1^k \mathbf v_1 + c_2 \lambda_2^k \mathbf v_2 + \dots + c_n \lambda_n^k \mathbf v_n \\
+\end{align}\]</span></p>
+<p>Now, we can clearly see that the system’s time evolution, <span class="math inline">\(\mathbf x_t\)</span>, is described by a summation of multiple exponential terms of <span class="math inline">\(\lambda_i\)</span>.</p>
+<blockquote class="blockquote">
+<p>Dynamics of a linear system are decomposable into multiple independent one-dimensional exponential dynamics, each of which takes place along the direction given by an eigenvector. A general trajectory from an arbitrary initial condition can be obtained by a simple linear superposition of those independent dynamics.</p>
+</blockquote>
+<p>An eigenvalue tells us whether a particular component of a system’s state (given by its corresponding eigenvector) grows or shrinks over time. * When the eigenvalue is greater than 1, the component grows exponentially. * When the eigenvalue is less than 1, the component shrinks exponentially. * When the eigenvalue is equal to 1, the component is conserved.</p>
+<p><strong>Dominant components and systems stability.</strong> In the long term, the exponential term with the largest absolute eigenvalue <span class="math inline">\(|\lambda_i|\)</span> will eventually dominate the others. Suppose <span class="math inline">\(\lambda_1\)</span> has the largest absolute value (<span class="math inline">\(|\lambda_1| &gt; |\lambda_2|, \dots, |\lambda_n|\)</span>), and we factor our <span class="math inline">\(\lambda_1\)</span> from the closed-form solution for <span class="math inline">\(\mathbf x_t\)</span>,</p>
+<p><span class="math display">\[
+\mathbf x_t =  \lambda_1^t \left(c_1  \mathbf v_1 + c_2 {\lambda_2^t \over \lambda_1^t} \mathbf v_2 + \dots + c_n {\lambda_n^t \over \lambda_1^t} \mathbf v_n \right).
+\]</span></p>
+<p>We can see that, eventually, the first term will dominate,</p>
+<p><span class="math display">\[
+\lim_{t\rightarrow \infty} \mathbf x_t \approx \lambda^t_1 c_1 \mathbf v_1.
+\]</span></p>
+<p>The eigenvalue with the largest absolute value is known as the <strong>dominant eigenvalue</strong>, while its related eigenvector is termed the <strong>dominant eigenvector</strong>. This eigenvector determines the asymptotic direction of the system’s state. This means if a linear difference equation (<span class="math inline">\(\mathbf x_{t+1} = \mathbf A \mathbf x_t\)</span>)’s coefficient matrix, <span class="math inline">\(\mathbf A\)</span>, has a single dominant eigenvalue, its system state will eventually align with the direction of its corresponding eigenvector, no matter the initial state.</p>
+<ul>
+<li>If the absolute value of the dominant eigenvalue is greater than 1, then the system will diverge to infinity, i.e., the system is unstable.</li>
+<li>If less than 1, the system will eventually shrink to zero, i.e., the system is stable.</li>
+<li>If it is precisely 1, then the dominant eigenvector component of the system’s state will be conserved with neither divergence nor convergence, and thus the system may converge to a non-zero equilibrium point.</li>
+</ul>
+<p><strong>Oscillating behavior</strong>. Where does oscillating behavior come from?</p>
+<p>In short, when some eigenvalues of a coefficient matrix are complex numbers. Why? The answer lies in <strong>Euler’s Formula</strong>, which states that for any real number <span class="math inline">\(x\)</span>,</p>
+<p><span class="math display">\[
+e^ix = \cos(x) + i\sin(x),
+\]</span></p>
+<p>bridging the world of trigonometric functions (i.e., oscillations) with exponential functions (i.e., the closed-form solutions of linear difference equations). Thus, when some eigenvalues of a coefficient matrix are complex numbers, the resulting system’s behavior is rotations around the origin of the system’s phase space.</p>
+<p>The meaning of the absolute values of those complex eigenvalues is still the same as before:</p>
+<ul>
+<li>if the eigenvalue’s absolute value is <strong>larger than one</strong>, <span class="math inline">\(|\lambda| &gt; 1\)</span>, we have <strong>instability</strong> in the form of rotations with an expanding amplitude;</li>
+<li>if the eigenvalue’s absolute value is <strong>smaller than one</strong>, <span class="math inline">\(|\lambda| &lt; 1\)</span>, we have <strong>stability</strong> in the form of rotations with a shrinking amplitude; and</li>
+<li>if the eigenvalue’s absolute value <strong>equals one</strong>, <span class="math inline">\(|\lambda| = 1\)</span>, we have <strong>conservation</strong> in the form of rotations with a sustained amplitude.</li>
+</ul>
+<p><strong>Eigenvalue spectrum</strong>.</p>
+<p>For higher-dimensional systems, various kinds of eigenvalues can appear in a mixed way; some of them may show exponential growth, some may show exponential decay, and some others may show rotation. This means that all of those behaviors are going on simultaneously and independently in the system. A <strong>list of all the eigenvalues</strong> is called the eigenvalue spectrum of the system (or just spectrum for short). The eigenvalue spectrum carries a lot of valuable information about the system’s behavior, but often, the most important information is whether the system is stable or not, which can be obtained from the dominant eigenvalue.</p>
+<p>How to put this into practice/Python?</p>
+<p>We use <code>scipy.linalg.eig</code> to calculate the eigenvalues and eigenvectors of a matrix.</p>
+<p>From the documentation (<code>scipy.linalg.eig?</code>) we note that it return two objects, an iterable of eigenvalues <code>w</code> and an iterable of eigenvalues <code>v</code>. The normalized eigenvector corresponding to the eigenvalue <code>w[i]</code> is the column <code>v[:,i]</code>.</p>
+<div id="92b1006d" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>evals, evecs <span class="op">=</span> scipy.linalg.eig(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, the eigenvalues are</p>
+<div id="d94a214a" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>evals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="52">
+<pre><code>array([ 0.90140379+0.j, -1.1914619 +0.j])</code></pre>
+</div>
+</div>
+<p>The eigenvectors are</p>
+<div id="43f03ff6" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>evecs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<pre><code>array([[ 0.99099361,  0.60104809],
+       [-0.13390914,  0.79921285]])</code></pre>
+</div>
+</div>
+<p>For readbility, we store eigenvalues and eigenvectors in new variables.</p>
+<div id="5df4c6b4" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>eval1, eval2 <span class="op">=</span> evals</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eval1)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eval2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(0.9014037889457369+0j)
+(-1.1914619046393624+0j)</code></pre>
+</div>
+</div>
+<p>Since the eigenvectors are return in the format in which they are return we need to transpose them to assign them to two separate variables.</p>
+<div id="dd416bfe" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>evec1, evec2 <span class="op">=</span> evecs.T</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We check that we did not make any mistake:</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This should be zeros:"</span>, evec1 <span class="op">-</span> evecs[:,<span class="dv">0</span>])</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This too:"</span>, evec2 <span class="op">-</span> evecs[:,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This should be zeros: [0. 0.]
+This too: [0. 0.]</code></pre>
+</div>
+</div>
+<p>We can autmate such checks with the <code>assert</code> statement.</p>
+<div id="8f672075" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(evec1, evecs[:,<span class="dv">0</span>]), <span class="st">"The first eigenvector is not correct"</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(evec2, evecs[:,<span class="dv">1</span>]), <span class="st">"The second eigenvector is not correct"</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we create a <code>plot_eigenvectors</code> function.</p>
+<div id="fb9f9fdc" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_eigenvectors(a,b,c,d, extent<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>: _, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>        A <span class="op">=</span> np.array([[a, b], [c, d]])</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>        evals, evecs <span class="op">=</span> scipy.linalg.eig(A)</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>        eval1, eval2 <span class="op">=</span> evals</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>        evec1, evec2 <span class="op">=</span> evecs.T</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># plotting the real part of the eigenvectors</span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>        ax.plot([<span class="dv">0</span>, extent<span class="op">*</span>evec1[<span class="dv">0</span>].real], [<span class="dv">0</span>, extent<span class="op">*</span>evec1[<span class="dv">1</span>].real], <span class="st">'-'</span>, </span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>                lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'deepskyblue'</span>, </span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="st">'$|\lambda_1|$ = </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(np.<span class="bu">abs</span>(eval1).<span class="bu">round</span>(<span class="dv">4</span>)))</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>        ax.plot([<span class="dv">0</span>, extent<span class="op">*</span>evec2[<span class="dv">0</span>].real], [<span class="dv">0</span>, extent<span class="op">*</span>evec2[<span class="dv">1</span>].real], <span class="st">'-'</span>, </span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>                lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'teal'</span>, </span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="st">'$|\lambda_2|$ = </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(np.<span class="bu">abs</span>(eval2).<span class="bu">round</span>(<span class="dv">4</span>)))</span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>        ax.legend(loc<span class="op">=</span><span class="st">'upper right'</span>, bbox_to_anchor<span class="op">=</span>(<span class="op">-</span><span class="fl">0.15</span>, <span class="dv">1</span>))</span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="6153abba" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;skip&quot;}" data-tags="[]" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>plot_eigenvectors(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">1</span>, c<span class="op">=</span><span class="fl">1.0</span>, d<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-55-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Putting it all togehter, we observe how the eigenvector represent the long-term behavior of the system (<a href="#fig-eigenvector-flow" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>).</p>
+<div id="cell-fig-eigenvector-flow" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>plot_flow_trajectory_with_ev()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-eigenvector-flow" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eigenvector-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-eigenvector-flow-output-1.png" id="fig-eigenvector-flow" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-eigenvector-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.10
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-systems-with-linear-changes" class="level3">
+<h3 class="anchored" data-anchor-id="summary-systems-with-linear-changes">Summary | Systems with linear changes</h3>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\({}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(k\)</span> th-component is …</th>
+<th style="text-align: center;">if <span class="math inline">\(\lambda_k\)</span> is complex-conjugate,<br> the <span class="math inline">\(k\)</span>th-component is rotating around the origin</th>
+<th style="text-align: center;">if <span class="math inline">\(\lambda_k\)</span> is dominant</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\| \lambda_k \| &gt; 1\)</span></td>
+<td style="text-align: center;">growing</td>
+<td style="text-align: center;">with an expanding amplitude.</td>
+<td style="text-align: center;">system unstable, diverging to infinity</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\| \lambda_k \| &lt; 1\)</span></td>
+<td style="text-align: center;">shrinking</td>
+<td style="text-align: center;">with a shrinking amplitude.</td>
+<td style="text-align: center;">system stable, converging to the origin.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\| \lambda_k \| = 1\)</span></td>
+<td style="text-align: center;">conserved</td>
+<td style="text-align: center;">with a sustained amplitude.</td>
+<td style="text-align: center;">system stable, dominant eigenvector component conserved,<br>system may converge to a non-zero equilibrium point</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Linear dynamical systems can show only exponaential growth/decay, periodic oscillation, stationary states (no change), or their hybrids (e.g., exponentially growing oscillation) .</p>
+</blockquote>
+<p>Sometimes they can also show behaviors that are represented by polynomials (or products of polynomials and exponentials) of time. This occurs when their coefficient matrices are non-diagonalizable. <span class="citation" data-cites="Sayama2023">(<a href="References.html#ref-Sayama2023" role="doc-biblioref">Sayama, 2023</a>)</span></p>
+<p>In other words, these behaviors are signatures of linear systems. If you observe such behavior in nature, you may be able to assume that the underlying rules that produced the behavior could be linear.</p>
+</section>
+</section>
+<section id="non-linear-changes" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="non-linear-changes"><span class="header-section-number">2.6</span> Non-linear changes</h2>
+<p>Systems with non-linear changes, often called just non-linear systems, are defined as systems who are not linear (<span class="math inline">\(\mathbf x_{t+1}=\mathbf A \mathbf x_t\)</span>). In other words, they are systems whose rules involve non-linear combinations of state variables.</p>
+<p>While <strong>linear systems exhibit relatively simple behavior</strong> (exponential growth/decay, periodic oscillation, stationary states (no change), or their hybrids (e.g., exponentially growing oscillation)), <strong>non-linear systems can exhibit a much wider range of behaviors</strong>, including chaotic dynamics, bifurcations, and limit cycles. As a result, there is no general way to obtain a closed-form solution for non-linear systems, making them much more challenging to analyze and predict than linear systems.</p>
+<p>The <strong>logisitc map</strong> is a classic example of a one-dimensional nonlinear system. It is defined as</p>
+<p><span class="math display">\[x_{t+1} = x_t + rx_{t}(1 - \frac{x_{t}}{C}),\]</span></p>
+<p>where <span class="math inline">\(r\)</span> is the growth rate and <span class="math inline">\(C\)</span> the carrying capacity. In Python, it can be implemented as follows:</p>
+<div id="f8b9d676" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> logistic_map(x, r, C<span class="op">=</span><span class="dv">1</span>): <span class="cf">return</span> x <span class="op">+</span> r<span class="op">*</span>x<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>x<span class="op">/</span>C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Plotting the logistic map for a growth rate of 0.25, and a carrying capacity of 3.0, results in the following time evolution:</p>
+<div id="e0dcb8dc" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>plot_stock_evolution(<span class="dv">50</span>, <span class="fl">0.01</span>, update_func<span class="op">=</span>logistic_map, r<span class="op">=</span><span class="fl">0.25</span>, C<span class="op">=</span><span class="fl">3.0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-60-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="finding-equilibrium-points" class="level3">
+<h3 class="anchored" data-anchor-id="finding-equilibrium-points">Finding equilibrium points</h3>
+<p>An <em>equilibirum</em> point <span class="math inline">\(x_e\)</span> (also called fixed points or steady states) is a point in the state space, where the system can stay unchanged over time.</p>
+<p><span class="math display">\[x_e = F(x_e)\]</span></p>
+<p>In other words, if the system state is at an equilibrium point, it will remain there indefinitely. Fixed points are <strong>theoretically important</strong> as a meaningful reference when we understand the structure of the phase space. They are of <strong>practical relevance</strong> when we want to sustain the system at a certain desirable state.</p>
+<p>To find the equilibrium points of a system, we need to solve the equation <span class="math inline">\(x_e = F(x_e)\)</span> for <span class="math inline">\(x_e\)</span>. This can be done by setting <span class="math inline">\(x_{t+1} = x_t = x_e\)</span> in the system’s update function and solving for <span class="math inline">\(x_e\)</span>.</p>
+<p><strong>For example</strong>, in the logistic map, we obtain,</p>
+<p><span class="math display">\[\begin{align}
+x_e &amp;= x_{e} + rx_{e}(1 - \frac{x_{e}}{C}) \\
+0 &amp;= 0+ rx_{e}(1 - \frac{x_{e}}{C}) \\
+0 &amp;= rx_{e}(1 - \frac{x_{e}}{C})
+\end{align}\]</span></p>
+<p>This equation is fulfilled if either <span class="math inline">\(x_e = 0\)</span> or <span class="math inline">\(x_e = C\)</span>. Thus, the logistic map has two equilibrium points, <span class="math inline">\(x_e = 0\)</span> and <span class="math inline">\(x_e = C\)</span>.</p>
+<p>Graphically, fixpoints of an iterative map are the intersections between <span class="math inline">\(F(x)\)</span> and <span class="math inline">\(x\)</span>.</p>
+<div id="9b4d9392-8c22-4319-b114-228bb0aab852" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">101</span>)  <span class="co"># Resolution of the x axis</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, logistic_map(xs, <span class="fl">1.5</span>, <span class="dv">5</span>), label<span class="op">=</span><span class="st">"F(x)"</span>)  <span class="co"># Plot the map x_=F(x)</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)  <span class="co"># Plot the diagonal x_=x</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span>  <span class="co"># Include the legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-61-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can enrich this representation with the cobweb plot, which shows the system’s time evolution from an initial state to the equilibrium point.</p>
+<div id="1f42da6a-c548-4166-a549-aa16234d7908" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">101</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, logistic_map(xs, <span class="fl">1.5</span>, <span class="dv">5</span>), label<span class="op">=</span><span class="st">"F(x)"</span>)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>h,v <span class="op">=</span> cobweb(logistic_map, initial_value<span class="op">=</span><span class="fl">0.1</span>, r<span class="op">=</span><span class="fl">1.5</span>, C<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>             nr_timesteps<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span> </span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.01-Nonlinearity_files/figure-html/cell-62-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="linear-stability-in-nonlinear-systems" class="level3">
+<h3 class="anchored" data-anchor-id="linear-stability-in-nonlinear-systems">Linear stability in nonlinear systems</h3>
+<p>Unfortunately, it is impossible to forcast the asymptotic behaviors of nonlinear systems in the same way as for linerar systems.</p>
+<p>However, the concept of stability in linear systems can be applied to equilibirum points of non-linear systems. &gt; The basic idea of linear stability analysis is to rewrite the dynamics of the system in terms of a small perturbation added to the equilibrium point of your interest.</p>
+<p>Consider the system <span class="math inline">\(x_{t+1} = F(x_{t})\)</span> with steady state <span class="math inline">\(x_e\)</span>.</p>
+<p>To analyze its stability around this equilibrium point, we switch our perspective from a global coordinate system to a local one. We zoom in and capture a small perturbation added to the equilibrium point, <span class="math inline">\(z_t = x_t - x_e\)</span>. Inserting <span class="math inline">\(x_t\)</span> into the update equation, yields <span class="math display">\[ x_e + z_t = F(x_e+z_{t-1}).\]</span></p>
+<p>Since <span class="math inline">\(z\)</span> is small (by assumption), we can approximate the right-hand side as a Taylor expansion, <span class="math display">\[ x_e + z_t = F(x_e) + F'(x_e)z_{t-1} + O(z_{t-1}^2)  \]</span> where, <span class="math inline">\(F'\)</span> is the derivative of <span class="math inline">\(F\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+<p>Using <span class="math inline">\(x_e=F(x_e)\)</span>, we obtain the simple linear difference equation, <span class="math display">\[z_t \approx F'(x_e) z_{t-1}.\]</span></p>
+<blockquote class="blockquote">
+<p>To determine the stability of fixed points in non-linear systems, we need to look at the derivative of <span class="math inline">\(F(x_e)\)</span> at the fixed point.</p>
+</blockquote>
+<p>There are <strong>three qualitatively distinct cases</strong> for the linear stability of a steady state in a non-linear system.</p>
+<ol type="1">
+<li><span class="math inline">\(|F'(x_e)|&lt;1\)</span>: The equilibirum point <span class="math inline">\(x_e\)</span> is stable.</li>
+<li><span class="math inline">\(|F'(x_e)|&gt;1\)</span>: The equilibirum point <span class="math inline">\(x_e\)</span> is unstable.</li>
+<li><span class="math inline">\(|F'(x_e)|=1\)</span>: The equilibirum point <span class="math inline">\(x_e\)</span> is neutral <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+</ol>
+<p><strong>For example</strong>, for the logistic map,</p>
+<p><span class="math display">\[x_{t+1} = F(x_t) = x_{t} + rx_{t}(1 - \frac{x_{t}}{C})\]</span></p>
+<p>we calculate the derivative of <span class="math inline">\(F(x_t)\)</span> as</p>
+<p><span class="math display">\[F'(x) = 1+  r - 2r\frac{x}{C}.\]</span></p>
+<p>At the fixed points <span class="math inline">\(x_e = 0\)</span> and <span class="math inline">\(x_e = C\)</span>, we have</p>
+<p><span class="math display">\[F'(x)|_{x=0} = 1+r,  \quad  \text{and} \quad  F'(x)|_{x=C} = 1-r.\]</span></p>
+<p>Graphically, we obtain <a href="#fig-logistic-map" class="quarto-xref">Figure&nbsp;<span>2.11</span></a>.</p>
+<div id="cell-fig-logistic-map" class="cell" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-logistic-map" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-logistic-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02.01-Nonlinearity_files/figure-html/fig-logistic-map-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logistic-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.11: Linear stability shown at the nonlinear logistic map.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We <strong>observe</strong>, that when <span class="math inline">\(0&lt;r&lt;2\)</span>, the system convergens to <span class="math inline">\(x_e=C\)</span>. When <span class="math inline">\(r&gt;2\)</span>, the system converges to <span class="math inline">\(x_e=0\)</span>. When <span class="math inline">\(r&gt;2\)</span>, <span class="math inline">\(F'(x)|_{x=C} = 1 - r &lt; -1\)</span> causing unstable ossilations.</p>
+</section>
+</section>
+<section id="learning-goals-revisited" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">2.7</span> Learning goals revisited</h2>
+<ul>
+<li>Define and describe the <strong>components of a dynamic system</strong>.
+<ul>
+<li>At their core, dynamic systems consist of stocks and flows.</li>
+</ul></li>
+<li><strong>Represent</strong> dynamic system models in visual and mathematical form.
+<ul>
+<li>In general, a dynamic system iterates via <span class="math inline">\(\mathbf x_{t+1} = F(\mathbf x_t)\)</span>.</li>
+</ul></li>
+<li>Explain the concepts of <strong>feedback loops</strong> and <strong>delays</strong>.
+<ul>
+<li>Reinforcing (positive) feedback loops lead to divergence/instability.</li>
+<li>Balancing (negative) feedback loops lead to convergence/stability.</li>
+<li>Considering delays makes system more complicated.</li>
+</ul></li>
+<li>Explain two kinds of <strong>non-linearity</strong> and how they are related.
+<ul>
+<li>Dynamic systems with linear changes can be represented as <span class="math inline">\(\mathbf x_{t+1} = \mathbf A \mathbf x_t\)</span>, and can exhibit non-linear behavior, such as exponential growth or decay, periodic osscilations, or stationary states, or their combinations.</li>
+<li>Dynamic systems with non-linear changes can exhibit more kinds of behaviors.</li>
+</ul></li>
+<li><strong>Implement</strong> dynamic system models and <strong>visualize model outputs</strong> using Python, to interpret model results.</li>
+<li><strong>Analyze</strong> the <strong>stability</strong> of equilibrium points in dynamic systems using linear stability analysis.</li>
+</ul>
+<section id="bibliographical-and-historical-remarks" class="level3">
+<h3 class="anchored" data-anchor-id="bibliographical-and-historical-remarks">Bibliographical and Historical Remarks</h3>
+<p><span class="citation" data-cites="Raworth2017">Raworth (<a href="References.html#ref-Raworth2017" role="doc-biblioref">2017</a>)</span> (Chapter 4) and <span class="citation" data-cites="Page2018">Page (<a href="References.html#ref-Page2018" role="doc-biblioref">2018</a>)</span> (Chapter 18) provide great conceptual introductions to the topic without going into mathematical details.</p>
+<p><span class="citation" data-cites="Sayama2023">Sayama (<a href="References.html#ref-Sayama2023" role="doc-biblioref">2023</a>)</span> heavily inspired some of the material in this chapter.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-Page2018" class="csl-entry" role="listitem">
+Page, S. E. (2018). <em>The model thinker: <span>What</span> you need to know to make data work for you</em>. Basic Books.
+</div>
+<div id="ref-Raworth2017" class="csl-entry" role="listitem">
+Raworth, K. (2017). <em>Doughnut economics: Seven ways to think like a 21st-century economist</em>. Chelsea Green Publishing.
+</div>
+<div id="ref-Sayama2023" class="csl-entry" role="listitem">
+Sayama, H. (2023). <em>Introduction to the <span>Modeling</span> and <span>Analysis</span> of <span>Complex Systems</span></em>. <a href="https://math.libretexts.org/Bookshelves/Scientific_Computing_Simulations_and_Modeling/Book%3A_Introduction_to_the_Modeling_and_Analysis_of_Complex_Systems_(Sayama)">https://math.libretexts.org/Bookshelves/Scientific_Computing_Simulations_and_Modeling/Book%3A_Introduction_to_the_Modeling_and_Analysis_of_Complex_Systems_(Sayama)</a>
+</div>
+<div id="ref-SteffenEtAl2015a" class="csl-entry" role="listitem">
+Steffen, W., Broadgate, W., Deutsch, L., Gaffney, O., &amp; Ludwig, C. (2015). The trajectory of the <span>Anthropocene</span>: <span>The Great Acceleration</span>. <em>The Anthropocene Review</em>, <em>2</em>(1), 81–98. <a href="https://doi.org/10.1177/2053019614564785">https://doi.org/10.1177/2053019614564785</a>
+</div>
+<div id="ref-StermanSweeney2007" class="csl-entry" role="listitem">
+Sterman, J. D., &amp; Sweeney, L. B. (2007). Understanding public complacency about climate change: Adults’ mental models of climate change violate conservation of matter. <em>Climatic Change</em>, <em>80</em>(3), 213–238. <a href="https://doi.org/10.1007/s10584-006-9107-5">https://doi.org/10.1007/s10584-006-9107-5</a>
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>In mathematics, the term “dynamical system” is more commonly used. But there is also the related field of “system dynamics”, with its own scientific community. I don’t want to get into the details of the differences between these two fields. For the purpose of this course, we will use the term “dynamic system” to refer to the overarching ideas.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This assumption doesn’t apply to defective (non-diagonalizable) matrices that don’t have <span class="math inline">\(n\)</span> linearly independent eigenvectors. However, such cases are rare in real-world applications because any arbitrarily small perturbations added to a defective matrix would make it diagonalizable. Problems with such sensitive, ill-behaving properties are sometimes called <em>pathological</em> in mathematical modeling.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>also know as <em>Lyapunov</em> stable. More advanced nonlinear analysis is required to show that an equilibrium point is truly neutral.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-DynamicSystems.html" class="pagination-link  aria-label=" dynamic="" systems"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dynamic Systems</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02.02-TippingElements.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Tipping elements</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

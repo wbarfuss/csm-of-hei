@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.544">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Complex Systems Modeling of Human-Environment Interactions - 11&nbsp; Learning dynamics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./References.html" rel="next">
+<link href="./04.02-IndividualLearning.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-TransformationAgency.html">Transformation Agency</a></li><li class="breadcrumb-item"><a href="./04.03-LearningDynamics.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Complex-Systems-Modeling-of-Human-Environment-Interactions.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-TargetEquilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Target Equilibria</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-TransformationAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transformation Agency</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Behavioral agency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02ex-IntroToPython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01ex-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Nonlinearity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02ex-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Tipping elements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03ex-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Resilience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04ex-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | State transitions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01ex-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Sequential Decisions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02ex-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Strategic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03ex-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Dynamic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01ex-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Behavioral Agency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02ex-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Individual Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Learning Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">11.1</span> Motivation</a>
+  <ul class="collapse">
+  <li><a href="#recap-reinforcement-learning" id="toc-recap-reinforcement-learning" class="nav-link" data-scroll-target="#recap-reinforcement-learning">Recap | Reinforcement learning</a></li>
+  <li><a href="#modeling-challenges-of-reinforcement-learning" id="toc-modeling-challenges-of-reinforcement-learning" class="nav-link" data-scroll-target="#modeling-challenges-of-reinforcement-learning">Modeling challenges of reinforcement learning</a></li>
+  <li><a href="#dynamics-of-collective-reinforcement-learning" id="toc-dynamics-of-collective-reinforcement-learning" class="nav-link" data-scroll-target="#dynamics-of-collective-reinforcement-learning">Dynamics of collective reinforcement learning</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#derivation" id="toc-derivation" class="nav-link" data-scroll-target="#derivation"><span class="header-section-number">11.2</span> Derivation</a>
+  <ul class="collapse">
+  <li><a href="#rewards" id="toc-rewards" class="nav-link" data-scroll-target="#rewards">1) Rewards</a></li>
+  <li><a href="#next-quality-estimates" id="toc-next-quality-estimates" class="nav-link" data-scroll-target="#next-quality-estimates">2) Next quality estimates</a></li>
+  <li><a href="#state-values" id="toc-state-values" class="nav-link" data-scroll-target="#state-values">State values</a></li>
+  <li><a href="#transition-matrix" id="toc-transition-matrix" class="nav-link" data-scroll-target="#transition-matrix">Transition matrix</a></li>
+  <li><a href="#state-rewards" id="toc-state-rewards" class="nav-link" data-scroll-target="#state-rewards">State rewards</a></li>
+  <li><a href="#current-quality-estimates" id="toc-current-quality-estimates" class="nav-link" data-scroll-target="#current-quality-estimates">3) Current quality estimates</a></li>
+  <li><a href="#strategy-average-reward-prediction-temporal-difference-error" id="toc-strategy-average-reward-prediction-temporal-difference-error" class="nav-link" data-scroll-target="#strategy-average-reward-prediction-temporal-difference-error">Strategy-average reward-prediction temporal-difference error</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">11.3</span> Application</a>
+  <ul class="collapse">
+  <li><a href="#learning-trajectories" id="toc-learning-trajectories" class="nav-link" data-scroll-target="#learning-trajectories">Learning trajectories</a></li>
+  <li><a href="#flow-plot" id="toc-flow-plot" class="nav-link" data-scroll-target="#flow-plot">Flow plot</a></li>
+  <li><a href="#critical-transition" id="toc-critical-transition" class="nav-link" data-scroll-target="#critical-transition">Critical transition</a></li>
+  <li><a href="#hysteresis" id="toc-hysteresis" class="nav-link" data-scroll-target="#hysteresis">Hysteresis</a></li>
+  </ul></li>
+  <li><a href="#learning-goals-revisited" id="toc-learning-goals-revisited" class="nav-link" data-scroll-target="#learning-goals-revisited"><span class="header-section-number">11.4</span> Learning goals revisited</a></li>
+  <li><a href="#synthesis" id="toc-synthesis" class="nav-link" data-scroll-target="#synthesis"><span class="header-section-number">11.5</span> Synthesis</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-TransformationAgency.html">Transformation Agency</a></li><li class="breadcrumb-item"><a href="./04.03-LearningDynamics.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<section id="motivation" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">11.1</span> Motivation</h2>
+<blockquote class="blockquote">
+<p>Modeling model-based reinforcement learning agents</p>
+</blockquote>
+<p>This chapter introduces <strong>collective reinforcement learning dynamics</strong> - treating the multi-agent reinforcement learning process as a non-linear dynamic system.</p>
+<section id="recap-reinforcement-learning" class="level3">
+<h3 class="anchored" data-anchor-id="recap-reinforcement-learning">Recap | Reinforcement learning</h3>
+<p>In chapter <a href="./04.02-IndividualLearning.html">04.02-IndividualLearning</a>, we introduced the basics of the temporal-difference reward-prediction reinforcement learning process. In essence, learning means <strong>updating the quality estimates</strong>, <span class="math inline">\(Q^i_t(s,a)\)</span>, with the current reward-prediction error, <span class="math inline">\(\delta^i_t(s, a)\)</span>, after selection action <span class="math inline">\(a_t\)</span> in state <span class="math inline">\(s_t\)</span> according to</p>
+<p><span id="eq-qualityupdate"><span class="math display">\[
+Q^i_{t+1}(s_t, a_t) = Q^i_{t}(s_t, a_t) + \alpha^i \delta^i_t(s_t, a_t),
+\tag{11.1}\]</span></span></p>
+<p>where <span class="math inline">\(\alpha^i \in (0,1)\)</span> is the learning rate of agent <span class="math inline">\(i\)</span>, which regulates how much new information the agent uses for the update.</p>
+<p>The reward-prediction error, <span class="math inline">\(\delta^i_t(s_t, a_t)\)</span>, equals the difference of the <strong>new quality estimate</strong>, <span class="math inline">\((1-\gamma^i) r^i_t + \gamma^i \mathcal Q_n^i(s_{t+1})\)</span>, and the <strong>current quality estimate</strong>, <span class="math inline">\(\mathcal Q_c^i(s_{t})\)</span>,</p>
+<p><span id="eq-rewardpredictionerror"><span class="math display">\[
+\delta^i_t(s_t, a_t) = (1-\gamma^i) r^i_t + \gamma^i \mathcal{Q}^i_n(s_{t+1}, a_{t+1}) - \mathcal Q^i_c(s_{t}, a_{t}),
+\tag{11.2}\]</span></span></p>
+<p>where the <span class="math inline">\(\mathcal{Q}_n^i\)</span> represents the quality estimate of the <em>next</em> state and <span class="math inline">\(\mathcal{Q}_c^i\)</span> represents the quality estimate of the <em>current</em> state. Depending on how we choose, <span class="math inline">\(\mathcal{Q}_n^i\)</span>, and <span class="math inline">\(\mathcal{Q}_c^i\)</span>, we recover various well-known temporal-difference reinforcement learning update schemes <span class="citation" data-cites="BarfussEtAl2019">(<a href="References.html#ref-BarfussEtAl2019" role="doc-biblioref">Barfuss et al., 2019</a>)</span>.</p>
+<p>For example, we covered the <em>Expected SARSA</em> update with <span class="math inline">\(\mathcal{Q}_n^i (s_{t+1}, a_{t+1})  = \mathcal{Q}_n^i (s_{t+1}) = \sum_b x_t^i(s_{t+1},b) Q^i_t(s_{t+1}, b)\)</span>, and <span class="math inline">\(\mathcal{Q}_c^i = Q^i_t\)</span>. The temporal-difference reward-prediction error then reads,</p>
+<p><span class="math display">\[\delta^i_t(s_t, a_t) = (1-\gamma^i) r^i_t + \gamma^i \sum_b x_t^i(s_{t+1},b) Q^i_t(s_{t+1}, b) - Q^i_t(s_{t}, a_{t}).\]</span></p>
+</section>
+<section id="modeling-challenges-of-reinforcement-learning" class="level3">
+<h3 class="anchored" data-anchor-id="modeling-challenges-of-reinforcement-learning">Modeling challenges of reinforcement learning</h3>
+<p>Classic reinforcement learning processes are highly <em>stochastic</em> since, generally, all agent strategies <span class="math inline">\(x^i(s, a)\)</span>, and the environments transition function <span class="math inline">\(T(s, \boldsymbol a, s')\)</span> are probability distributions. This stochasticity induces some challenges for using reinforcement learning as a modeling tool in complex human-environment systems:</p>
+<ol type="1">
+<li><strong>Sample inefficiency.</strong> The agents need many samples to learn something, as they immediately forget a sample experience after a value-belief update.</li>
+<li><strong>Computationally intense.</strong> Learning simulations are computationally intense since one requires many simulations to make sense of the noise, and each takes a long time to address the sample inefficiency.</li>
+<li><strong>Rare events.</strong> Due to the stochasticity, dealing with rare events is particularly difficult to learn from experience alone.</li>
+<li><strong>Hard to explain.</strong> The stochasticity can sometimes make it hard to explain why a phenomenon occurred in a simulation.</li>
+</ol>
+<p>In contrast, <strong>human learning is highly efficient.</strong> Thus, as a model of human behavior, this basic reinforcement learning update scheme is implausible:</p>
+<ul>
+<li>Human cognition is not that simplistic, and their actions are not that stochastic.</li>
+<li>Humans typically build and use a model of the world around them.</li>
+<li>Sometimes, it is possible to invest into multiple options at the same time</li>
+</ul>
+<p>How can we address these challenges?</p>
+</section>
+<section id="dynamics-of-collective-reinforcement-learning" class="level3">
+<h3 class="anchored" data-anchor-id="dynamics-of-collective-reinforcement-learning">Dynamics of collective reinforcement learning</h3>
+<p>The essential idea of the collective reinforcement learning dynamics approach is to <strong>replace</strong> the <strong>individual sample realizations</strong> of the temporal-difference reward-prediction error <strong>with its strategy average</strong> plus a small error term,</p>
+<p><span class="math display">\[\boldsymbol \delta \leftarrow {\boldsymbol\delta_\mathbf{x}} + \boldsymbol\epsilon.\]</span></p>
+<p>Thus, collective reinforcement learning dynamics <strong>describe how agents with access to</strong> (a good approximation of) <strong>the strategy-average reward-prediction error would learn</strong>.</p>
+<p>There are multiple interpretations to motivate how the agents can obtain the strategy averages:</p>
+<ul>
+<li><strong>Model-based learners</strong>. Agents have a model of how the environment works, including how the other agents behave currently, but not how the other agents learn. The agents use their world model to stabilize learning. In the limit of a perfect model (and sufficient cognitive resources), the error term vanishes, <span class="math inline">\(\boldsymbol\epsilon \rightarrow 0\)</span>.</li>
+<li><strong>Batch learners</strong>. The agents store experiences (state observations, rewards, actions, next state observations) inside a memory batch and replay these experiences to make the learning more stable. Batch learning is a common algorithmic technique in machine learning. In the limit of an infinite memory batch, the error term vanishes, <span class="math inline">\(\boldsymbol\epsilon \rightarrow 0\)</span> <span class="citation" data-cites="Barfuss2020">(<a href="References.html#ref-Barfuss2020" role="doc-biblioref">Barfuss, 2020</a>)</span>.</li>
+<li><strong>Different timescales</strong>. The agents learn on two different time scales. On one time scale, the agents interact with the environment, collecting experiences and integrating them to improve their quality estimates while keeping their strategies fixed. On the other time scale, they use the accumulated experiences to adapt their strategy. Timescale separation is a common technique used in theoretical physics. In the limit of a complete time scale separation, having infinite experiences between two strategy updates, the error term vanishes, <span class="math inline">\(\boldsymbol\epsilon \rightarrow 0\)</span> <span class="citation" data-cites="Barfuss2022">(<a href="References.html#ref-Barfuss2022" role="doc-biblioref">Barfuss, 2022</a>)</span>.</li>
+<li><strong>Proportional investors</strong>. Instead of choosing actions individually, agents can invest an endowment into actions proportional to their policy. Assuming by analogy, that the environment is not in one of its states but described by its state distribution, agents receive feedback proportionally to their investment. When there is no noise in the rewards itself, the error term vanishes, <span class="math inline">\(\boldsymbol\epsilon \rightarrow 0\)</span></li>
+</ul>
+<p>In the following, we focus on the idealized case of a vanishing error term, <span class="math inline">\(\boldsymbol\epsilon \rightarrow 0\)</span>.</p>
+</section>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning goals</h3>
+<p>After this chapter, students will be able to:</p>
+<ul>
+<li>Explain the rationale of a dynamic systems treatment of reinforcement learning for complex human-environment interactions.</li>
+<li>Study dynamic system properties of multi-agent reinforcement learning in human-environment models</li>
+<li>Use open-source Python packages.</li>
+</ul>
+<p>In the next section, we will <strong>derive</strong> the strategy-average deterministic approximation model of the multi-agent reinforcement learning process. It goes beyond this lecture to implement the learning dynamics ourselves (although we could if we invested enough time). Luckily, we can utilize an open-source Python package to <strong>apply</strong> and study the learning dynamics, which we will do in the section afterward.</p>
+</section>
+</section>
+<section id="derivation" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="derivation"><span class="header-section-number">11.2</span> Derivation</h2>
+<p>We import our usual libraries.</p>
+<div id="11f33209-d5ed-4584-b8fe-d00cf936f63b" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, we install the <code>pyCRLD</code> package from Github to compare the mathematical derivation with the respective code method.</p>
+<pre><code>!pip install git+https://github.com/barfusslab/pyCRLD.git</code></pre>
+<div id="9ab6d476-dbe0-4085-bcb9-5129a936a566" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Agents.Base <span class="im">import</span> abase <span class="im">as</span> AgentBaseClass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>From <a href="#eq-rewardpredictionerror" class="quarto-xref">Equation&nbsp;<span>11.2</span></a>, <span class="math display">\[
+\delta^i_t(s_t, a_t) = (1-\gamma^i) r^i_t + \gamma^i \mathcal{Q}^i_n(s_{t+1}, a_{t+1}) - \mathcal Q^i_c(s_{t}, a_{t}),
+\]</span></p>
+<p>we see that we need to construct the strategy-average reward, the strategy-average value of the next state, and the strategy-average value of the current state.</p>
+<section id="rewards" class="level3">
+<h3 class="anchored" data-anchor-id="rewards">1) Rewards</h3>
+<p>The strategy-average version of the current reward is obtained by considering each agent <span class="math inline">\(i\)</span> taking action <span class="math inline">\(a\)</span> in state <span class="math inline">\(s\)</span> when all other agents <span class="math inline">\(j\)</span> act according to their strategy <span class="math inline">\(x^j(s, a^j)\)</span>, causing the environment to transition to the next state <span class="math inline">\(s'\)</span> with probability <span class="math inline">\(T(s, \boldsymbol a, s')\)</span>, during which agent <span class="math inline">\(i\)</span> receives reward <span class="math inline">\(R^i(s, \boldsymbol a, s')\)</span>. Mathematically, we write,</p>
+<p><span class="math display">\[
+R^i_\mathbf{x}(s, a) = \sum_{s'} \sum_{a^j} \prod_{j\neq i} x^j(s, a^j) T(s, \boldsymbol a, s') R^i(s, \mathbf a, s').
+\]</span></p>
+<p>Notation-wise, the formulation <span class="math inline">\(\sum_{a^j} \prod_{j\neq i} X^j(s, a^j)\)</span> is short for</p>
+<p><span class="math display">\[
+\sum_{a^j} \prod_{j\neq i} X^j(s, a^j) =
+\sum_{a^1 \in \mathcal A^1} \cdots \sum_{a^{i-1} \in \mathcal A^{i-1}}
+\sum_{a^{i+1} \in \mathcal A^{i+1}} \cdots \sum_{a^N \in \mathcal A^N}
+x^1(s, a^1) \cdots x^{i-1}(s, a^{i-1}) x^{i+1}(s, a^{i+1}) \cdots x^N(s, a^N)
+\]</span></p>
+<p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
+<div id="8585105e-0088-4cea-b2cc-b35587080903" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Risa??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Signature:</span>      AgentBaseClass<span class="ansi-blue-fg">.</span>Risa<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jax<span class="ansi-blue-fg">.</span>Array
+<span class="ansi-red-fg">Call signature:</span> AgentBaseClass<span class="ansi-blue-fg">.</span>Risa<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Type:</span>           PjitFunction
+<span class="ansi-red-fg">String form:</span>    &lt;PjitFunction of &lt;function abase.Risa at 0x140f4c4a0&gt;&gt;
+<span class="ansi-red-fg">File:</span>           ~/Other/miniconda3/envs/iw-dev/lib/python3.11/site-packages/pyCRLD/Agents/Base.py
+<span class="ansi-red-fg">Source:</span>        
+    <span class="ansi-blue-fg">@</span>partial<span class="ansi-blue-fg">(</span>jit<span class="ansi-blue-fg">,</span> static_argnums<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>    
+    <span class="ansi-green-fg">def</span> Risa<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span>
+             Xisa<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray <span class="ansi-red-fg"># Joint strategy</span>
+            <span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># Average reward</span>
+        <span class="ansi-blue-fg">"""Compute average reward `Risa`, given joint strategy `Xisa`"""</span>
+        i <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">;</span> a <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">;</span> s <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">;</span> s_ <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">3</span>  <span class="ansi-red-fg"># Variables</span>
+        j2k <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">+</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># other agents</span>
+        b2d <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">+</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">+</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span> <span class="ansi-blue-fg">+</span> self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># all actions</span>
+        e2f <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">+</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">*</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">+</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">*</span>self<span class="ansi-blue-fg">.</span>N <span class="ansi-blue-fg">+</span> self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># all other acts</span>
+ 
+        sumsis <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">[</span>j2k<span class="ansi-blue-fg">[</span>l<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">,</span> e2f<span class="ansi-blue-fg">[</span>l<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span> <span class="ansi-green-fg">for</span> l <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>  <span class="ansi-red-fg"># sum inds</span>
+        otherX <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>it<span class="ansi-blue-fg">.</span>chain<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>zip<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">*</span><span class="ansi-blue-fg">[</span>Xisa<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> sumsis<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+        args <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>self<span class="ansi-blue-fg">.</span>Omega<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">+</span>j2k<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">[</span>a<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">+</span>b2d<span class="ansi-blue-fg">+</span>e2f<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+</span> otherX\
+            <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">[</span>self<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">+</span>b2d<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">[</span>s_<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>R<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">+</span>b2d<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">[</span>s_<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>
+               <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">,</span> a<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span>
+        <span class="ansi-green-fg">return</span> jnp<span class="ansi-blue-fg">.</span>einsum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> optimize<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>opti<span class="ansi-blue-fg">)</span></pre>
+</div>
+</div>
+</div>
+<p>The <code>@partial(jit, static_argnums=0)</code> decorator above the method makes the code execution fast. <code>jit</code> stands for just-in-time compilation and comes from the Python package <a href="https://jax.readthedocs.io/en/latest/index.html">JAX</a>. Using JAX is very similar to using <code>numpy</code>. Hence, there is the JAX numpy module, <code>jnp</code>. See, for example, <code>jnp.einsum</code> in the code above.</p>
+<p>Another <em>trick</em> is the use of the <code>self.Omega</code> object, which is a tensor of zeros and ones constructed to make the summation <span class="math inline">\(\sum_{a^j} \prod_{j\neq i} X^j(s, a^j)\)</span> work with the fast <code>einsum</code> method.</p>
+</section>
+<section id="next-quality-estimates" class="level3">
+<h3 class="anchored" data-anchor-id="next-quality-estimates">2) Next quality estimates</h3>
+<p>The strategy average of the following state value is likewise computed by averaging the over all actions of the other agents and the following states.</p>
+<p>For each agent <span class="math inline">\(i\)</span>, state <span class="math inline">\(s\)</span>, and action <span class="math inline">\(a\)</span>, all other agents <span class="math inline">\(j\neq i\)</span> choose their action <span class="math inline">\(a^j\)</span> with probability <span class="math inline">\(x^j(s, a^j)\)</span>. Consequently, the environment transitions to the next state <span class="math inline">\(s'\)</span> with probability <span class="math inline">\(T(s, \boldsymbol a, s')\)</span>. At <span class="math inline">\(s'\)</span>, the agent estimates the quality of the next state to be of <span class="math inline">\(v_\mathbf{x}^i(s') = \sum_{a^i \in \mathcal A^i} x^i(s', a^i) q_\mathbf{x}^i(s', a^i)\)</span>. Mathematically, we write,</p>
+<p><span class="math display">\[
+{}^{n}\!{Q}_\mathbf{x}^i(s, a) = \sum_{s'} \sum_{a^j} \prod_{j \neq i} x^j(s, a^j) T(s, \boldsymbol a, s') v_\mathbf{x}^i(s').
+\]</span></p>
+</section>
+<section id="state-values" class="level3">
+<h3 class="anchored" data-anchor-id="state-values">State values</h3>
+<p>We compute the state values <span class="math inline">\(v_\mathbf{x}^i(s)\)</span> exactly like in Chapters <a href="./03.01-SequentialDecisions.html">03.01</a> and <a href="./03.03-DynamicInteractions.html">03.03</a>. We write the <strong>Bellman equation in matrix form</strong> and bring the values <span class="math inline">\(\mathbf v^i_\mathbf{x}\)</span> on one side,</p>
+<p><span class="math display">\[\mathbf v^i_\mathbf{x} = (1-\gamma^i) (\mathbf 1_Z - \gamma^i\underline{\mathbf T}_\mathbf{x})^{-1} \mathbf R^i_\mathbf{x}.\]</span></p>
+<p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
+<div id="5157caee-0ebe-468c-9169-97673d5f1788" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Vis??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Signature:</span>     
+AgentBaseClass<span class="ansi-blue-fg">.</span>Vis<span class="ansi-blue-fg">(</span>
+    self<span class="ansi-blue-fg">,</span>
+    Xisa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array<span class="ansi-blue-fg">,</span>
+    Ris<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
+    Tss<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
+    Risa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jax<span class="ansi-blue-fg">.</span>Array
+<span class="ansi-red-fg">Call signature:</span> AgentBaseClass<span class="ansi-blue-fg">.</span>Vis<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Type:</span>           PjitFunction
+<span class="ansi-red-fg">String form:</span>    &lt;PjitFunction of &lt;function abase.Vis at 0x140f4cb80&gt;&gt;
+<span class="ansi-red-fg">File:</span>           ~/Other/miniconda3/envs/iw-dev/lib/python3.11/site-packages/pyCRLD/Agents/Base.py
+<span class="ansi-red-fg">Source:</span>        
+    <span class="ansi-blue-fg">@</span>partial<span class="ansi-blue-fg">(</span>jit<span class="ansi-blue-fg">,</span> static_argnums<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>            
+    <span class="ansi-green-fg">def</span> Vis<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span>
+            Xisa<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">,</span> <span class="ansi-red-fg"># Joint strategy</span>
+            Ris<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> <span class="ansi-red-fg"># Optional reward for speed-up</span>
+            Tss<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> <span class="ansi-red-fg"># Optional transition for speed-up</span>
+            Risa<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span>  <span class="ansi-red-fg"># Optional reward for speed-up</span>
+           <span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># Average state values</span>
+        <span class="ansi-blue-fg">"""Compute average state values `Vis`, given joint strategy `Xisa`"""</span>
+        <span class="ansi-red-fg"># For speed up</span>
+        Ris <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>Ris<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">,</span> Risa<span class="ansi-blue-fg">=</span>Risa<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> Ris <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> Ris
+        Tss <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>Tss<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> Tss <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> Tss
+        
+        i <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span>  <span class="ansi-red-fg"># agent i</span>
+        s <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span>  <span class="ansi-red-fg"># state s</span>
+        sp <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">2</span>  <span class="ansi-red-fg"># next state s'</span>
+        n <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>newaxis
+        Miss <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>eye<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>Z<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span>n<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">-</span> self<span class="ansi-blue-fg">.</span>gamma<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span> n<span class="ansi-blue-fg">,</span> n<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">*</span> Tss<span class="ansi-blue-fg">[</span>n<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span>
+        
+        invMiss <span class="ansi-blue-fg">=</span> jnp<span class="ansi-blue-fg">.</span>linalg<span class="ansi-blue-fg">.</span>inv<span class="ansi-blue-fg">(</span>Miss<span class="ansi-blue-fg">)</span>
+               
+        <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>pre<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">*</span> jnp<span class="ansi-blue-fg">.</span>einsum<span class="ansi-blue-fg">(</span>invMiss<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">,</span> sp<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> Ris<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> sp<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>
+                                          <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> optimize<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>opti<span class="ansi-blue-fg">)</span></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="transition-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="transition-matrix">Transition matrix</h3>
+<p>The <strong>transition matrix</strong> <span class="math inline">\(\underline{\mathbf T}_\mathbf{x}\)</span> is a <span class="math inline">\(Z \times Z\)</span> matrix, where the element <span class="math inline">\(T_\mathbf{x}(s,s')\)</span> is the probability of transitioning from state <span class="math inline">\(s\)</span> to <span class="math inline">\(s'\)</span> under the joint policy <span class="math inline">\(\mathbf x\)</span>. It is computed as</p>
+<p><span class="math display">\[T_\mathbf{x}(s,s') = \sum_{a^i}\prod_i x^i(s, a^i) T(s, \mathbf a, s').\]</span></p>
+<p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
+<div id="e4e7bf56-634e-4316-806d-3907ccbbffd9" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Tss??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Signature:</span>      AgentBaseClass<span class="ansi-blue-fg">.</span>Tss<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jax<span class="ansi-blue-fg">.</span>Array
+<span class="ansi-red-fg">Call signature:</span> AgentBaseClass<span class="ansi-blue-fg">.</span>Tss<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Type:</span>           PjitFunction
+<span class="ansi-red-fg">String form:</span>    &lt;PjitFunction of &lt;function abase.Tss at 0x140f4afc0&gt;&gt;
+<span class="ansi-red-fg">File:</span>           ~/Other/miniconda3/envs/iw-dev/lib/python3.11/site-packages/pyCRLD/Agents/Base.py
+<span class="ansi-red-fg">Source:</span>        
+    <span class="ansi-blue-fg">@</span>partial<span class="ansi-blue-fg">(</span>jit<span class="ansi-blue-fg">,</span> static_argnums<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>    
+    <span class="ansi-green-fg">def</span> Tss<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> 
+            Xisa<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray  <span class="ansi-red-fg"># Joint strategy</span>
+           <span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># Average transition matrix</span>
+        <span class="ansi-blue-fg">"""Compute average transition model `Tss`, given joint strategy `Xisa`"""</span>
+        <span class="ansi-red-fg"># i = 0  # agent i (not needed)</span>
+        s <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span>  <span class="ansi-red-fg"># state s</span>
+        sprim <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">2</span>  <span class="ansi-red-fg"># next state s'</span>
+        b2d <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">+</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># all actions</span>
+        X4einsum <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>it<span class="ansi-blue-fg">.</span>chain<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>zip<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">,</span> b2d<span class="ansi-blue-fg">[</span>a<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span> <span class="ansi-green-fg">for</span> a <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+        args <span class="ansi-blue-fg">=</span> X4einsum <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">[</span>self<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">+</span>b2d<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">[</span>sprim<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">,</span> sprim<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span>
+        <span class="ansi-green-fg">return</span> jnp<span class="ansi-blue-fg">.</span>einsum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> optimize<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>opti<span class="ansi-blue-fg">)</span></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="state-rewards" class="level3">
+<h3 class="anchored" data-anchor-id="state-rewards">State rewards</h3>
+<p>The <strong>average reward</strong> <span class="math inline">\(\mathbf R^i_\mathbf{x}\)</span> is a <span class="math inline">\(N \times Z\)</span>-matrix, where the element <span class="math inline">\(R_\mathbf{x}^i(s)\)</span> is the expected reward agent <span class="math inline">\(i\)</span> receives in state <span class="math inline">\(s\)</span> under the joint policy <span class="math inline">\(\mathbf x\)</span>. It is computed as</p>
+<p><span class="math display">\[ R_\mathbf{x}^i(s) = \sum_{s'} \sum_{a^i}\prod_i x^i(s, a^i) T(s, \mathbf a, s') R^i(s, \mathbf a, s').\]</span></p>
+<p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
+<div id="795972a3-3453-4731-bbb7-877ee130e731" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Ris??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Signature:</span>      AgentBaseClass<span class="ansi-blue-fg">.</span>Ris<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array<span class="ansi-blue-fg">,</span> Risa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jax<span class="ansi-blue-fg">.</span>Array
+<span class="ansi-red-fg">Call signature:</span> AgentBaseClass<span class="ansi-blue-fg">.</span>Ris<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Type:</span>           PjitFunction
+<span class="ansi-red-fg">String form:</span>    &lt;PjitFunction of &lt;function abase.Ris at 0x140f4bd80&gt;&gt;
+<span class="ansi-red-fg">File:</span>           ~/Other/miniconda3/envs/iw-dev/lib/python3.11/site-packages/pyCRLD/Agents/Base.py
+<span class="ansi-red-fg">Source:</span>        
+    <span class="ansi-blue-fg">@</span>partial<span class="ansi-blue-fg">(</span>jit<span class="ansi-blue-fg">,</span> static_argnums<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>    
+    <span class="ansi-green-fg">def</span> Ris<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span>
+            Xisa<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">,</span> <span class="ansi-red-fg"># Joint strategy</span>
+            Risa<span class="ansi-blue-fg">:</span>jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span> <span class="ansi-red-fg"># Optional reward for speed-up</span>
+           <span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jnp<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># Average reward</span>
+        <span class="ansi-blue-fg">"""Compute average reward `Ris`, given joint strategy `Xisa`"""</span> 
+        <span class="ansi-green-fg">if</span> Risa <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># for speed up</span>
+            <span class="ansi-red-fg"># Variables      </span>
+            i <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">;</span> s <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">;</span> sprim <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">;</span> b2d <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">+</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+        
+            X4einsum <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>it<span class="ansi-blue-fg">.</span>chain<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>zip<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">,</span>
+                                    <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">,</span> b2d<span class="ansi-blue-fg">[</span>a<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span> <span class="ansi-green-fg">for</span> a <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>N<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+            args <span class="ansi-blue-fg">=</span> X4einsum <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">[</span>self<span class="ansi-blue-fg">.</span>T<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">+</span>b2d<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">[</span>sprim<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span>
+                               self<span class="ansi-blue-fg">.</span>R<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">+</span>b2d<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">[</span>sprim<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span>
+            <span class="ansi-green-fg">return</span> jnp<span class="ansi-blue-fg">.</span>einsum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> optimize<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>opti<span class="ansi-blue-fg">)</span>
+        
+        <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># Compute Ris from Risa </span>
+            i<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">;</span> s<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">;</span> a<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span>
+            args <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>Xisa<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">,</span> a<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> Risa<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">,</span> a<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span>
+            <span class="ansi-green-fg">return</span> jnp<span class="ansi-blue-fg">.</span>einsum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> optimize<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>opti<span class="ansi-blue-fg">)</span></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="current-quality-estimates" class="level3">
+<h3 class="anchored" data-anchor-id="current-quality-estimates">3) Current quality estimates</h3>
+<p>Assuming that agents select their actions according to a softmax policy function,</p>
+<p><span id="eq-policyfunction"><span class="math display">\[
+x^i_t(s, a) = \frac{\exp \beta^i Q^i_t(s, a)}{\sum_{b}\exp \beta^i Q^i_t(s, b)},
+\tag{11.3}\]</span></span></p>
+<p>where <span class="math inline">\(\beta^i\)</span> is the intensity of choice of agent <span class="math inline">\(i\)</span>, we can <strong>reformulate the update of the state-action quality estimates (<a href="#eq-qualityupdate" class="quarto-xref">Equation&nbsp;<span>11.1</span></a>) into an update of the policy</strong>, i.e., state-action probabilities. Doing so reduces the dynamic system’s state space size, as we do not need to track the quality estimates of each agent in each state-action pair. Instead, we only need to track the state-action probabilities of each agent in each state-action pair. This is advantageous as the <strong>lower dimensional dynamic state space is more straightforward to analyze and visualize</strong>.</p>
+<p>For the derivation of the joint policy update, we need to solve the policy function for <span class="math inline">\(Q^i_t(s, a)\)</span>,</p>
+<p><span class="math display">\[\begin{align}
+Q^i_t(s,a) &amp;= \frac{1}{\beta^i} \ln x^i_t(s, a) + \frac{1}{\beta^i}\ln\left[ \sum_b \exp \beta^i Q^i_t(s,b) \right] \\
+&amp;= \frac{1}{\beta^i} \ln x^i_t(s, a) + C^i(s)
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(C^i(s)\)</span> denots a constant in actions. It may vary for each agent and state but not for actions.</p>
+<p>The step-by-step derivation of the joint policy update is as follows:</p>
+<p><span class="math display">\[\begin{align}
+    x^i_{t+1}(s, a) &amp;= \frac{\exp \beta^i Q^i_{t+1}(s, a)}{\sum_{b} \exp \beta^i Q^i_{t+1}(s,b)} \\[1em]
+    %
+    %
+    &amp;= \frac{\exp\left[ \beta^i \left(Q^i_{t}(s, a) + \alpha^i \delta^i_t(s, a)\right)\right]}
+    {\sum_{b} \exp\left[ \beta^i \left(Q_{t}(s, b) + \alpha^i \delta^i_t(s, b)\right)\right]}
+    \qquad \text{Inserting the belief update} \\[1em]
+    %
+    %
+    &amp;= \frac{\exp\left[ \beta^i Q^i_{t}(s, a)\right] \exp\left[\alpha^i\beta^i \delta^i_t(s, a)\right]}
+    {\sum_{b} \exp\left[ \beta^i Q_{t}(s, b) \right] \exp\left[ \alpha^i\beta^i \delta^i_t(s, b)\right]}
+    \qquad \text{Factoring the exponentials} \\[1em]
+    %
+    %
+    %
+    &amp;= \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \delta^i_t(s, a)\right]}
+    {\sum_{b} x^i_t(s, b) \exp\left[ \alpha^i\beta^i \delta^i_t(s, b)\right]}
+    \qquad \text{Multiplying by $\frac{\frac{1}{z}}{\frac{1}{z}}$ with $z=\sum_{c} \exp\beta^i Q^i_t(s, c)$}\\[1em]
+    %
+    %
+    &amp;= \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \delta^i_\mathbf{x}(s, a)\right]}
+    {\sum_{b} x^i_t(s, b) \exp\left[ \alpha^i\beta^i \delta^i_\mathbf{x}(s, b)\right]}
+    \qquad \text{Replacing sample $\delta^i_t$ with strategy-average $\delta^i_\mathbf{x}$}\\[1em]
+    %
+    %
+    %
+    &amp;= \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \left(
+        (1-\gamma^i)R^i_\mathbf{x}(s,a)
+        + \gamma^i \cdot {}^{n}\!{Q}_\mathbf{x}^i(s, a)
+        - Q^i_t(s,a)\right)\right]}
+    {\sum_{b} x^i_t(s, b) \exp\left[ \alpha^i\beta^i \left(
+        (1-\gamma^i)R^i_\mathbf{x}(s,b)
+        + \gamma^i \cdot {}^{n}\!{Q}_\mathbf{x}^i(s, b)
+        - Q^i_t(s,b)\right)\right]}
+    \qquad \text{Filling $\delta^i_\mathbf{x}$}\\[1em]
+    %
+    %
+    %
+    &amp;= \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \left(
+        (1-\gamma^i)R^i_\mathbf{x}(s,a)
+        + \gamma^i \cdot {}^{n}\!{Q}_\mathbf{x}^i(s, a)
+        - \frac{1}{\beta^i} \ln x^i_t(s,a)\right)\right]}
+    {\sum_{b} x^i_t(s, b) \exp\left[ \alpha^i\beta^i \left(
+        (1-\gamma^i)R^i_\mathbf{x}(s,b)
+        + \gamma^i \cdot {}^{n}\!{Q}_\mathbf{x}^i(s, b)
+        - \frac{1}{\beta^i} \ln x^i_t(s,b)\right)\right]} \\
+    &amp; \qquad \text{Using $Q^i_t(s, a) = \frac{1}{\beta^i} \ln x_t(s, a) + C^i(s)$}
+\end{align}\]</span></p>
+<p><strong>In summary,</strong> the strategy-average of the current state-action value, <span class="math inline">\(Q_t^i(s,a)\)</span> is</p>
+<p><span class="math display">\[\frac{1}{\beta^i} \ln x^i(s, a).\]</span></p>
+</section>
+<section id="strategy-average-reward-prediction-temporal-difference-error" class="level3">
+<h3 class="anchored" data-anchor-id="strategy-average-reward-prediction-temporal-difference-error">Strategy-average reward-prediction temporal-difference error</h3>
+<div id="66072cf3-8ecd-4b07-b3c1-e657d866040b" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Agents.StrategySARSA <span class="im">import</span> stratSARSA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Taken together, the strategy-average reward-prediction error is</p>
+<p><span class="math display">\[
+\delta_\mathbf{x}^i(s, a) = (1-\gamma^i) R^i_\mathbf{x}(s, a) + \gamma^i \cdot {}^{n}\!{Q}_\mathbf{x}^i(s, a) - \frac{1}{\beta^i} \ln x^i(s, a),
+\]</span></p>
+<p>to be inserted in the joint policy update,</p>
+<p><span class="math display">\[
+x^i_{t+1}(s, a) = \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \delta^i_\mathbf{x}(s, a)\right]}
+    {\sum_{b} x^i_t(s, b) \exp\left[ \alpha^i\beta^i \delta^i_\mathbf{x}(s, b)\right]}.
+\]</span></p>
+<p><strong>We made the strategy update independent of the quality beliefs</strong>.</p>
+<p>In the <code>pyCRLD</code> package, update step is implement as follows,</p>
+<div id="f4ca8688-9bdb-453e-8351-4009297ee9ac" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stratSARSA.step??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Signature:</span>      stratSARSA<span class="ansi-blue-fg">.</span>step<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> tuple
+<span class="ansi-red-fg">Call signature:</span> stratSARSA<span class="ansi-blue-fg">.</span>step<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Type:</span>           PjitFunction
+<span class="ansi-red-fg">String form:</span>    &lt;PjitFunction of &lt;function strategybase.step at 0x140f907c0&gt;&gt;
+<span class="ansi-red-fg">File:</span>           ~/Other/miniconda3/envs/iw-dev/lib/python3.11/site-packages/pyCRLD/Agents/StrategyBase.py
+<span class="ansi-red-fg">Source:</span>        
+    <span class="ansi-blue-fg">@</span>partial<span class="ansi-blue-fg">(</span>jit<span class="ansi-blue-fg">,</span> static_argnums<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
+    <span class="ansi-green-fg">def</span> step<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span>
+             Xisa  <span class="ansi-red-fg"># Joint strategy</span>
+            <span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> tuple<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># (Updated joint strategy, Prediction error)</span>
+        <span class="ansi-blue-fg">"""</span>
+<span class="ansi-blue-fg">        Performs a learning step along the reward-prediction/temporal-difference error</span>
+<span class="ansi-blue-fg">        in strategy space, given joint strategy `Xisa`.</span>
+<span class="ansi-blue-fg">        """</span>
+        TDe <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>TDerror<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">)</span>
+        n <span class="ansi-blue-fg">=</span> jnp<span class="ansi-blue-fg">.</span>newaxis
+        XexpaTDe <span class="ansi-blue-fg">=</span> Xisa <span class="ansi-blue-fg">*</span> jnp<span class="ansi-blue-fg">.</span>exp<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>alpha<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">*</span> TDe<span class="ansi-blue-fg">)</span>
+        <span class="ansi-green-fg">return</span> XexpaTDe <span class="ansi-blue-fg">/</span> XexpaTDe<span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> keepdims<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> TDe</pre>
+</div>
+</div>
+</div>
+<p>The <code>step</code> method comes from a parent class, called <code>strategybase</code>, and calls the <code>TDerror</code> method, which is initialized upon creating a specific agent collective with the concrete reward-prediction error method from the SARSA agent.</p>
+<p>The reward-prediction error of the SARSA agent is implemented as follows.</p>
+<div id="48fd867a-937e-43f3-92f7-db00b44f0bf6" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stratSARSA.RPEisa??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Signature:</span>      stratSARSA<span class="ansi-blue-fg">.</span>RPEisa<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">,</span> norm<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> numpy<span class="ansi-blue-fg">.</span>ndarray
+<span class="ansi-red-fg">Call signature:</span> stratSARSA<span class="ansi-blue-fg">.</span>RPEisa<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Type:</span>           PjitFunction
+<span class="ansi-red-fg">String form:</span>    &lt;PjitFunction of &lt;function stratSARSA.RPEisa at 0x140f905e0&gt;&gt;
+<span class="ansi-red-fg">File:</span>           ~/Other/miniconda3/envs/iw-dev/lib/python3.11/site-packages/pyCRLD/Agents/StrategySARSA.py
+<span class="ansi-red-fg">Source:</span>        
+    <span class="ansi-blue-fg">@</span>partial<span class="ansi-blue-fg">(</span>jit<span class="ansi-blue-fg">,</span> static_argnums<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+    <span class="ansi-green-fg">def</span> RPEisa<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span>
+               Xisa<span class="ansi-blue-fg">,</span>  <span class="ansi-red-fg"># Joint strategy</span>
+               norm<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span> <span class="ansi-red-fg"># normalize error around actions? </span>
+               <span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> np<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># RP/TD error</span>
+        <span class="ansi-blue-fg">"""</span>
+<span class="ansi-blue-fg">        Compute reward-prediction/temporal-difference error for </span>
+<span class="ansi-blue-fg">        strategy SARSA dynamics, given joint strategy `Xisa`.</span>
+<span class="ansi-blue-fg">        """</span>
+        R <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>Risa<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">)</span>
+        NextQ <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>NextQisa<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">,</span> Risa<span class="ansi-blue-fg">=</span>R<span class="ansi-blue-fg">)</span>
+        n <span class="ansi-blue-fg">=</span> jnp<span class="ansi-blue-fg">.</span>newaxis
+        E <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>pre<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">*</span>R <span class="ansi-blue-fg">+</span> self<span class="ansi-blue-fg">.</span>gamma<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">*</span>NextQ <span class="ansi-blue-fg">-</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">/</span>self<span class="ansi-blue-fg">.</span>beta<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span> n<span class="ansi-blue-fg">,</span> n<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">*</span> jnp<span class="ansi-blue-fg">.</span>log<span class="ansi-blue-fg">(</span>Xisa<span class="ansi-blue-fg">)</span>
+        E <span class="ansi-blue-fg">*=</span> self<span class="ansi-blue-fg">.</span>beta<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">,</span>n<span class="ansi-blue-fg">]</span>
+        E <span class="ansi-blue-fg">=</span> E <span class="ansi-blue-fg">-</span> E<span class="ansi-blue-fg">.</span>mean<span class="ansi-blue-fg">(</span>axis<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> keepdims<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> norm <span class="ansi-green-fg">else</span> E
+        <span class="ansi-green-fg">return</span> E</pre>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="application" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="application"><span class="header-section-number">11.3</span> Application</h2>
+<p>Let us apply the collective reinforcement learning dynamics to the ecological public good environment from Chapter <a href="./03.03-DynamicInteractions.html">03.03</a>. We will highlight the complex dynamics phenomena that arise from the collective reinforcement learning dynamics <span class="citation" data-cites="BarfussEtAl2024a">(<a href="References.html#ref-BarfussEtAl2024a" role="doc-biblioref">Barfuss et al., 2024</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/03.03-EcologicalPublicGood.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Ecological public good collective decision-making environment</figcaption>
+</figure>
+</div>
+<p>For convenience, we import the environment class from the <code>pyCRLD</code> package. However, you now possess all the skills needed to implement it on your own.</p>
+<div id="b2c03825-028d-4800-8c9f-8b77ac122596" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Environments.EcologicalPublicGood <span class="im">import</span> EcologicalPublicGood <span class="im">as</span> EcoPG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We initialize the environment with two agents, a benefit-to-cost ratio of <span class="math inline">\(f=1.2\)</span>, a cost of <span class="math inline">\(c=5\)</span>, a collapse impact of <span class="math inline">\(m=-5\)</span>, a collapse leverage of <span class="math inline">\(0.2\)</span>, and a recovery probability of <span class="math inline">\(0.01\)</span>. We set the <code>degraded_choice</code> parameter to <code>False</code> to remove all agency from the agents in the degraded state. In other word, regardless what they do in the degraded state, they have to wait for the recovery on average <span class="math inline">\(1/q_r\)</span> timesteps.</p>
+<div id="3ad84bbd-eecf-45db-a1d9-ffb41a9b50f1" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inititalize the ecological public good environment</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>These parameters ensure to have the same short-term welfare values in the prosperous state as shown in the Figure above.</p>
+<div id="0b4fdc42-0816-4ff6-be29-b7d33ed52a11" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> env.Sset.index(<span class="st">'p'</span>)<span class="op">;</span> g <span class="op">=</span> env.Sset.index(<span class="st">'g'</span>) <span class="co"># indices of the prosperous and degraded state</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Agent zero's welfare</span><span class="ch">\n</span><span class="st">"</span>, env.R[<span class="dv">0</span>, p, :, :, p])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Agent one's welfare</span><span class="ch">\n</span><span class="st">"</span>, env.R[<span class="dv">1</span>, p, :, :, p])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Agent zero's welfare
+ [[ 1. -2.]
+ [ 3.  0.]]
+
+Agent one's welfare
+ [[ 1.  3.]
+ [-2.  0.]]</code></pre>
+</div>
+</div>
+<section id="learning-trajectories" class="level3">
+<h3 class="anchored" data-anchor-id="learning-trajectories">Learning trajectories</h3>
+<p>We create a multi-agent-environment interface <code>MAEi</code> composed of SARSA agents with a learning rate of <span class="math inline">\(0.05\)</span>, a choice intensity of <span class="math inline">\(50.0\)</span>, and a discount factor of <span class="math inline">\(0.75\)</span>. We set the <code>use_prefactor</code> parameter to <code>True</code> to use the pre-factor <span class="math inline">\((1-\gamma)\)</span> in the policy update.</p>
+<div id="70a8c9e7-e41d-48bf-8604-37b3f092c3f7" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>MAEi <span class="op">=</span> stratSARSA(env, learning_rates<span class="op">=</span><span class="fl">0.05</span>, choice_intensities<span class="op">=</span><span class="fl">50.0</span>, discount_factors<span class="op">=</span><span class="fl">0.75</span>, use_prefactor<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let us evolve the learning from a random initial joint policy,</p>
+<div id="32569888-af43-4afd-aa00-154548dba656" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> MAEi.random_softmax_strategy()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>Array([[[0.65391284, 0.34608716],
+        [0.540063  , 0.45993698]],
+
+       [[0.23748323, 0.7625168 ],
+        [0.6527203 , 0.34727973]]], dtype=float32)</code></pre>
+</div>
+</div>
+<p>for a maximum of 5000 time steps with a convergence tolerance of <span class="math inline">\(10^{-5}\)</span>. Thus, if two consecutive joint policies are closer than <span class="math inline">\(10^{-5}\)</span>, the learning process stops.</p>
+<div id="0ddb87a8-01b8-4320-ab7c-d676c690639f" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>policy_trajectory_Xtisa, fixedpointreached <span class="op">=</span> MAEi.trajectory(x, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fixedpointreached</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>We have reached a fixed point and the learning trajecotry has a length of</p>
+<div id="a1a82438-d0cd-4884-86b6-3c8d012cfa19" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(policy_trajectory_Xtisa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>153</code></pre>
+</div>
+</div>
+<p>Let us visualize the time evolution of learning trajectory.</p>
+<div id="a360bdc5-c64d-4efb-9fca-ad229234c2c4" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> env.Aset[<span class="dv">0</span>].index(<span class="st">'c'</span>)<span class="op">;</span> d <span class="op">=</span> env.Aset[<span class="dv">0</span>].index(<span class="st">'d'</span>)  <span class="co"># action indices</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, p, c], label<span class="op">=</span><span class="st">'Agent zero in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, p, c], label<span class="op">=</span><span class="st">'Agent one in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, ls<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, g, c], label<span class="op">=</span><span class="st">'Agent zero in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, g, c], label<span class="op">=</span><span class="st">'Agent one in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, ls<span class="op">=</span><span class="st">'--'</span>)<span class="op">;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Cooperation probability'</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Let’s repeat this serveral times from different random joint policies. <strong>Exectue the cell below multiple times and observe what happens</strong>.</p>
+<div id="989e6815-ae45-4d1a-8b45-8eac9b750229" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> MAEi.random_softmax_strategy()</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>policy_trajectory_Xtisa, fixedpointreached <span class="op">=</span> MAEi.trajectory(x, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, p, c], label<span class="op">=</span><span class="st">'Agent zero in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, p, c], label<span class="op">=</span><span class="st">'Agent one in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, ls<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, g, c], label<span class="op">=</span><span class="st">'Agent zero in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, g, c], label<span class="op">=</span><span class="st">'Agent one in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, ls<span class="op">=</span><span class="st">'--'</span>)<span class="op">;</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Cooperation probability'</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Some observations</strong> you should make:</p>
+<ul>
+<li><strong>Learning occurs fast</strong>. The agents quickly attain a stable state within just a few hundred steps, and their execution is remarkably rapid.</li>
+<li><strong>Learning is deterministic</strong>. Given an initial joint policy, the learning process has no stochastic fluctuations. The agents learn deterministically. However, <em>what</em> they learn is a probability distribution.</li>
+<li><strong>Outcome is bistable</strong>. The agents learn to either cooperate or defect completely in the prosperous state, depending on where they start. If they start closer to cooperation, they learn to cooperate. If they start closer to defection, they learn to defect.</li>
+<li><strong>Agents randomize</strong>. In the degraded state, agents learn to randomize over actions fully, i.e., choose each of their two options with a probability of 0.5. This is because the agents cannot influence the outcome of their actions and, thus, are driven only by exploration. You can imagine the desire to explore as a form of intrinsic motivation that dominates here without controllable extrinsic rewards.</li>
+</ul>
+</section>
+<section id="flow-plot" class="level3">
+<h3 class="anchored" data-anchor-id="flow-plot">Flow plot</h3>
+<p>The determinism and the fast computation allow for an improved visualization of the learning process. As with any deterministic dynamic system, we can visualize the flow plot of the dynamics (See Chapter <a href="./02.01-Nonlinearity.html">02.01</a>).</p>
+<p>In the <code>pyCRLD</code> package, we have a special module for that purpose.</p>
+<div id="794e39d6-64cf-4477-ba12-58f1b1077892" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Utils <span class="im">import</span> FlowPlot <span class="im">as</span> fp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Applying this function yields a flow plot of the learning dynamics which highlights the bistability of the learning process in the prosperous state and the randomization in the degraded state.</p>
+<div id="498b1c4a-63b6-4f90-a4e8-0f8dc398cdfa" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ([<span class="dv">0</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on x axis</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ([<span class="dv">1</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on y axis</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>eps<span class="op">=</span><span class="fl">10e-3</span><span class="op">;</span> action_probability_points <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span>eps, <span class="fl">1.0</span><span class="op">-</span>eps, <span class="dv">9</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fp.plot_strategy_flow(MAEi, x, y, action_probability_points, conds<span class="op">=</span>env.Sset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Basic flow of collective reinforcement learning dynamics.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These flow plots allow for a geometric understanding of the collective learning dynamics over the whole joint policy space. In contrast to a standard flow plot, per default, the <strong>arrows show the temporal-difference reward prediction error</strong>. Thus, they have a cognitive interpretation.</p>
+<p>We may use them to study how the parameters of the learning agents and the environment influence the outcome.</p>
+<div id="3795a5ec-00f3-46ac-bbb3-69c8f60c6eca" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow(DiscountFactor<span class="op">=</span><span class="fl">0.75</span>, ChoiceIntensity<span class="op">=</span><span class="dv">50</span>, CollapseImpact<span class="op">=-</span><span class="dv">5</span>, CollapseLeverage<span class="op">=</span><span class="fl">0.2</span>):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=</span>CollapseImpact, qc<span class="op">=</span>CollapseLeverage,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>                qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    MAEi <span class="op">=</span> stratSARSA(env, learning_rates<span class="op">=</span><span class="fl">0.05</span>, choice_intensities<span class="op">=</span>ChoiceIntensity, </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>                      discount_factors<span class="op">=</span>DiscountFactor, use_prefactor<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> ([<span class="dv">0</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on x axis</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> ([<span class="dv">1</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on y axis</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    eps<span class="op">=</span><span class="fl">10e-3</span><span class="op">;</span> action_probability_points <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span>eps, <span class="fl">1.0</span><span class="op">-</span>eps, <span class="dv">9</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> fp.plot_strategy_flow(MAEi, x, y, action_probability_points, conds<span class="op">=</span>env.Sset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When working with this material in a Jupyter notebook, we can interactively study the parameter dependence of the flow plot.</p>
+<p>For example, caring more for the future makes the cooperative basin of attraction larger.</p>
+<div id="396fc926-b4d8-456d-9063-e6c45f4206d4" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_flow(DiscountFactor<span class="op">=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Learning flow with more future caring.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>So does a more severe collapse impact,</p>
+<div id="ab63c0d1-d998-4603-be7f-00cb985c80ab" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plot_flow(CollapseImpact<span class="op">=-</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Learning flow with a more severe collapse impact.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>and a collapse that occurse more likely or faster.</p>
+<div id="ced89f57-25c1-4c1f-a05e-a530c3c8b0ca" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot_flow(CollapseLeverage<span class="op">=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Learning flow with a higher collapse leverage.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The flow in the degraded state is unaffected by these parameter modulations.</p>
+<p>A very low choice intensity makes the desire to explore (i.e., randomize) dominate also in the prosperous state.</p>
+<div id="85a67087-a89b-47d3-9459-f1f79319bef7" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plot_flow(ChoiceIntensity<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Learning flow with a small intensity of choice makes explorative behavior dominant.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="critical-transition" class="level3">
+<h3 class="anchored" data-anchor-id="critical-transition">Critical transition</h3>
+<p>Let us study the learning behavior around the separatrix of the bistable region.</p>
+<p>First, we define a function that allows us to enter initial cooperation probabilities for both agents and return a proper joint policy. This function sets the cooperation probability in the degraded state to 0.5 for both agents, as we have seen that the agents will eventually learn to randomize in the degraded state and we are not interested in that part of the learning behavior.</p>
+<div id="c3b11d73-2049-4186-a007-cedf6b1b7d3d" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compile_strategy(p0c:<span class="bu">float</span>,  <span class="co"># cooperation probability of agent zero</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                     p1c:<span class="bu">float</span>):  <span class="co"># cooperation probability of agent one</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    Pi <span class="op">=</span> np.array([<span class="fl">0.5</span>, p0c])  <span class="co"># coop. prob. in the degraded state set to 0.5</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    Pj <span class="op">=</span> np.array([<span class="fl">0.5</span>, p1c])</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    xi <span class="op">=</span> np.array([Pi, <span class="dv">1</span><span class="op">-</span>Pi]).T</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    xj <span class="op">=</span> np.array([Pj, <span class="dv">1</span><span class="op">-</span>Pj]).T</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([xi, xj])              </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We setup the multiagent-environment interaface.</p>
+<div id="4c45e23f-b462-45a3-bce6-480228f712ab" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>MAEi <span class="op">=</span> stratSARSA(env<span class="op">=</span>env, learning_rates<span class="op">=</span><span class="fl">0.01</span>, choice_intensities<span class="op">=</span><span class="dv">100</span>, discount_factors<span class="op">=</span><span class="fl">0.75</span>,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                  use_prefactor<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To get a feeling for the critical transition, we create three well chosen learning trajectories.</p>
+<div id="131e9be6-771b-4488-963b-f643c542e5af" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>xtrajs <span class="op">=</span> []  <span class="co"># storing strategy trajectories </span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>fprs <span class="op">=</span> []    <span class="co"># and whether a fixed point is reached</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pc <span class="kw">in</span> [<span class="fl">0.18</span>, <span class="fl">0.19</span>, <span class="fl">0.20</span>]:  <span class="co"># cooperation probability of agent 1</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> compile_strategy(pc, <span class="fl">0.95</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    xtraj, fixedpointreached <span class="op">=</span> MAEi.trajectory(X, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    xtrajs.append(xtraj)<span class="op">;</span> fprs.append(fixedpointreached)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Trajectory length:"</span>,<span class="bu">len</span>(xtraj))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Trajectory length: 178
+Trajectory length: 234
+Trajectory length: 174</code></pre>
+</div>
+</div>
+<p>We plot them ontop of the learning flow.</p>
+<div id="9eae85a8-a477-45af-b407-aa876c49a607" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.5</span>))<span class="op">;</span> ax <span class="op">=</span> fig.add_subplot(<span class="dv">132</span>) <span class="co"># to center the plot</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fig.add_subplot(<span class="dv">131</span>, xticks<span class="op">=</span>[], yticks<span class="op">=</span>[])<span class="op">;</span> fig.add_subplot(<span class="dv">133</span>, xticks<span class="op">=</span>[], yticks<span class="op">=</span>[])<span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ([<span class="dv">0</span>], [p], [c])  <span class="co"># which (agent, observation, action) to plot on x axis</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ([<span class="dv">1</span>], [p], [c])  <span class="co"># which (agent, observation, action) to plot on y axis</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>eps<span class="op">=</span><span class="fl">10e-3</span><span class="op">;</span> action_probability_points <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span>eps, <span class="fl">1.0</span><span class="op">-</span>eps, <span class="dv">9</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>fp.plot_strategy_flow(MAEi, x, y, action_probability_points, axes<span class="op">=</span>[ax])</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add trajectories to flow plot</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>fp.plot_trajectories(xtrajs, x<span class="op">=</span>x, y<span class="op">=</span>y, fprs<span class="op">=</span>fprs, cols<span class="op">=</span>[<span class="st">'red'</span>,<span class="st">'blue'</span>,<span class="st">'blue'</span>],</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                     lws<span class="op">=</span>[<span class="dv">2</span>], msss<span class="op">=</span>[<span class="dv">2</span>], lss<span class="op">=</span>[<span class="st">'-'</span>], alphas<span class="op">=</span>[<span class="fl">0.75</span>], axes<span class="op">=</span>[ax])<span class="op">;</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Agent 2's cooperation probability"</span>)<span class="op">;</span> </span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Agent 1's cooperation probability"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-31-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Next, we create a more fine-grained bundle of learning trajectories.</p>
+<div id="c76c3a6a-7233-4d6f-8b0c-3d26700464a4" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cooperation probability of agent 1</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>pcs <span class="op">=</span> np.concatenate([np.linspace(<span class="fl">0.01</span>, <span class="fl">0.99</span>, <span class="dv">51</span>), np.linspace(<span class="fl">0.185</span>, <span class="fl">0.195</span>, <span class="dv">151</span>)])</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>pcs <span class="op">=</span> np.sort(np.unique(pcs))</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>Xktisa <span class="op">=</span> []  <span class="co"># storing strategy trajectories </span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>fprs <span class="op">=</span> []    <span class="co"># and whether a fixed point is reached</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, pc <span class="kw">in</span> <span class="bu">enumerate</span>(pcs):</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Progress: </span><span class="sc">{</span>((i<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="bu">len</span>(pcs))<span class="sc">:.2%}</span><span class="ss">"</span>, end<span class="op">=</span><span class="st">"</span><span class="ch">\r</span><span class="st">"</span>)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> compile_strategy(pc, <span class="fl">0.95</span>)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    PolicyTrajectories_Xtisa, fixedpointreached <span class="op">=</span> MAEi.trajectory(X, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    Xktisa.append(PolicyTrajectories_Xtisa)</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    fprs.append(fixedpointreached)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Progress: 100.00%</code></pre>
+</div>
+</div>
+<p><strong>We obtain the critical point in this bundle of learning trajectories where the two agents switch or tip from complete defection to complete cooperation.</strong></p>
+<p>First, we check that all trajectories converged.</p>
+<div id="4903a224-2387-415f-a459-1a42b1ab5390" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">all</span>(fprs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>Then, we obtain the cooperation probabilities at convergence.</p>
+<div id="a05c8a38-0dcb-46d3-a1df-7a54bce75ac0" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>converged_pcs <span class="op">=</span> np.array([Xtisa[<span class="op">-</span><span class="dv">1</span>][:, p, c] <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa])</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>converged_pcs.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>(201, 2)</code></pre>
+</div>
+</div>
+<p>Last, we show the biomodal distribution of full defection and full cooperation.</p>
+<div id="0959cb87-696e-48dc-985c-13d7f5acfb70" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>np.histogram(np.array(converged_pcs).mean(<span class="op">-</span><span class="dv">1</span>), <span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>array([ 80,   0,   0,   0,   0,   0,   0,   0,   0, 121])</code></pre>
+</div>
+</div>
+<p>Thus, the critical point lies at the index</p>
+<div id="792bb2bd-185a-4f39-8699-296faac975bb" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>cp <span class="op">=</span> np.histogram(np.array(converged_pcs).mean(<span class="op">-</span><span class="dv">1</span>), <span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))[<span class="dv">0</span>][<span class="dv">0</span>]</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>cp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>80</code></pre>
+</div>
+</div>
+<p>and has an approximate value between</p>
+<div id="b6f59378-31cc-4751-9b45-64255409072f" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pcs[cp<span class="op">-</span><span class="dv">1</span>], <span class="st">'and'</span>, pcs[cp], <span class="st">'.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.18966666666666668 and 0.18973333333333334 .</code></pre>
+</div>
+</div>
+<p>We use this more fine-grained bundle of learning trajectories to visualize the phenomenon of a <strong>critical slowing down</strong> by plotting the time steps required to reach convergence.</p>
+<div id="caee0a00-adf7-4e53-bc8c-b4c2215bdf55" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plt.plot(pcs[:cp], [<span class="bu">len</span>(Xtisa) <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa[:cp]],</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>         <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)  <span class="co"># defectors in red</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>plt.plot(pcs[cp:], [<span class="bu">len</span>(Xtisa) <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa[cp:]], </span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">0.6</span>) <span class="co"># cooperators in blue</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Timesteps to convergence'</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="ss">f"Agent 1's cooperation probability in the prosperous state"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-38-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Time steps required to convergence show a critical slowing down around the tipping point.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We also observe a kind of <strong>transient tipping point</strong> in the learning dynamics, when plotting the two closest trajectories around the critical point.</p>
+<div id="a28dd4a8-2286-4873-93f3-7f130ecf4292" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_TransientTipping(xlim<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot the defecting learners in red</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp<span class="op">-</span><span class="dv">1</span>][:, <span class="dv">0</span>, p, c], color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">5</span>, ls<span class="op">=</span><span class="st">':'</span>, label<span class="op">=</span><span class="st">'Agent zero'</span>) </span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp<span class="op">-</span><span class="dv">1</span>][:, <span class="dv">1</span>, p, c], color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">4</span>, ls<span class="op">=</span><span class="st">"--"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, label<span class="op">=</span><span class="st">'Agent one'</span>)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot the cooperating learners in blue</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp][:, <span class="dv">0</span>, p, c], color<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">3</span>, ls<span class="op">=</span><span class="st">':'</span>, label<span class="op">=</span><span class="st">'Agent zero'</span>)</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp][:, <span class="dv">1</span>, p, c], color<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">2</span>, ls<span class="op">=</span><span class="st">"--"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, label<span class="op">=</span><span class="st">'Agent one'</span>)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    plt.xlim(xlim)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.xlabel(<span class="st">"Timesteps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Cooperation"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="91f7e852-1edd-4153-a4d9-63da6db6b250" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>plot_TransientTipping()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-40-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Emergent time scale seperation at the critical point.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>During this <strong>emergent timescale separation</strong>, the learning process seems to settle on a mixed policy after approximately 50 timesteps. It remains at this point for another 50 steps, which is the same duration it took to reach this mixed policy (<a href="#fig-apparent-convergence" class="quarto-xref">Figure&nbsp;<span>11.1</span></a>). The learning adjusts the policies more rapidly after this period until they converge to two deterministic policies.</p>
+<div id="cell-fig-apparent-convergence" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>plot_TransientTipping((<span class="dv">0</span>, <span class="dv">95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-apparent-convergence" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-apparent-convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04.03-LearningDynamics_files/figure-html/fig-apparent-convergence-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-apparent-convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Apparent convergence to a mixed policy.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="hysteresis" class="level3">
+<h3 class="anchored" data-anchor-id="hysteresis">Hysteresis</h3>
+<p>The last phenomenon we want to highlight is hysteresis (See Chapter <a href="./02.02-TippingElements.html">02.02</a>). We study the cooperation probabilities of the agents in the prosperous state as a function of the discount factor <span class="math inline">\(\gamma\)</span>. We know from Chapter <a href="03.03-DynamicInteractions.ipybn">03.03</a> that caring for the future can turn a tragedy of the commons into a comedy while passing through the coordination regime.</p>
+<p>In the following, we start at a relatively low level of caring for the future, increase it, and then decrease it again, all while letting the agent learn along</p>
+<p>First, let us create the discount factor values.</p>
+<div id="55155cd8-eabe-4b47-8c7a-9b16bf1890ed" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dcfs <span class="op">=</span> <span class="bu">list</span>(np.arange(<span class="fl">0.6</span>, <span class="fl">0.9</span>, <span class="fl">0.005</span>))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>hystcurve <span class="op">=</span> dcfs <span class="op">+</span> dcfs[::<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, we set up the environment and start the simulation from a random policy. We let the agents learn for 2500 time steps or until the learning process converges with a tiny tolerance. Then, we record the final policy, advance the discount factor, and restart from the previous final policy.</p>
+<div id="0b0395a1-947c-4903-bf48-90a8b42ba0a9" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the ecological public goods environment</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>coops <span class="op">=</span> []  <span class="co"># for storing the cooperation probabilities</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> MAEi.random_softmax_strategy() </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, dcf <span class="kw">in</span> <span class="bu">enumerate</span>(hystcurve):</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adjust multi-agent environment interface with discount factor</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    MAEi <span class="op">=</span> stratSARSA(env<span class="op">=</span>env, discount_factors<span class="op">=</span>dcf, use_prefactor<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>                      learning_rates<span class="op">=</span><span class="fl">0.05</span>, choice_intensities<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    trj, fpr <span class="op">=</span> MAEi.trajectory(X, Tmax<span class="op">=</span><span class="dv">2500</span>, tolerance<span class="op">=</span><span class="fl">10e-12</span>)</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Progress: </span><span class="sc">{</span>((i<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="bu">len</span>(hystcurve))<span class="sc">:6.2%}</span><span class="ss"> |"</span>,</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"Discount Factor </span><span class="sc">{</span>dcf<span class="sc">:5.4}</span><span class="ss"> | Conv?: </span><span class="sc">{</span>fpr<span class="sc">}</span><span class="ss">"</span> , end<span class="op">=</span><span class="st">"</span><span class="ch">\r</span><span class="st">"</span>)        </span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> trj[<span class="op">-</span><span class="dv">1</span>] <span class="co"># select last strategy</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>    coops.append(X[:, <span class="dv">1</span>, <span class="dv">0</span>]) <span class="co"># append to storage container</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Progress: 100.00% | Discount Factor   0.6 | Conv?: True</code></pre>
+</div>
+</div>
+<p>Now, we plot the computed data. We use the points’ size and color to indicate the time dimensions of the discount factor changes. The time flows from big to small data points and from dark to light ones.</p>
+<div id="7097826b-584d-42da-8dc2-6dc2844aad78" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot background line</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>plt.plot(hystcurve, np.array(coops).mean(<span class="op">-</span><span class="dv">1</span>),<span class="st">'-'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>,color<span class="op">=</span><span class="st">'k'</span>,zorder<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data points with size and color indicating the time dimension</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>plt.scatter(hystcurve, np.array(coops).mean(<span class="op">-</span><span class="dv">1</span>), alpha<span class="op">=</span><span class="fl">0.9</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>,</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>            s<span class="op">=</span>np.arange(<span class="bu">len</span>(hystcurve))[::<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>, c<span class="op">=</span>np.arange(<span class="bu">len</span>(hystcurve)))</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cooperation'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'Discount Factor'</span>)<span class="op">;</span> <span class="co">#plt.ylim(0,1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04.03-LearningDynamics_files/figure-html/cell-44-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Hysteresis curve</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The hysteresis curve shows that the probability of cooperation among agents in the prosperous state depends on the history of the discount factor. The agents’ learning dynamics exhibit a memory of the past, a typical feature of complex systems.</p>
+</section>
+</section>
+<section id="learning-goals-revisited" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">11.4</span> Learning goals revisited</h2>
+<p>In this chapter,</p>
+<ul>
+<li>we introduced deterministic approximation models of the stochastic reinforcement learning process as a valuable tool for modeling complex human-environment interactions. Collective reinforcement learning dynamics model adaptive agents (in stylized model environments)
+<ul>
+<li>that use a perfect model of the world</li>
+<li>in a computationally fast</li>
+<li>transparent</li>
+<li>and deterministically evolving way.</li>
+</ul></li>
+<li>We studied complex dynamic phenomena of multi-agent reinforcement learning in the ecological public good environment.</li>
+<li>To do so, we used the open-source <code>pyCRLD</code> Python package.</li>
+</ul>
+</section>
+<section id="synthesis" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="synthesis"><span class="header-section-number">11.5</span> Synthesis</h2>
+<p><strong>Collective reinforcement learning dynamics</strong> bridge agent-based, equation-based (dynamic systems), and equilibrium-based modeling:</p>
+<ul>
+<li>agent-based: derived from individual agent characteristics</li>
+<li>equation-based: treated as a dynamical systems</li>
+<li>equilibrium-based: fixed points are (close to) the classic equilibrium solutions</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01.01-ThreeTypesOfModels.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Three types of models</figcaption>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-Barfuss2020" class="csl-entry" role="listitem">
+Barfuss, W. (2020). Reinforcement <span>Learning Dynamics</span> in the <span>Infinite Memory Limit</span>. <em>Proceedings of the 19th <span>International Conference</span> on <span>Autonomous Agents</span> and <span>MultiAgent Systems</span></em>, 1768–1770.
+</div>
+<div id="ref-Barfuss2022" class="csl-entry" role="listitem">
+Barfuss, W. (2022). Dynamical systems as a level of cognitive analysis of multi-agent learning. <em>Neural Computing and Applications</em>, <em>34</em>(3), 1653–1671. <a href="https://doi.org/10.1007/s00521-021-06117-0">https://doi.org/10.1007/s00521-021-06117-0</a>
+</div>
+<div id="ref-BarfussEtAl2019" class="csl-entry" role="listitem">
+Barfuss, W., Donges, J. F., &amp; Kurths, J. (2019). Deterministic limit of temporal difference reinforcement learning for stochastic games. <em>Physical Review E</em>, <em>99</em>(4), 043305. <a href="https://doi.org/10.1103/PhysRevE.99.043305">https://doi.org/10.1103/PhysRevE.99.043305</a>
+</div>
+<div id="ref-BarfussEtAl2024a" class="csl-entry" role="listitem">
+Barfuss, W., Flack, J. C., Gokhale, C. S., Hammond, L., Hilbe, C., Hughes, E., Leibo, J. Z., Lenaerts, T., Levin, S. A., Madhushani Sehwag, U., McAvoy, A., Meylahn, J. M., &amp; Santos, F. P. (2024). Collective <span>Cooperative Intelligence</span>. <em>Forthcomming in the Proceedings of the National Academy of Sciences</em>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04.02-IndividualLearning.html" class="pagination-link  aria-label=" &lt;span="" learning&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./References.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

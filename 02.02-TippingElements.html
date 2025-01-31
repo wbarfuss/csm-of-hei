@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.544">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Complex Systems Modeling of Human-Environment Interactions - 3&nbsp; Tipping elements</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02.03-Resilience.html" rel="next">
+<link href="./02.01-Nonlinearity.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-DynamicSystems.html">Dynamic Systems</a></li><li class="breadcrumb-item"><a href="./02.02-TippingElements.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Complex-Systems-Modeling-of-Human-Environment-Interactions.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-TippingElements.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-TargetEquilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Target Equilibria</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-TransformationAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transformation Agency</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Behavioral agency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02ex-IntroToPython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01ex-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Nonlinearity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02ex-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Tipping elements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03ex-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Resilience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04ex-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | State transitions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01ex-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Sequential Decisions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02ex-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Strategic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03ex-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Dynamic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01ex-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Behavioral Agency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02ex-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Individual Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Learning Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">3.1</span> Motivation</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#bifurcations-the-mathematics-of-tipping-elements" id="toc-bifurcations-the-mathematics-of-tipping-elements" class="nav-link" data-scroll-target="#bifurcations-the-mathematics-of-tipping-elements"><span class="header-section-number">3.2</span> Bifurcations | The mathematics of tipping elements</a>
+  <ul class="collapse">
+  <li><a href="#a-minimal-model-of-tipping-elements" id="toc-a-minimal-model-of-tipping-elements" class="nav-link" data-scroll-target="#a-minimal-model-of-tipping-elements">A minimal model of tipping elements</a></li>
+  <li><a href="#cobweb-plot" id="toc-cobweb-plot" class="nav-link" data-scroll-target="#cobweb-plot">Cobweb plot</a></li>
+  <li><a href="#empirical-bifurcation-diagram" id="toc-empirical-bifurcation-diagram" class="nav-link" data-scroll-target="#empirical-bifurcation-diagram">Empirical bifurcation diagram</a></li>
+  <li><a href="#conducting-a-bifurcation-analysis" id="toc-conducting-a-bifurcation-analysis" class="nav-link" data-scroll-target="#conducting-a-bifurcation-analysis">Conducting a bifurcation analysis</a></li>
+  <li><a href="#step-1-equilibrium-points" id="toc-step-1-equilibrium-points" class="nav-link" data-scroll-target="#step-1-equilibrium-points">Step 1 | Equilibrium points</a></li>
+  <li><a href="#step-2-stability" id="toc-step-2-stability" class="nav-link" data-scroll-target="#step-2-stability">Step 2 | Stability</a></li>
+  <li><a href="#step-3-bifurcation-diagram" id="toc-step-3-bifurcation-diagram" class="nav-link" data-scroll-target="#step-3-bifurcation-diagram">Step 3 | Bifurcation diagram</a></li>
+  <li><a href="#potential-function" id="toc-potential-function" class="nav-link" data-scroll-target="#potential-function">Potential function</a></li>
+  <li><a href="#hysteresis" id="toc-hysteresis" class="nav-link" data-scroll-target="#hysteresis">Hysteresis</a></li>
+  </ul></li>
+  <li><a href="#learning-goals-revisited" id="toc-learning-goals-revisited" class="nav-link" data-scroll-target="#learning-goals-revisited"><span class="header-section-number">3.3</span> Learning goals revisited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-DynamicSystems.html">Dynamic Systems</a></li><li class="breadcrumb-item"><a href="./02.02-TippingElements.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<section id="motivation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">3.1</span> Motivation</h2>
+<p>Think of the term “tipping point” in the context of sustainability. What do you associated with it? What does it mean? What are examples of tipping points in the context of human-environment interactions?</p>
+<section id="tipping-points-elements-and-regime-shifts" class="level5">
+<h5 class="anchored" data-anchor-id="tipping-points-elements-and-regime-shifts">Tipping points, elements and regime shifts</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.02-TippingPointsElementsRegimeShifts.png" class="img-fluid figure-img"></p>
+<figcaption>Tipping points, elements and regime shifts</figcaption>
+</figure>
+</div>
+<p>The concepts of tipping elements and regime shifts are closely related aspects of complex systems dynamics. While tipping elements refer more to the components of a system with the potential for abrupt change, regime shifts refer more to the actual transitions that occur when these elements cross their critical thresholds. Also, the term tipping elements is used more in the context of Earth system science, while regime shifts are used more in the context of social-ecological systems.</p>
+</section>
+<section id="climate-tipping-risks" class="level5">
+<h5 class="anchored" data-anchor-id="climate-tipping-risks">Climate tipping risks</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.02-ClimateTippingRisks.png" class="img-fluid figure-img"></p>
+<figcaption>Climate tipping risks</figcaption>
+</figure>
+</div>
+<p>Climate tipping points are thresholds in the <strong>Earth’s climate system</strong> that, such as a slight increase in global average temperature, when crossed, can lead to significant and potentially irreversible changes. These changes can trigger <strong>reinforcing feedback loops</strong> that push the system into a new equilibrium, potentially leading to severe consequences like accelerated ice melt or shifts in ocean currents. For instance, the collapse of the West Antarctic ice shelves is a potential climate tipping point that could lead to substantial sea level rise and other impacts. While some tipping points may be <strong>triggered within the 1.5-2°C Paris Agreement range</strong>, many more become likely at 2-3°C of warming <span class="citation" data-cites="ArmstrongMcKayEtAl2022">(<a href="References.html#ref-ArmstrongMcKayEtAl2022" role="doc-biblioref">Armstrong McKay et al., 2022</a>)</span>.</p>
+</section>
+<section id="global-tipping-points" class="level5">
+<h5 class="anchored" data-anchor-id="global-tipping-points">Global Tipping Points</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.02-GlobalTippingPoints.png" class="img-fluid figure-img"></p>
+<figcaption>Parts of the earth system with tipping points</figcaption>
+</figure>
+</div>
+<p>While climate tipping points are specific to the Earth’s climate systems and their feedback mechanisms, global tipping points <span class="citation" data-cites="LentonEtAl2023a">(<a href="References.html#ref-LentonEtAl2023a" role="doc-biblioref">Lenton et al., 2023</a>)</span> consider a wider array of <strong>interconnected systems, including human and ecological dimensions</strong>, highlighting the complex interplay between natural and societal changes. <strong>Natural tipping points</strong> may occur over the entire Earth system, from the Biosphere to the Cryosphere, the Oceans and the Atmosphere.</p>
+<p>Currently, several major tipping points are at imminent risk due to global warming, with more projected as temperatures rise above 1.5°C. The cascading effects of these negative tipping points could overwhelm global social and economic systems, outpacing some countries’ adaptive capacities. Addressing these crises requires a transformative shift away from incremental changes <strong>towards a robust global governance framework</strong> that prioritizes <strong>rapid emission reductions</strong> and <strong>ecological restoration</strong>.</p>
+</section>
+<section id="social-tipping-points" class="level5">
+<h5 class="anchored" data-anchor-id="social-tipping-points">Social tipping points</h5>
+<p>to the rescue?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.02-SocialTippingPoints.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Social tipping points</figcaption>
+</figure>
+</div>
+<p>Simultaneously, it’s crucial to identify and harness <strong>positive tipping points</strong>, where beneficial changes can become self-sustaining, potentially offsetting some negative impacts. There is an urgent need to build <strong>resilient societies</strong> capable of withstanding impending challenges and seizing opportunities for sustainable progress. The paradigm of ‘business as usual’ is obsolete; instead, a proactive approach to governance and global cooperation is essential to navigate towards a sustainable future, leveraging both the threats and opportunities posed by tipping points <span class="citation" data-cites="LentonEtAl2023a">(<a href="References.html#ref-LentonEtAl2023a" role="doc-biblioref">Lenton et al., 2023</a>)</span>.</p>
+</section>
+<section id="challenges" class="level5">
+<h5 class="anchored" data-anchor-id="challenges">Challenges</h5>
+<p><strong>So what exacltly are tipping elements and regime shifts?</strong></p>
+<p>How can we identify them?</p>
+<p>And how can we manage them?</p>
+<p><em>Here, the mathematics of bifurcations can help.</em></p>
+</section>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning goals</h3>
+<p>After this chapter, students will be able to:</p>
+<ul>
+<li><strong>Explain</strong> the concept of a <strong>bifurcaton</strong> and how it relates to tipping points and regime shifts.</li>
+<li>Explain a simple <strong>dynamic system to model a tipping element</strong> or regime shift.</li>
+<li>Explain what an <em>attractor</em>, <em>transient</em>, <em>basin of attraction</em> and <em>separatrix</em> are.</li>
+<li>Conduct a <strong>bifurcation analysis</strong> in a simple dynamic system using Python.</li>
+<li><strong>Construct</strong> a <strong>potential function</strong> and explain its role in bifurcation analysis.</li>
+<li>Explain and recognize <strong>hysteresis</strong> and its consequences for sustainability transitions.</li>
+</ul>
+</section>
+</section>
+<section id="bifurcations-the-mathematics-of-tipping-elements" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="bifurcations-the-mathematics-of-tipping-elements"><span class="header-section-number">3.2</span> Bifurcations | The mathematics of tipping elements</h2>
+<p>The key question bifurcation theory addresses is: <strong>How does the system’s long-term behavior depend on its parameters?</strong></p>
+<p>The <strong>distinction</strong> between a system’s <em>state</em> and its <em>parameters</em> is <strong>crucial</strong>. The state of a system is the set of variables that describe the system at a given time, while the parameters are the constants that define the system’s behavior.</p>
+<p>Often, a small change in parameter values causes only a small or even no quantitative change in the system’s state. However, sometimes, a slight change in parameter values causes a drastic, qualitative change in the system’s behavior.</p>
+<blockquote class="blockquote">
+<p>A <strong>bifurcation</strong> is a qualitative, topological change of a dynamic system’s phase space that occurs when some parameters are slightly varied across their <strong>critical thresholds</strong>.</p>
+</blockquote>
+<p>Here, we cover the very basics of bifurcation theory in dynamic systems. These provide a rich understanding of tipping points and regime shifts in the sustainability sciences.</p>
+<p>We start by importing the necessary libraries and setting up the plotting environment.</p>
+<div id="8d76781b-3800-48b7-9067-ef22787b5778" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, interactive</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We also inlcude some keys functions to simulate dynamic systems from <a href="./02.01-Nonlinearity.html">02.01-Nonlinearity</a>.</p>
+<p>To run the model we copy and refine an <code>iterate_model</code> function.</p>
+<div id="82d89938" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> iterate_model(nr_timesteps, initial_value, update_func, <span class="op">**</span>update_params):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> initial_value</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> [stock]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        stock <span class="op">=</span> update_func(stock, <span class="op">**</span>update_params)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(stock)<span class="op">&gt;</span><span class="fl">10e9</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        time_series.append(stock)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(time_series)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We also copy define a <code>plot_stock_evolution</code> function, plotting the stock evolution.</p>
+<div id="646b6222" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stock_evolution(nr_timesteps, initial_value, update_func,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                update_func, <span class="op">**</span>update_parameters)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.-'</span>, label<span class="op">=</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"System state"</span>)<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And last, we copy the cobweb plot function over.</p>
+<div id="ff7ff362" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb(F, x0, params, iters<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    h<span class="op">=</span>[x0]<span class="op">;</span> v<span class="op">=</span>[x0]<span class="op">;</span> x<span class="op">=</span>x0  <span class="co"># lists for (h)orizontal and (v)ertical points</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(iters):  <span class="co"># iterate the dynamical system</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> F(x, <span class="op">**</span>params)  <span class="co"># get the next system's state</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(x)<span class="op">&gt;</span><span class="fl">10e9</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        h.append(x)<span class="op">;</span> v.append(x_)  <span class="co"># going vertically (changing v)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        h.append(x_)<span class="op">;</span> v.append(x_)  <span class="co"># going horizontially (changing h)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_  <span class="co"># the new system state becomes the current state</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>) <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">None</span>, ax  <span class="co"># get ax</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    ax.plot(h, v, <span class="st">'k-'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)  <span class="co"># plot on axv</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.allclose(h[<span class="op">-</span><span class="dv">2</span>],h[<span class="op">-</span><span class="dv">1</span>]) <span class="kw">and</span> np.allclose(v[<span class="op">-</span><span class="dv">1</span>],v[<span class="op">-</span><span class="dv">2</span>]):</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if last points are close, assume convergence</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        ax.plot([h[<span class="op">-</span><span class="dv">1</span>]], [v[<span class="op">-</span><span class="dv">1</span>]], <span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)  <span class="co"># plot dot</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> h, v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="a-minimal-model-of-tipping-elements" class="level3">
+<h3 class="anchored" data-anchor-id="a-minimal-model-of-tipping-elements">A minimal model of tipping elements</h3>
+<p>Let <span class="math inline">\(x\)</span> denote the <strong>property of a system we are interested</strong> in, such as the amount of ice in the Arctic, the population of a species, or the fraction of a lake’s surface coverd by vegetation <span class="citation" data-cites="SchefferEtAl2001">(<a href="References.html#ref-SchefferEtAl2001" role="doc-biblioref">Scheffer et al., 2001</a>)</span>. Thus, we describe the system’s state over time <span class="math inline">\(t\)</span> by <span class="math inline">\(x_t\)</span>.</p>
+<p>Conceptually, the system’s dynamics are influenced by a <strong>reinforcing feedback loop</strong>, a <strong>balancing feedback loop</strong>, an <strong>external influence</strong> <span class="math inline">\(c\)</span>. The exertnal influence <span class="math inline">\(c\)</span>, for example, represents the global mean temperature in the case of climate tipping elements, or the level of nutrients in the example of a lake regime shift.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.02-TippingModel.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Tipping element model</figcaption>
+</figure>
+</div>
+<p>A simple mathematical representation of such a system has the difference euqation,</p>
+<p><span class="math display">\[\Delta x = (x - ax^3 + c) \frac{1}{\tau},\]</span></p>
+<p>where <span class="math inline">\(\tau\)</span> represents the typical time scale of the system, and thus, inverse strength of the system’s change, and <span class="math inline">\(a\)</span> is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength).</p>
+<p>We define the <code>update_stock</code> function, <span class="math inline">\(F(x_{t}\)</span> for the udpate <span class="math inline">\(x_{t+1}=F(x_t)\)</span>, to iterate the stock <span class="math inline">\(x\)</span> according to the difference equation above.</p>
+<div id="2ea13348-4548-46e8-a80e-57ee8326523b" class="cell" data-editable="true" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_tipmod(x, c, a<span class="op">=</span><span class="dv">1</span>, tau<span class="op">=</span><span class="dv">10</span>): <span class="cf">return</span> x <span class="op">+</span> (x <span class="op">-</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> c)<span class="op">/</span>tau</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We explore the stock’s evolution over time from two different initial conditions by iterating the model for 200 time steps.</p>
+<div id="812a7e17" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_initial_conditions(nr_timesteps<span class="op">=</span><span class="dv">200</span>, c<span class="op">=</span><span class="fl">0.0</span>, tau<span class="op">=</span><span class="dv">50</span>, a<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(nr_timesteps, <span class="fl">1.2</span>, F_tipmod, c<span class="op">=</span>c, tau<span class="op">=</span>tau, a<span class="op">=</span>a)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(nr_timesteps, <span class="op">-</span><span class="fl">1.2</span>, F_tipmod, c<span class="op">=</span>c, tau<span class="op">=</span>tau, a<span class="op">=</span>a)<span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    paramstring <span class="op">=</span> <span class="ss">f"c=</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">, tau=</span><span class="sc">{</span>tau<span class="sc">}</span><span class="ss">, a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    plt.gca().annotate(paramstring, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">1.0</span>), xycoords<span class="op">=</span><span class="st">'axes fraction'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, ha<span class="op">=</span><span class="st">'left'</span>)<span class="op">;</span> plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="9bba0859" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>compare_initial_conditions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>We observe bi-stability.</strong> Depending on where the dynamical system starts, it will either converge to the fixed point <span class="math inline">\(x_e = 1.0\)</span>, or the the fixed point <span class="math inline">\(x_e = -1.0\)</span></p>
+<p><em>How do the parameters influence the system’s evolution?</em> We can convince ourselves that the timescale parameter <span class="math inline">\(\tau\)</span> determines the speed of the system’s evolution (vary <span class="math inline">\(\tau\)</span> and the total number of simulation staps proportionally: the curves’s shapes look identical). The parameter <span class="math inline">\(a\)</span> scales the system’s fixed points (vary <span class="math inline">\(a\)</span> and observe the system’s behavior). Finally, We can also observe, that the external influence <span class="math inline">\(c\)</span> can change the system’s equilibrium state. Run this notebook interactivly and confirm these observations for yourself!</p>
+</section>
+<section id="cobweb-plot" class="level3">
+<h3 class="anchored" data-anchor-id="cobweb-plot">Cobweb plot</h3>
+<p>Let us observe thhis phenomenon of bi-stability in a cobweb plot.</p>
+<div id="72a3056d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb_plot(c<span class="op">=</span><span class="dv">0</span>, tau<span class="op">=</span><span class="fl">1.5</span>, a<span class="op">=</span><span class="dv">1</span>): </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">101</span>)<span class="op">;</span> plt.xlabel(<span class="st">'x'</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">1.3</span>,<span class="fl">1.3</span>)<span class="op">;</span> plt.xlim(<span class="op">-</span><span class="fl">1.6</span>,<span class="fl">1.6</span>)<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, F_tipmod(xs, c,a,tau), label<span class="op">=</span><span class="st">'F(x)'</span>)<span class="op">;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, xs, label<span class="op">=</span><span class="st">'x'</span>, color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    cobweb(F_tipmod, x0<span class="op">=</span><span class="fl">0.3</span>, params<span class="op">=</span><span class="bu">dict</span>(c<span class="op">=</span>c, a<span class="op">=</span>a, tau<span class="op">=</span>tau), iters<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    cobweb(F_tipmod, x0<span class="op">=-</span><span class="fl">0.3</span>, params<span class="op">=</span><span class="bu">dict</span>(c<span class="op">=</span>c, a<span class="op">=</span>a, tau<span class="op">=</span>tau), iters<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="311406a0" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cobweb_plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We see, that it depends on where the update function <span class="math inline">\(F(x_t)\)</span> intersects the diagonal line <span class="math inline">\(y=x\)</span> whether an inital condition converges to the fixed point <span class="math inline">\(x_e = 1.0\)</span> or <span class="math inline">\(x_e = -1.0\)</span>. The external influence parameter <span class="math inline">\(c\)</span> determines this intersection point</p>
+<p><em>Some definitions.</em></p>
+<p>An <strong>attractor</strong> is a set of states toward which a dynamic system tends to evolve over time. These states represent the system’s long-term behavior. Once the system reaches an attractor, it typically remains there. For example, in the system above the attractors are the fixed points <span class="math inline">\(x_e = 1.0\)</span> and <span class="math inline">\(x_e = -1.0\)</span>.</p>
+<p>A <strong>transient</strong> refers to the behavior of a system during a limited period of time before it reaches an attractor. For example, the cobweb plot shows the transient behavior of the system.</p>
+<p>A <strong>basin of attraction</strong> the set of all the initial states from which you will eventually end up falling into that attractor. For example, in the system above, the basin of attraction for the fixed point <span class="math inline">\(x_e = 1.0\)</span> are all point greater than the intersection point between <span class="math inline">\(F(x_t)\)</span> and <span class="math inline">\(y=x\)</span>. The basin of attraction for the fixed point <span class="math inline">\(x_e = -1.0\)</span> are all points less than the intersection point between <span class="math inline">\(F(x_t)\)</span> and <span class="math inline">\(y=x\)</span>.</p>
+<p>If there are more than one attractor in the phase space, you can divide the phase space into several different regions. In this case, a <strong>separatrix</strong> is the boundary between distinct basins of attractions. For example, in the system above, the separatrix consists only of the intersection point between <span class="math inline">\(F(x_t)\)</span> and <span class="math inline">\(y=x\)</span>.</p>
+</section>
+<section id="empirical-bifurcation-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="empirical-bifurcation-diagram">Empirical bifurcation diagram</h3>
+<p>A bifurcation diagram is a powerful tool to visualize the system’s long-term behavior as a function of its parameters. To create a bifurcation diagram, we iterate the model for a range of parameter values and plot the system’s equilibrium states.</p>
+<div id="daca4bfe-0b1f-4356-93a1-38fa755529e0" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_bifurcation_diagram(F, x0s, params, iters<span class="op">=</span><span class="dv">1000</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>],</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                                 pointsize<span class="op">=</span><span class="fl">2.0</span>):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    c_s <span class="op">=</span> np.linspace(cextent[<span class="dv">0</span>], cextent[<span class="dv">1</span>], <span class="dv">501</span>) <span class="co"># The external parameter to be varied</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x0 <span class="kw">in</span> x0s:  <span class="co"># Loop through all initial conditions</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        endpoints <span class="op">=</span> []  <span class="co"># Container to store the endpoints</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> c_s:  <span class="co"># Loop through all external parameter values</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            trj <span class="op">=</span> iterate_model(iters, x0, F, c<span class="op">=</span>c, <span class="op">**</span>params)  <span class="co"># Simulate the system</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>            endpoints.append(trj[<span class="op">-</span><span class="dv">10</span>:])  <span class="co"># Taking the last 10 points of the trajectory</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plotting the endpoints</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        cpoints <span class="op">=</span> [[c_s[i]]<span class="op">*</span>l <span class="cf">for</span> i, l <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">map</span>(<span class="bu">len</span>, endpoints))]  <span class="co"># create cpoints that may work for different endpoint lengths</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        plt.scatter(np.hstack(cpoints), np.hstack(endpoints), c<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                    s<span class="op">=</span>pointsize)<span class="op">;</span>  <span class="co"># np.hstack unpacks everything      </span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r'Equilibrium state $x$'</span>)<span class="op">;</span> plt.xlabel(<span class="vs">r'External influence $c$'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="1668f96d-2cc7-4fcc-8acd-2cbfabd2ccad" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>simulate_bifurcation_diagram(F_tipmod, x0s<span class="op">=</span>[<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], params<span class="op">=</span><span class="bu">dict</span>(tau<span class="op">=</span><span class="dv">10</span> , a<span class="op">=</span><span class="fl">1.0</span>), iters<span class="op">=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This <strong>empirical bifurcation diagram</strong> allows us to identify the system’s stable fixed points as a function of the parameter <span class="math inline">\(c\)</span>. We observe the <strong>range of parameter values</strong> for which the system <strong>converges</strong> to the fixed points around <span class="math inline">\(x_e = 1.0\)</span> and <span class="math inline">\(x_e = -1.0\)</span>, as well as the range where the system is <strong>bi-stable</strong>. We also observe the <strong>critical values</strong> of <span class="math inline">\(c\)</span> where the system undergoes a qualitative change in its behavior. When the external parameter <span class="math inline">\(c\)</span> changes around these critical values in <span class="math inline">\(c\)</span> (close to <span class="math inline">\(-0.4\)</span> and <span class="math inline">\(0.4\)</span> here), a tiny change causes a drastic effect on the system state.</p>
+</section>
+<section id="conducting-a-bifurcation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="conducting-a-bifurcation-analysis">Conducting a bifurcation analysis</h3>
+<p>Local bifurcations occur when the stability of an equilibrium point changes between stable and unstable.</p>
+<ol type="1">
+<li><strong>Determine</strong> the <strong>equilibirum points</strong> in dependence of the model parameters</li>
+<li><strong>Determine</strong> the <strong>stability</strong> of the equilibirum points in dependence of the model parameters. For one-dimensional systems <span class="math inline">\(x_{t+1} = F(x_{t})\)</span>, an equilibrium point is stable when <span class="math inline">\(|F'(x_e)| &lt; 1\)</span>.</li>
+<li><strong>Bifurcations</strong> occur at parameter values at which the <strong>stability changes</strong>. For one-dimensional systems <span class="math inline">\(x_{t+1} = F(x_{t})\)</span>, local bifurcations occur when <span class="math inline">\(|F'(x_e)|=1\)</span>.</li>
+</ol>
+</section>
+<section id="step-1-equilibrium-points" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-equilibrium-points">Step 1 | Equilibrium points</h3>
+<p>The equilibrium points for <span class="math inline">\(\Delta x = \frac{1}{\tau}(x - ax^3 + c)\)</span> fulfill,</p>
+<p><span class="math display">\[c = ax^3 - x.\]</span></p>
+<p>It is not straightforward to solve the equation, <span class="math inline">\(c=ax^3-x\)</span>, analytically, i.e., to give an expression for how the system’s equilibirum depends on the parameters <span class="math inline">\(c\)</span> and <span class="math inline">\(a\)</span>. However, we can plot the parameter <span class="math inline">\(c\)</span> as a function of the equilibirum points <span class="math inline">\(x_e\)</span> and the parameter <span class="math inline">\(a\)</span>.</p>
+<div id="2067adf1" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_equilibirum_points_tipmod(a<span class="op">=</span><span class="fl">1.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">2.0</span>,<span class="fl">2.0</span>]):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    xe<span class="op">=</span>np.linspace(<span class="op">-</span><span class="fl">2.0</span>,<span class="fl">2.0</span>,<span class="dv">501</span>) <span class="co"># equilibrium points</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a<span class="op">*</span>xe<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xe <span class="co"># parameter c</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(c, xe, <span class="st">"--"</span>)<span class="op">;</span> <span class="co"># plot</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r'External parameter $c$'</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r'Equilibrium points $x_e$'</span>)<span class="op">;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plt.xlim(cextent); </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d5c5f72e" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plot_equilibirum_points_tipmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-stability" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-stability">Step 2 | Stability</h3>
+<p>Computing the derivative of the update function <span class="math inline">\(F(x_t) = x + \frac{1}{\tau}(x - ax^3 + c)\)</span> , we find,</p>
+<p><span class="math display">\[\frac{dF}{dx} = 1+\frac{1}{\tau} (1 - 3ax^2).\]</span></p>
+<p>We create a Python function to plot the whether an equilibrium point is stable or not using the <code>np.logical_and</code> function.</p>
+<div id="403ffaa5" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stability_tipmod(a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="fl">3.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">3.0</span>,<span class="fl">3.0</span>]):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    xe<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1001</span>) <span class="co"># equilibrium points</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a<span class="op">*</span>xe<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xe <span class="co"># parameter c</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> F_(x, a,tau): <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> (<span class="dv">1</span><span class="op">-</span><span class="dv">3</span><span class="op">*</span>a<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>tau</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    cond<span class="op">=</span>np.logical_and(F_(xe, a,tau)<span class="op">&lt;</span><span class="dv">1</span>, F_(xe, a,tau)<span class="op">&gt;-</span><span class="dv">1</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(c[cond], xe[cond], <span class="st">"."</span>, c<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r'External parameter $c$'</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r'Equilibrium points $x_e$'</span>)<span class="op">;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    plt.xlim(cextent)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Brining stability and equilibrium points together, we can plot an analytical bifurcation diagram.</p>
+<div id="72017ada" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau<span class="op">=</span><span class="fl">3.0</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plot_equilibirum_points_tipmod(a<span class="op">=</span>a)<span class="op">;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plot_stability_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-bifurcation-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-bifurcation-diagram">Step 3 | Bifurcation diagram</h3>
+<p>We enrich this bifurcation diagram by solving <span class="math inline">\(\frac{dF}{dx} = 1+\frac{1}{\tau} (1 - 3ax^2)\)</span> for <span class="math inline">\(\frac{dF}{dx} = 1\)</span> and <span class="math inline">\(\frac{dF}{dx} = -1\)</span> yields the <strong>stability boundaries</strong></p>
+<p><span class="math display">\[x_b=\pm\sqrt{\frac{1}{3a}} \quad \text{and} \quad x_b=\pm\sqrt{\frac{2\tau + 1}{3a}}.\]</span></p>
+<p>We create a Python function to plot the stability boundaries.</p>
+<div id="5bf0f837" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stability_boundaries_tipmod(a<span class="op">=</span> <span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">3</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">3.0</span>, <span class="fl">3.0</span>]):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    styl <span class="op">=</span> <span class="bu">dict</span>(ls<span class="op">=</span><span class="st">":"</span>, lw<span class="op">=</span><span class="fl">0.75</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[<span class="op">-</span>np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), <span class="op">-</span>np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl) </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[<span class="op">-</span>np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), <span class="op">-</span>np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Bringing all togehter, we obtain our analytical bifurcation diagram.</p>
+<div id="c0dee5a1" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_analytical_bifurcation_tipmod(a <span class="op">=</span> <span class="fl">1.0</span>, tau <span class="op">=</span> <span class="fl">3.0</span>, extent<span class="op">=</span><span class="fl">3.0</span>):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    plot_equilibirum_points_tipmod(a<span class="op">=</span>a, cextent<span class="op">=</span>[<span class="op">-</span>extent, extent])<span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    plot_stability_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau, cextent<span class="op">=</span>[<span class="op">-</span>extent, extent])<span class="op">;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    plot_stability_boundaries_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau, cextent<span class="op">=</span>[<span class="op">-</span>extent, extent])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="295956c0" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plot_analytical_bifurcation_tipmod(a <span class="op">=</span> a, tau <span class="op">=</span> tau, extent<span class="op">=</span><span class="fl">1.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Lastly, we can compare the empirical bifurcation diagram with the analytical bifurcation diagram, and observe that both match perfectly.</p>
+<div id="2bb3ee60" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_analytical_bifurcation_tipmod(a <span class="op">=</span> a, tau <span class="op">=</span> tau, extent<span class="op">=</span><span class="fl">2.0</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>simulate_bifurcation_diagram(F_tipmod, x0s<span class="op">=</span>[<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>], params<span class="op">=</span><span class="bu">dict</span>(tau<span class="op">=</span>tau , a<span class="op">=</span>a), </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                             iters<span class="op">=</span><span class="dv">500</span>, pointsize<span class="op">=</span><span class="dv">30</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">2.0</span>, <span class="fl">2.0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Our bifurcation analysis produces the same diagram we observed in the literature. What is still missing is the changing stability landscape portrayed in <a href="#fig-Scheffer" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>?</p>
+<div id="fig-Scheffer" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Scheffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/02.02-SchefferRegimeShifts.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Scheffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Conceptual Regime Shift
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="potential-function" class="level3">
+<h3 class="anchored" data-anchor-id="potential-function">Potential function</h3>
+<p>A potential is a function that describes the <em>energy</em> of a system. In the context of dynamic systems, a potential function can help us understand the system’s behavior by visualizing the system’s <em>energy</em> landscape.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/02.02-LentonPotential.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Illustrations of potential functions</figcaption>
+</figure>
+</div>
+<p>In general, there are multiple ways to define a potential function. Here, we define a potential function <span class="math inline">\(G\)</span> as the negative integral of the system change <span class="math inline">\(\Delta x\)</span>. Thus, for a system <span class="math inline">\(x_{t+1} = F(x_{t}) = x_{t} - \left.\frac{G(x)}{dx}\right|_{x=x_{t}}\)</span>, we have</p>
+<p><span class="math display">\[\Delta x =  - \frac{G(x)}{dx}.\]</span></p>
+<p>The idea is, that the system changes as if <em>rolling</em> downard (according to the first derivative of) the potential landscape <span class="math inline">\(G(x)\)</span>.</p>
+<p>Thus, for the difference equation <span class="math inline">\(\Delta x = \frac{1}{\tau}(x - ax^3 + c)\)</span>, we have</p>
+<p><span class="math display">\[G(x) = - \frac{1}{\tau} \left(\frac{1}{2}x^2 - \frac{1}{4}ax^4 + cx\right).\]</span></p>
+<p>Converting this into Python yields,</p>
+<div id="ef39bef5" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_tipmod(x, c,a,tau): <span class="cf">return</span> <span class="op">-</span> (x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span> <span class="op">-</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span> <span class="op">+</span> c<span class="op">*</span>x)<span class="op">/</span>tau</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>which we use in a <code>plot_potential</code> function to visualize the potential landscape.</p>
+<div id="c446dbd0" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tipmod_potential(c<span class="op">=</span><span class="fl">0.2</span>, a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    xs<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">501</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>)<span class="op">;</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, G_tipmod(xs, c,a,tau), color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r'Potential $G(x)$'</span>)<span class="op">;</span> plt.xlabel(<span class="vs">r'System state $x$'</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  numerically find and plot equilibrium points</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    c_ <span class="op">=</span> a<span class="op">*</span>xs<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xs</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    xeq <span class="op">=</span> xs[np.isclose(c_<span class="op">-</span>c, <span class="fl">0.0</span>, atol<span class="op">=</span><span class="fl">0.02</span>)]</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(xeq, G_tipmod(xeq, c, a, tau), <span class="st">'o'</span>, ms<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'k'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="305db503" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plot_tipmod_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finally, we bring all pieces together to visualize the system’s potential landscape, bifurcation diagram and time evolution.</p>
+<div id="f3f5e2b2" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_all_tipmod(c<span class="op">=</span><span class="fl">0.2</span>, a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    fig.add_subplot(<span class="dv">221</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    plot_tipmod_potential(c<span class="op">=</span>c, a<span class="op">=</span>a, tau<span class="op">=</span>tau)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    fig.add_subplot(<span class="dv">222</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    plot_analytical_bifurcation_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau, extent<span class="op">=</span><span class="fl">1.4</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    plt.plot([c,c], [<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>], <span class="st">"-"</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    fig.add_subplot(<span class="dv">313</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    compare_initial_conditions(nr_timesteps<span class="op">=</span><span class="dv">50</span>, c<span class="op">=</span>c, tau<span class="op">=</span>tau, a<span class="op">=</span>a)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3442d533" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_all_tipmod()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 2340x750 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="hysteresis" class="level3">
+<h3 class="anchored" data-anchor-id="hysteresis">Hysteresis</h3>
+<p>The last phenomenon we want to explore is <strong>hysteresis</strong>. Hysteresis occurs when the system’s behavior depends on its history, i.e., the system’s current state depends on its past states.</p>
+<p>We let our tipping element model iterate until it reaches an equilibirum point and then slighlty change the external influence parameter <span class="math inline">\(c\)</span>.</p>
+<ol type="1">
+<li>We start from a low value of external influence parameter <span class="math inline">\(c\)</span> such that the system equilibriates toward the negative equilibrium point and then increae <span class="math inline">\(c\)</span> into the range where only the positive equilibrium point is stable.</li>
+<li>Then, we decrease <span class="math inline">\(c\)</span> back to the range where only the negative equilibrium point is stable.</li>
+</ol>
+<div id="241fa65e" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_hysteresis():</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=-</span><span class="dv">1</span><span class="op">;</span> xs <span class="op">=</span> [] <span class="co"># inital condition and container for the system state</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    cvs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.8</span>, <span class="fl">0.8</span>, <span class="dv">101</span>)<span class="op">;</span>  <span class="co"># values of parameter a to go through</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    cvs <span class="op">=</span> np.concatenate((cvs, cvs[::<span class="op">-</span><span class="dv">1</span>]))<span class="op">;</span> <span class="co"># first we go up, then we go back down</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> cvs: <span class="co"># looping through all parameter values</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>): x<span class="op">=</span>F_tipmod(x, c<span class="op">=</span>c, a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="fl">2.0</span>)<span class="op">;</span>  <span class="co"># iterating the system 100 times</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        xs.append(x)<span class="op">;</span> <span class="co"># storing the last system state</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    plt.plot(cvs, xs,<span class="st">'-'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'gray'</span>,zorder<span class="op">=-</span><span class="dv">1</span>) <span class="co"># Plot background line</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    plt.scatter(cvs, xs, alpha<span class="op">=</span><span class="fl">0.9</span>, s<span class="op">=</span>np.arange(<span class="bu">len</span>(cvs))[::<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>, c<span class="op">=</span>np.arange(<span class="bu">len</span>(cvs)), cmap<span class="op">=</span><span class="st">'viridis'</span>)<span class="op">;</span> <span class="co"># Colorful plot</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"Influence parameter $c$"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"System state $x$"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="adb6ae53" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_hysteresis()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.02-TippingElements_files/figure-html/cell-32-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Time moves from <em>large</em> to <em>small</em> and <em>dark</em> to <em>light</em> dots.</p>
+<p>Hysteresis is not only a theoretical construct. It occurs in many practical real-world domains from physics, chemistry, engineering, biology, to economics.</p>
+<div id="fig-Garbe2020" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Garbe2020-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/02.02-GarbeHysteresis.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Garbe2020-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Hysteresis of the Antarctic Ice Sheet
+</figcaption>
+</figure>
+</div>
+<p>The hysteresis of the Antarctic Ice Sheet refers to the phenomenon where the ice sheet’s response to temperature changes is not symmetric; i.e., the thresholds for ice growth and decline differ significantly (<a href="#fig-Garbe2020" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>). This behavior has critical implications for understanding future sea-level rise under global warming scenarios.</p>
+<p>The Antarctic Ice Sheet exhibits multiple temperature thresholds, beyond which ice loss becomes irreversible. For instance, at 2°C warming, West Antarctica faces long-term partial collapse due to marine ice-sheet instability. A significant loss of over 70% of the ice volume is anticipated with 6 to 9°C warming, primarily driven by surface elevation feedback <span class="citation" data-cites="GarbeEtAl2020">(<a href="References.html#ref-GarbeEtAl2020" role="doc-biblioref">Garbe et al., 2020</a>)</span>.</p>
+</section>
+</section>
+<section id="learning-goals-revisited" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">3.3</span> Learning goals revisited</h2>
+<p>In this chapter, we have explored the concept of a <strong>bifurcation</strong> and its significance in understanding tipping points and regime shifts. We examined how small changes in system parameters can lead to substantial shifts in behavior, highlighting the importance of bifurcations as precursors to critical transitions.</p>
+<p>We then introduced a simple <strong>dynamic system</strong> model to represent a <strong>tipping element</strong> or regime shift, giving us a framework to analyze and simulate how systems behave under the influence of varying forces and feedback mechanisms. In this context, we explained key concepts such as <strong>attractors</strong>, <strong>transients</strong>, <strong>basins of attraction</strong>, and <strong>separatrices</strong>. These elements helped us understand the structure of the system’s state space, illustrating how it is shaped by stable and unstable regions.</p>
+<p>To deepen our analysis, we conducted a <strong>bifurcation analysis</strong>, demonstrating how a system’s behavior changes as we adjust specific parameters. This analysis allowed us to identify potential tipping points and provided a practical approach to studying system dynamics.</p>
+<p>Furthermore, we constructed a <strong>potential function</strong> and examined its role in bifurcation analysis, as it represents the energy landscape and stability of a system. By analyzing the shape and contours of this potential function, we gained insight into where attractors are located and how the system may transition between states.</p>
+<p>Finally, we discussed <strong>hysteresis</strong> and its implications for <strong>sustainability transitions</strong>. We observed that hysteresis introduces a kind of path-dependence, where returning to an original state may require more than simply reversing parameter changes. This phenomenon has critical consequences for sustainability, underscoring the challenges in restoring systems after they have undergone significant transformations. Together, these insights equip us with a deeper understanding of complex system dynamics, emphasizing the importance of identifying and managing critical transitions effectively.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-ArmstrongMcKayEtAl2022" class="csl-entry" role="listitem">
+Armstrong McKay, D. I., Staal, A., Abrams, J. F., Winkelmann, R., Sakschewski, B., Loriani, S., Fetzer, I., Cornell, S. E., Rockström, J., &amp; Lenton, T. M. (2022). Exceeding 1.5<span><span class="math inline">\(^\circ\)</span></span><span>C</span> global warming could trigger multiple climate tipping points. <em>Science</em>, <em>377</em>(6611), eabn7950. <a href="https://doi.org/10.1126/science.abn7950">https://doi.org/10.1126/science.abn7950</a>
+</div>
+<div id="ref-GarbeEtAl2020" class="csl-entry" role="listitem">
+Garbe, J., Albrecht, T., Levermann, A., Donges, J. F., &amp; Winkelmann, R. (2020). The hysteresis of the <span>Antarctic Ice Sheet</span>. <em>Nature</em>, <em>585</em>(7826), 538–544. <a href="https://doi.org/10.1038/s41586-020-2727-5">https://doi.org/10.1038/s41586-020-2727-5</a>
+</div>
+<div id="ref-LentonEtAl2023a" class="csl-entry" role="listitem">
+Lenton, T. M., Armstrong McKay, D. I., Loriani, S., Abrams, J. F., Lade, S. J., Donges, J. F., Milkoreit, M., Powell, T., Smith, S. R., Zimm, C., Buxton, J. E., Bailey, E., Laybourn, L., Ghadiali, A., &amp; Dyke, J. G. (Eds.). (2023). <em>The <span>Global Tipping Points Report</span> 2023</em>. <a href="https://global-tipping-points.org">https://global-tipping-points.org</a>
+</div>
+<div id="ref-SchefferEtAl2001" class="csl-entry" role="listitem">
+Scheffer, M., Carpenter, S., Foley, J. A., Folke, C., &amp; Walker, B. (2001). Catastrophic shifts in ecosystems. <em>Nature</em>, <em>413</em>(6856), 591–596. <a href="https://doi.org/10.1038/35098000">https://doi.org/10.1038/35098000</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02.01-Nonlinearity.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02.03-Resilience.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Resilience</span>">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
