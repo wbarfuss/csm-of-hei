@@ -1,8 +1,10 @@
 /.quarto/
 /__output/
-/__slides/ 
+/__slides/
+/__scripts/
 /SOLUTIONS/
 
+/images/.$*.bkp
 *__pycache__/
 *.ipynb_checkpoints/
 *.jupyter/
