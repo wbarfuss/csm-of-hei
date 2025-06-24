@@ -1,5 +1,17 @@
+# repos:
+# - repo: https://github.com/fastai/nbdev
+#   rev: 2.2.10
+#   hooks:
+#   - id: nbdev_clean
 repos:
-- repo: https://github.com/fastai/nbdev
-  rev: 2.2.10
-  hooks:
-  - id: nbdev_clean
+  - repo: https://github.com/srstevenson/nb-clean
+    rev: 4.0.1
+    hooks:
+      - id: nb-clean
+        args:
+          - --remove-empty-cells
+          - --preserve-cell-outputs
+          - --preserve-cell-metadata
+          - tags
+          - slideshow
+          - --
