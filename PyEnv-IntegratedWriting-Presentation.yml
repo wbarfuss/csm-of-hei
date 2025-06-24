@@ -10,8 +10,9 @@ dependencies:
   - sympy
   - scipy
   - pandas
-  - jupyterlab=4.0.0  # deck not functioning with jupyterlab > 4.0.0
+  - jupyterlab=4.0.12  # deck not functioning with jupyterlab > 4.0.0
   - ipywidgets
+  - jupyterlab-git
   - pip
   - pip:
     - jupyterlab-deck
