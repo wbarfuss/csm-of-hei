@@ -38,6 +38,12 @@ These lecture notes are made open-source and hosted in a [GitHub repository](htt
 !rm index.qmd  # remove the intermediate file
 ```
 
+After configuring the [settings](https://quarto.org/docs/publishing/github-pages.html#publish-command) for GitHub Pages, one can publish the web version of these lecture notes by running the following command (at the root of the cleaned main branch):
+
+```
+quarto publish gh-pages
+```
+
 <!-- #TODO: write about Python environments -->
 
 ## Acknowledgements
