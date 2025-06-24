@@ -12,10 +12,13 @@ dependencies:
   - pandas
   - jupyterlab
   - ipywidgets
-  - jupyterlab-git
+  - jupyterlab-slideshow
+  - nb-clean # to clean notebook files for better version control
+  - jupyterlab-git # optional for a nicer git interface in JupyterLab
+  - jupytext  # optional
   - pip
   - pip:
-    - jupyter_copilot
-    - nbdev # to clean ipynb files
+    - nbdev # optional
     - pre-commit # for https://nbdev.fast.ai/tutorials/pre_commit.html
+    - jupyter_copilot # optional
     - git+https://github.com/barfusslab/pyCRLD.git
