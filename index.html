@@ -433,6 +433,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>tail <span class="op">-</span>n <span class="op">+</span><span class="dv">10</span> index.qmd <span class="op">&gt;</span> README.md  <span class="co"># remove some metadata+</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm index.qmd  <span class="co"># remove the intermediate file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>After configuring the <a href="https://quarto.org/docs/publishing/github-pages.html#publish-command">settings</a> for GitHub Pages, one can publish the web version of these lecture notes by running the following command (at the root of the cleaned main branch):</p>
+<pre><code>quarto publish gh-pages</code></pre>
 <!-- #TODO: write about Python environments -->
 </section>
 <section id="acknowledgements" class="level2">
