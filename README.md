@@ -30,7 +30,7 @@ Assuming you have installed the [Quarto CLI](https://quarto.org/docs/get-started
 
 The comment `#| output: false` is a Quarto directive that prevents the output of this cell from being displayed in the rendered documents. This is useful for keeping these readable.
 
-These lecture notes are made open-source and hosted in a GitHub repository. To convert this `index.ipynb` file (which is required in the Quarto Book project type) into the repository's README file, one may execute the following commands:
+These lecture notes are made open-source and hosted in a [GitHub repository](https://github.com/wbarfuss/csm-of-hei). To convert this `index.ipynb` file (which is required in the Quarto Book project type) into the repository's README file, one may execute the following commands:
 
 ```{python}
 !quarto convert index.ipynb # convert into Quarto markdown
