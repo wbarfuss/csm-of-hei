@@ -9,6 +9,7 @@ repos:
     hooks:
       - id: nb-clean
         args:
+          - --remove-all-notebook-metadata
           - --remove-empty-cells
           - --preserve-cell-outputs
           - --preserve-cell-metadata
