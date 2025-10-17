@@ -21,7 +21,9 @@ These lecture notes are written in [Jupyter](https://jupyter.org) Notebooks, whi
 Scholarly writing practices, such as citations and cross-references, are facilitated by [Quarto](https://quarto.org), a powerful scientific and technical publishing system. Quarto also allows you to view these lecture notes in various formats, such as HTML and PDF. 
 
 
-Assuming you have installed the [Quarto CLI](https://quarto.org/docs/get-started/), you can render these lecture notes by running the following command in the terminal:
+### Rendering the lecture notes
+
+Assuming you have installed the [Quarto CLI](https://quarto.org/docs/get-started/) and cloned or copied the [repository](https://github.com/wbarfuss/csm-of-hei) to your local machine, you can render these lecture notes by running the following command in the terminal:
 
 ```{python}
 #| output: false
@@ -29,6 +31,8 @@ Assuming you have installed the [Quarto CLI](https://quarto.org/docs/get-started
 ```
 
 The comment `#| output: false` is a Quarto directive that prevents the output of this cell from being displayed in the rendered documents. This is useful for keeping these readable.
+
+### Readme file
 
 These lecture notes are made open-source and hosted in a [GitHub repository](https://github.com/wbarfuss/csm-of-hei). To convert this `index.ipynb` file (which is required in the Quarto Book project type) into the repository's README file, one may execute the following commands:
 
@@ -38,10 +42,28 @@ These lecture notes are made open-source and hosted in a [GitHub repository](htt
 !rm index.qmd  # remove the intermediate file
 ```
 
+### GitHub Pages
+
 After configuring the [settings](https://quarto.org/docs/publishing/github-pages.html#publish-command) for GitHub Pages, one can publish the web version of these lecture notes by running the following command (at the root of the cleaned main branch):
 
-```
+```bash
 quarto publish gh-pages
+```
+
+### nb-clean and pre-commit hooks
+
+To check the notebooks for unnecessary metadata and clean them up, you can run the following command:
+
+```bash
+nb-clean check --remove-empty-cells --preserve-cell-outputs --preserve-cell-metadata slideshow tags -- index.ipynb
+```
+
+To clean the notebooks and remove unnecessary metadata, replace `check` with `clean` in the command above.
+
+This repository uses [pre-commit](https://pre-commit.com) to ensure that all notebooks commited to git adhere to the standards from the command above and are as git-friendly as possible. To install the pre-commit hooks, run the following command:
+
+```bash
+pre-commit install --allow-missing-config
 ```
 
 <!-- #TODO: write about Python environments -->
