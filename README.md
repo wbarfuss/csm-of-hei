@@ -55,7 +55,7 @@ quarto publish gh-pages
 To check the notebooks for unnecessary metadata and clean them up, you can run the following command:
 
 ```bash
-nb-clean check --remove-empty-cells --preserve-cell-outputs --preserve-cell-metadata slideshow tags -- index.ipynb
+nb-clean check --remove-all-notebook-metadata --remove-empty-cells --preserve-cell-outputs --preserve-cell-metadata slideshow tags -- index.ipynb
 ```
 
 To clean the notebooks and remove unnecessary metadata, replace `check` with `clean` in the command above.
