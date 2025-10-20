@@ -1,11 +1,11 @@
-name: iw-dev
+name: iw
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.11
+  - python # =3.11
   - numpy
-  - matplotlib=3.8.0
+  - matplotlib # =3.8.0
   - ipympl
   - sympy
   - scipy
