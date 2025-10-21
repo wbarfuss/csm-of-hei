@@ -210,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -477,7 +477,7 @@ window.Quarto = {
 </header>
 
 
-<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2025/2026 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
 <section id="motivation" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">2.1</span> Motivation</h2>
 <section id="the-issue-of-climate-change" class="level3">
@@ -496,7 +496,8 @@ window.Quarto = {
 <figcaption>A scenario of climate change</figcaption>
 </figure>
 </div>
-<p><strong>Typical responses</strong>. This experiment was conducted with MIT graduate students, a group of highly educated adults <span class="citation" data-cites="StermanSweeney2007">(<a href="References.html#ref-StermanSweeney2007" role="doc-biblioref">Sterman &amp; Sweeney, 2007</a>)</span>. Yet, they showed a widespread misunderstanding of fundamental stock and flow relationships. Most subjects believed that atmospheric greenhouse gas (GHG) can be stabilized while emissions into the atmosphere continuously exceed the removal of GHGs from it.</p>
+<p><strong>Typical responses</strong>.</p>
+<p>This experiment was conducted with MIT graduate students, a group of highly educated adults <span class="citation" data-cites="StermanSweeney2007">(<a href="References.html#ref-StermanSweeney2007" role="doc-biblioref">Sterman &amp; Sweeney, 2007</a>)</span>. Yet, they showed a widespread misunderstanding of fundamental stock and flow relationships. Most subjects believed that atmospheric greenhouse gas (GHG) can be stabilized while emissions into the atmosphere continuously exceed the removal of GHGs from it.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/02.01-StermanSweeney2007-TypicalResponses.dio.png" class="img-fluid figure-img"></p>
@@ -527,7 +528,7 @@ window.Quarto = {
 <li><strong>Analyze</strong> the <strong>stability</strong> of equilibrium points in dynamic systems using linear stability analysis.</li>
 </ul>
 <p>After motivating this chapter, we make ourselves ready for some computations by importing some Python libraries and setting up the plotting style.</p>
-<div id="039a4f67-01f4-4cde-8de9-52a60216d901" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="50">
+<div id="039a4f67-01f4-4cde-8de9-52a60216d901" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -599,31 +600,35 @@ window.Quarto = {
 <section id="computational-representation" class="level3">
 <h3 class="anchored" data-anchor-id="computational-representation">Computational representation</h3>
 <p>There are, in fact, <strong>many ways</strong> to translate the pictorial and mathematical models into a computer model. We start by defining the <strong>function</strong>, <span class="math inline">\(F(x_t)\)</span>, from above but give it a more <strong>descriptive name</strong>.</p>
-<div id="7972f9b5" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="3">
+<div id="7972f9b5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_stock(stock, inflow, outflow):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    new_stock <span class="op">=</span> stock <span class="op">+</span> inflow <span class="op">-</span> outflow</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_stock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we are ready to perform our <strong>first model simulation</strong>.</p>
 <p><strong>Conceptually</strong>, we need to define the <strong>initial value</strong> of the stock. Let’s assume we start at 280 parts per million (ppm).</p>
-<div id="62cdaa69-53be-46d3-9ffa-e73f8eecca31" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="4">
+<div id="62cdaa69-53be-46d3-9ffa-e73f8eecca31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>stock <span class="op">=</span> <span class="dv">280</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Technically</strong>, we must define a container to store the simulation output. We create a Python list for this purpose and store the stock’s initial value inside.</p>
-<div id="bb54382e-065b-4d32-9240-bf78ac6f703e" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>time_series <span class="op">=</span> [stock]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bb54382e-065b-4d32-9240-bf78ac6f703e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>time_series <span class="op">=</span> [stock]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>[280]</code></pre>
+</div>
 </div>
 <p><strong>Conceptually</strong>, before we can start the simulation, we must decide <strong>how many time steps</strong> it should run, and on the values of <strong>inflow and outflow</strong>. Let’s simulate 150 steps, denoting yearly updates from 1850 to 2000, and assume a <strong>constant flow</strong> with an inflow of 75.6 ppm and an outflow of 75 ppm.</p>
 <p><strong>Technically</strong>, we loop over the <code>range</code> from 1851 to 2001, calling the <code>update_stock</code> function with the flow parameter values and appending the new <code>stock</code> value to the <code>time_series</code> list.</p>
-<div id="32672dcd" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1851</span>, <span class="dv">2001</span>): </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> update_stock(stock, <span class="fl">75.6</span>, <span class="dv">75</span>)<span class="op">;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    time_series.append(stock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="32672dcd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1851</span>, <span class="dv">2001</span>): </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> update_stock(stock, <span class="fl">75.6</span>, <span class="dv">75</span>)<span class="op">;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    time_series.append(stock)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, we can graphically investigate the output time series of our model simulation.</p>
-<div id="cell-fig-linear-growth" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1850</span>, <span class="dv">2001</span>)), time_series, <span class="st">'.-'</span>)<span class="op">;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'time [years]'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'stock [ppm]'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-fig-linear-growth" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1850</span>, <span class="dv">2001</span>)), time_series, <span class="st">'.-'</span>)<span class="op">;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'time [years]'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'stock [ppm]'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-linear-growth" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -688,48 +693,48 @@ Figure&nbsp;2.1: Linear growth
 </ol>
 <p>We will find out.</p>
 <p>Let’s first define our new <code>update_stock</code> function.</p>
-<div id="d8c61965-0bb5-425a-add3-2eea7afaf60f" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_stock(stock, rate):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    new_stock <span class="op">=</span> stock <span class="op">+</span> rate<span class="op">*</span>stock</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_stock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d8c61965-0bb5-425a-add3-2eea7afaf60f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_stock(stock, rate):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    new_stock <span class="op">=</span> stock <span class="op">+</span> rate<span class="op">*</span>stock</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_stock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To run the model, i.e., to iterate the <code>update_stock</code> function, we define an <code>iterate_model</code> function.</p>
-<div id="ddf696a4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> iterate_model(nr_timesteps, initial_value, update_func, <span class="op">**</span>update_params):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> initial_value</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> [stock]</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        stock <span class="op">=</span> update_func(stock, <span class="op">**</span>update_params)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        time_series.append(stock)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(time_series)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ddf696a4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> iterate_model(nr_timesteps, initial_value, update_func, <span class="op">**</span>update_params):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> initial_value</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> [stock]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        stock <span class="op">=</span> update_func(stock, <span class="op">**</span>update_params)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        time_series.append(stock)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(time_series)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This function takes, the number of time steps, the initial stock value as input arguments. Furthermore, it takes an <code>update_func</code> function and flexible <code>**update_params</code> as arguments, which allows us to use different stock update functions. It returns a <code>numpy</code> array of stock values over time.</p>
 <p>The stock value starts at <code>initial_value</code>. The list <code>time_series</code> is initialized with the starting stock value. This will store the stock value at each timestep.</p>
 <p>Then, a loop runs <code>nr_timesteps</code> times. The <code>update_func</code> function is called in each iteration with the current stock value and the <code>update_parameters</code>. The result is assigned to <code>stock</code>, updating its value. The new <code>stock</code> value is appended to the <code>time_series</code> list, which tracks the stock’s value at each timestep.</p>
 <p>For convenience, we will also define a <code>plot_stock_evolution</code> function, plotting the stock evolution.</p>
-<div id="deca3799-6bbd-40e5-b7d0-bab8aa556446" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stock_evolution(nr_timesteps, initial_value, update_func,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                update_func, <span class="op">**</span>update_parameters)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.-'</span>, label<span class="op">=</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])<span class="op">;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Stock value"</span>)<span class="op">;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="deca3799-6bbd-40e5-b7d0-bab8aa556446" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stock_evolution(nr_timesteps, initial_value, update_func,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                update_func, <span class="op">**</span>update_parameters)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.-'</span>, label<span class="op">=</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Stock value"</span>)<span class="op">;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>plot_stock_evolution</code> function calls the <code>iterate_model</code> function with the given parameters and plots the <code>time_series</code> on the axis, with the format <code>'.-'</code> (dots connected by lines) and a legend label indicating the parameters used. The <code>str(update_parameters)[1:-1]</code> converts the <code>update_parameters</code> dictionary into a string and, with <code>[1:-1]</code>, removes the first and last characters (<code>{</code> and <code>}</code> in the case of a dictionary).</p>
 <p>Finally, the function returns the <code>time_series</code> list, which contains the stock values at each timestep.</p>
 <p><strong>For example</strong>, let’s consider the phenomenon of CO2 emissions.</p>
-<div id="b6627f29-1fd9-4f53-a777-2a1ed1d46a01" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="11">
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div id="b6627f29-1fd9-4f53-a777-2a1ed1d46a01" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[&quot;hide_input&quot;]">
+<div class="cell-output cell-output-display">
 
         <iframe width="100%" height="450" src="https://ourworldindata.org/explorers/co2?hideControls=true&amp;Gas+or+Warming=CO%E2%82%82&amp;Accounting=Territorial&amp;Fuel+or+Land+Use+Change=All+fossil+emissions&amp;Count=Per+country&amp;country=CHN~USA~IND~GBR~OWID_WRL&amp;tab=chart" frameborder="0" allowfullscreen=""></iframe>
         
 </div>
 </div>
 <p>Our stock will be the annual CO2 emissions. We assume that we start with 0.01 gigatons of CO2 emissions around 1750 and assume a constant growth rate of 3.3% per year. Where are we 250 years later?</p>
-<div id="f18a177c-1b5d-42c1-83ab-fc99a2c5ba57" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plot_stock_evolution(<span class="dv">250</span>, <span class="fl">0.01</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=</span><span class="fl">0.033</span>)<span class="op">;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Time steps [years]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Anthropogenic</span><span class="ch">\n</span><span class="st">CO2 emissions [GtC/year]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f18a177c-1b5d-42c1-83ab-fc99a2c5ba57" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_stock_evolution(<span class="dv">250</span>, <span class="fl">0.01</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=</span><span class="fl">0.033</span>)<span class="op">;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Time steps [years]"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Anthropogenic</span><span class="ch">\n</span><span class="st">CO2 emissions [GtC/year]"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -764,11 +769,11 @@ Figure&nbsp;2.2: The great acceleration
 <li>A halved rate leads to about a <strong>100th of the stock</strong> at the end, and a doubled rate leads to about <strong>10 times of the stock</strong> at the end.</li>
 </ol>
 <p>Let’s find out.</p>
-<div id="5a32125b-b8bc-4f3e-bf09-166a10b408d0" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ts_half <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span><span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ts_norm <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ts_doub <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span><span class="op">*</span><span class="dv">2</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5a32125b-b8bc-4f3e-bf09-166a10b408d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ts_half <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ts_norm <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ts_doub <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_stock, rate<span class="op">=</span><span class="fl">0.033</span><span class="op">*</span><span class="dv">2</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -778,17 +783,17 @@ Figure&nbsp;2.2: The great acceleration
 </div>
 </div>
 <p>Thus, a halved rate leads to about a <strong>10th of the stock</strong> at the end:</p>
-<div id="dfb3558d-b5d7-4b5a-8ba3-21031ff754a3" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ts_norm[<span class="op">-</span><span class="dv">1</span>]<span class="op">/</span>ts_half[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>11.192852530716676</code></pre>
+<div id="dfb3558d-b5d7-4b5a-8ba3-21031ff754a3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ts_norm[<span class="op">-</span><span class="dv">1</span>]<span class="op">/</span>ts_half[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>np.float64(11.192852530716676)</code></pre>
 </div>
 </div>
 <p>And a doubled rate leads to about <strong>100 times of the stock</strong> at the end:</p>
-<div id="8c50de96-c109-4fa6-914d-01ec3c046372" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ts_doub[<span class="op">-</span><span class="dv">1</span>]<span class="op">/</span>ts_norm[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>111.82334406335414</code></pre>
+<div id="8c50de96-c109-4fa6-914d-01ec3c046372" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ts_doub[<span class="op">-</span><span class="dv">1</span>]<span class="op">/</span>ts_norm[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>np.float64(111.82334406335414)</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -820,18 +825,11 @@ Figure&nbsp;2.2: The great acceleration
 </ol>
 <p>Let’s find out.</p>
 <p>Fortunately, there’s no need to create a new Python function. We can just insert negative growth rates into our current functions.</p>
-<div id="fab3197f-78d5-48d3-97e5-dc6f337ee68c" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ts_half <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span><span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ts_norm <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ts_doub <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span><span class="op">*</span><span class="dv">2</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="fab3197f-78d5-48d3-97e5-dc6f337ee68c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ts_half <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>ts_norm <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>ts_doub <span class="op">=</span> plot_stock_evolution(<span class="dv">150</span>, <span class="fl">0.1</span>, update_func<span class="op">=</span>update_stock, rate<span class="op">=-</span><span class="fl">0.033</span><span class="op">*</span><span class="dv">2</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Thus, the stocks shrink <strong>faster than linearly</strong> toward zero, with more negative growth rates causing faster decay. This process is also called <strong>exponential decay</strong>.</p>
 <p>Since decay isn’t inherently negative in a normative sense—consider environmental degradation—it’s more accurate to refer to negative feedback loops as <strong>balancing feedback loops</strong>.</p>
@@ -861,52 +859,52 @@ y_{t+1} &amp;= y_t + bx_t
 \end{align}\]</span> where <span class="math inline">\(a&gt;0\)</span> denotes the rate of converting innovations to economic development and <span class="math inline">\(b&gt;0\)</span> denotes the rate of converting economic development to innovations.</p>
 <p>Now, we convert the mathematical model into a <strong>computational model</strong>.</p>
 <p>First, we define the <code>update_model</code> functions.</p>
-<div id="77a5debe-cf5b-470c-bc26-74bb2f5fffb8" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_model1(x, r):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> x <span class="op">+</span> r<span class="op">*</span>x</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="77a5debe-cf5b-470c-bc26-74bb2f5fffb8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_model1(x, r):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> x <span class="op">+</span> r<span class="op">*</span>x</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="51a2cf7e-0c40-47ae-a75c-60dd99141b93" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_model2(z, a, b):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> z</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> x <span class="op">+</span> a<span class="op">*</span>y</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    y_ <span class="op">=</span> y <span class="op">+</span> b<span class="op">*</span>x</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x_, y_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="51a2cf7e-0c40-47ae-a75c-60dd99141b93" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_model2(z, a, b):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> z</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> x <span class="op">+</span> a<span class="op">*</span>y</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    y_ <span class="op">=</span> y <span class="op">+</span> b<span class="op">*</span>x</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x_, y_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Second, we define two <code>plot_evolution</code> functions, detailing the plotting of the economic development and innovation levels.</p>
-<div id="60e55b81-cff0-4f16-a576-334e3729f472" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_evolution1(initial_value, nr_timesteps, <span class="op">**</span>update_parameters):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, update_model1, </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                <span class="op">**</span>update_parameters)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.--'</span>, label<span class="op">=</span><span class="st">"Economy1 | "</span> <span class="op">+</span> <span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>],</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'purple'</span>)<span class="op">;</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="60e55b81-cff0-4f16-a576-334e3729f472" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_evolution1(initial_value, nr_timesteps, <span class="op">**</span>update_parameters):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, update_model1, </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                                <span class="op">**</span>update_parameters)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.--'</span>, label<span class="op">=</span><span class="st">"Economy1 | "</span> <span class="op">+</span> <span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'purple'</span>)<span class="op">;</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7c2cd58f-6285-4aba-b048-52f8532a167e" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_evolution2(initial_value_x, initial_value_y, nr_timesteps, </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> [initial_value_x, initial_value_y]</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, z, update_model2, </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="op">**</span>update_parameters)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series[:, <span class="dv">0</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">"Economy2 | "</span><span class="op">+</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>],</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'red'</span>)<span class="op">;</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series[:, <span class="dv">1</span>], <span class="st">'.-'</span>, <span class="co">#label="Innovation2 | "+str(update_parameters)[1:-1],</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'blue'</span>)<span class="op">;</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7c2cd58f-6285-4aba-b048-52f8532a167e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_model_evolution2(initial_value_x, initial_value_y, nr_timesteps, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> [initial_value_x, initial_value_y]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, z, update_model2, </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="op">**</span>update_parameters)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series[:, <span class="dv">0</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">"Economy2 | "</span><span class="op">+</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'red'</span>)<span class="op">;</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series[:, <span class="dv">1</span>], <span class="st">'.-'</span>, <span class="co">#label="Innovation2 | "+str(update_parameters)[1:-1],</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'blue'</span>)<span class="op">;</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Last, we define a <code>compare_model</code> function, which sets the initial levels of the economies as identical and has descriptive parameters for easy interpretation of the model results.</p>
-<div id="888df4f8-bb94-4224-ad9f-3304d55917ff" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_models(economy<span class="op">=</span><span class="fl">1.0</span>, innovation<span class="op">=</span><span class="fl">1.0</span>, timesteps<span class="op">=</span><span class="dv">20</span>, selfrate<span class="op">=</span><span class="fl">0.2</span>, innoTOecon<span class="op">=</span><span class="fl">0.01</span>, econTOinno<span class="op">=</span><span class="fl">4.0</span>,</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                  ymax<span class="op">=</span><span class="dv">40</span>):</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution2(economy, innovation, timesteps, a<span class="op">=</span>innoTOecon, b<span class="op">=</span>econTOinno)<span class="op">;</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution1(economy, timesteps, r<span class="op">=</span>selfrate)<span class="op">;</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="dv">0</span>, ymax)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="888df4f8-bb94-4224-ad9f-3304d55917ff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_models(economy<span class="op">=</span><span class="fl">1.0</span>, innovation<span class="op">=</span><span class="fl">1.0</span>, timesteps<span class="op">=</span><span class="dv">20</span>, selfrate<span class="op">=</span><span class="fl">0.2</span>, innoTOecon<span class="op">=</span><span class="fl">0.01</span>, econTOinno<span class="op">=</span><span class="fl">4.0</span>,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                  ymax<span class="op">=</span><span class="dv">40</span>):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution2(economy, innovation, timesteps, a<span class="op">=</span>innoTOecon, b<span class="op">=</span>econTOinno)<span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution1(economy, timesteps, r<span class="op">=</span>selfrate)<span class="op">;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="dv">0</span>, ymax)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We set the default parameter so that in <em>model 1</em>, there is a default growth rate of 0.2. In <em>model 2</em>, we assume that innovations take a long time to result in economic development (i.e., the rate from innovation to the economy is small, a 20th compared to the default rate of <em>model 1</em>, to be precise). Even if the rate of converting economic development to innovation is 20 times larger than the default rate, economic growth in <em>model 2</em> is slower than in <em>model 1</em>.</p>
-<div id="cell-fig-default-economy-innovation-interactions" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>compare_models()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-fig-default-economy-innovation-interactions" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>compare_models()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-default-economy-innovation-interactions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -923,8 +921,8 @@ Figure&nbsp;2.3: Default Economy-Innovation interactions
 <p>How could be boost growth in <em>model 2</em>?</p>
 <p>One way could be to increase the number of innovations.</p>
 <p>It would require a 20-fold increase in the number of innovations to match the growth rate of <em>model 1</em>. This is also intuitive: if it takes 20 times longer for innovations to result in economic development, we need 20 times more innovations to achieve the same growth rate. Compare <a href="#fig-economy-boosted-innovation-interactions" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> with <a href="#fig-default-economy-innovation-interactions" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>.</p>
-<div id="cell-fig-economy-boosted-innovation-interactions" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>compare_models(innovation<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-fig-economy-boosted-innovation-interactions" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>compare_models(innovation<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-economy-boosted-innovation-interactions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -942,12 +940,12 @@ Figure&nbsp;2.4: Economy-Innovation interactions with a 20-fold increase in inno
 <p>How much would the rate of converting economic development into innovations increase to match economic growth in <em>model 1</em>?</p>
 <p>How much would we need to change the rate of converting innovations to economic development in <em>model 2</em> to outperform the economic growth of <em>model 1</em>?</p>
 <p>We need to increase either the innovation-to-economy or the economy-to-innovation rate by a factor of approx. 1.45 to match the sizes of the economies after 20 time periods (<a href="#fig-economy-innovation-boosted-interactions" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>).</p>
-<div id="cell-fig-economy-innovation-boosted-interactions" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">121</span>) <span class="co"># LEFT PLOT</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>compare_models(econTOinno<span class="op">=</span><span class="fl">4.0</span><span class="op">*</span><span class="fl">1.45</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">122</span>) <span class="co"># RIGHT PLOT</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>compare_models(innoTOecon<span class="op">=</span><span class="fl">0.01</span><span class="op">*</span><span class="fl">1.45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-fig-economy-innovation-boosted-interactions" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">121</span>) <span class="co"># LEFT PLOT</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>compare_models(econTOinno<span class="op">=</span><span class="fl">4.0</span><span class="op">*</span><span class="fl">1.45</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(<span class="dv">122</span>) <span class="co"># RIGHT PLOT</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>compare_models(innoTOecon<span class="op">=</span><span class="fl">0.01</span><span class="op">*</span><span class="fl">1.45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-economy-innovation-boosted-interactions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -981,14 +979,14 @@ Figure&nbsp;2.6: Economy-Nature interactions
 </div>
 <p>Assuming the feedback structure defined in <a href="#fig-EconomyNature" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>, we can reuse our code block from above.</p>
 <p>Let’s assume that economic and natural capital start at a base level of 1. Economic growth depends positively on the state of natural capital (assuming a base rate of 0.1). In contrast, natural capital changes depend negatively on economic capital but on a slower timescale (let’s take a rate of 0.005). Of course, these parameters serve mainly illustrative purposes.</p>
-<div id="12d119a0-ba66-4605-b413-221194cd5b30" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_EconomyNature(economy<span class="op">=</span><span class="fl">1.0</span>, nature<span class="op">=</span><span class="fl">1.0</span>, timesteps<span class="op">=</span><span class="dv">100</span>, natTOecon<span class="op">=</span><span class="fl">0.1</span>, econTOnat<span class="op">=-</span><span class="fl">0.005</span>):</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution2(economy, nature, timesteps, a<span class="op">=</span>natTOecon, b<span class="op">=</span>econTOnat)<span class="op">;</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="12d119a0-ba66-4605-b413-221194cd5b30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_EconomyNature(economy<span class="op">=</span><span class="fl">1.0</span>, nature<span class="op">=</span><span class="fl">1.0</span>, timesteps<span class="op">=</span><span class="dv">100</span>, natTOecon<span class="op">=</span><span class="fl">0.1</span>, econTOnat<span class="op">=-</span><span class="fl">0.005</span>):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    plot_model_evolution2(economy, nature, timesteps, a<span class="op">=</span>natTOecon, b<span class="op">=</span>econTOnat)<span class="op">;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The economy starts growing linearly while nature degrades. At around 60 periods, the economy reaches a maximum and enters a recession while nature continues to degrade ({#fig-EconomyNature100}).</p>
-<div id="cell-fig-EconomyNature100" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plot_EconomyNature()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-fig-EconomyNature100" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_EconomyNature()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-economynature100" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1003,8 +1001,8 @@ Figure&nbsp;2.7
 </div>
 </div>
 <p>What happens if we continue the simulation for 1000 periods?</p>
-<div id="cell-fig-EconomyNature1000" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_EconomyNature(timesteps<span class="op">=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-fig-EconomyNature1000" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plot_EconomyNature(timesteps<span class="op">=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-economynature1000" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1115,42 +1113,27 @@ a_{n1} &amp; a_{n2} &amp; \dots &amp;a_{nn}
 <p><span class="math display">\[ x_t = x_0 a^t \]</span></p>
 <p>This means, we can directly calculate the system state at any point in time without the need to iterate the difference equation forward.</p>
 <p><strong>For example</strong>, let’s say we want to calculate only each 10th time step,</p>
-<div id="27653fc5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">10</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
-<pre><code>array([  0,  10,  20,  30,  40,  50,  60,  70,  80,  90, 100])</code></pre>
-</div>
+<div id="27653fc5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">10</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The system state is,</p>
-<div id="cb20376e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="33">
+<div id="cb20376e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x_0 <span class="op">=</span> <span class="fl">1.2</span><span class="op">;</span> r <span class="op">=</span> <span class="fl">0.05</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x_0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> r)<span class="op">**</span>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
-<pre><code>array([  1.2       ,   1.95467355,   3.18395725,   5.18633085,
-         8.44798645,  13.76087974,  22.41502307,  36.51171064,
-        59.47372928,  96.87643806, 157.80150942])</code></pre>
-</div>
 </div>
 <p>Here, we made use of the element-wise exponentiation of NumPy arrays. This means that each element of the array is raised to the power of the corresponding element of the other array. This a very convenient feature of NumPy, as it allows us to perform operations on arrays without the need for explicit loops.</p>
 <p>To check, whether our closed-form solution works, we compare it to the simulation results.</p>
-<div id="20246f4b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_solutions(initial_value<span class="op">=</span><span class="fl">1.2</span>, nr_timesteps<span class="op">=</span><span class="dv">100</span>, rate<span class="op">=</span><span class="fl">0.05</span>):</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(initial_value<span class="op">=</span>initial_value, nr_timesteps<span class="op">=</span>nr_timesteps,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                         update_func<span class="op">=</span>update_stock, rate<span class="op">=</span>rate)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.arange(<span class="dv">0</span>, nr_timesteps<span class="op">+</span><span class="dv">1</span>, <span class="dv">5</span>)<span class="op">;</span> </span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(t, initial_value<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>rate)<span class="op">**</span>t, <span class="st">'X'</span>, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Analytical solution'</span>)<span class="op">;</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="20246f4b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_solutions(initial_value<span class="op">=</span><span class="fl">1.2</span>, nr_timesteps<span class="op">=</span><span class="dv">100</span>, rate<span class="op">=</span><span class="fl">0.05</span>):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(initial_value<span class="op">=</span>initial_value, nr_timesteps<span class="op">=</span>nr_timesteps,</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                         update_func<span class="op">=</span>update_stock, rate<span class="op">=</span>rate)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.arange(<span class="dv">0</span>, nr_timesteps<span class="op">+</span><span class="dv">1</span>, <span class="dv">5</span>)<span class="op">;</span> </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(t, initial_value<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>rate)<span class="op">**</span>t, <span class="st">'X'</span>, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Analytical solution'</span>)<span class="op">;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5a91547f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;skip&quot;}}" data-tags="[]" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>compare_solutions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-36-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="5a91547f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;skip&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>compare_solutions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Try it out with different parameter values and observe that the closed-form solution matches the simulation results perfectly.</strong></p>
 </section>
@@ -1158,54 +1141,49 @@ a_{n1} &amp; a_{n2} &amp; \dots &amp;a_{nn}
 <h3 class="anchored" data-anchor-id="cobweb-plots">Cobweb plots</h3>
 <p>Cobweb plots are a graphical tool to understand the dynamics of one-dimensional systems.</p>
 <p>The idea is to plot the system state at time <span class="math inline">\(t+1\)</span> against the system state at time <span class="math inline">\(t\)</span>. Including the system’s udpate function <span class="math inline">\(F(x_t)\)</span>, together with the identity line, <span class="math inline">\(y=x\)</span>, allows us to see how the system evolves over time. The next system state is obtained by a vertical line from the current state to the system update function. From this point, a horizontal line to the identity line makes the <em>next</em> system state, the <em>current</em> system state. Thus, the system evolution is represented by horizontal and vertical lines, hence the name, because the resulting picture resembles a cobweb.</p>
-<div id="d597f5d2-c3a4-4b39-8280-77982ba2353e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb(update_func, initial_value, nr_timesteps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>update_params):</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>initial_value<span class="op">;</span> h<span class="op">=</span>[x]<span class="op">;</span> v<span class="op">=</span>[x]<span class="op">;</span>  <span class="co"># lists for (h)orizontal and (v)ertical points</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):  <span class="co"># iterate the dynamical system</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> update_func(x, <span class="op">**</span>update_params)  <span class="co"># get the next system's state </span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        h.append(x)<span class="op">;</span> v.append(x_)  <span class="co"># going vertically (changing v)</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        h.append(x_)<span class="op">;</span> v.append(x_)  <span class="co"># going horizontially (changing h)</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_  <span class="co"># the new system state becomes the current state</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>) <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">None</span>, ax  <span class="co"># get ax</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    ax.plot(h, v, <span class="st">'k-'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)  <span class="co"># plot on ax</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.allclose(h[<span class="op">-</span><span class="dv">2</span>],h[<span class="op">-</span><span class="dv">1</span>]) <span class="kw">and</span> np.allclose(v[<span class="op">-</span><span class="dv">1</span>],v[<span class="op">-</span><span class="dv">2</span>]):</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if last points are close, assume convergence</span></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>        ax.plot([h[<span class="op">-</span><span class="dv">1</span>]], [v[<span class="op">-</span><span class="dv">1</span>]], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)  <span class="co"># plot dot</span></span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> h, v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d597f5d2-c3a4-4b39-8280-77982ba2353e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb(update_func, initial_value, nr_timesteps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>, <span class="op">**</span>update_params):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>initial_value<span class="op">;</span> h<span class="op">=</span>[x]<span class="op">;</span> v<span class="op">=</span>[x]<span class="op">;</span>  <span class="co"># lists for (h)orizontal and (v)ertical points</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):  <span class="co"># iterate the dynamical system</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> update_func(x, <span class="op">**</span>update_params)  <span class="co"># get the next system's state </span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        h.append(x)<span class="op">;</span> v.append(x_)  <span class="co"># going vertically (changing v)</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        h.append(x_)<span class="op">;</span> v.append(x_)  <span class="co"># going horizontially (changing h)</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_  <span class="co"># the new system state becomes the current state</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>) <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">None</span>, ax  <span class="co"># get ax</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    ax.plot(h, v, <span class="st">'k-'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)  <span class="co"># plot on ax</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.allclose(h[<span class="op">-</span><span class="dv">2</span>],h[<span class="op">-</span><span class="dv">1</span>]) <span class="kw">and</span> np.allclose(v[<span class="op">-</span><span class="dv">1</span>],v[<span class="op">-</span><span class="dv">2</span>]):</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if last points are close, assume convergence</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>        ax.plot([h[<span class="op">-</span><span class="dv">1</span>]], [v[<span class="op">-</span><span class="dv">1</span>]], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)  <span class="co"># plot dot</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> h, v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We study the simple system <span class="math inline">\(x_{t+1} = ax_t\)</span>.</p>
-<div id="e3e1bbb4-52bd-421d-83c7-4541798692ab" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Flin(x, a): <span class="cf">return</span> a<span class="op">*</span>x</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotF(a, x0<span class="op">=</span><span class="fl">1.4</span>):   </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.5</span>))<span class="op">;</span>  <span class="co"># axes and limits</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>), ax[<span class="dv">1</span>].set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">101</span>)<span class="op">;</span> <span class="co"># plot F(x) and x</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(xs, Flin(xs, a), label<span class="op">=</span><span class="st">"F(x)"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].legend()<span class="op">;</span> ax[<span class="dv">0</span>].set_xlabel(<span class="st">'system state x'</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">'system state x'</span>)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    h,v <span class="op">=</span> cobweb(update_func<span class="op">=</span>Flin, initial_value<span class="op">=</span>x0, a<span class="op">=</span>a, nr_timesteps<span class="op">=</span><span class="dv">20</span>, ax<span class="op">=</span>ax[<span class="dv">0</span>])<span class="op">;</span>  <span class="co"># include cobweb</span></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(initial_value<span class="op">=</span>x0, nr_timesteps<span class="op">=</span><span class="dv">20</span>, update_func<span class="op">=</span>Flin, a<span class="op">=</span>a)<span class="op">;</span></span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.tight_layout()  <span class="co"># make axis fit nicely</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e3e1bbb4-52bd-421d-83c7-4541798692ab" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Flin(x, a): <span class="cf">return</span> a<span class="op">*</span>x</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotF(a, x0<span class="op">=</span><span class="fl">1.4</span>):   </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.5</span>))<span class="op">;</span>  <span class="co"># axes and limits</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>), ax[<span class="dv">1</span>].set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">101</span>)<span class="op">;</span> <span class="co"># plot F(x) and x</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(xs, Flin(xs, a), label<span class="op">=</span><span class="st">"F(x)"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].legend()<span class="op">;</span> ax[<span class="dv">0</span>].set_xlabel(<span class="st">'system state x'</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylabel(<span class="st">'system state x'</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    h,v <span class="op">=</span> cobweb(update_func<span class="op">=</span>Flin, initial_value<span class="op">=</span>x0, a<span class="op">=</span>a, nr_timesteps<span class="op">=</span><span class="dv">20</span>, ax<span class="op">=</span>ax[<span class="dv">0</span>])<span class="op">;</span>  <span class="co"># include cobweb</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(initial_value<span class="op">=</span>x0, nr_timesteps<span class="op">=</span><span class="dv">20</span>, update_func<span class="op">=</span>Flin, a<span class="op">=</span>a)<span class="op">;</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.tight_layout()  <span class="co"># make axis fit nicely</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, with <span class="math inline">\(a=0.8\)</span>, we observe the cobweb plot in <a href="#fig-cobweb-a0o8" class="quarto-xref">Figure&nbsp;<span>2.9</span></a>.</p>
-<div id="cell-fig-cobweb-a0o8" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plotF(a<span class="op">=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="fig-cobweb-a0o8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-cobweb-a0o8" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tags="[]" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cobweb-a0o8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02.01-Nonlinearity_files/figure-html/fig-cobweb-a0o8-output-1.png" id="fig-cobweb-a0o8" class="img-fluid figure-img">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>plotF(a<span class="op">=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-cobweb-a0o8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.9
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p>Convince yourself about the following <strong>observations</strong>:</p>
 <ul>
@@ -1227,70 +1205,59 @@ Figure&nbsp;2.9
 <section id="multi-dimensional-phase-space-vizualization" class="level3">
 <h3 class="anchored" data-anchor-id="multi-dimensional-phase-space-vizualization">Multi-dimensional phase space vizualization</h3>
 <p>Let us first create a general, multi-dimensional update function.</p>
-<div id="d9aaf459" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_general_model(x, A): <span class="cf">return</span> A<span class="op">@</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d9aaf459" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_general_model(x, A): <span class="cf">return</span> A<span class="op">@</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here, the <code>@</code> operator is used for matrix multiplication.</p>
 <p>Then, we create a <code>plot_flow</code> function, using the <code>matplotlib.quiver</code> function.</p>
-<div id="86214eaf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow(A, extent<span class="op">=</span><span class="dv">10</span>, nr_points<span class="op">=</span><span class="dv">11</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>: _, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> y <span class="op">=</span> np.linspace(<span class="op">-</span>extent, extent, nr_points)  <span class="co"># the x and y grid points</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    X, Y <span class="op">=</span> np.meshgrid(x, y)  <span class="co"># transformed into a meshgrid</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    dX <span class="op">=</span> np.ones_like(X)<span class="op">;</span> dY <span class="op">=</span> np.ones_like(Y)  <span class="co"># containers for the changes</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x)):  <span class="co"># looping through the x grid points</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(y)):  <span class="co"># looping through the y grid points</span></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>            s <span class="op">=</span> np.array([x[i], y[j]]) <span class="co"># the current state</span></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>            s_ <span class="op">=</span> update_general_model(s, A) <span class="co"># the next state</span></span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>            ds <span class="op">=</span> s_ <span class="op">-</span> s <span class="co"># the change in state</span></span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>            dX[j,i] <span class="op">=</span> ds[<span class="dv">0</span>]  <span class="co"># capturing the change along the x-dimension</span></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>            dY[j,i] <span class="op">=</span> ds[<span class="dv">1</span>]  <span class="co"># captuaring the change along the y-dimension</span></span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> ax.quiver(X, Y, dX, dY, angles<span class="op">=</span><span class="st">'xy'</span>)  <span class="co"># plot the result</span></span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'x-stock level'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'y-stock level'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="86214eaf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow(A, extent<span class="op">=</span><span class="dv">10</span>, nr_points<span class="op">=</span><span class="dv">11</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>: </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>        fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">3</span>))<span class="op">;</span> ax <span class="op">=</span> fig.add_subplot(<span class="dv">132</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        fig.add_subplot(<span class="dv">131</span>, yticks<span class="op">=</span>[], xticks<span class="op">=</span>[])</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        fig.add_subplot(<span class="dv">133</span>, yticks<span class="op">=</span>[], xticks<span class="op">=</span>[])</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> y <span class="op">=</span> np.linspace(<span class="op">-</span>extent, extent, nr_points)  <span class="co"># the x and y grid points</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    X, Y <span class="op">=</span> np.meshgrid(x, y)  <span class="co"># transformed into a meshgrid</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    dX <span class="op">=</span> np.ones_like(X)<span class="op">;</span> dY <span class="op">=</span> np.ones_like(Y)  <span class="co"># containers for the changes</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x)):  <span class="co"># looping through the x grid points</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(y)):  <span class="co"># looping through the y grid points</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>            s <span class="op">=</span> np.array([x[i], y[j]]) <span class="co"># the current state</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>            s_ <span class="op">=</span> update_general_model(s, A) <span class="co"># the next state</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>            ds <span class="op">=</span> s_ <span class="op">-</span> s <span class="co"># the change in state</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>            dX[j,i] <span class="op">=</span> ds[<span class="dv">0</span>]  <span class="co"># capturing the change along the x-dimension</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>            dY[j,i] <span class="op">=</span> ds[<span class="dv">1</span>]  <span class="co"># captuaring the change along the y-dimension</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> ax.quiver(X, Y, dX, dY, angles<span class="op">=</span><span class="st">'xy'</span>)  <span class="co"># plot the result</span></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'x-stock level'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'y-stock level'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s test our <code>plot_flow</code> function with a random two-by-two matrix.</p>
-<div id="73403629" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.random.randn(<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>plot_flow(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-44-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="73403629" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.random.randn(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>plot_flow(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we can visualize the flow of any two-dimensional system, including a trajectory, in the phase space.</p>
 <p>We create a <code>plot_flow_trajectory</code> function, which plots the flow of a system with a given matrix, and the trajectory of the system over time.</p>
-<div id="45bafce8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow_trajectory(a<span class="op">=</span><span class="dv">1</span>,b<span class="op">=</span><span class="fl">0.05</span>,c<span class="op">=-</span><span class="fl">0.05</span>,d<span class="op">=</span><span class="dv">1</span>, nr_timesteps<span class="op">=</span><span class="dv">200</span>):</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))<span class="op">;</span>  <span class="co"># axes and limits</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ax[0].set_xlim(-1,2); ax[0].set_ylim(-1,2), ax[1].set_ylim(-1,2)</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> np.array([[a, b], [c, d]])</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> iterate_model(nr_timesteps, [<span class="dv">3</span>, <span class="dv">2</span>], update_general_model, A<span class="op">=</span>A)</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    plot_flow(A, ax<span class="op">=</span>ax[<span class="dv">0</span>])</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(ts[:,<span class="dv">0</span>], ts[:,<span class="dv">1</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Model trajectory'</span>, color<span class="op">=</span><span class="st">'purple'</span>)</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)<span class="op">;</span></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].plot(ts[:,<span class="dv">0</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'x-stock level'</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].plot(ts[:,<span class="dv">1</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'y-stock level'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].legend()</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="45bafce8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow_trajectory(a<span class="op">=</span><span class="dv">1</span>,b<span class="op">=</span><span class="fl">0.05</span>,c<span class="op">=-</span><span class="fl">0.05</span>,d<span class="op">=</span><span class="dv">1</span>, nr_timesteps<span class="op">=</span><span class="dv">200</span>):</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    fix, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))<span class="op">;</span>  <span class="co"># axes and limits</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ax[0].set_xlim(-1,2); ax[0].set_ylim(-1,2), ax[1].set_ylim(-1,2)</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> np.array([[a, b], [c, d]])</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> iterate_model(nr_timesteps, [<span class="dv">3</span>, <span class="dv">2</span>], update_general_model, A<span class="op">=</span>A)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    plot_flow(A, ax<span class="op">=</span>ax[<span class="dv">0</span>])</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].plot(ts[:,<span class="dv">0</span>], ts[:,<span class="dv">1</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Model trajectory'</span>, color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].plot(ts[:,<span class="dv">0</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'x-stock level'</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].plot(ts[:,<span class="dv">1</span>], <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'y-stock level'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].legend()</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c3e4e961-ac93-44e5-ab83-de3fcd21598e" class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>plot_flow_trajectory()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-47-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="c3e4e961-ac93-44e5-ab83-de3fcd21598e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>plot_flow_trajectory()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Such a phase space visulaization is a powerful tool, connecting the time-evolution of a dynamic systems with a <strong>geometrical representation</strong>.</p>
 <p>It allows us to understand the <strong>long-term behavior</strong> of a system, and eventually, how a system’s fate <strong>depends on its initial state</strong>.</p>
@@ -1350,97 +1317,60 @@ e^ix = \cos(x) + i\sin(x),
 <p>How to put this into practice/Python?</p>
 <p>We use <code>scipy.linalg.eig</code> to calculate the eigenvalues and eigenvectors of a matrix.</p>
 <p>From the documentation (<code>scipy.linalg.eig?</code>) we note that it return two objects, an iterable of eigenvalues <code>w</code> and an iterable of eigenvalues <code>v</code>. The normalized eigenvector corresponding to the eigenvalue <code>w[i]</code> is the column <code>v[:,i]</code>.</p>
-<div id="92b1006d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="51">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>evals, evecs <span class="op">=</span> scipy.linalg.eig(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="92b1006d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>evals, evecs <span class="op">=</span> scipy.linalg.eig(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, the eigenvalues are</p>
-<div id="d94a214a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>evals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="52">
-<pre><code>array([ 0.90140379+0.j, -1.1914619 +0.j])</code></pre>
-</div>
+<div id="d94a214a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>evals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The eigenvectors are</p>
-<div id="43f03ff6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="53">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>evecs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
-<pre><code>array([[ 0.99099361,  0.60104809],
-       [-0.13390914,  0.79921285]])</code></pre>
-</div>
+<div id="43f03ff6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>evecs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For readbility, we store eigenvalues and eigenvectors in new variables.</p>
-<div id="5df4c6b4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>eval1, eval2 <span class="op">=</span> evals</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eval1)</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eval2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(0.9014037889457369+0j)
-(-1.1914619046393624+0j)</code></pre>
-</div>
+<div id="5df4c6b4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>eval1, eval2 <span class="op">=</span> evals</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eval1)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eval2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Since the eigenvectors are return in the format in which they are return we need to transpose them to assign them to two separate variables.</p>
-<div id="dd416bfe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="55">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>evec1, evec2 <span class="op">=</span> evecs.T</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We check that we did not make any mistake:</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This should be zeros:"</span>, evec1 <span class="op">-</span> evecs[:,<span class="dv">0</span>])</span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This too:"</span>, evec2 <span class="op">-</span> evecs[:,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>This should be zeros: [0. 0.]
-This too: [0. 0.]</code></pre>
-</div>
+<div id="dd416bfe" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>evec1, evec2 <span class="op">=</span> evecs.T</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We check that we did not make any mistake:</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This should be zeros:"</span>, evec1 <span class="op">-</span> evecs[:,<span class="dv">0</span>])</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This too:"</span>, evec2 <span class="op">-</span> evecs[:,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can autmate such checks with the <code>assert</code> statement.</p>
-<div id="8f672075" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(evec1, evecs[:,<span class="dv">0</span>]), <span class="st">"The first eigenvector is not correct"</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(evec2, evecs[:,<span class="dv">1</span>]), <span class="st">"The second eigenvector is not correct"</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8f672075" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(evec1, evecs[:,<span class="dv">0</span>]), <span class="st">"The first eigenvector is not correct"</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> np.allclose(evec2, evecs[:,<span class="dv">1</span>]), <span class="st">"The second eigenvector is not correct"</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we create a <code>plot_eigenvectors</code> function.</p>
-<div id="fb9f9fdc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_eigenvectors(a,b,c,d, extent<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>: _, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>        A <span class="op">=</span> np.array([[a, b], [c, d]])</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>        evals, evecs <span class="op">=</span> scipy.linalg.eig(A)</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>        eval1, eval2 <span class="op">=</span> evals</span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>        evec1, evec2 <span class="op">=</span> evecs.T</span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># plotting the real part of the eigenvectors</span></span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>        ax.plot([<span class="dv">0</span>, extent<span class="op">*</span>evec1[<span class="dv">0</span>].real], [<span class="dv">0</span>, extent<span class="op">*</span>evec1[<span class="dv">1</span>].real], <span class="st">'-'</span>, </span>
-<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>                lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'deepskyblue'</span>, </span>
-<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="st">'$|</span><span class="er">\</span><span class="st">lambda_1|$ = </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(np.<span class="bu">abs</span>(eval1).<span class="bu">round</span>(<span class="dv">4</span>)))</span>
-<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>        ax.plot([<span class="dv">0</span>, extent<span class="op">*</span>evec2[<span class="dv">0</span>].real], [<span class="dv">0</span>, extent<span class="op">*</span>evec2[<span class="dv">1</span>].real], <span class="st">'-'</span>, </span>
-<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>                lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'teal'</span>, </span>
-<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="st">'$|</span><span class="er">\</span><span class="st">lambda_2|$ = </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(np.<span class="bu">abs</span>(eval2).<span class="bu">round</span>(<span class="dv">4</span>)))</span>
-<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>        ax.legend(loc<span class="op">=</span><span class="st">'upper right'</span>, bbox_to_anchor<span class="op">=</span>(<span class="op">-</span><span class="fl">0.15</span>, <span class="dv">1</span>))</span>
-<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fb9f9fdc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_eigenvectors(a,b,c,d, extent<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>: _, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>        A <span class="op">=</span> np.array([[a, b], [c, d]])</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>        evals, evecs <span class="op">=</span> scipy.linalg.eig(A)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>        eval1, eval2 <span class="op">=</span> evals</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>        evec1, evec2 <span class="op">=</span> evecs.T</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># plotting the real part of the eigenvectors</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>        ax.plot([<span class="dv">0</span>, extent<span class="op">*</span>evec1[<span class="dv">0</span>].real], [<span class="dv">0</span>, extent<span class="op">*</span>evec1[<span class="dv">1</span>].real], <span class="st">'-'</span>, </span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>                lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'deepskyblue'</span>, </span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="cf">|</span><span class="er">\</span><span class="vs">lambda_1</span><span class="cf">|</span><span class="dv">$</span><span class="vs"> = {}'</span>.<span class="bu">format</span>(np.<span class="bu">abs</span>(eval1).<span class="bu">round</span>(<span class="dv">4</span>)))</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>        ax.plot([<span class="dv">0</span>, extent<span class="op">*</span>evec2[<span class="dv">0</span>].real], [<span class="dv">0</span>, extent<span class="op">*</span>evec2[<span class="dv">1</span>].real], <span class="st">'-'</span>, </span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>                lw<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'teal'</span>, </span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="cf">|</span><span class="er">\</span><span class="vs">lambda_2</span><span class="cf">|</span><span class="dv">$</span><span class="vs"> = {}'</span>.<span class="bu">format</span>(np.<span class="bu">abs</span>(eval2).<span class="bu">round</span>(<span class="dv">4</span>)))</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>        ax.legend(loc<span class="op">=</span><span class="st">'upper right'</span>, bbox_to_anchor<span class="op">=</span>(<span class="op">-</span><span class="fl">0.15</span>, <span class="dv">1</span>))</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6153abba" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;skip&quot;}}" data-tags="[]" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>plot_eigenvectors(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">1</span>, c<span class="op">=</span><span class="fl">1.0</span>, d<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-55-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<div id="6153abba" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;skip&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plot_eigenvectors(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">1</span>, c<span class="op">=</span><span class="fl">1.0</span>, d<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>Putting it all togehter, we observe how the eigenvector represent the long-term behavior of the system (<a href="#fig-eigenvector-flow" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>).</p>
-<div id="cell-fig-eigenvector-flow" class="cell" data-execution_count="70">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>plot_flow_trajectory_with_ev()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="fig-eigenvector-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-eigenvector-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02.01-Nonlinearity_files/figure-html/fig-eigenvector-flow-output-1.png" id="fig-eigenvector-flow" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-eigenvector-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.10
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>Putting it all togehter, we observe how the eigenvector represent the long-term behavior of the system (<span class="quarto-unresolved-ref">?fig-eigenvector-flow</span>).</p>
 </section>
 <section id="summary-systems-with-linear-changes" class="level3">
 <h3 class="anchored" data-anchor-id="summary-systems-with-linear-changes">Summary | Systems with linear changes</h3>
@@ -1494,19 +1424,12 @@ Figure&nbsp;2.10
 <p>The <strong>logisitc map</strong> is a classic example of a one-dimensional nonlinear system. It is defined as</p>
 <p><span class="math display">\[x_{t+1} = x_t + rx_{t}(1 - \frac{x_{t}}{C}),\]</span></p>
 <p>where <span class="math inline">\(r\)</span> is the growth rate and <span class="math inline">\(C\)</span> the carrying capacity. In Python, it can be implemented as follows:</p>
-<div id="f8b9d676" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="71">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> logistic_map(x, r, C<span class="op">=</span><span class="dv">1</span>): <span class="cf">return</span> x <span class="op">+</span> r<span class="op">*</span>x<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>x<span class="op">/</span>C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f8b9d676" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> logistic_map(x, r, C<span class="op">=</span><span class="dv">1</span>): <span class="cf">return</span> x <span class="op">+</span> r<span class="op">*</span>x<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>x<span class="op">/</span>C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Plotting the logistic map for a growth rate of 0.25, and a carrying capacity of 3.0, results in the following time evolution:</p>
-<div id="e0dcb8dc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="72">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>plot_stock_evolution(<span class="dv">50</span>, <span class="fl">0.01</span>, update_func<span class="op">=</span>logistic_map, r<span class="op">=</span><span class="fl">0.25</span>, C<span class="op">=</span><span class="fl">3.0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-60-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="e0dcb8dc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>plot_stock_evolution(<span class="dv">50</span>, <span class="fl">0.01</span>, update_func<span class="op">=</span>logistic_map, r<span class="op">=</span><span class="fl">0.25</span>, C<span class="op">=</span><span class="fl">3.0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="finding-equilibrium-points" class="level3">
 <h3 class="anchored" data-anchor-id="finding-equilibrium-points">Finding equilibrium points</h3>
@@ -1522,34 +1445,20 @@ x_e &amp;= x_{e} + rx_{e}(1 - \frac{x_{e}}{C}) \\
 \end{align}\]</span></p>
 <p>This equation is fulfilled if either <span class="math inline">\(x_e = 0\)</span> or <span class="math inline">\(x_e = C\)</span>. Thus, the logistic map has two equilibrium points, <span class="math inline">\(x_e = 0\)</span> and <span class="math inline">\(x_e = C\)</span>.</p>
 <p>Graphically, fixpoints of an iterative map are the intersections between <span class="math inline">\(F(x)\)</span> and <span class="math inline">\(x\)</span>.</p>
-<div id="9b4d9392-8c22-4319-b114-228bb0aab852" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="73">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">101</span>)  <span class="co"># Resolution of the x axis</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, logistic_map(xs, <span class="fl">1.5</span>, <span class="dv">5</span>), label<span class="op">=</span><span class="st">"F(x)"</span>)  <span class="co"># Plot the map x_=F(x)</span></span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)  <span class="co"># Plot the diagonal x_=x</span></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span>  <span class="co"># Include the legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-61-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="9b4d9392-8c22-4319-b114-228bb0aab852" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">101</span>)  <span class="co"># Resolution of the x axis</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, logistic_map(xs, <span class="fl">1.5</span>, <span class="dv">5</span>), label<span class="op">=</span><span class="st">"F(x)"</span>)  <span class="co"># Plot the map x_=F(x)</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)  <span class="co"># Plot the diagonal x_=x</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span>  <span class="co"># Include the legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can enrich this representation with the cobweb plot, which shows the system’s time evolution from an initial state to the equilibrium point.</p>
-<div id="1f42da6a-c548-4166-a549-aa16234d7908" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="74">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">101</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, logistic_map(xs, <span class="fl">1.5</span>, <span class="dv">5</span>), label<span class="op">=</span><span class="st">"F(x)"</span>)</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>h,v <span class="op">=</span> cobweb(logistic_map, initial_value<span class="op">=</span><span class="fl">0.1</span>, r<span class="op">=</span><span class="fl">1.5</span>, C<span class="op">=</span><span class="dv">5</span>,</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>             nr_timesteps<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span> </span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="02.01-Nonlinearity_files/figure-html/cell-62-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="1f42da6a-c548-4166-a549-aa16234d7908" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">101</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, logistic_map(xs, <span class="fl">1.5</span>, <span class="dv">5</span>), label<span class="op">=</span><span class="st">"F(x)"</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>h,v <span class="op">=</span> cobweb(logistic_map, initial_value<span class="op">=</span><span class="fl">0.1</span>, r<span class="op">=</span><span class="fl">1.5</span>, C<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>             nr_timesteps<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span> </span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="linear-stability-in-nonlinear-systems" class="level3">
@@ -1571,25 +1480,35 @@ x_e &amp;= x_{e} + rx_{e}(1 - \frac{x_{e}}{C}) \\
 </ol>
 <p><strong>For example</strong>, for the logistic map,</p>
 <p><span class="math display">\[x_{t+1} = F(x_t) = x_{t} + rx_{t}(1 - \frac{x_{t}}{C})\]</span></p>
+<div id="55855659-822e-4662-9fc1-b6b648b06e39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F(x, a, K): <span class="cf">return</span> x <span class="op">+</span> a<span class="op">*</span>x<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>x<span class="op">/</span>K)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>we calculate the derivative of <span class="math inline">\(F(x_t)\)</span> as</p>
 <p><span class="math display">\[F'(x) = 1+  r - 2r\frac{x}{C}.\]</span></p>
 <p>At the fixed points <span class="math inline">\(x_e = 0\)</span> and <span class="math inline">\(x_e = C\)</span>, we have</p>
 <p><span class="math display">\[F'(x)|_{x=0} = 1+r,  \quad  \text{and} \quad  F'(x)|_{x=C} = 1-r.\]</span></p>
-<p>Graphically, we obtain <a href="#fig-logistic-map" class="quarto-xref">Figure&nbsp;<span>2.11</span></a>.</p>
-<div id="cell-fig-logistic-map" class="cell" data-execution_count="80">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="fig-logistic-map" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="22a669d6-bd34-4f56-9cb4-44b8893847d2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot(r<span class="op">=</span><span class="fl">1.25</span>, C<span class="op">=</span><span class="dv">5</span>):</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">101</span>)<span class="op">;</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, logistic_map(xs, r, C), label<span class="op">=</span><span class="st">"F(x)"</span>)  <span class="co"># plot F(x)</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, xs, label<span class="op">=</span><span class="st">"x"</span>)  <span class="co"># plot x</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Derivatives</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    zs<span class="op">=</span>np.linspace(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="dv">101</span>)<span class="op">;</span> plt.plot(zs, (<span class="dv">1</span><span class="op">+</span>r)<span class="op">*</span>(zs), c<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    zs<span class="op">=</span>np.linspace(C<span class="op">-</span><span class="fl">0.5</span>, C<span class="op">+</span><span class="fl">0.5</span>, <span class="dv">101</span>)<span class="op">;</span> plt.plot(zs, r<span class="op">*</span>C<span class="op">+</span>(<span class="dv">1</span><span class="op">-</span>r)<span class="op">*</span>(zs), c<span class="op">=</span><span class="st">'red'</span>)    </span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    h,v <span class="op">=</span> cobweb(logistic_map, initial_value<span class="op">=</span><span class="fl">1.0</span>, r<span class="op">=</span>r, C<span class="op">=</span>C,</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>                 nr_timesteps<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span> </span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Graphically, we obtain <a href="#fig-logistic-map" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>.</p>
+<div id="fig-logistic-map" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tags="[]" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-logistic-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02.01-Nonlinearity_files/figure-html/fig-logistic-map-output-1.png" class="img-fluid figure-img">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logistic-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.11: Linear stability shown at the nonlinear logistic map.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-logistic-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.10
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p>We <strong>observe</strong>, that when <span class="math inline">\(0&lt;r&lt;2\)</span>, the system convergens to <span class="math inline">\(x_e=C\)</span>. When <span class="math inline">\(r&gt;2\)</span>, the system converges to <span class="math inline">\(x_e=0\)</span>. When <span class="math inline">\(r&gt;2\)</span>, <span class="math inline">\(F'(x)|_{x=C} = 1 - r &lt; -1\)</span> causing unstable ossilations.</p>
 </section>
@@ -1619,10 +1538,11 @@ Figure&nbsp;2.11: Linear stability shown at the nonlinear logistic map.
 <li><strong>Implement</strong> dynamic system models and <strong>visualize model outputs</strong> using Python, to interpret model results.</li>
 <li><strong>Analyze</strong> the <strong>stability</strong> of equilibrium points in dynamic systems using linear stability analysis.</li>
 </ul>
+<p>The <a href="02.02ex-Nonlinearity.ipynb">exercises for this chapter</a> offer a thorough introduction to the programming language <code>Python</code>, preparing you for the modeling exercises in the subsequent chapters.</p>
 <section id="bibliographical-and-historical-remarks" class="level3">
 <h3 class="anchored" data-anchor-id="bibliographical-and-historical-remarks">Bibliographical and Historical Remarks</h3>
 <p><span class="citation" data-cites="Raworth2017">Raworth (<a href="References.html#ref-Raworth2017" role="doc-biblioref">2017</a>)</span> (Chapter 4) and <span class="citation" data-cites="Page2018">Page (<a href="References.html#ref-Page2018" role="doc-biblioref">2018</a>)</span> (Chapter 18) provide great conceptual introductions to the topic without going into mathematical details.</p>
-<p><span class="citation" data-cites="Sayama2023">Sayama (<a href="References.html#ref-Sayama2023" role="doc-biblioref">2023</a>)</span> heavily inspired some of the material in this chapter.</p>
+<p><span class="citation" data-cites="Sayama2023">Sayama (<a href="References.html#ref-Sayama2023" role="doc-biblioref">2023</a>)</span> heavily inspired some of the material in this lecture.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">

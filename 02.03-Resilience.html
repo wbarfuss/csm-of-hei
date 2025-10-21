@@ -210,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -654,6 +654,13 @@ window.Quarto = {
 </div>
 <div id="e310c85d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>We observe a <strong>single basin of attraction</strong> for the system state <span class="math inline">\(x\)</span>. For <span class="math inline">\(c&gt;0\)</span>, the unstable fixed points indicate where boundaries of the <em>cup</em> lie.</p>
 </section>
@@ -687,11 +694,25 @@ window.Quarto = {
 <p>If the noise level is low, the system is resilient to shocks and remains in the basin of attraction.</p>
 <div id="9be67255" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>However, if the noise level is high, the system can escape the basin of attraction and diverge.</p>
 <div id="e28d30a2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>The level of <strong>resilience</strong> of the system is the width between the unstable fixed points. This quantity gives the maximum magnitude of a shock the system can still tolerate.</p>
 <p>However, resilience in <strong>(social-)ecological systems</strong> is <strong>not always adequately described</strong> by this form of resilience.</p>
@@ -754,6 +775,13 @@ window.Quarto = {
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.4</span>, loc<span class="op">=</span><span class="fl">0.8</span>, steep<span class="op">=</span><span class="dv">8</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.2</span>, loc<span class="op">=</span><span class="fl">1.0</span>, steep<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">2.05</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>We include this feedback mechanism in the dynamic systems update,</p>
 <div id="65100b2a-5a5c-423b-9a1d-56d6495fa5d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
@@ -796,16 +824,37 @@ window.Quarto = {
 <p>For a small noise level <span class="math inline">\(n\)</span>, the system is resilient to shocks and remains in the basin of attraction, independent of the designed feedback mechanism.</p>
 <div id="6c047d35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>For large noise leves, the location <span class="math inline">\(l\)</span> where the feedback mechanism kicks in becomes crucial. If <span class="math inline">\(l\)</span> is too large, the system cannot adapt to the shocks and diverges.</p>
 <div id="5032c7d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.4</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>Decreasing the location <span class="math inline">\(l\)</span> allows the system to adapt to the shocks and remain in the basin of attraction.</p>
 <div id="633658c2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.2</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>It is important to note, that the way we <strong>implemented</strong> adaptation resilience is just one of <strong>many possible ways</strong> to make this concept more precise. Instead of widening the basin of attraction with increased noise levels, the location of the basins minimum could be shifted gradually to areas with less noise.</p>
 <p>Adaptation resilience makes the resilience concept more flexible and adquate for (social-)ecological systems. However, sometimes, a system response to shocks by a complete <strong>reorganization</strong>, instead of just absorbing a shock.</p>
@@ -1183,6 +1232,13 @@ window.Quarto = {
 <p>How do we see the <strong>autocorrelation</strong> in this plot?</p>
 <div id="8fcf4f47" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-49-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>The autocorrelation is the <strong>correlation</strong> between the time series and a <strong>lagged version</strong> of itself. Thus, it is the correlation between the x-axis and the y-axis of the scatter plot on the left.</p>
 <p>Then we <strong>slide</strong> our window of 200 system points <strong>through our time series</strong>. How does the scatter plot change? And what does the mean for the autocorrleation?</p>

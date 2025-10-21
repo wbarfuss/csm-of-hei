@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Wolfram Barfuss">
-<meta name="dcterms.date" content="2025-06-24">
+<meta name="dcterms.date" content="2025-10-21">
 
 <title>Complex Systems Modeling of Human-Environment Interactions</title>
 <style>
@@ -158,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -361,7 +361,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
   <ul class="collapse">
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
-  <li><a href="#integrated-writing-and-reproducibility" id="toc-integrated-writing-and-reproducibility" class="nav-link" data-scroll-target="#integrated-writing-and-reproducibility">Integrated writing and reproducibility</a></li>
+  <li><a href="#integrated-writing-and-reproducibility" id="toc-integrated-writing-and-reproducibility" class="nav-link" data-scroll-target="#integrated-writing-and-reproducibility">Integrated writing and reproducibility</a>
+  <ul class="collapse">
+  <li><a href="#rendering-the-lecture-notes" id="toc-rendering-the-lecture-notes" class="nav-link" data-scroll-target="#rendering-the-lecture-notes">Rendering the lecture notes</a></li>
+  <li><a href="#readme-file" id="toc-readme-file" class="nav-link" data-scroll-target="#readme-file">Readme file</a></li>
+  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">GitHub Pages</a></li>
+  <li><a href="#nb-clean-and-pre-commit-hooks" id="toc-nb-clean-and-pre-commit-hooks" class="nav-link" data-scroll-target="#nb-clean-and-pre-commit-hooks">nb-clean and pre-commit hooks</a></li>
+  </ul></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul></li>
   </ul>
@@ -389,7 +395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 24, 2025</p>
+      <p class="date">October 21, 2025</p>
     </div>
   </div>
   
@@ -422,20 +428,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The following steps are entirely optional for readers who want to focus on the learning goals and are not interested in the development of these lecture notes.</p>
 <p>These lecture notes are written in <a href="https://jupyter.org">Jupyter</a> Notebooks, which are a popular format for interactive computing. Notebooks contain code, math, and text. The code is written in <a href="https://www.python.org">Python</a>, a general-purpose programming language widely used in scientific computing and other fields.</p>
 <p>Scholarly writing practices, such as citations and cross-references, are facilitated by <a href="https://quarto.org">Quarto</a>, a powerful scientific and technical publishing system. Quarto also allows you to view these lecture notes in various formats, such as HTML and PDF.</p>
-<p>Assuming you have installed the <a href="https://quarto.org/docs/get-started/">Quarto CLI</a>, you can render these lecture notes by running the following command in the terminal:</p>
+<section id="rendering-the-lecture-notes" class="level3">
+<h3 class="anchored" data-anchor-id="rendering-the-lecture-notes">Rendering the lecture notes</h3>
+<p>Assuming you have installed the <a href="https://quarto.org/docs/get-started/">Quarto CLI</a> and cloned or copied the <a href="https://github.com/wbarfuss/csm-of-hei">repository</a> to your local machine, you can render these lecture notes by running the following command in the terminal:</p>
 <div id="ac23a9e8-f6f2-45c6-b88b-e75d8763ea33" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>quarto render .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The comment <code>#| output: false</code> is a Quarto directive that prevents the output of this cell from being displayed in the rendered documents. This is useful for keeping these readable.</p>
+</section>
+<section id="readme-file" class="level3">
+<h3 class="anchored" data-anchor-id="readme-file">Readme file</h3>
 <p>These lecture notes are made open-source and hosted in a <a href="https://github.com/wbarfuss/csm-of-hei">GitHub repository</a>. To convert this <code>index.ipynb</code> file (which is required in the Quarto Book project type) into the repository’s README file, one may execute the following commands:</p>
 <div id="e406d849-7b90-4346-af6a-c7a568ae946c" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>quarto convert index.ipynb <span class="co"># convert into Quarto markdown</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>tail <span class="op">-</span>n <span class="op">+</span><span class="dv">10</span> index.qmd <span class="op">&gt;</span> README.md  <span class="co"># remove some metadata+</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm index.qmd  <span class="co"># remove the intermediate file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="github-pages" class="level3">
+<h3 class="anchored" data-anchor-id="github-pages">GitHub Pages</h3>
 <p>After configuring the <a href="https://quarto.org/docs/publishing/github-pages.html#publish-command">settings</a> for GitHub Pages, one can publish the web version of these lecture notes by running the following command (at the root of the cleaned main branch):</p>
-<pre><code>quarto publish gh-pages</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="nb-clean-and-pre-commit-hooks" class="level3">
+<h3 class="anchored" data-anchor-id="nb-clean-and-pre-commit-hooks">nb-clean and pre-commit hooks</h3>
+<p>To check the notebooks for unnecessary metadata and clean them up, you can run the following command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nb-clean</span> check <span class="at">--remove-all-notebook-metadata</span> <span class="at">--remove-empty-cells</span> <span class="at">--preserve-cell-outputs</span> <span class="at">--preserve-cell-metadata</span> slideshow tags <span class="at">--</span> index.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To clean the notebooks and remove unnecessary metadata, replace <code>check</code> with <code>clean</code> in the command above.</p>
+<p>This repository uses <a href="https://pre-commit.com">pre-commit</a> to ensure that all notebooks commited to git adhere to the standards from the command above and are as git-friendly as possible. To install the pre-commit hooks, run the following command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pre-commit</span> install <span class="at">--allow-missing-config</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <!-- #TODO: write about Python environments -->
+</section>
 </section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
@@ -849,8 +872,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01.01-Introduction.html" class="pagination-link" aria-label="Intoduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./01.01-Introduction.html" class="pagination-link" aria-label="Introduction">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
