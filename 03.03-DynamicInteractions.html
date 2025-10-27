@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="./03.02-StrategicInteractions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7f1cf6fc70090d11f60898f9e7f80fa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dda8909163e0b4f3670ba323ebd66e56.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -139,7 +140,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -181,7 +182,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
@@ -487,14 +489,14 @@ Figure&nbsp;8.1: Environmental dynamics are relevant to consider
 <li>Analyze the strategic interactions in stochastic games</li>
 </ul>
 <div id="cell-8" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -559,12 +561,12 @@ Figure&nbsp;8.3: Ecological public good collective decision-making environment
 <h3 class="anchored" data-anchor-id="states-agents-and-actions">States, agents and actions</h3>
 <p>The environment consists of two states, <span class="math inline">\(\mathcal S = \{\textsf{p}, \textsf{d}\}\)</span>, representing a <strong>prosperous</strong> and a <strong>degraded</strong> state of the environment.</p>
 <div id="cell-21" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>state_set <span class="op">=</span> [<span class="st">'prosperous,'</span> <span class="st">'degraded'</span>]<span class="op">;</span> p<span class="op">=</span><span class="dv">0</span><span class="op">;</span> g<span class="op">=</span><span class="dv">1</span><span class="op">;</span> Z<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>state_set <span class="op">=</span> [<span class="st">'prosperous,'</span> <span class="st">'degraded'</span>]<span class="op">;</span> p<span class="op">=</span><span class="dv">0</span><span class="op">;</span> g<span class="op">=</span><span class="dv">1</span><span class="op">;</span> Z<span class="op">=</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also defined two Python variable <code>p=0</code> and <code>g=1</code> to serves as readable and memorable indices to represent the environmental contexts.</p>
 <p>There are <span class="math inline">\(2\)</span> identical agents. In each state <span class="math inline">\(s \in \mathcal S\)</span>, each agent <span class="math inline">\(i \in \{1, 2\}\)</span> can choose within their action set between either <strong>cooperation</strong> or <strong>defection</strong>, <span class="math inline">\(\mathcal A^i = \{\mathsf{c,d}\}\)</span>.</p>
 <div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>action_sets <span class="op">=</span> [<span class="st">'cooperate'</span>, <span class="st">'defect'</span>]<span class="op">;</span> c<span class="op">=</span><span class="dv">0</span><span class="op">;</span> d<span class="op">=</span><span class="dv">1</span><span class="op">;</span> M<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>action_sets <span class="op">=</span> [<span class="st">'cooperate'</span>, <span class="st">'defect'</span>]<span class="op">;</span> c<span class="op">=</span><span class="dv">0</span><span class="op">;</span> d<span class="op">=</span><span class="dv">1</span><span class="op">;</span> M<span class="op">=</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Likewise, we define two Python variables, <code>c=0</code> and <code>d=1</code>, to serve as readable and memorable indices to represent the agents’ actions.</p>
 <p>We denote the number of cooperating agents by <span class="math inline">\(N_c\)</span>. The number of defecting agents is <span class="math inline">\(N_d = N - N_c\)</span>.</p>
@@ -579,44 +581,44 @@ Figure&nbsp;8.3: Ecological public good collective decision-making environment
 <li>the fourth and last dimension corresponds to the <strong>next state</strong>.</li>
 </ul>
 <div id="cell-29" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor <span class="op">=</span> np.zeros((Z, M, M, Z), dtype<span class="op">=</span><span class="bu">object</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor <span class="op">=</span> np.zeros((Z, M, M, Z), dtype<span class="op">=</span><span class="bu">object</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <em>environmental dynamics</em> are then governed by two parameters: a collapse leverage, <span class="math inline">\(q_c\)</span>, and a recovery probability, <span class="math inline">\(p_r\)</span>.</p>
 <div id="cell-31" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>qc, pr <span class="op">=</span> sp.symbols(<span class="st">'q_c p_r'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>qc, pr <span class="op">=</span> sp.symbols(<span class="st">'q_c p_r'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A collapse from the prosperous to the degraded state occurs with a transition probability</p>
 <p><span class="math display">\[T(\mathsf p, \mathbf a, \mathsf g) = \frac{N_d}{N}  q_c. \]</span></p>
 <div id="cell-33" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, c, c, g] <span class="op">=</span> <span class="dv">0</span>  <span class="co"># no agent defects</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, c, c, g] <span class="op">=</span> <span class="dv">0</span>  <span class="co"># no agent defects</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, d, c, g] <span class="op">=</span> qc<span class="op">/</span><span class="dv">2</span>  <span class="co"># one agent defects</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, c, d, g] <span class="op">=</span> qc<span class="op">/</span><span class="dv">2</span>  <span class="co"># other agent defects</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, d, d, g] <span class="op">=</span> qc  <span class="co"># all agents defect</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, d, d, g] <span class="op">=</span> qc  <span class="co"># all agents defect</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Thus, if all agents defect, the environment collapses with probability <span class="math inline">\(q_c\)</span>. The collapse leverage indicates how much impact a defecting agent exerts on the environment. The environment remains within the prosperous state with probability, <span class="math inline">\(T(\mathsf p, \mathbf a, \mathsf p) = 1 - \frac{N_d}{N}  q_c\)</span>.</p>
 <div id="cell-35" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, : , :, p] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> TransitionTensor[p, : , :, g]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[p, : , :, p] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> TransitionTensor[p, : , :, g]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In the degraded state, we set the recovery to occur with probability,</p>
 <p><span class="math display">\[T(\mathsf g, \mathbf a, \mathsf p) = p_r,\]</span></p>
 <p>independent of the agents’ actions.</p>
 <div id="cell-37" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[g, :, :, p] <span class="op">=</span> pr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[g, :, :, p] <span class="op">=</span> pr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The probability that the environment remains in the degraded state is then, <span class="math inline">\(T(\mathsf g, \mathbf a, \mathsf g) = 1 - p_r\)</span>.</p>
 <div id="cell-39" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[g, :, :, g] <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>pr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor[g, :, :, g] <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>pr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Together</strong>, our transition tensor is then given by</p>
 <div id="cell-41" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sp.Array(TransitionTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sp.Array(TransitionTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}\left[\begin{matrix}1 &amp; 0\\1 - \frac{q_{c}}{2} &amp; \frac{q_{c}}{2}\end{matrix}\right] &amp; \left[\begin{matrix}1 - \frac{q_{c}}{2} &amp; \frac{q_{c}}{2}\\1 - q_{c} &amp; q_{c}\end{matrix}\right]\\\left[\begin{matrix}p_{r} &amp; 1 - p_{r}\\p_{r} &amp; 1 - p_{r}\end{matrix}\right] &amp; \left[\begin{matrix}p_{r} &amp; 1 - p_{r}\\p_{r} &amp; 1 - p_{r}\end{matrix}\right]\end{matrix}\right]\)</span></p>
 </div>
 </div>
 <p>Last, we make sure that our transition tensor is normalized, i.e., the sum of all transition probabilities from a state-joint-action pair to all possible next states equals one, <span class="math inline">\(\sum_{s'} T(s, \mathbf a, s') = 1\)</span>.</p>
 <div id="cell-43" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor.<span class="bu">sum</span>(<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>TransitionTensor.<span class="bu">sum</span>(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>array([[[1, 1],
         [1, 1]],
@@ -629,31 +631,31 @@ Figure&nbsp;8.3: Ecological public good collective decision-making environment
 <section id="rewards-short-term-welfare" class="level3">
 <h3 class="anchored" data-anchor-id="rewards-short-term-welfare"><strong>Rewards</strong> | Short-term welfare</h3>
 <div id="cell-45" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>RewardTensor <span class="op">=</span> np.zeros((<span class="dv">2</span>, Z, M, M, Z), dtype<span class="op">=</span><span class="bu">object</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>RewardTensor <span class="op">=</span> np.zeros((<span class="dv">2</span>, Z, M, M, Z), dtype<span class="op">=</span><span class="bu">object</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Rewards in the prosperous state follow the standard public goods game with a synergy factor <span class="math inline">\(r\)</span> and a cost of cooperation <span class="math inline">\(c\)</span>.</p>
 <div id="cell-47" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>r, cost <span class="op">=</span> sp.symbols(<span class="st">'r c'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>r, cost <span class="op">=</span> sp.symbols(<span class="st">'r c'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The rewards for cooperating and defecting agents are then given by</p>
 <p><span class="math display">\[ R^i(\mathsf p, a^i, a^{-i}, \mathsf p) = \begin{cases} \frac{r c (N_c +1)}{N}  - c, &amp; \text{if } a^i = \mathsf c, \\ \frac{r c N_c}{N}, &amp; \text{if } a^i = \mathsf d. \end{cases} \]</span></p>
 <div id="cell-49" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, c, c, p] <span class="op">=</span> r<span class="op">*</span>cost <span class="op">-</span> cost</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, c, c, p] <span class="op">=</span> r<span class="op">*</span>cost <span class="op">-</span> cost</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, d, d, p] <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>RewardTensor[<span class="dv">0</span>, p, c, d, p] <span class="op">=</span> RewardTensor[<span class="dv">1</span>, p, d, c, p] <span class="op">=</span> r<span class="op">*</span>cost<span class="op">/</span><span class="dv">2</span> <span class="op">-</span> cost</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>RewardTensor[<span class="dv">0</span>, p, d, c, p] <span class="op">=</span> RewardTensor[<span class="dv">1</span>, p, c, d, p] <span class="op">=</span> r<span class="op">*</span>cost<span class="op">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>RewardTensor[<span class="dv">0</span>, p, d, c, p] <span class="op">=</span> RewardTensor[<span class="dv">1</span>, p, c, d, p] <span class="op">=</span> r<span class="op">*</span>cost<span class="op">/</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>When a state transition involves the degraded state, <span class="math inline">\(\mathsf{g}\)</span>, the agents only receive an environmental collapse impact <span class="math inline">\(m\)</span>:</p>
 <div id="cell-51" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> sp.symbols(<span class="st">'m'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> sp.symbols(<span class="st">'m'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="math display">\[R^i(\mathsf p, \mathbf a, \mathsf g) = R^i(\mathsf g, \mathbf a, \mathsf g) = R^i(\mathsf g, \mathbf a, \mathsf p) = m, \quad \text{for all} \ \mathbf a, i.\]</span></p>
 <div id="cell-53" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, :, :, g] <span class="op">=</span> RewardTensor[:, g, :, :, g] <span class="op">=</span> RewardTensor[:, g, :, :, p] <span class="op">=</span> m </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>RewardTensor[:, p, :, :, g] <span class="op">=</span> RewardTensor[:, g, :, :, g] <span class="op">=</span> RewardTensor[:, g, :, :, p] <span class="op">=</span> m </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Together</strong>, our reward tensor is then given by</p>
 <div id="cell-55" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sp.Array(RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sp.Array(RewardTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="18">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}\left[\begin{matrix}\left[\begin{matrix}c r - c &amp; m\\\frac{c r}{2} - c &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}\frac{c r}{2} &amp; m\\0 &amp; m\end{matrix}\right]\\\left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right]\end{matrix}\right] &amp; \left[\begin{matrix}\left[\begin{matrix}c r - c &amp; m\\\frac{c r}{2} &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}\frac{c r}{2} - c &amp; m\\0 &amp; m\end{matrix}\right]\\\left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right] &amp; \left[\begin{matrix}m &amp; m\\m &amp; m\end{matrix}\right]\end{matrix}\right]\end{matrix}\right]\)</span></p>
 </div>
@@ -663,16 +665,16 @@ Figure&nbsp;8.3: Ecological public good collective decision-making environment
 <h3 class="anchored" data-anchor-id="deepdive-subsituting-parameter-values"><strong>DeepDive</strong> | Subsituting parameter values</h3>
 <p>In this chapter, we defined the transition and reward tensors as general <code>numpy</code> arrays with data types <code>object</code>, which we filled with symbolic expressions from <code>sympy</code>. To manipulate and substitute these expressions, we can use the <code>sympy.subs</code> method, however, not directly on the <code>numpy</code> array. Instead, we define a helper function <code>substitute_in_array</code> that takes a <code>numpy</code> array and a dictionary of substitutions and returns a new array with the substitutions applied.</p>
 <div id="cell-58" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> substitute_in_array(array, subs_dict):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> substitute_in_array(array, subs_dict):</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> array.copy()</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> index,_ <span class="kw">in</span> np.ndenumerate(array):</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(array[index], sp.Basic):</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            result[index] <span class="op">=</span> array[index].subs(subs_dict)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To make this work, it seems to be of critical importance that the subsitution dictionary is given as a dictionary in the form of <code>{&lt;symbol_variable&gt;: &lt;subsitution&gt;, ...}</code> and <em>not</em> as <code>dict(&lt;symbol_variable&gt;=&lt;subsitution&gt;, ...)</code>. For example,</p>
 <div id="cell-60" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>substitute_in_array(TransitionTensor, {pr:<span class="fl">0.01</span>, qc:<span class="fl">0.2</span>}).astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>substitute_in_array(TransitionTensor, {pr:<span class="fl">0.01</span>, qc:<span class="fl">0.2</span>}).astype(<span class="bu">float</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>array([[[[1.  , 0.  ],
          [0.9 , 0.1 ]],
@@ -695,15 +697,15 @@ Figure&nbsp;8.3: Ecological public good collective decision-making environment
 <p>Anonymity means that agents do not consider the game’s history, i.e., behave according to a Markov policy. We analyze the two extreme cases: An agent can either cooperate or defect in the prosperous state, <span class="math inline">\(\mathsf p\)</span>.</p>
 <p>Generally, a single agent’s policy is represented by a <span class="math inline">\(Z \times M\)</span> tensor. The cooperative policy is then given by</p>
 <div id="cell-63" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Xsa_coo <span class="op">=</span>  <span class="fl">0.5</span> <span class="op">*</span> np.ones((Z, M))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Xsa_coo <span class="op">=</span>  <span class="fl">0.5</span> <span class="op">*</span> np.ones((Z, M))</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Xsa_coo[p, c] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>Xsa_coo[p, d] <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>Xsa_coo[p, d] <span class="op">=</span> <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The defective policy is given by</p>
 <div id="cell-65" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Xsa_def <span class="op">=</span>  <span class="fl">0.5</span> <span class="op">*</span> np.ones((Z, M))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Xsa_def <span class="op">=</span>  <span class="fl">0.5</span> <span class="op">*</span> np.ones((Z, M))</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Xsa_def[p, c] <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>Xsa_def[p, d] <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>Xsa_def[p, d] <span class="op">=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To obtain the incentive regimes, we need to calculate the long-term values of the four policy combinations:</p>
 <ul>
@@ -736,10 +738,10 @@ Figure&nbsp;8.3: Ecological public good collective decision-making environment
 </table>
 <p>We summarize these respecitve joint policies in four <span class="math inline">\(N \times Z \times M\)</span> tensors,</p>
 <div id="cell-69" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>Xisa_cc <span class="op">=</span> np.array([Xsa_coo, Xsa_coo])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>Xisa_cc <span class="op">=</span> np.array([Xsa_coo, Xsa_coo])</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>Xisa_cd <span class="op">=</span> np.array([Xsa_coo, Xsa_def])</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>Xisa_dc <span class="op">=</span> np.array([Xsa_def, Xsa_coo])</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>Xisa_dd <span class="op">=</span> np.array([Xsa_def, Xsa_def])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>Xisa_dd <span class="op">=</span> np.array([Xsa_def, Xsa_def])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="state-values-long-term-welbeing" class="level3">
@@ -756,7 +758,7 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <p><span class="math display">\[T_\mathbf{x}(s,s') = \sum_{a^1 \in \mathcal A^1} \dots \sum_{a^N \in \mathcal A^N} x^1(s, a^1) \dots x^N(s, a^N) T(s, a^1, \dots, a^N, s').\]</span></p>
 <p>For <span class="math inline">\(N=2\)</span>, we implement in Python as follows:</p>
 <div id="cell-76" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_TransitionMatrix_Tss(policy_Xisa, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_TransitionMatrix_Tss(policy_Xisa, </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                                          transitions_Tsas):</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    s, a, b, s_ <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>  <span class="co"># defining indices for convenience</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -764,11 +766,11 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                              policy_Xisa[<span class="dv">1</span>], [s, b],</span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                              transitions_Tsas, [s, a, b, s_], </span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                              [s,s_]))   </span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Tss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Tss)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For example, the transition matrix for the joint policy <span class="math inline">\(\mathbf x = (\mathsf d, \mathsf c)\)</span> is then given by</p>
 <div id="cell-78" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>compute_symbolic_TransitionMatrix_Tss(Xisa_dc, TransitionTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>compute_symbolic_TransitionMatrix_Tss(Xisa_dc, TransitionTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="25">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}1.0 - 0.5 q_{c} &amp; 0.5 q_{c}\\1.0 p_{r} &amp; 1.0 - 1.0 p_{r}\end{matrix}\right]\)</span></p>
 </div>
@@ -777,7 +779,7 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <p><span class="math display">\[ R_\mathbf{x}^i(s) = \sum_{a^1 \in \mathcal A^1} \dots \sum_{a^N \in \mathcal A^N} x^1(s, a^1) \dots x^N(s, a^N) T(s, a^1, \dots, a^N, s') R^i(s, a^1, \dots, a^N, s').\]</span></p>
 <p>For <span class="math inline">\(N=2\)</span>, we implement in Python as follows:</p>
 <div id="cell-81" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_AverageReward_Ris(policy_Xisa, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_AverageReward_Ris(policy_Xisa, </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                                       transitions_Tsas, </span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                                       rewards_Risas):</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    i, s, a, b, s_ <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span> <span class="co"># defining indices for convenience</span></span>
@@ -786,18 +788,18 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>                             transitions_Tsas, [s, a, b, s_], </span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                             rewards_Risas, [i, s, a, b, s_],</span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                             [i, s]))</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Ris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Ris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For example, the average reward under the joint policy <span class="math inline">\(\mathbf x = (\mathsf d, \mathsf c)\)</span> is then given by</p>
 <div id="cell-83" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>compute_symbolic_AverageReward_Ris(Xisa_dc, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>compute_symbolic_AverageReward_Ris(Xisa_dc, TransitionTensor, RewardTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="27">
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}- \frac{c r \left(0.5 q_{c} - 1.0\right)}{2} + 0.5 m q_{c} &amp; 1.0 m\\- \frac{c \left(0.5 q_{c} - 1.0\right) \left(r - 2\right)}{2} + 0.5 m q_{c} &amp; 1.0 m\end{matrix}\right]\)</span></p>
 </div>
 </div>
 <p>With the transition matrix <span class="math inline">\(\underline{\mathbf T}_\mathbf{x}\)</span> and the average reward <span class="math inline">\(\mathbf R^i_\mathbf{x}\)</span>, we can now solve the Bellman equation for the state values <span class="math inline">\(\mathbf v^i_\mathbf{x}\)</span>. For convenience, we assume a homogeneous discount factor <span class="math inline">\(\gamma^i = \gamma\)</span> for all agents <span class="math inline">\(i\)</span>.</p>
 <div id="cell-85" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>dcf <span class="op">=</span> sp.symbols(<span class="st">'gamma'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>dcf <span class="op">=</span> sp.symbols(<span class="st">'gamma'</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_symbolic_statevalues(policy_Xisa, </span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                                 transitions_Tsas, </span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>                                 rewards_Risas, </span>
@@ -815,20 +817,20 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    Vis <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>discountfactor) <span class="op">*\</span></span>
 <span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>        sp.Matrix(np.einsum(inv, [s,s_], Ris, [i, s_], [i, s]))<span class="op">;</span></span>
 <span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Vis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sp.simplify(Vis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>With the help of the function <code>compute_symbolic_statevalues</code>, we can now compute the state values for all four joint policies.</p>
 <section id="mutual-cooperation" class="level4">
 <h4 class="anchored" data-anchor-id="mutual-cooperation">Mutual cooperation</h4>
 <p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf c, \mathsf c)\)</span> is given by</p>
 <div id="cell-89" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_cc <span class="op">=</span> compute_symbolic_statevalues(</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    Xisa_cc, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_cc <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    Xisa_cc, TransitionTensor, RewardTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-90" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Vcc_p <span class="op">=</span> statevalues_Vis_cc[<span class="dv">0</span>, p]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Vcc_p <span class="op">=</span> statevalues_Vis_cc[<span class="dv">0</span>, p]</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>Vcc_g <span class="op">=</span> statevalues_Vis_cc[<span class="dv">0</span>, g]</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>Vcc_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>Vcc_p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="30">
 <p><span class="math inline">\(\displaystyle 1.0 c \left(r - 1\right)\)</span></p>
 </div>
@@ -838,13 +840,13 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <h4 class="anchored" data-anchor-id="unilateral-defection">Unilateral defection</h4>
 <p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf d, \mathsf c)\)</span> is given by</p>
 <div id="cell-93" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_dc <span class="op">=</span> compute_symbolic_statevalues(</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    Xisa_dc, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_dc <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    Xisa_dc, TransitionTensor, RewardTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-94" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Vdc_p <span class="op">=</span> statevalues_Vis_dc[<span class="dv">0</span>, p]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Vdc_p <span class="op">=</span> statevalues_Vis_dc[<span class="dv">0</span>, p]</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>Vdc_g <span class="op">=</span> statevalues_Vis_dc[<span class="dv">0</span>, g]</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>Vdc_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>Vdc_p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="32">
 <p><span class="math inline">\(\displaystyle \frac{- 0.5 c \gamma p_{r} q_{c} r + 1.0 c \gamma p_{r} r + 0.5 c \gamma q_{c} r - 1.0 c \gamma r - 0.5 c q_{c} r + 1.0 c r + 1.0 \gamma m p_{r} q_{c} + 1.0 m q_{c}}{2.0 \gamma p_{r} + 1.0 \gamma q_{c} - 2.0 \gamma + 2.0}\)</span></p>
 </div>
@@ -854,13 +856,13 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <h4 class="anchored" data-anchor-id="unilateral-cooperation">Unilateral cooperation</h4>
 <p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf c, \mathsf d)\)</span> is given by</p>
 <div id="cell-97" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_cd <span class="op">=</span> compute_symbolic_statevalues(</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    Xisa_cd, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_cd <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    Xisa_cd, TransitionTensor, RewardTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-98" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Vcd_p <span class="op">=</span> statevalues_Vis_cd[<span class="dv">0</span>, p]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Vcd_p <span class="op">=</span> statevalues_Vis_cd[<span class="dv">0</span>, p]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>Vcd_g <span class="op">=</span> statevalues_Vis_cd[<span class="dv">0</span>, g]</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>Vcd_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>Vcd_p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="34">
 <p><span class="math inline">\(\displaystyle \frac{- 0.5 c \gamma p_{r} q_{c} r + 1.0 c \gamma p_{r} q_{c} + 1.0 c \gamma p_{r} r - 2.0 c \gamma p_{r} + 0.5 c \gamma q_{c} r - 1.0 c \gamma q_{c} - 1.0 c \gamma r + 2.0 c \gamma - 0.5 c q_{c} r + 1.0 c q_{c} + 1.0 c r - 2.0 c + 1.0 \gamma m p_{r} q_{c} + 1.0 m q_{c}}{2.0 \gamma p_{r} + 1.0 \gamma q_{c} - 2.0 \gamma + 2.0}\)</span></p>
 </div>
@@ -870,13 +872,13 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <h4 class="anchored" data-anchor-id="mutual-defection">Mutual defection</h4>
 <p>The state value of the prosperous state, <span class="math inline">\(\mathsf p\)</span>, for the joint policy <span class="math inline">\((\mathsf d, \mathsf d)\)</span> is given by</p>
 <div id="cell-101" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_dd <span class="op">=</span> compute_symbolic_statevalues(</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    Xisa_dd, TransitionTensor, RewardTensor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>statevalues_Vis_dd <span class="op">=</span> compute_symbolic_statevalues(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    Xisa_dd, TransitionTensor, RewardTensor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-102" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Vdd_p <span class="op">=</span> statevalues_Vis_dd[<span class="dv">0</span>, p]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Vdd_p <span class="op">=</span> statevalues_Vis_dd[<span class="dv">0</span>, p]</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>Vdd_g <span class="op">=</span> statevalues_Vis_dd[<span class="dv">0</span>, g]</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>Vdd_p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>Vdd_p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="36">
 <p><span class="math inline">\(\displaystyle \frac{1.0 m q_{c} \left(\gamma p_{r} + 1\right)}{\gamma p_{r} + \gamma q_{c} - \gamma + 1}\)</span></p>
 </div>
@@ -902,15 +904,15 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <h4 class="anchored" data-anchor-id="dilemma">Dilemma</h4>
 <p>The critical curve at which collapse avoidance becomes collectively optimal is obtained by setting <span class="math inline">\(v_{cc} = v_{dd}\)</span>. Solving for the collapse impact <span class="math inline">\(m\)</span> yields,</p>
 <div id="cell-108" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dilemma_m <span class="op">=</span> sp.solve(Vdd_p <span class="op">-</span> Vcc_p, m)[<span class="dv">0</span>]</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>dilemma_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dilemma_m <span class="op">=</span> sp.solve(Vdd_p <span class="op">-</span> Vcc_p, m)[<span class="dv">0</span>]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>dilemma_m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="37">
 <p><span class="math inline">\(\displaystyle \frac{c \left(\gamma p_{r} r - \gamma p_{r} + \gamma q_{c} r - \gamma q_{c} - \gamma r + \gamma + r - 1.0\right)}{q_{c} \left(\gamma p_{r} + 1.0\right)}\)</span></p>
 </div>
 </div>
 <p>We verify that the dilemma condition does not depend on environmental state by computing it also for the degraded state.</p>
 <div id="cell-110" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vdd_g <span class="op">-</span> Vcc_g, m)[<span class="dv">0</span>] <span class="op">-</span> dilemma_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vdd_g <span class="op">-</span> Vcc_g, m)[<span class="dv">0</span>] <span class="op">-</span> dilemma_m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="38">
 <p><span class="math inline">\(\displaystyle 0\)</span></p>
 </div>
@@ -920,15 +922,15 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <h4 class="anchored" data-anchor-id="greed">Greed</h4>
 <p>The critical curve at which agents become indifferent to greed, i.e., exactly where cooperators are indifferent to cooperation and defection, given all other actors cooperate, is obtained by setting <span class="math inline">\(v_{cc} = v_{dc}\)</span>. Solving for the collapse impact <span class="math inline">\(m\)</span> yields,</p>
 <div id="cell-113" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>greed_m <span class="op">=</span> sp.solve(Vdc_p <span class="op">-</span> Vcc_p, m)[<span class="dv">0</span>] </span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>greed_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>greed_m <span class="op">=</span> sp.solve(Vdc_p <span class="op">-</span> Vcc_p, m)[<span class="dv">0</span>] </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>greed_m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="39">
 <p><span class="math inline">\(\displaystyle \frac{0.5 c \left(\gamma p_{r} q_{c} r + 2.0 \gamma p_{r} r - 4.0 \gamma p_{r} + \gamma q_{c} r - 2.0 \gamma q_{c} - 2.0 \gamma r + 4.0 \gamma + q_{c} r + 2.0 r - 4.0\right)}{q_{c} \left(\gamma p_{r} + 1.0\right)}\)</span></p>
 </div>
 </div>
 <p>We verify that the greed condition does not depend on the environmental state by computing it also for the degraded state.</p>
 <div id="cell-115" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vdc_g <span class="op">-</span> Vcc_g, m)[<span class="dv">0</span>] <span class="op">-</span> greed_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vdc_g <span class="op">-</span> Vcc_g, m)[<span class="dv">0</span>] <span class="op">-</span> greed_m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="40">
 <p><span class="math inline">\(\displaystyle 0\)</span></p>
 </div>
@@ -938,15 +940,15 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <h4 class="anchored" data-anchor-id="fear">Fear</h4>
 <p>The critical curve at which actors are indifferent to fear, i.e., exactly where defectors are indifferent to cooperation and defection, given all other actors defect, is obtained by setting <span class="math inline">\(v_{cd} = v_{dd}\)</span>. Solving for the collapse impact <span class="math inline">\(m\)</span> yields,</p>
 <div id="cell-118" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fear_m <span class="op">=</span> sp.solve(Vcd_g <span class="op">-</span> Vdd_g, m)[<span class="dv">0</span>]</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>fear_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fear_m <span class="op">=</span> sp.solve(Vcd_g <span class="op">-</span> Vdd_g, m)[<span class="dv">0</span>]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>fear_m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="41">
 <p><span class="math inline">\(\displaystyle \frac{0.5 c \left(- \gamma p_{r} q_{c} r + 2.0 \gamma p_{r} q_{c} + 2.0 \gamma p_{r} r - 4.0 \gamma p_{r} - \gamma q_{c}^{2} r + 2.0 \gamma q_{c}^{2} + 3.0 \gamma q_{c} r - 6.0 \gamma q_{c} - 2.0 \gamma r + 4.0 \gamma - q_{c} r + 2.0 q_{c} + 2.0 r - 4.0\right)}{q_{c} \left(\gamma p_{r} + 1.0\right)}\)</span></p>
 </div>
 </div>
 <p>We verify that also the fear condition does not depend on the environmental state by computing it also for the degraded state.</p>
 <div id="cell-120" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vcd_g <span class="op">-</span> Vdd_g, m)[<span class="dv">0</span>] <span class="op">-</span> fear_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sp.solve(Vcd_g <span class="op">-</span> Vdd_g, m)[<span class="dv">0</span>] <span class="op">-</span> fear_m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="42">
 <p><span class="math inline">\(\displaystyle 0\)</span></p>
 </div>
@@ -960,25 +962,25 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <h4 class="anchored" data-anchor-id="parameter-values">Parameter values</h4>
 <p>Let us apply the model to the case of global sustainability. We set public goods synergy factors <span class="math inline">\(r=1.2\)</span> and the cost of cooperation to <span class="math inline">\(5\)</span>.</p>
 <div id="cell-125" class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>vr <span class="op">=</span> <span class="fl">1.2</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>vc <span class="op">=</span> <span class="dv">5</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>vr <span class="op">=</span> <span class="fl">1.2</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>vc <span class="op">=</span> <span class="dv">5</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Regarding the transition probabilities, we apply the conversion rule developed in <a href="./02.04-StateTransitions.html">02.04-StateTransitions</a> to set the collapse leverage, <span class="math inline">\(q_c\)</span> and the recovery probability <span class="math inline">\(p_r\)</span>, in terms of typical timescales. Under current business-as-usual policies, there are about 50 years left to avert the collapse <span class="citation" data-cites="RockstromEtAl2017">(<a href="References.html#ref-RockstromEtAl2017" role="doc-biblioref">Rockström et al., 2017</a>)</span>. After a collapse, there is a potential lock-in into an unfavorable Earth system state for a timescale up to millennia <span class="citation" data-cites="SteffenEtAl2018">(<a href="References.html#ref-SteffenEtAl2018" role="doc-biblioref">Steffen et al., 2018</a>)</span>. Interpreting a time step as one year, we set the collapse leverage to <span class="math inline">\(q_r = 1/50 = 0.02\)</span> and the recovery probability to <span class="math inline">\(p_r = 1/10000 = 0.0001\)</span>.</p>
 <div id="cell-127" class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>vqc <span class="op">=</span> <span class="fl">0.02</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>vqr <span class="op">=</span> <span class="fl">0.0001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>vqc <span class="op">=</span> <span class="fl">0.02</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>vqr <span class="op">=</span> <span class="fl">0.0001</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="final-graphic" class="level4">
 <h4 class="anchored" data-anchor-id="final-graphic">Final graphic</h4>
 <p>We convert the symbolic expressions to numerical functions using <code>lambdify</code>.</p>
 <div id="cell-130" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>Fdilemma_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), dilemma_m, <span class="st">'numpy'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>Fdilemma_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), dilemma_m, <span class="st">'numpy'</span>)</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>Fgreed_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), greed_m, <span class="st">'numpy'</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>Ffear_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), fear_m, <span class="st">'numpy'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>Ffear_m <span class="op">=</span> sp.lambdify((r, cost, qc, pr, dcf), fear_m, <span class="st">'numpy'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-131" class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>dcf_values <span class="op">=</span> np.linspace(<span class="fl">0.95</span>, <span class="fl">1.0</span>, <span class="dv">100</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>dcf_values <span class="op">=</span> np.linspace(<span class="fl">0.95</span>, <span class="fl">1.0</span>, <span class="dv">100</span>)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>plt.plot(dcf_values, Fdilemma_m(vr, vc, vqc, vqr, dcf_values), </span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>         c<span class="op">=</span><span class="st">'k'</span>, label<span class="op">=</span><span class="st">'Dilemma'</span>)</span>
@@ -996,7 +998,7 @@ v^i_\mathbf{x}(s) := \mathbb E_\mathbf{x}[ G^i_t | S_t = s] = (1-\gamma^i) \math
 <span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>             (<span class="fl">0.9999</span>, <span class="fl">2.5</span>), ha<span class="op">=</span><span class="st">'right'</span>, va<span class="op">=</span><span class="st">'center'</span>)</span>
 <span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'center left'</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="dv">7</span>, <span class="dv">3</span>)<span class="op">;</span> plt.xlim(<span class="fl">0.955</span>, <span class="fl">1.0</span>)<span class="op">;</span></span>
-<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Discount factor $</span><span class="er">\</span><span class="st">gamma$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Collapse impact $m$'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Discount factor $</span><span class="er">\</span><span class="st">gamma$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Collapse impact $m$'</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1090,13 +1092,14 @@ Steffen, W., Rockström, J., Richardson, K., Lenton, T. M., Folke, C., Liverman,
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

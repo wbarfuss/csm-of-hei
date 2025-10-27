@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,7 +78,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="./04.02-IndividualLearning.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7f1cf6fc70090d11f60898f9e7f80fa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dda8909163e0b4f3670ba323ebd66e56.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,10 +125,10 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -185,7 +186,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
@@ -529,19 +531,19 @@ Q^i_{t+1}(s_t, a_t) = Q^i_{t}(s_t, a_t) + \alpha^i \delta^i_t(s_t, a_t),
 <h2 data-number="11.2" class="anchored" data-anchor-id="derivation"><span class="header-section-number">11.2</span> Derivation</h2>
 <p>We import our usual libraries.</p>
 <div id="11f33209-d5ed-4584-b8fe-d00cf936f63b" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then, we install the <code>pyCRLD</code> package from Github to compare the mathematical derivation with the respective code method.</p>
 <pre><code>!pip install git+https://github.com/barfusslab/pyCRLD.git</code></pre>
 <div id="9ab6d476-dbe0-4085-bcb9-5129a936a566" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Agents.Base <span class="im">import</span> abase <span class="im">as</span> AgentBaseClass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Agents.Base <span class="im">import</span> abase <span class="im">as</span> AgentBaseClass</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>From <a href="#eq-rewardpredictionerror" class="quarto-xref">Equation&nbsp;<span>11.2</span></a>, <span class="math display">\[
 \delta^i_t(s_t, a_t) = (1-\gamma^i) r^i_t + \gamma^i \mathcal{Q}^i_n(s_{t+1}, a_{t+1}) - \mathcal Q^i_c(s_{t}, a_{t}),
@@ -562,7 +564,7 @@ x^1(s, a^1) \cdots x^{i-1}(s, a^{i-1}) x^{i+1}(s, a^{i+1}) \cdots x^N(s, a^N)
 \]</span></p>
 <p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
 <div id="8585105e-0088-4cea-b2cc-b35587080903" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Risa??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Risa??</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">Signature:</span>      AgentBaseClass<span class="ansi-blue-fg">.</span>Risa<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jax<span class="ansi-blue-fg">.</span>Array
@@ -607,7 +609,7 @@ x^1(s, a^1) \cdots x^{i-1}(s, a^{i-1}) x^{i+1}(s, a^{i+1}) \cdots x^N(s, a^N)
 <p><span class="math display">\[\mathbf v^i_\mathbf{x} = (1-\gamma^i) (\mathbf 1_Z - \gamma^i\underline{\mathbf T}_\mathbf{x})^{-1} \mathbf R^i_\mathbf{x}.\]</span></p>
 <p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
 <div id="5157caee-0ebe-468c-9169-97673d5f1788" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Vis??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Vis??</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">Signature:</span>     
@@ -655,7 +657,7 @@ AgentBaseClass<span class="ansi-blue-fg">.</span>Vis<span class="ansi-blue-fg">(
 <p><span class="math display">\[T_\mathbf{x}(s,s') = \sum_{a^i}\prod_i x^i(s, a^i) T(s, \mathbf a, s').\]</span></p>
 <p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
 <div id="e4e7bf56-634e-4316-806d-3907ccbbffd9" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Tss??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Tss??</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">Signature:</span>      AgentBaseClass<span class="ansi-blue-fg">.</span>Tss<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jax<span class="ansi-blue-fg">.</span>Array
@@ -686,7 +688,7 @@ AgentBaseClass<span class="ansi-blue-fg">.</span>Vis<span class="ansi-blue-fg">(
 <p><span class="math display">\[ R_\mathbf{x}^i(s) = \sum_{s'} \sum_{a^i}\prod_i x^i(s, a^i) T(s, \mathbf a, s') R^i(s, \mathbf a, s').\]</span></p>
 <p>In the <code>pyCRLD</code> package, it is implemented as follows.</p>
 <div id="795972a3-3453-4731-bbb7-877ee130e731" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Ris??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>AgentBaseClass.Ris??</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">Signature:</span>      AgentBaseClass<span class="ansi-blue-fg">.</span>Ris<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array<span class="ansi-blue-fg">,</span> Risa<span class="ansi-blue-fg">:</span> jax<span class="ansi-blue-fg">.</span>Array <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> jax<span class="ansi-blue-fg">.</span>Array
@@ -787,7 +789,7 @@ Q^i_t(s,a) &amp;= \frac{1}{\beta^i} \ln x^i_t(s, a) + \frac{1}{\beta^i}\ln\left[
 <section id="strategy-average-reward-prediction-temporal-difference-error" class="level3">
 <h3 class="anchored" data-anchor-id="strategy-average-reward-prediction-temporal-difference-error">Strategy-average reward-prediction temporal-difference error</h3>
 <div id="66072cf3-8ecd-4b07-b3c1-e657d866040b" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Agents.StrategySARSA <span class="im">import</span> stratSARSA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Agents.StrategySARSA <span class="im">import</span> stratSARSA</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Taken together, the strategy-average reward-prediction error is</p>
 <p><span class="math display">\[
@@ -801,7 +803,7 @@ x^i_{t+1}(s, a) = \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \delta^i_\mathbf{x
 <p><strong>We made the strategy update independent of the quality beliefs</strong>.</p>
 <p>In the <code>pyCRLD</code> package, update step is implement as follows,</p>
 <div id="f4ca8688-9bdb-453e-8351-4009297ee9ac" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stratSARSA.step??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stratSARSA.step??</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">Signature:</span>      stratSARSA<span class="ansi-blue-fg">.</span>step<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> tuple
@@ -828,7 +830,7 @@ x^i_{t+1}(s, a) = \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \delta^i_\mathbf{x
 <p>The <code>step</code> method comes from a parent class, called <code>strategybase</code>, and calls the <code>TDerror</code> method, which is initialized upon creating a specific agent collective with the concrete reward-prediction error method from the SARSA agent.</p>
 <p>The reward-prediction error of the SARSA agent is implemented as follows.</p>
 <div id="48fd867a-937e-43f3-92f7-db00b44f0bf6" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stratSARSA.RPEisa??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stratSARSA.RPEisa??</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">Signature:</span>      stratSARSA<span class="ansi-blue-fg">.</span>RPEisa<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> Xisa<span class="ansi-blue-fg">,</span> norm<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> numpy<span class="ansi-blue-fg">.</span>ndarray
@@ -869,18 +871,18 @@ x^i_{t+1}(s, a) = \frac{x^i_t(s, a) \exp\left[\alpha^i\beta^i \delta^i_\mathbf{x
 </div>
 <p>For convenience, we import the environment class from the <code>pyCRLD</code> package. However, you now possess all the skills needed to implement it on your own.</p>
 <div id="b2c03825-028d-4800-8c9f-8b77ac122596" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Environments.EcologicalPublicGood <span class="im">import</span> EcologicalPublicGood <span class="im">as</span> EcoPG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Environments.EcologicalPublicGood <span class="im">import</span> EcologicalPublicGood <span class="im">as</span> EcoPG</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We initialize the environment with two agents, a benefit-to-cost ratio of <span class="math inline">\(f=1.2\)</span>, a cost of <span class="math inline">\(c=5\)</span>, a collapse impact of <span class="math inline">\(m=-5\)</span>, a collapse leverage of <span class="math inline">\(0.2\)</span>, and a recovery probability of <span class="math inline">\(0.01\)</span>. We set the <code>degraded_choice</code> parameter to <code>False</code> to remove all agency from the agents in the degraded state. In other word, regardless what they do in the degraded state, they have to wait for the recovery on average <span class="math inline">\(1/q_r\)</span> timesteps.</p>
 <div id="3ad84bbd-eecf-45db-a1d9-ffb41a9b50f1" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inititalize the ecological public good environment</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inititalize the ecological public good environment</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>These parameters ensure to have the same short-term welfare values in the prosperous state as shown in the Figure above.</p>
 <div id="0b4fdc42-0816-4ff6-be29-b7d33ed52a11" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> env.Sset.index(<span class="st">'p'</span>)<span class="op">;</span> g <span class="op">=</span> env.Sset.index(<span class="st">'g'</span>) <span class="co"># indices of the prosperous and degraded state</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> env.Sset.index(<span class="st">'p'</span>)<span class="op">;</span> g <span class="op">=</span> env.Sset.index(<span class="st">'g'</span>) <span class="co"># indices of the prosperous and degraded state</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Agent zero's welfare</span><span class="ch">\n</span><span class="st">"</span>, env.R[<span class="dv">0</span>, p, :, :, p])</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Agent one's welfare</span><span class="ch">\n</span><span class="st">"</span>, env.R[<span class="dv">1</span>, p, :, :, p])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Agent one's welfare</span><span class="ch">\n</span><span class="st">"</span>, env.R[<span class="dv">1</span>, p, :, :, p])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Agent zero's welfare
  [[ 1. -2.]
@@ -895,12 +897,12 @@ Agent one's welfare
 <h3 class="anchored" data-anchor-id="learning-trajectories">Learning trajectories</h3>
 <p>We create a multi-agent-environment interface <code>MAEi</code> composed of SARSA agents with a learning rate of <span class="math inline">\(0.05\)</span>, a choice intensity of <span class="math inline">\(50.0\)</span>, and a discount factor of <span class="math inline">\(0.75\)</span>. We set the <code>use_prefactor</code> parameter to <code>True</code> to use the pre-factor <span class="math inline">\((1-\gamma)\)</span> in the policy update.</p>
 <div id="70a8c9e7-e41d-48bf-8604-37b3f092c3f7" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>MAEi <span class="op">=</span> stratSARSA(env, learning_rates<span class="op">=</span><span class="fl">0.05</span>, choice_intensities<span class="op">=</span><span class="fl">50.0</span>, discount_factors<span class="op">=</span><span class="fl">0.75</span>, use_prefactor<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>MAEi <span class="op">=</span> stratSARSA(env, learning_rates<span class="op">=</span><span class="fl">0.05</span>, choice_intensities<span class="op">=</span><span class="fl">50.0</span>, discount_factors<span class="op">=</span><span class="fl">0.75</span>, use_prefactor<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Let us evolve the learning from a random initial joint policy,</p>
 <div id="32569888-af43-4afd-aa00-154548dba656" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> MAEi.random_softmax_strategy()</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> MAEi.random_softmax_strategy()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>Array([[[0.65391284, 0.34608716],
         [0.540063  , 0.45993698]],
@@ -911,27 +913,27 @@ Agent one's welfare
 </div>
 <p>for a maximum of 5000 time steps with a convergence tolerance of <span class="math inline">\(10^{-5}\)</span>. Thus, if two consecutive joint policies are closer than <span class="math inline">\(10^{-5}\)</span>, the learning process stops.</p>
 <div id="0ddb87a8-01b8-4320-ab7c-d676c690639f" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>policy_trajectory_Xtisa, fixedpointreached <span class="op">=</span> MAEi.trajectory(x, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fixedpointreached</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>policy_trajectory_Xtisa, fixedpointreached <span class="op">=</span> MAEi.trajectory(x, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fixedpointreached</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>We have reached a fixed point and the learning trajecotry has a length of</p>
 <div id="a1a82438-d0cd-4884-86b6-3c8d012cfa19" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(policy_trajectory_Xtisa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(policy_trajectory_Xtisa)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>153</code></pre>
 </div>
 </div>
 <p>Let us visualize the time evolution of learning trajectory.</p>
 <div id="a360bdc5-c64d-4efb-9fca-ad229234c2c4" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> env.Aset[<span class="dv">0</span>].index(<span class="st">'c'</span>)<span class="op">;</span> d <span class="op">=</span> env.Aset[<span class="dv">0</span>].index(<span class="st">'d'</span>)  <span class="co"># action indices</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> env.Aset[<span class="dv">0</span>].index(<span class="st">'c'</span>)<span class="op">;</span> d <span class="op">=</span> env.Aset[<span class="dv">0</span>].index(<span class="st">'d'</span>)  <span class="co"># action indices</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, p, c], label<span class="op">=</span><span class="st">'Agent zero in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, p, c], label<span class="op">=</span><span class="st">'Agent one in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, ls<span class="op">=</span><span class="st">'--'</span>)</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, g, c], label<span class="op">=</span><span class="st">'Agent zero in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, g, c], label<span class="op">=</span><span class="st">'Agent one in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, ls<span class="op">=</span><span class="st">'--'</span>)<span class="op">;</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Cooperation probability'</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Cooperation probability'</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -942,14 +944,14 @@ Agent one's welfare
 </div>
 <p>Let’s repeat this serveral times from different random joint policies. <strong>Exectue the cell below multiple times and observe what happens</strong>.</p>
 <div id="989e6815-ae45-4d1a-8b45-8eac9b750229" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> MAEi.random_softmax_strategy()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> MAEi.random_softmax_strategy()</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>policy_trajectory_Xtisa, fixedpointreached <span class="op">=</span> MAEi.trajectory(x, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, p, c], label<span class="op">=</span><span class="st">'Agent zero in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, p, c], label<span class="op">=</span><span class="st">'Agent one in prosperous state'</span>, c<span class="op">=</span><span class="st">'blue'</span>, ls<span class="op">=</span><span class="st">'--'</span>)</span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">0</span>, g, c], label<span class="op">=</span><span class="st">'Agent zero in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">3</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.plot(policy_trajectory_Xtisa[:, <span class="dv">1</span>, g, c], label<span class="op">=</span><span class="st">'Agent one in degraded state'</span>, c<span class="op">=</span><span class="st">'red'</span>, ls<span class="op">=</span><span class="st">'--'</span>)<span class="op">;</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Cooperation probability'</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Cooperation probability'</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -971,14 +973,14 @@ Agent one's welfare
 <p>The determinism and the fast computation allow for an improved visualization of the learning process. As with any deterministic dynamic system, we can visualize the flow plot of the dynamics (See Chapter <a href="./02.01-Nonlinearity.html">02.01</a>).</p>
 <p>In the <code>pyCRLD</code> package, we have a special module for that purpose.</p>
 <div id="794e39d6-64cf-4477-ba12-58f1b1077892" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Utils <span class="im">import</span> FlowPlot <span class="im">as</span> fp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyCRLD.Utils <span class="im">import</span> FlowPlot <span class="im">as</span> fp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Applying this function yields a flow plot of the learning dynamics which highlights the bistability of the learning process in the prosperous state and the randomization in the degraded state.</p>
 <div id="498b1c4a-63b6-4f90-a4e8-0f8dc398cdfa" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ([<span class="dv">0</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on x axis</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ([<span class="dv">0</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on x axis</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ([<span class="dv">1</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on y axis</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>eps<span class="op">=</span><span class="fl">10e-3</span><span class="op">;</span> action_probability_points <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span>eps, <span class="fl">1.0</span><span class="op">-</span>eps, <span class="dv">9</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fp.plot_strategy_flow(MAEi, x, y, action_probability_points, conds<span class="op">=</span>env.Sset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fp.plot_strategy_flow(MAEi, x, y, action_probability_points, conds<span class="op">=</span>env.Sset)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -991,7 +993,7 @@ Agent one's welfare
 <p>These flow plots allow for a geometric understanding of the collective learning dynamics over the whole joint policy space. In contrast to a standard flow plot, per default, the <strong>arrows show the temporal-difference reward prediction error</strong>. Thus, they have a cognitive interpretation.</p>
 <p>We may use them to study how the parameters of the learning agents and the environment influence the outcome.</p>
 <div id="3795a5ec-00f3-46ac-bbb3-69c8f60c6eca" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow(DiscountFactor<span class="op">=</span><span class="fl">0.75</span>, ChoiceIntensity<span class="op">=</span><span class="dv">50</span>, CollapseImpact<span class="op">=-</span><span class="dv">5</span>, CollapseLeverage<span class="op">=</span><span class="fl">0.2</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_flow(DiscountFactor<span class="op">=</span><span class="fl">0.75</span>, ChoiceIntensity<span class="op">=</span><span class="dv">50</span>, CollapseImpact<span class="op">=-</span><span class="dv">5</span>, CollapseLeverage<span class="op">=</span><span class="fl">0.2</span>):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=</span>CollapseImpact, qc<span class="op">=</span>CollapseLeverage,</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>                qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    MAEi <span class="op">=</span> stratSARSA(env, learning_rates<span class="op">=</span><span class="fl">0.05</span>, choice_intensities<span class="op">=</span>ChoiceIntensity, </span>
@@ -1000,12 +1002,12 @@ Agent one's welfare
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> ([<span class="dv">0</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on x axis</span></span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> ([<span class="dv">1</span>], [g,p], [c])  <span class="co"># which (agent, observation, action) to plot on y axis</span></span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    eps<span class="op">=</span><span class="fl">10e-3</span><span class="op">;</span> action_probability_points <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span>eps, <span class="fl">1.0</span><span class="op">-</span>eps, <span class="dv">9</span>)</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> fp.plot_strategy_flow(MAEi, x, y, action_probability_points, conds<span class="op">=</span>env.Sset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> fp.plot_strategy_flow(MAEi, x, y, action_probability_points, conds<span class="op">=</span>env.Sset)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>When working with this material in a Jupyter notebook, we can interactively study the parameter dependence of the flow plot.</p>
 <p>For example, caring more for the future makes the cooperative basin of attraction larger.</p>
 <div id="396fc926-b4d8-456d-9063-e6c45f4206d4" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_flow(DiscountFactor<span class="op">=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_flow(DiscountFactor<span class="op">=</span><span class="fl">0.8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1017,7 +1019,7 @@ Agent one's welfare
 </div>
 <p>So does a more severe collapse impact,</p>
 <div id="ab63c0d1-d998-4603-be7f-00cb985c80ab" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plot_flow(CollapseImpact<span class="op">=-</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plot_flow(CollapseImpact<span class="op">=-</span><span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1029,7 +1031,7 @@ Agent one's welfare
 </div>
 <p>and a collapse that occurse more likely or faster.</p>
 <div id="ced89f57-25c1-4c1f-a05e-a530c3c8b0ca" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot_flow(CollapseLeverage<span class="op">=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot_flow(CollapseLeverage<span class="op">=</span><span class="fl">0.3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1042,7 +1044,7 @@ Agent one's welfare
 <p>The flow in the degraded state is unaffected by these parameter modulations.</p>
 <p>A very low choice intensity makes the desire to explore (i.e., randomize) dominate also in the prosperous state.</p>
 <div id="85a67087-a89b-47d3-9459-f1f79319bef7" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plot_flow(ChoiceIntensity<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plot_flow(ChoiceIntensity<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1058,29 +1060,29 @@ Agent one's welfare
 <p>Let us study the learning behavior around the separatrix of the bistable region.</p>
 <p>First, we define a function that allows us to enter initial cooperation probabilities for both agents and return a proper joint policy. This function sets the cooperation probability in the degraded state to 0.5 for both agents, as we have seen that the agents will eventually learn to randomize in the degraded state and we are not interested in that part of the learning behavior.</p>
 <div id="c3b11d73-2049-4186-a007-cedf6b1b7d3d" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compile_strategy(p0c:<span class="bu">float</span>,  <span class="co"># cooperation probability of agent zero</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compile_strategy(p0c:<span class="bu">float</span>,  <span class="co"># cooperation probability of agent zero</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                     p1c:<span class="bu">float</span>):  <span class="co"># cooperation probability of agent one</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    Pi <span class="op">=</span> np.array([<span class="fl">0.5</span>, p0c])  <span class="co"># coop. prob. in the degraded state set to 0.5</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    Pj <span class="op">=</span> np.array([<span class="fl">0.5</span>, p1c])</span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    xi <span class="op">=</span> np.array([Pi, <span class="dv">1</span><span class="op">-</span>Pi]).T</span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    xj <span class="op">=</span> np.array([Pj, <span class="dv">1</span><span class="op">-</span>Pj]).T</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([xi, xj])              </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([xi, xj])              </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We setup the multiagent-environment interaface.</p>
 <div id="4c45e23f-b462-45a3-bce6-480228f712ab" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>MAEi <span class="op">=</span> stratSARSA(env<span class="op">=</span>env, learning_rates<span class="op">=</span><span class="fl">0.01</span>, choice_intensities<span class="op">=</span><span class="dv">100</span>, discount_factors<span class="op">=</span><span class="fl">0.75</span>,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                  use_prefactor<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                  use_prefactor<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To get a feeling for the critical transition, we create three well chosen learning trajectories.</p>
 <div id="131e9be6-771b-4488-963b-f643c542e5af" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>xtrajs <span class="op">=</span> []  <span class="co"># storing strategy trajectories </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>xtrajs <span class="op">=</span> []  <span class="co"># storing strategy trajectories </span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>fprs <span class="op">=</span> []    <span class="co"># and whether a fixed point is reached</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pc <span class="kw">in</span> [<span class="fl">0.18</span>, <span class="fl">0.19</span>, <span class="fl">0.20</span>]:  <span class="co"># cooperation probability of agent 1</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> compile_strategy(pc, <span class="fl">0.95</span>)</span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    xtraj, fixedpointreached <span class="op">=</span> MAEi.trajectory(X, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
 <span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    xtrajs.append(xtraj)<span class="op">;</span> fprs.append(fixedpointreached)</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Trajectory length:"</span>,<span class="bu">len</span>(xtraj))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Trajectory length:"</span>,<span class="bu">len</span>(xtraj))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Trajectory length: 178
 Trajectory length: 234
@@ -1089,7 +1091,7 @@ Trajectory length: 174</code></pre>
 </div>
 <p>We plot them ontop of the learning flow.</p>
 <div id="9eae85a8-a477-45af-b407-aa876c49a607" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.5</span>))<span class="op">;</span> ax <span class="op">=</span> fig.add_subplot(<span class="dv">132</span>) <span class="co"># to center the plot</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">3.5</span>))<span class="op">;</span> ax <span class="op">=</span> fig.add_subplot(<span class="dv">132</span>) <span class="co"># to center the plot</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fig.add_subplot(<span class="dv">131</span>, xticks<span class="op">=</span>[], yticks<span class="op">=</span>[])<span class="op">;</span> fig.add_subplot(<span class="dv">133</span>, xticks<span class="op">=</span>[], yticks<span class="op">=</span>[])<span class="op">;</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ([<span class="dv">0</span>], [p], [c])  <span class="co"># which (agent, observation, action) to plot on x axis</span></span>
@@ -1102,7 +1104,7 @@ Trajectory length: 174</code></pre>
 <span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                     lws<span class="op">=</span>[<span class="dv">2</span>], msss<span class="op">=</span>[<span class="dv">2</span>], lss<span class="op">=</span>[<span class="st">'-'</span>], alphas<span class="op">=</span>[<span class="fl">0.75</span>], axes<span class="op">=</span>[ax])<span class="op">;</span></span>
 <span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Agent 2's cooperation probability"</span>)<span class="op">;</span> </span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Agent 1's cooperation probability"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Agent 1's cooperation probability"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1113,7 +1115,7 @@ Trajectory length: 174</code></pre>
 </div>
 <p>Next, we create a more fine-grained bundle of learning trajectories.</p>
 <div id="c76c3a6a-7233-4d6f-8b0c-3d26700464a4" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cooperation probability of agent 1</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cooperation probability of agent 1</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>pcs <span class="op">=</span> np.concatenate([np.linspace(<span class="fl">0.01</span>, <span class="fl">0.99</span>, <span class="dv">51</span>), np.linspace(<span class="fl">0.185</span>, <span class="fl">0.195</span>, <span class="dv">151</span>)])</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>pcs <span class="op">=</span> np.sort(np.unique(pcs))</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1124,7 +1126,7 @@ Trajectory length: 174</code></pre>
 <span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> compile_strategy(pc, <span class="fl">0.95</span>)</span>
 <span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    PolicyTrajectories_Xtisa, fixedpointreached <span class="op">=</span> MAEi.trajectory(X, Tmax<span class="op">=</span><span class="dv">5000</span>, tolerance<span class="op">=</span><span class="dv">10</span><span class="op">**-</span><span class="dv">5</span>)</span>
 <span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    Xktisa.append(PolicyTrajectories_Xtisa)</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    fprs.append(fixedpointreached)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    fprs.append(fixedpointreached)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Progress: 100.00%</code></pre>
 </div>
@@ -1132,49 +1134,49 @@ Trajectory length: 174</code></pre>
 <p><strong>We obtain the critical point in this bundle of learning trajectories where the two agents switch or tip from complete defection to complete cooperation.</strong></p>
 <p>First, we check that all trajectories converged.</p>
 <div id="4903a224-2387-415f-a459-1a42b1ab5390" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">all</span>(fprs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">all</span>(fprs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>Then, we obtain the cooperation probabilities at convergence.</p>
 <div id="a05c8a38-0dcb-46d3-a1df-7a54bce75ac0" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>converged_pcs <span class="op">=</span> np.array([Xtisa[<span class="op">-</span><span class="dv">1</span>][:, p, c] <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa])</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>converged_pcs.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>converged_pcs <span class="op">=</span> np.array([Xtisa[<span class="op">-</span><span class="dv">1</span>][:, p, c] <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa])</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>converged_pcs.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>(201, 2)</code></pre>
 </div>
 </div>
 <p>Last, we show the biomodal distribution of full defection and full cooperation.</p>
 <div id="0959cb87-696e-48dc-985c-13d7f5acfb70" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>np.histogram(np.array(converged_pcs).mean(<span class="op">-</span><span class="dv">1</span>), <span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>np.histogram(np.array(converged_pcs).mean(<span class="op">-</span><span class="dv">1</span>), <span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>array([ 80,   0,   0,   0,   0,   0,   0,   0,   0, 121])</code></pre>
 </div>
 </div>
 <p>Thus, the critical point lies at the index</p>
 <div id="792bb2bd-185a-4f39-8699-296faac975bb" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>cp <span class="op">=</span> np.histogram(np.array(converged_pcs).mean(<span class="op">-</span><span class="dv">1</span>), <span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))[<span class="dv">0</span>][<span class="dv">0</span>]</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>cp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>cp <span class="op">=</span> np.histogram(np.array(converged_pcs).mean(<span class="op">-</span><span class="dv">1</span>), <span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))[<span class="dv">0</span>][<span class="dv">0</span>]</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>cp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>80</code></pre>
 </div>
 </div>
 <p>and has an approximate value between</p>
 <div id="b6f59378-31cc-4751-9b45-64255409072f" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pcs[cp<span class="op">-</span><span class="dv">1</span>], <span class="st">'and'</span>, pcs[cp], <span class="st">'.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pcs[cp<span class="op">-</span><span class="dv">1</span>], <span class="st">'and'</span>, pcs[cp], <span class="st">'.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.18966666666666668 and 0.18973333333333334 .</code></pre>
 </div>
 </div>
 <p>We use this more fine-grained bundle of learning trajectories to visualize the phenomenon of a <strong>critical slowing down</strong> by plotting the time steps required to reach convergence.</p>
 <div id="caee0a00-adf7-4e53-bc8c-b4c2215bdf55" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plt.plot(pcs[:cp], [<span class="bu">len</span>(Xtisa) <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa[:cp]],</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plt.plot(pcs[:cp], [<span class="bu">len</span>(Xtisa) <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa[:cp]],</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>         <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)  <span class="co"># defectors in red</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>plt.plot(pcs[cp:], [<span class="bu">len</span>(Xtisa) <span class="cf">for</span> Xtisa <span class="kw">in</span> Xktisa[cp:]], </span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">0.6</span>) <span class="co"># cooperators in blue</span></span>
 <span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Timesteps to convergence'</span>)</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="ss">f"Agent 1's cooperation probability in the prosperous state"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="ss">f"Agent 1's cooperation probability in the prosperous state"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1186,7 +1188,7 @@ Trajectory length: 174</code></pre>
 </div>
 <p>We also observe a kind of <strong>transient tipping point</strong> in the learning dynamics, when plotting the two closest trajectories around the critical point.</p>
 <div id="a28dd4a8-2286-4873-93f3-7f130ecf4292" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_TransientTipping(xlim<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_TransientTipping(xlim<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot the defecting learners in red</span></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp<span class="op">-</span><span class="dv">1</span>][:, <span class="dv">0</span>, p, c], color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">5</span>, ls<span class="op">=</span><span class="st">':'</span>, label<span class="op">=</span><span class="st">'Agent zero'</span>) </span>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp<span class="op">-</span><span class="dv">1</span>][:, <span class="dv">1</span>, p, c], color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">4</span>, ls<span class="op">=</span><span class="st">"--"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, label<span class="op">=</span><span class="st">'Agent one'</span>)</span>
@@ -1195,10 +1197,10 @@ Trajectory length: 174</code></pre>
 <span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp][:, <span class="dv">0</span>, p, c], color<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">3</span>, ls<span class="op">=</span><span class="st">':'</span>, label<span class="op">=</span><span class="st">'Agent zero'</span>)</span>
 <span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    plt.plot(Xktisa[cp][:, <span class="dv">1</span>, p, c], color<span class="op">=</span><span class="st">'blue'</span>, lw<span class="op">=</span><span class="dv">2</span>, ls<span class="op">=</span><span class="st">"--"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, label<span class="op">=</span><span class="st">'Agent one'</span>)</span>
 <span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    plt.xlim(xlim)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.xlabel(<span class="st">"Timesteps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Cooperation"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    plt.xlim(xlim)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.xlabel(<span class="st">"Timesteps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Cooperation"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="91f7e852-1edd-4153-a4d9-63da6db6b250" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>plot_TransientTipping()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>plot_TransientTipping()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1210,7 +1212,7 @@ Trajectory length: 174</code></pre>
 </div>
 <p>During this <strong>emergent timescale separation</strong>, the learning process seems to settle on a mixed policy after approximately 50 timesteps. It remains at this point for another 50 steps, which is the same duration it took to reach this mixed policy (<a href="#fig-apparent-convergence" class="quarto-xref">Figure&nbsp;<span>11.1</span></a>). The learning adjusts the policies more rapidly after this period until they converge to two deterministic policies.</p>
 <div id="cell-fig-apparent-convergence" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>plot_TransientTipping((<span class="dv">0</span>, <span class="dv">95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>plot_TransientTipping((<span class="dv">0</span>, <span class="dv">95</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="fig-apparent-convergence" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1231,12 +1233,12 @@ Figure&nbsp;11.1: Apparent convergence to a mixed policy.
 <p>In the following, we start at a relatively low level of caring for the future, increase it, and then decrease it again, all while letting the agent learn along</p>
 <p>First, let us create the discount factor values.</p>
 <div id="55155cd8-eabe-4b47-8c7a-9b16bf1890ed" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dcfs <span class="op">=</span> <span class="bu">list</span>(np.arange(<span class="fl">0.6</span>, <span class="fl">0.9</span>, <span class="fl">0.005</span>))</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>hystcurve <span class="op">=</span> dcfs <span class="op">+</span> dcfs[::<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dcfs <span class="op">=</span> <span class="bu">list</span>(np.arange(<span class="fl">0.6</span>, <span class="fl">0.9</span>, <span class="fl">0.005</span>))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>hystcurve <span class="op">=</span> dcfs <span class="op">+</span> dcfs[::<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then, we set up the environment and start the simulation from a random policy. We let the agents learn for 2500 time steps or until the learning process converges with a tiny tolerance. Then, we record the final policy, advance the discount factor, and restart from the previous final policy.</p>
 <div id="0b0395a1-947c-4903-bf48-90a8b42ba0a9" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the ecological public goods environment</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the ecological public goods environment</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> EcoPG(N<span class="op">=</span><span class="dv">2</span>, f<span class="op">=</span><span class="fl">1.2</span>, c<span class="op">=</span><span class="dv">5</span>, m<span class="op">=-</span><span class="dv">5</span>, qc<span class="op">=</span><span class="fl">0.2</span>, qr<span class="op">=</span><span class="fl">0.01</span>, degraded_choice<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>coops <span class="op">=</span> []  <span class="co"># for storing the cooperation probabilities</span></span>
@@ -1249,20 +1251,20 @@ Figure&nbsp;11.1: Apparent convergence to a mixed policy.
 <span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Progress: </span><span class="sc">{</span>((i<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span><span class="bu">len</span>(hystcurve))<span class="sc">:6.2%}</span><span class="ss"> |"</span>,</span>
 <span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"Discount Factor </span><span class="sc">{</span>dcf<span class="sc">:5.4}</span><span class="ss"> | Conv?: </span><span class="sc">{</span>fpr<span class="sc">}</span><span class="ss">"</span> , end<span class="op">=</span><span class="st">"</span><span class="ch">\r</span><span class="st">"</span>)        </span>
 <span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> trj[<span class="op">-</span><span class="dv">1</span>] <span class="co"># select last strategy</span></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>    coops.append(X[:, <span class="dv">1</span>, <span class="dv">0</span>]) <span class="co"># append to storage container</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>    coops.append(X[:, <span class="dv">1</span>, <span class="dv">0</span>]) <span class="co"># append to storage container</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Progress: 100.00% | Discount Factor   0.6 | Conv?: True</code></pre>
 </div>
 </div>
 <p>Now, we plot the computed data. We use the points’ size and color to indicate the time dimensions of the discount factor changes. The time flows from big to small data points and from dark to light ones.</p>
 <div id="7097826b-584d-42da-8dc2-6dc2844aad78" class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot background line</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot background line</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>plt.plot(hystcurve, np.array(coops).mean(<span class="op">-</span><span class="dv">1</span>),<span class="st">'-'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>,color<span class="op">=</span><span class="st">'k'</span>,zorder<span class="op">=-</span><span class="dv">1</span>)</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data points with size and color indicating the time dimension</span></span>
 <span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>plt.scatter(hystcurve, np.array(coops).mean(<span class="op">-</span><span class="dv">1</span>), alpha<span class="op">=</span><span class="fl">0.9</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>,</span>
 <span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>            s<span class="op">=</span>np.arange(<span class="bu">len</span>(hystcurve))[::<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>, c<span class="op">=</span>np.arange(<span class="bu">len</span>(hystcurve)))</span>
 <span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cooperation'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'Discount Factor'</span>)<span class="op">;</span> <span class="co">#plt.ylim(0,1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cooperation'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'Discount Factor'</span>)<span class="op">;</span> <span class="co">#plt.ylim(0,1)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1374,13 +1376,14 @@ Barfuss, W., Flack, J. C., Gokhale, C. S., Hammond, L., Hilbe, C., Hughes, E., L
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

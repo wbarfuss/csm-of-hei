@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,7 +78,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="./02.01-Nonlinearity.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7f1cf6fc70090d11f60898f9e7f80fa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dda8909163e0b4f3670ba323ebd66e56.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,10 +125,10 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -185,7 +186,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
@@ -529,40 +531,40 @@ window.Quarto = {
 <p>Here, we cover the very basics of bifurcation theory in dynamic systems. These provide a rich understanding of tipping points and regime shifts in the sustainability sciences.</p>
 <p>We start by importing the necessary libraries and setting up the plotting environment.</p>
 <div id="8d76781b-3800-48b7-9067-ef22787b5778" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, interactive</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also inlcude some keys functions to simulate dynamic systems from <a href="./02.01-Nonlinearity.html">02.01-Nonlinearity</a>.</p>
 <p>To run the model we copy and refine an <code>iterate_model</code> function.</p>
 <div id="82d89938" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> iterate_model(nr_timesteps, initial_value, update_func, <span class="op">**</span>update_params):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> iterate_model(nr_timesteps, initial_value, update_func, <span class="op">**</span>update_params):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    stock <span class="op">=</span> initial_value</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> [stock]</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(nr_timesteps):</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        stock <span class="op">=</span> update_func(stock, <span class="op">**</span>update_params)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(stock)<span class="op">&gt;</span><span class="fl">10e9</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        time_series.append(stock)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(time_series)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(time_series)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also copy define a <code>plot_stock_evolution</code> function, plotting the stock evolution.</p>
 <div id="646b6222" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stock_evolution(nr_timesteps, initial_value, update_func,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stock_evolution(nr_timesteps, initial_value, update_func,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                         <span class="op">**</span>update_parameters):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    time_series <span class="op">=</span> iterate_model(nr_timesteps, initial_value, </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                update_func, <span class="op">**</span>update_parameters)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(time_series, <span class="st">'.-'</span>, label<span class="op">=</span><span class="bu">str</span>(update_parameters)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])<span class="op">;</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Time steps"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"System state"</span>)<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> time_series</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>And last, we copy the cobweb plot function over.</p>
 <div id="ff7ff362" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb(F, x0, params, iters<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb(F, x0, params, iters<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    h<span class="op">=</span>[x0]<span class="op">;</span> v<span class="op">=</span>[x0]<span class="op">;</span> x<span class="op">=</span>x0  <span class="co"># lists for (h)orizontal and (v)ertical points</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(iters):  <span class="co"># iterate the dynamical system</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        x_ <span class="op">=</span> F(x, <span class="op">**</span>params)  <span class="co"># get the next system's state</span></span>
@@ -577,7 +579,7 @@ window.Quarto = {
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if last points are close, assume convergence</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        ax.plot([h[<span class="op">-</span><span class="dv">1</span>]], [v[<span class="op">-</span><span class="dv">1</span>]], <span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)  <span class="co"># plot dot</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> h, v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> h, v</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="a-minimal-model-of-tipping-elements" class="level3">
 <h3 class="anchored" data-anchor-id="a-minimal-model-of-tipping-elements">A minimal model of tipping elements</h3>
@@ -594,18 +596,18 @@ window.Quarto = {
 <p>where <span class="math inline">\(\tau\)</span> represents the typical time scale of the system, and thus, inverse strength of the system’s change, and <span class="math inline">\(a\)</span> is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength).</p>
 <p>We define the <code>update_stock</code> function, <span class="math inline">\(F(x_{t}\)</span> for the udpate <span class="math inline">\(x_{t+1}=F(x_t)\)</span>, to iterate the stock <span class="math inline">\(x\)</span> according to the difference equation above.</p>
 <div id="2ea13348-4548-46e8-a80e-57ee8326523b" class="cell" data-editable="true" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_tipmod(x, c, a<span class="op">=</span><span class="dv">1</span>, tau<span class="op">=</span><span class="dv">10</span>): <span class="cf">return</span> x <span class="op">+</span> (x <span class="op">-</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> c)<span class="op">/</span>tau</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_tipmod(x, c, a<span class="op">=</span><span class="dv">1</span>, tau<span class="op">=</span><span class="dv">10</span>): <span class="cf">return</span> x <span class="op">+</span> (x <span class="op">-</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> c)<span class="op">/</span>tau</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We explore the stock’s evolution over time from two different initial conditions by iterating the model for 200 time steps.</p>
 <div id="812a7e17" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_initial_conditions(nr_timesteps<span class="op">=</span><span class="dv">200</span>, c<span class="op">=</span><span class="fl">0.0</span>, tau<span class="op">=</span><span class="dv">50</span>, a<span class="op">=</span><span class="dv">1</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_initial_conditions(nr_timesteps<span class="op">=</span><span class="dv">200</span>, c<span class="op">=</span><span class="fl">0.0</span>, tau<span class="op">=</span><span class="dv">50</span>, a<span class="op">=</span><span class="dv">1</span>):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(nr_timesteps, <span class="fl">1.2</span>, F_tipmod, c<span class="op">=</span>c, tau<span class="op">=</span>tau, a<span class="op">=</span>a)<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    plot_stock_evolution(nr_timesteps, <span class="op">-</span><span class="fl">1.2</span>, F_tipmod, c<span class="op">=</span>c, tau<span class="op">=</span>tau, a<span class="op">=</span>a)<span class="op">;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    paramstring <span class="op">=</span> <span class="ss">f"c=</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">, tau=</span><span class="sc">{</span>tau<span class="sc">}</span><span class="ss">, a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    plt.gca().annotate(paramstring, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">1.0</span>), xycoords<span class="op">=</span><span class="st">'axes fraction'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, ha<span class="op">=</span><span class="st">'left'</span>)<span class="op">;</span> plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    plt.gca().annotate(paramstring, xy<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">1.0</span>), xycoords<span class="op">=</span><span class="st">'axes fraction'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, ha<span class="op">=</span><span class="st">'left'</span>)<span class="op">;</span> plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="9bba0859" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>compare_initial_conditions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>compare_initial_conditions()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -621,15 +623,15 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="cobweb-plot">Cobweb plot</h3>
 <p>Let us observe thhis phenomenon of bi-stability in a cobweb plot.</p>
 <div id="72a3056d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb_plot(c<span class="op">=</span><span class="dv">0</span>, tau<span class="op">=</span><span class="fl">1.5</span>, a<span class="op">=</span><span class="dv">1</span>): </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cobweb_plot(c<span class="op">=</span><span class="dv">0</span>, tau<span class="op">=</span><span class="fl">1.5</span>, a<span class="op">=</span><span class="dv">1</span>): </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">101</span>)<span class="op">;</span> plt.xlabel(<span class="st">'x'</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">1.3</span>,<span class="fl">1.3</span>)<span class="op">;</span> plt.xlim(<span class="op">-</span><span class="fl">1.6</span>,<span class="fl">1.6</span>)<span class="op">;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, F_tipmod(xs, c,a,tau), label<span class="op">=</span><span class="st">'F(x)'</span>)<span class="op">;</span> </span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, xs, label<span class="op">=</span><span class="st">'x'</span>, color<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    cobweb(F_tipmod, x0<span class="op">=</span><span class="fl">0.3</span>, params<span class="op">=</span><span class="bu">dict</span>(c<span class="op">=</span>c, a<span class="op">=</span>a, tau<span class="op">=</span>tau), iters<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    cobweb(F_tipmod, x0<span class="op">=-</span><span class="fl">0.3</span>, params<span class="op">=</span><span class="bu">dict</span>(c<span class="op">=</span>c, a<span class="op">=</span>a, tau<span class="op">=</span>tau), iters<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    cobweb(F_tipmod, x0<span class="op">=-</span><span class="fl">0.3</span>, params<span class="op">=</span><span class="bu">dict</span>(c<span class="op">=</span>c, a<span class="op">=</span>a, tau<span class="op">=</span>tau), iters<span class="op">=</span><span class="dv">100</span>, ax<span class="op">=</span>plt.gca())<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="311406a0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cobweb_plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cobweb_plot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -649,7 +651,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="empirical-bifurcation-diagram">Empirical bifurcation diagram</h3>
 <p>A bifurcation diagram is a powerful tool to visualize the system’s long-term behavior as a function of its parameters. To create a bifurcation diagram, we iterate the model for a range of parameter values and plot the system’s equilibrium states.</p>
 <div id="daca4bfe-0b1f-4356-93a1-38fa755529e0" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_bifurcation_diagram(F, x0s, params, iters<span class="op">=</span><span class="dv">1000</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>],</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_bifurcation_diagram(F, x0s, params, iters<span class="op">=</span><span class="dv">1000</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>],</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                                 pointsize<span class="op">=</span><span class="fl">2.0</span>):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    c_s <span class="op">=</span> np.linspace(cextent[<span class="dv">0</span>], cextent[<span class="dv">1</span>], <span class="dv">501</span>) <span class="co"># The external parameter to be varied</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x0 <span class="kw">in</span> x0s:  <span class="co"># Loop through all initial conditions</span></span>
@@ -661,10 +663,10 @@ window.Quarto = {
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        cpoints <span class="op">=</span> [[c_s[i]]<span class="op">*</span>l <span class="cf">for</span> i, l <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">map</span>(<span class="bu">len</span>, endpoints))]  <span class="co"># create cpoints that may work for different endpoint lengths</span></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        plt.scatter(np.hstack(cpoints), np.hstack(endpoints), c<span class="op">=</span><span class="st">'k'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>,</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                    s<span class="op">=</span>pointsize)<span class="op">;</span>  <span class="co"># np.hstack unpacks everything      </span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r'Equilibrium state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> plt.xlabel(<span class="vs">r'External influence </span><span class="dv">$</span><span class="vs">c</span><span class="dv">$</span><span class="vs">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r'Equilibrium state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> plt.xlabel(<span class="vs">r'External influence </span><span class="dv">$</span><span class="vs">c</span><span class="dv">$</span><span class="vs">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="1668f96d-2cc7-4fcc-8acd-2cbfabd2ccad" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>simulate_bifurcation_diagram(F_tipmod, x0s<span class="op">=</span>[<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], params<span class="op">=</span><span class="bu">dict</span>(tau<span class="op">=</span><span class="dv">10</span> , a<span class="op">=</span><span class="fl">1.0</span>), iters<span class="op">=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>simulate_bifurcation_diagram(F_tipmod, x0s<span class="op">=</span>[<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], params<span class="op">=</span><span class="bu">dict</span>(tau<span class="op">=</span><span class="dv">10</span> , a<span class="op">=</span><span class="fl">1.0</span>), iters<span class="op">=</span><span class="dv">1000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -690,15 +692,15 @@ window.Quarto = {
 <p><span class="math display">\[c = ax^3 - x.\]</span></p>
 <p>It is not straightforward to solve the equation, <span class="math inline">\(c=ax^3-x\)</span>, analytically, i.e., to give an expression for how the system’s equilibirum depends on the parameters <span class="math inline">\(c\)</span> and <span class="math inline">\(a\)</span>. However, we can plot the parameter <span class="math inline">\(c\)</span> as a function of the equilibirum points <span class="math inline">\(x_e\)</span> and the parameter <span class="math inline">\(a\)</span>.</p>
 <div id="2067adf1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_equilibirum_points_tipmod(a<span class="op">=</span><span class="fl">1.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">2.0</span>,<span class="fl">2.0</span>]):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_equilibirum_points_tipmod(a<span class="op">=</span><span class="fl">1.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">2.0</span>,<span class="fl">2.0</span>]):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    xe<span class="op">=</span>np.linspace(<span class="op">-</span><span class="fl">2.0</span>,<span class="fl">2.0</span>,<span class="dv">501</span>) <span class="co"># equilibrium points</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a<span class="op">*</span>xe<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xe <span class="co"># parameter c</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(c, xe, <span class="st">"--"</span>)<span class="op">;</span> <span class="co"># plot</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r'External parameter </span><span class="dv">$</span><span class="vs">c</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r'Equilibrium points </span><span class="dv">$</span><span class="vs">x_e</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plt.xlim(cextent); </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plt.xlim(cextent); </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="d5c5f72e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plot_equilibirum_points_tipmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plot_equilibirum_points_tipmod()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -714,7 +716,7 @@ window.Quarto = {
 <p><span class="math display">\[\frac{dF}{dx} = 1+\frac{1}{\tau} (1 - 3ax^2).\]</span></p>
 <p>We create a Python function to plot the whether an equilibrium point is stable or not using the <code>np.logical_and</code> function.</p>
 <div id="403ffaa5" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stability_tipmod(a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="fl">3.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">3.0</span>,<span class="fl">3.0</span>]):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stability_tipmod(a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="fl">3.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">3.0</span>,<span class="fl">3.0</span>]):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    xe<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1001</span>) <span class="co"># equilibrium points</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a<span class="op">*</span>xe<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xe <span class="co"># parameter c</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -723,13 +725,13 @@ window.Quarto = {
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(c[cond], xe[cond], <span class="st">"."</span>, c<span class="op">=</span><span class="st">'red'</span>)</span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r'External parameter </span><span class="dv">$</span><span class="vs">c</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r'Equilibrium points </span><span class="dv">$</span><span class="vs">x_e</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    plt.xlim(cextent)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    plt.xlim(cextent)<span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Brining stability and equilibrium points together, we can plot an analytical bifurcation diagram.</p>
 <div id="72017ada" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau<span class="op">=</span><span class="fl">3.0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau<span class="op">=</span><span class="fl">3.0</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plot_equilibirum_points_tipmod(a<span class="op">=</span>a)<span class="op">;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plot_stability_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plot_stability_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -745,23 +747,23 @@ window.Quarto = {
 <p><span class="math display">\[x_b=\pm\sqrt{\frac{1}{3a}} \quad \text{and} \quad x_b=\pm\sqrt{\frac{2\tau + 1}{3a}}.\]</span></p>
 <p>We create a Python function to plot the stability boundaries.</p>
 <div id="5bf0f837" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stability_boundaries_tipmod(a<span class="op">=</span> <span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">3</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">3.0</span>, <span class="fl">3.0</span>]):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_stability_boundaries_tipmod(a<span class="op">=</span> <span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">3</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">3.0</span>, <span class="fl">3.0</span>]):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    styl <span class="op">=</span> <span class="bu">dict</span>(ls<span class="op">=</span><span class="st">":"</span>, lw<span class="op">=</span><span class="fl">0.75</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[<span class="op">-</span>np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), <span class="op">-</span>np.sqrt(<span class="dv">1</span><span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl) </span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[<span class="op">-</span>np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), <span class="op">-</span>np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(cextent,[<span class="op">-</span>np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a)), <span class="op">-</span>np.sqrt((<span class="dv">2</span><span class="op">*</span>tau <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>(<span class="dv">3</span><span class="op">*</span>a))], <span class="op">**</span>styl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Bringing all togehter, we obtain our analytical bifurcation diagram.</p>
 <div id="c0dee5a1" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_analytical_bifurcation_tipmod(a <span class="op">=</span> <span class="fl">1.0</span>, tau <span class="op">=</span> <span class="fl">3.0</span>, extent<span class="op">=</span><span class="fl">3.0</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_analytical_bifurcation_tipmod(a <span class="op">=</span> <span class="fl">1.0</span>, tau <span class="op">=</span> <span class="fl">3.0</span>, extent<span class="op">=</span><span class="fl">3.0</span>):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    plot_equilibirum_points_tipmod(a<span class="op">=</span>a, cextent<span class="op">=</span>[<span class="op">-</span>extent, extent])<span class="op">;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    plot_stability_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau, cextent<span class="op">=</span>[<span class="op">-</span>extent, extent])<span class="op">;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    plot_stability_boundaries_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau, cextent<span class="op">=</span>[<span class="op">-</span>extent, extent])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    plot_stability_boundaries_tipmod(a<span class="op">=</span>a, tau<span class="op">=</span>tau, cextent<span class="op">=</span>[<span class="op">-</span>extent, extent])<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="295956c0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau <span class="op">=</span> <span class="fl">3.0</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plot_analytical_bifurcation_tipmod(a <span class="op">=</span> a, tau <span class="op">=</span> tau, extent<span class="op">=</span><span class="fl">1.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plot_analytical_bifurcation_tipmod(a <span class="op">=</span> a, tau <span class="op">=</span> tau, extent<span class="op">=</span><span class="fl">1.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -772,10 +774,10 @@ window.Quarto = {
 </div>
 <p>Lastly, we can compare the empirical bifurcation diagram with the analytical bifurcation diagram, and observe that both match perfectly.</p>
 <div id="2bb3ee60" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau <span class="op">=</span> <span class="fl">3.0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> tau <span class="op">=</span> <span class="fl">3.0</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_analytical_bifurcation_tipmod(a <span class="op">=</span> a, tau <span class="op">=</span> tau, extent<span class="op">=</span><span class="fl">2.0</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>simulate_bifurcation_diagram(F_tipmod, x0s<span class="op">=</span>[<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>], params<span class="op">=</span><span class="bu">dict</span>(tau<span class="op">=</span>tau , a<span class="op">=</span>a), </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                             iters<span class="op">=</span><span class="dv">500</span>, pointsize<span class="op">=</span><span class="dv">30</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">2.0</span>, <span class="fl">2.0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                             iters<span class="op">=</span><span class="dv">500</span>, pointsize<span class="op">=</span><span class="dv">30</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">2.0</span>, <span class="fl">2.0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -812,11 +814,11 @@ Figure&nbsp;3.1: Conceptual Regime Shift
 <p><span class="math display">\[G(x) = - \frac{1}{\tau} \left(\frac{1}{2}x^2 - \frac{1}{4}ax^4 + cx\right).\]</span></p>
 <p>Converting this into Python yields,</p>
 <div id="ef39bef5" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_tipmod(x, c,a,tau): <span class="cf">return</span> <span class="op">-</span> (x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span> <span class="op">-</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span> <span class="op">+</span> c<span class="op">*</span>x)<span class="op">/</span>tau</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_tipmod(x, c,a,tau): <span class="cf">return</span> <span class="op">-</span> (x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span> <span class="op">-</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span> <span class="op">+</span> c<span class="op">*</span>x)<span class="op">/</span>tau</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>which we use in a <code>plot_potential</code> function to visualize the potential landscape.</p>
 <div id="c446dbd0" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tipmod_potential(c<span class="op">=</span><span class="fl">0.2</span>, a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">2</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tipmod_potential(c<span class="op">=</span><span class="fl">0.2</span>, a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    xs<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">501</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>)<span class="op">;</span> </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, G_tipmod(xs, c,a,tau), color<span class="op">=</span><span class="st">'blue'</span>)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r'Potential </span><span class="dv">$</span><span class="vs">G</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> plt.xlabel(<span class="vs">r'System state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>)</span>
@@ -824,10 +826,10 @@ Figure&nbsp;3.1: Conceptual Regime Shift
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  numerically find and plot equilibrium points</span></span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    c_ <span class="op">=</span> a<span class="op">*</span>xs<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xs</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    xeq <span class="op">=</span> xs[np.isclose(c_<span class="op">-</span>c, <span class="fl">0.0</span>, atol<span class="op">=</span><span class="fl">0.02</span>)]</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(xeq, G_tipmod(xeq, c, a, tau), <span class="st">'o'</span>, ms<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'k'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(xeq, G_tipmod(xeq, c, a, tau), <span class="st">'o'</span>, ms<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'k'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="305db503" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plot_tipmod_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plot_tipmod_potential()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -838,7 +840,7 @@ Figure&nbsp;3.1: Conceptual Regime Shift
 </div>
 <p>Finally, we bring all pieces together to visualize the system’s potential landscape, bifurcation diagram and time evolution.</p>
 <div id="f3f5e2b2" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_all_tipmod(c<span class="op">=</span><span class="fl">0.2</span>, a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">2</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_all_tipmod(c<span class="op">=</span><span class="fl">0.2</span>, a<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    fig.add_subplot(<span class="dv">221</span>)</span>
@@ -851,10 +853,10 @@ Figure&nbsp;3.1: Conceptual Regime Shift
 <span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    fig.add_subplot(<span class="dv">313</span>)</span>
 <span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    compare_initial_conditions(nr_timesteps<span class="op">=</span><span class="dv">50</span>, c<span class="op">=</span>c, tau<span class="op">=</span>tau, a<span class="op">=</span>a)</span>
 <span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="3442d533" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_all_tipmod()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plot_all_tipmod()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -876,7 +878,7 @@ Figure&nbsp;3.1: Conceptual Regime Shift
 <li>Then, we decrease <span class="math inline">\(c\)</span> back to the range where only the negative equilibrium point is stable.</li>
 </ol>
 <div id="241fa65e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_hysteresis():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_hysteresis():</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=-</span><span class="dv">1</span><span class="op">;</span> xs <span class="op">=</span> [] <span class="co"># inital condition and container for the system state</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    cvs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.8</span>, <span class="fl">0.8</span>, <span class="dv">101</span>)<span class="op">;</span>  <span class="co"># values of parameter a to go through</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    cvs <span class="op">=</span> np.concatenate((cvs, cvs[::<span class="op">-</span><span class="dv">1</span>]))<span class="op">;</span> <span class="co"># first we go up, then we go back down</span></span>
@@ -887,10 +889,10 @@ Figure&nbsp;3.1: Conceptual Regime Shift
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    plt.plot(cvs, xs,<span class="st">'-'</span>,alpha<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'gray'</span>,zorder<span class="op">=-</span><span class="dv">1</span>) <span class="co"># Plot background line</span></span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    plt.scatter(cvs, xs, alpha<span class="op">=</span><span class="fl">0.9</span>, s<span class="op">=</span>np.arange(<span class="bu">len</span>(cvs))[::<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>, c<span class="op">=</span>np.arange(<span class="bu">len</span>(cvs)), cmap<span class="op">=</span><span class="st">'viridis'</span>)<span class="op">;</span> <span class="co"># Colorful plot</span></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"Influence parameter </span><span class="dv">$</span><span class="vs">c</span><span class="dv">$</span><span class="vs">"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"System state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"Influence parameter </span><span class="dv">$</span><span class="vs">c</span><span class="dv">$</span><span class="vs">"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"System state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="adb6ae53" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_hysteresis()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plot_hysteresis()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -992,13 +994,14 @@ Scheffer, M., Carpenter, S., Foley, J. A., Folke, C., &amp; Walker, B. (2001). C
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

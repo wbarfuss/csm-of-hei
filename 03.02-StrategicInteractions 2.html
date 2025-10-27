@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Strategic Interactions – Complex Systems Modeling of Human-Environment Interactions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03.03-DynamicInteractions.html" rel="next">
+<link href="./03.01-SequentialDecisions.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7f1cf6fc70090d11f60898f9e7f80fa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-TargetEquilibria.html">Target Equilibria</a></li><li class="breadcrumb-item"><a href="./03.02-StrategicInteractions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Complex-Systems-Modeling-of-Human-Environment-Interactions.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intoduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Nonlinearity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipping elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resilience</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">State transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-TargetEquilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Target Equilibria</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02-StrategicInteractions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-TransformationAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transformation Agency</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Behavioral agency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02ex-IntroToPython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Introduction to Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01ex-Nonlinearity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Nonlinearity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02ex-TippingElements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Tipping elements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03ex-Resilience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Resilience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04ex-StateTransitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | State transitions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.01ex-SequentialDecisions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Sequential Decisions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.02ex-StrategicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Strategic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.03ex-DynamicInteractions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Dynamic Interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.01ex-BehavioralAgency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Behavioral Agency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.02ex-IndividualLearning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Individual Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ex | Learning Dynamics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#motivation-collective-action-for-sustainability" id="toc-motivation-collective-action-for-sustainability" class="nav-link active" data-scroll-target="#motivation-collective-action-for-sustainability"><span class="header-section-number">7.1</span> Motivation | <strong>Collective action for sustainability</strong></a>
+  <ul class="collapse">
+  <li><a href="#advantages-of-game-theory" id="toc-advantages-of-game-theory" class="nav-link" data-scroll-target="#advantages-of-game-theory"><strong>Advantages</strong> of game theory</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a></li>
+  </ul></li>
+  <li><a href="#game-theory" id="toc-game-theory" class="nav-link" data-scroll-target="#game-theory"><span class="header-section-number">7.2</span> Game theory</a>
+  <ul class="collapse">
+  <li><a href="#lets-play" id="toc-lets-play" class="nav-link" data-scroll-target="#lets-play">Let’s play</a></li>
+  <li><a href="#mathematical-model" id="toc-mathematical-model" class="nav-link" data-scroll-target="#mathematical-model">Mathematical model</a></li>
+  <li><a href="#nash-equilibirum" id="toc-nash-equilibirum" class="nav-link" data-scroll-target="#nash-equilibirum"><strong>Nash equilibirum</strong></a></li>
+  <li><a href="#social-dilemma" id="toc-social-dilemma" class="nav-link" data-scroll-target="#social-dilemma">Social dilemma</a></li>
+  </ul></li>
+  <li><a href="#dimensions-of-a-social-dilemma" id="toc-dimensions-of-a-social-dilemma" class="nav-link" data-scroll-target="#dimensions-of-a-social-dilemma"><span class="header-section-number">7.3</span> Dimensions of a social dilemma</a>
+  <ul class="collapse">
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  </ul></li>
+  <li><a href="#international-agreements" id="toc-international-agreements" class="nav-link" data-scroll-target="#international-agreements"><span class="header-section-number">7.4</span> International Agreements</a>
+  <ul class="collapse">
+  <li><a href="#lets-play-1" id="toc-lets-play-1" class="nav-link" data-scroll-target="#lets-play-1">Let’s play</a></li>
+  <li><a href="#agreement-participation-game" id="toc-agreement-participation-game" class="nav-link" data-scroll-target="#agreement-participation-game">Agreement participation game</a></li>
+  <li><a href="#self-enforcing-agreements" id="toc-self-enforcing-agreements" class="nav-link" data-scroll-target="#self-enforcing-agreements">Self-enforcing agreements</a></li>
+  <li><a href="#critical-participation-level-k" id="toc-critical-participation-level-k" class="nav-link" data-scroll-target="#critical-participation-level-k">Critical participation level <span class="math inline">\(k^*\)</span></a></li>
+  <li><a href="#agreements-turn-tragedy-into-divergence" id="toc-agreements-turn-tragedy-into-divergence" class="nav-link" data-scroll-target="#agreements-turn-tragedy-into-divergence">Agreements turn tragedy into divergence</a></li>
+  </ul></li>
+  <li><a href="#threshold-public-goods" id="toc-threshold-public-goods" class="nav-link" data-scroll-target="#threshold-public-goods"><span class="header-section-number">7.5</span> Threshold Public Goods</a>
+  <ul class="collapse">
+  <li><a href="#threshold-dilemma-game" id="toc-threshold-dilemma-game" class="nav-link" data-scroll-target="#threshold-dilemma-game">Threshold dilemma game</a></li>
+  <li><a href="#uncertainty" id="toc-uncertainty" class="nav-link" data-scroll-target="#uncertainty">Uncertainty</a></li>
+  </ul></li>
+  <li><a href="#learning-goals-revisited" id="toc-learning-goals-revisited" class="nav-link" data-scroll-target="#learning-goals-revisited"><span class="header-section-number">7.6</span> Learning goals <strong>revisited</strong></a>
+  <ul class="collapse">
+  <li><a href="#overall-limitations" id="toc-overall-limitations" class="nav-link" data-scroll-target="#overall-limitations">Overall limitations</a></li>
+  <li><a href="#bibliographic-remarks" id="toc-bibliographic-remarks" class="nav-link" data-scroll-target="#bibliographic-remarks">Bibliographic remarks</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-TargetEquilibria.html">Target Equilibria</a></li><li class="breadcrumb-item"><a href="./03.02-StrategicInteractions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Strategic Interactions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2024/2025 <br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<section id="motivation-collective-action-for-sustainability" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="motivation-collective-action-for-sustainability"><span class="header-section-number">7.1</span> Motivation | <strong>Collective action for sustainability</strong></h2>
+<p>Consider the following questions:</p>
+<ul>
+<li>Do you think climate change is a significant problem the world needs to address?</li>
+<li>Do you think the world has been trying?</li>
+<li>Do you think the world has succeeded?</li>
+</ul>
+<p>Please enter your views below.</p>
+<div id="a824e835-5e49-48e4-8ab6-06e54e1732eb" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[&quot;remove-input&quot;]" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+        <iframe width="100%" height="450" src="https://ars.particify.de/p/57584395/series/03.02-01-ClimateChange/1" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>Scott Barrett asked these questions at the beginning of a talk, which I can highly recommend watching. The talk is called <a href="https://www.youtube.com/watch?v=5GO0ZS2KkPY">Climate Change Diplomacy: a Most Dangerous Game</a> and is given at the London School of Economics.</p>
+<p>The typical answers to these questions raise the point of <strong>why it is so difficult to succeed in stopping climate change despite recognizing the problem and trying to solve it.</strong></p>
+<p><strong>The outcome depends on all!</strong> Carbon dioxide (CO2) is the most prevalent greenhouse gas driving global climate change. CO2 from different sources (fossil fuels, burned biomass, land ecosystems, oceans) is being added to Earth’s atmosphere from various locations over the globe. Then, it mixes relatively fast in the atmosphere, i.e., the consequences for a region do not depend on how much that region emits but on the overall emissions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/03.02-Atmosphere.dio.png" class="img-fluid figure-img"></p>
+<figcaption>This visualization from <a href="https://svs.gsfc.nasa.gov/5110">NASA</a> shows the CO2 added to Earth’s atmosphere over 2021, split into four major contributors: fossil fuels in orange, burning biomass in red, land ecosystems in green, and the ocean in blue. The dots on the surface also show how green land ecosystems and the ocean in blue absorb atmospheric carbon dioxide. Though the land and oceans are each carbon sinks in a global sense, individual locations can be sources at different times.</figcaption>
+</figure>
+</div>
+<div id="9e5098ac" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[&quot;remove-input&quot;]" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+        <iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/Q_93pLMA4pM?si=LMwqLfiMJreDB27i" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p><strong>To stabilize the climate, (net) emissions have to go to zero</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/03.02-LinearDamages.dio.png" class="img-fluid figure-img"></p>
+<figcaption>Linear damages of climate change</figcaption>
+</figure>
+</div>
+<p>While the climate is the most discussed example, the collective action problem extends to the whole <strong>planetary commons</strong>.</p>
+<section id="advantages-of-game-theory" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-of-game-theory"><strong>Advantages</strong> of game theory</h3>
+<p><strong>In this lecture</strong>, we introduce the basics of mathematical game theory to uncover the underlying mechanisms of strategic interactions. We will see how the behavior of individuals can lead to collective outcomes that are not in the interest of any individual. We will also discuss possible mechanisms and variations of the situation that help to overcome these challenges and will acknowledge the limitations of these variations.</p>
+<p>A <strong>mathematical game</strong> describes an action situation where an <strong>outcome</strong> relevant to an individual <strong>depends on</strong> at least one <strong>other actor</strong>. This is why we speak of <strong>inter</strong>actions instead of only actions of a single-agent action situation. The <strong>strategic</strong> aspect comes into play when the actors are aware of the interdependence and can anticipate the actions of others.</p>
+</section>
+<section id="learning-goals" class="level3">
+<h3 class="anchored" data-anchor-id="learning-goals">Learning goals</h3>
+<p>After this lecture, students will be able to:</p>
+<ul>
+<li>Apply game theory to model multi-agent action situations</li>
+<li>Resolve games by finding Nash equilibria</li>
+<li>Describe the dimensions of a social dilemma</li>
+<li>Explain two special kinds of games: <em>agreement games</em> and <em>threshold public goods</em>, and how they relate to the dimensions of a social dilemma.</li>
+</ul>
+</section>
+</section>
+<section id="game-theory" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="game-theory"><span class="header-section-number">7.2</span> Game theory</h2>
+<blockquote class="blockquote">
+<p>Life is a game. At least in theory.</p>
+</blockquote>
+<div id="b300ce00-d25e-47bf-9de7-837af77dfdde" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> BoundaryNorm</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, fixed</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Game theory in itself is diverse. Here, we focus on <strong>normal-form games</strong> with the following elements.</p>
+<ul>
+<li>A finate set of <span class="math inline">\(N\)</span> agents <span class="math inline">\(\mathcal I = \{2,\dots, N\}\)</span> participating in an interaction.</li>
+<li>For each agent <span class="math inline">\(i\in\mathcal I\)</span>, a discrete set of <strong>options</strong> or <strong>actions</strong> <span class="math inline">\(\mathcal A^i = \{A^i_1, \dots, A^i_M\}\)</span>.
+<ul>
+<li>Let’s denote the joint action set by <span class="math inline">\(\boldsymbol{\mathcal A} = \mathcal A^1 \times \dots \times A^N\)</span>.</li>
+<li>An action profile <span class="math inline">\(\boldsymbol a = (a^1,\dots,a^N) \in \boldsymbol{\mathcal A}\)</span> is a joint action of all agents.</li>
+</ul></li>
+<li>For each agent <span class="math inline">\(i\in\mathcal I\)</span>, a <strong>welfare</strong>, <strong>reward</strong> or <strong>payoff</strong> function <span class="math inline">\(R^i: \boldsymbol{\mathcal A} \rightarrow \mathbb R\)</span>.
+<ul>
+<li><span class="math inline">\(R^i(\boldsymbol a)\)</span> is the welfare agent <span class="math inline">\(i\)</span> receives when all agents chose <span class="math inline">\(\boldsymbol a = (a^1,\dots,a^N) \in \boldsymbol{\mathcal A}\)</span></li>
+</ul></li>
+<li>The agent’s <strong>policy</strong> or <strong>strategy</strong> <span class="math inline">\(x^i: \mathcal A^i \rightarrow [0,1]\)</span>.
+<ul>
+<li><span class="math inline">\(x^i(a^i)\)</span> is the probability agent <span class="math inline">\(i\)</span> chooses action <span class="math inline">\(a^i\)</span>.</li>
+<li>A strategy is called <em>pure</em> if it chooses actions deterministically. If it is not <em>pure</em>, it is called <em>mixed</em> instead.</li>
+</ul></li>
+</ul>
+<section id="lets-play" class="level3">
+<h3 class="anchored" data-anchor-id="lets-play">Let’s play</h3>
+<ul>
+<li>You are given two choices: <strong>abate</strong> climate change or continue to <strong>pollute</strong> the atmosphere.</li>
+<li>You gain 100 Euros (of averated damages) for each person that chooses <em>abate</em>.</li>
+<li>If you choose <em>abate</em>, you must pay 250 Euros.</li>
+</ul>
+<p>What would you choose?</p>
+<div id="8d9012b9-fc4d-4048-a8c7-92e950dda690" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[&quot;remove-input&quot;]" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+        <iframe width="100%" height="450" src="https://ars.particify.de/p/57584395/series/03.02-02-Game1" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>Would you have chosen differently if the action had been labeled <strong>red</strong> and <strong>blue</strong>?</p>
+<p>The agents or actors in this game are all participants in this questionnaire. The actions are <em>abate</em> and <em>pollute</em>. The payoff is a given in (hypothetical) money. The strategies are the deterministic choice of either <em>abate</em> or <em>pollute</em>.</p>
+</section>
+<section id="mathematical-model" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-model">Mathematical model</h3>
+<p>Let us model the reward functions of this normal-form game in general terms. We have <span class="math inline">\(N\)</span> agents, the players of the game, each with two actions <span class="math inline">\(\mathsf{A}\)</span> or <span class="math inline">\(\mathsf{P}\)</span>, the choices they can make.</p>
+<p>Each abating actor brings a <strong>benefit</strong> <span class="math inline">\(b\)</span> (of averted damages) to all actors at an <strong>individual cost</strong> <span class="math inline">\(c\)</span>.</p>
+<p>From the perspective of a focal agent, let <span class="math inline">\(N_\mathsf{A}\)</span> be the number of all other actors abating. The rewards are then</p>
+<ul>
+<li>for a polluting actor: <span class="math inline">\(R_\mathsf{P}(\mathbf a) = N_\mathsf{A} b\)</span></li>
+<li>for an abating actor: <span class="math inline">\(R_\mathsf{A}(\mathbf a) = (N_\mathsf{A} + 1) b - c\)</span></li>
+</ul>
+<p>We visualize these payoffs as a function of the number of other abating actors.</p>
+<div id="ada4a33e" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_payoffs(N, b, c, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    Na_other <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    bA <span class="op">=</span> (Na_other<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    bP <span class="op">=</span> Na_other<span class="op">*</span>b</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bA, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Abate'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bP, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Pollute'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="165f9caf" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plot_payoffs(N<span class="op">=</span><span class="dv">100</span>, b<span class="op">=</span><span class="dv">1</span>, c<span class="op">=</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03.02-StrategicInteractions_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We observe that the reward of <em>polluting</em> is always higher than that of <em>abating</em>, regardless of the number of other actors abating.</p>
+<p>Thus, regardless of what the others do, every individual is incentivized to choose <em>pollute</em>. Hence, for every individual <span class="math inline">\(i\)</span>, <em>pollute</em> is a <strong>dominant strategy</strong>.</p>
+<p>Definition | <strong>Dominant strategy</strong></p>
+<p>Let <span class="math inline">\(\boldsymbol x = (x^i, \boldsymbol x^{-i})\)</span> be a joint strategy, where <span class="math inline">\(x^i\)</span> is actor <span class="math inline">\(i\)</span>’s strategy, and <span class="math inline">\(\boldsymbol x^{-i}\)</span> is the joint strategy of all other actors.</p>
+<p>Actor <span class="math inline">\(i\)</span> has a <em>dominant strategy</em>, <span class="math inline">\(x^i_D\)</span>, iff</p>
+<p><span class="math display">\[R^i(x^i_D,  {\boldsymbol x}^{-i}) \geq R^i(\tilde x^i, \tilde {\boldsymbol x}^{-i})\]</span></p>
+<p>for all possible other strategies <span class="math inline">\(\tilde x^i, \tilde {\boldsymbol x}^{-i}\)</span>.</p>
+<p>Thus, when all actors choose <em>pollute</em>, no actor has an incentive to deviate from this strategy. This is called a <strong>Nash equilibrium</strong>.</p>
+</section>
+<section id="nash-equilibirum" class="level3">
+<h3 class="anchored" data-anchor-id="nash-equilibirum"><strong>Nash equilibirum</strong></h3>
+<section id="definition" class="level4">
+<h4 class="anchored" data-anchor-id="definition">Definition</h4>
+<p>Let <span class="math inline">\(\boldsymbol x = (x^i, \boldsymbol x^{-i})\)</span> be a joint strategy, where <span class="math inline">\(x^i\)</span> is agent <span class="math inline">\(i\)</span>’s strategy and <span class="math inline">\(\boldsymbol x^{-i}\)</span> is the joint strategy of all other agents.</p>
+<p>A joint strategy <span class="math inline">\(\boldsymbol x_*\)</span> is a Nash-equilibrium when no agent can benefit from changing its strategy unilaterally,</p>
+<p><span class="math display">\[ R^i(x^i_*, \boldsymbol x_*^{-i}) \geq R^i(\tilde x^i, \boldsymbol x_*^{-i})\]</span></p>
+<p>for all agents <span class="math inline">\(i\)</span> and all other strategies <span class="math inline">\(\tilde X^i\)</span>.</p>
+<p>In 1950, John Nash showed (in a one-pager) that such an equilibrium always exists for games with <em>any number of (finite) actors with a finite number of actions</em> and <em>any type of payoffs</em> (beyond zero-sum games).</p>
+<p><strong>DeeDive</strong> | Nash’s equilibrium produces the same solution as von Neumann and Morgenstern’s minimax in the two-player zero-sum game. But while von Neumann and Morgenstern had struggled to extend the minimax solution beyond two-player zero-sum games in their 600-page book, Nash’s solution could be extended to any other case! I recommend the following blog post <a href="https://www.optimallyirrational.com/p/time-for-some-game-theory">Time for Some Game Theory - by Lionel Page</a> for an intuitive introduction to game theory.</p>
+</section>
+<section id="interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation">Interpretation</h4>
+<p>There is much confusion about <strong>how to interpret a Nash equilibrium</strong>, considering the question of how actors would be able to play a Nash equilibrium in a one-shot interaction. We will briefly discuss two interpretations: the <em>rationalistic</em> and the <em>learning</em> interpretation.</p>
+<p>In the <strong>rationalistic interpretation</strong>, rational players would mentally simulate the various ways the game could unfold and choose a Nash equilibrium. However, when faced with non-trivial strategic situations for the first time, people typically fail to play a Nash equilibrium of the game. When there is more than one equilibrium, this interpretation cannot say which one an actor would choose (This is also known as the <strong>equilibrium selection problem</strong>).</p>
+<p>In the <strong>learning interpretation</strong>, actors learn to play a Nash equilibrium through experience from repeated interactions over time. Learning here is understood in the broadest sense possible. It could be through imitation, trial and error, or even (cultural or genetic) evolution <span class="citation" data-cites="HoffmanYoeli2022">(<a href="References.html#ref-HoffmanYoeli2022" role="doc-biblioref">Hoffman &amp; Yoeli, 2022</a>)</span>. However, we will not explicitly model the learning process in this lecture and the whole part on <em>target equilibria</em>. This will be the main topic of the last part of this course.</p>
+</section>
+<section id="movie-time" class="level4">
+<h4 class="anchored" data-anchor-id="movie-time">Movie time</h4>
+<p>The movie <em>A Beautiful Mind</em> portrays John Nash, the inventor of the Nash equilibrium. The <a href="https://www.youtube.com/watch?v=LJS7Igvk6ZM">Bar Scene</a> is the moment in the film where Nash experiences the revelation of his equilibrium concept.</p>
+<div id="ff07f744" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[&quot;remove-input&quot;]" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+        <iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/LJS7Igvk6ZM?si=WkTyjAwkVvKvaHxf" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>Is the solution of the game Nash advocates for in the <a href="https://www.youtube.com/watch?v=LJS7Igvk6ZM">clip</a> a Nash equilibrium?</p>
+</section>
+</section>
+<section id="social-dilemma" class="level3">
+<h3 class="anchored" data-anchor-id="social-dilemma">Social dilemma</h3>
+<p>In fact, the bar scene from <em>A Beautiful Mind</em> is a good example of a social dilemma.</p>
+<p><strong>A social dilemma is a situation where all actors have an incentive to behave selfishly.</strong></p>
+<p><strong>However, everyone would be better off if everyone would behave cooperatively.</strong></p>
+<p>The game of abating and polluting is also a social dilemma for some values of the parameters <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>.</p>
+<div id="79ef6e96" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_payoffs(N<span class="op">=</span><span class="dv">3</span>, b<span class="op">=</span><span class="fl">0.55</span>, c<span class="op">=</span><span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03.02-StrategicInteractions_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As long as the cost of abating is greater than the benefit, <span class="math inline">\(b&lt;c\)</span>, the unique Nash equilibrium is that all actors pollute.</p>
+<p>However, when the benefit of abating times the number of actors is higher than the cost <span class="math inline">\(c&lt;bN\)</span>, all actors would be better off if all actors abate.</p>
+<p><strong>When both conditions are met, <span class="math inline">\(b&lt;c&lt;bN\)</span>, the game is a social dilemma.</strong></p>
+<p>Note, when <span class="math inline">\(c&gt;bN\)</span>, all actors <em>polluting</em> is the unique Nash equilibrium and the social optimum. Everyone is better off when all actors pollute.</p>
+<p>This simple model helps to explain why situations with many actors <span class="math inline">\(N\)</span> can be more prone to be social dilemmas. When abating benefits everyone, independent of how many actors are involved, having many actors makes the situation likely to be a social dilemma. Independent of how large the cost <span class="math inline">\(c\)</span> may be, we simply have to increase <span class="math inline">\(N\)</span>, such that <span class="math inline">\(c&lt;bN\)</span>. The condition that the benefits <span class="math inline">\(b\)</span> are independent of <span class="math inline">\(N\)</span> refers to the <strong>public good</strong> nature of the benefits. The benefits of having an intact and healthy planet with maintenance and regulating ecosystem services serve everyone, regardless of how many. They are so-called non-rivalrous. Other services of Nature are rivalrous, e.g., the fish in the ocean.</p>
+</section>
+</section>
+<section id="dimensions-of-a-social-dilemma" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="dimensions-of-a-social-dilemma"><span class="header-section-number">7.3</span> Dimensions of a social dilemma</h2>
+<p>Let us dissect a social dilemma along two dimensions:</p>
+<ul>
+<li>the <strong>greed</strong> <span class="math inline">\(G\)</span> to exploit others, and</li>
+<li>the <strong>fear</strong> <span class="math inline">\(F\)</span> of being exploited by others.</li>
+</ul>
+<p>For two actors that must face the decision between <em>abate</em> or <em>pollute</em>, we can summarize the payoffs in a matrix, <span class="math display">\[
+\begin{array}{c|cc}
+\text{} &amp; \color{blue}{\mathsf{Abate}} &amp; \color{blue}{\mathsf{Pollute}} \\
+\hline
+\color{red}{\mathsf{Abate}} &amp; {\color{red}{1}} \ | \ {\color{blue}{1}} &amp; {\color{red}{-1-F}} \ | \ {\color{blue}{+1+G}} \\
+\color{red}{\mathsf{Pollute}} &amp; {\color{red}{+1+G}} \ | \ {\color{blue}{-1-F}} &amp; {\color{red}{-1}} \ | \ {\color{blue}{-1}} \\
+\end{array}
+\]</span>.</p>
+<p>Depending on whether the greed <span class="math inline">\(G\)</span> and fear <span class="math inline">\(F\)</span> are positive or negative, we can distinguish four types of games <a href="04.02-IndividualLearning.html#fig-social-dilemma-dimensions" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>.</p>
+<div id="fig-social-dilemma-dimensions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-social-dilemma-dimensions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/03.02-SocialDilemmaDimensions.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-social-dilemma-dimensions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Dimensions of a social dilemma with ordinal payoffs and Nash equilibira shown in boxes.
+</figcaption>
+</figure>
+</div>
+<p>In <a href="04.02-IndividualLearning.html#fig-social-dilemma-dimensions" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>, the payoff values are ordinal, meaning that only their order, <span class="math inline">\(3&gt;2&gt;1&gt;0\)</span>, is considered of relevance.</p>
+<section id="case-1-tragedy-g0-f0." class="level4">
+<h4 class="anchored" data-anchor-id="case-1-tragedy-g0-f0."><strong>Case 1 | Tragedy</strong> (<span class="math inline">\(G&gt;0, F&gt;0\)</span>).</h4>
+<p>When actors are greedy to exploit others and fear being exploited by others, the game is a tragedy. Regardless of what others do, each agent has an incentive to pollute. Thus, the <strong>Nash equilibrium</strong> is that <strong>all actors pollute</strong>. The tragedy is that all actors would be better off if all actors abate. Another common name for this situation is the <em>Prisoner’s dilemma</em>.</p>
+</section>
+<section id="case-2-divergence-g0-f0." class="level4">
+<h4 class="anchored" data-anchor-id="case-2-divergence-g0-f0."><strong>Case 2 | Divergence</strong> (<span class="math inline">\(G&gt;0, F&lt;0\)</span>).</h4>
+<p>When actors are greedy to exploit others but do not fear being exploited by others, the actors are in a situation of divergence. When enough other actors <em>pollute</em>, individual incentives regard <em>abate</em> better than <em>pollute</em>. Thus, in the two-actor case, both <strong>(abate, pollute)</strong> and <strong>(pollute, abate)</strong> are <strong>Nash equilibria</strong>, where the polluting actor receives more than the abating one (as long as <span class="math inline">\(F&gt;-(G+2)\)</span>). This is a situation of <strong>inequality emerging</strong> despite both actors being identical. It also induces a <strong>first-mover advantage</strong>, as the first actor to choose <em>pollute</em> will receive more reward than the <em>abating</em> actor. We call this situation <strong>divergence</strong> since the collective remains divided and only partial sustainability is achieved. Other popular names are <em>chicken</em>, <em>hawk-dove</em>, <em>snow-drift</em> describing different stories around the situation.</p>
+</section>
+<section id="case-3-coordination-g0-f0." class="level4">
+<h4 class="anchored" data-anchor-id="case-3-coordination-g0-f0."><strong>Case 3 | Coordination</strong> (<span class="math inline">\(G&lt;0, F&gt;0\)</span>).</h4>
+<p>When actors are not greedy to exploit others but fear being exploited by others, they are in a situation of coordination. What is better for an individual mirrors what the others do. Thus, both <strong>(abate, abate)</strong> and <strong>(pollute, pollute)</strong> are <strong>Nash equilibria</strong>. In both equilibria, both agents are equally well off, but it depends on which of the two equilibria the actors coordinate. The agents are better off in <em>(abate, abate)</em> than in <em>(pollute, pollute)</em>. However, coordination may still be difficult to achieve, e.g., because of anonymity, a lack of communication, or false beliefs. Nevertheless, <strong>turning a tragedy into a coordination game is a common mechanism to resolve the social dilemma</strong>. Another popular name for this situation is the <em>stag-hunt</em> game.</p>
+</section>
+<section id="case-4-comedy-g0-f0." class="level4">
+<h4 class="anchored" data-anchor-id="case-4-comedy-g0-f0."><strong>Case 4 | Comedy</strong> (<span class="math inline">\(G&lt;0, F&lt;0\)</span>).</h4>
+<p>When there is neither greed to exploit others nor fear to be exploited by others, the actors are in a situation of comedy. Regardless of what others do, each agent has an incentive to abate. Thus, the joint strategy <strong>(abate, abate)</strong> is the only <strong>Nash equilibrium</strong>. Since individual and collective interests point to the same solution, we call this the <strong>comedy</strong> of the commons <span class="citation" data-cites="OstromEtAl2002">(<a href="References.html#ref-OstromEtAl2002" role="doc-biblioref">Ostrom et al., 2002</a>)</span>. The <em>Harmony</em> game is another common name for this situation.</p>
+</section>
+<section id="limitations" class="level3">
+<h3 class="anchored" data-anchor-id="limitations">Limitations</h3>
+<p>We assumed that the <strong>actors</strong> were <strong>anonymous</strong>. However, actors are often not anonymous, especially in the governance of local commons. They know each other and can communicate and reciprocate <span class="citation" data-cites="OstromEtAl2002 Nowak2006 AnderiesJanssen2016">(<a href="References.html#ref-AnderiesJanssen2016" role="doc-biblioref">Anderies &amp; Janssen, 2016</a>; <a href="References.html#ref-Nowak2006" role="doc-biblioref">Nowak, 2006</a>; <a href="References.html#ref-OstromEtAl2002" role="doc-biblioref">Ostrom et al., 2002</a>)</span>. This can help overcome the social dilemma. We will discuss and model this in the last part of the course.</p>
+<p>We also did not discuss any mechanisms that let one or more of these games (or incentive regimes) emerge. We will discuss two such broad mechanisms in the remainder of this chapter: <strong>international agreements</strong> and <strong>threshold public goods</strong>.</p>
+</section>
+</section>
+<section id="international-agreements" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="international-agreements"><span class="header-section-number">7.4</span> International Agreements</h2>
+<p>Let us revisit our climate commons dilemma from above. Each abating actor brings a <strong>benefit</strong> <span class="math inline">\(b=100\)</span> EUR (of averted damages) to all actors at an <strong>individual cost</strong> <span class="math inline">\(c=250\)</span> EUR. One way to resolve this social dilemma could be through an agreement. The <strong>actors could agree to abate</strong>. In the following, we will model this additional game layer, highlighting its potential and limitations.</p>
+<section id="lets-play-1" class="level3">
+<h3 class="anchored" data-anchor-id="lets-play-1">Let’s play</h3>
+<p>We assume that <strong>an agreement has already been negotiated</strong>. If you sign the agreement, you must choose <em>abate</em>. However, the agreement comes only into force if there are at least three signatories.</p>
+<p>You gain 100 Euros for each person who chooses <em>abate</em>. If you choose <em>abate</em>, you have to pay 250 Euros</p>
+<p>You have to make three choices:</p>
+<ol type="1">
+<li>whether you <strong>sign</strong> or <strong>not sign</strong> the agreement</li>
+<li>what you choose if there are not enough signatories: <strong>abate</strong> or <strong>pollute</strong></li>
+<li>what you choose if you did not sign the agreement: <strong>abate</strong> or <strong>pollute</strong></li>
+</ol>
+<div id="f8c3b848" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[&quot;remove-input&quot;]" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="13">
+
+        <iframe width="100%" height="450" src="https://ars.particify.de/p/57584395/series/03.02-04-AgreementGame/2" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+</section>
+<section id="agreement-participation-game" class="level3">
+<h3 class="anchored" data-anchor-id="agreement-participation-game">Agreement participation game</h3>
+<p>Generally, in this model, the agreement mandates that all signatories <em>abate</em> if at least <span class="math inline">\(k^*\)</span> actors sign the agreement. Then, at</p>
+<ul>
+<li>Stage 1: Every actor chooses whether or not to sign the agreement. At</li>
+<li>Stage 2: The signatories choose jointly whether to abate or pollute. Finally, at</li>
+<li>Stage 3: The non-signatories choose independently whether to abate or pollute.</li>
+</ul>
+</section>
+<section id="self-enforcing-agreements" class="level3">
+<h3 class="anchored" data-anchor-id="self-enforcing-agreements">Self-enforcing agreements</h3>
+<p>An international environmental agreement (IEA) must be <strong>self-enforcing</strong>, i.e., a Nash equilibrium in the game-theoretic sense, as there are no global enforcement mechanisms.</p>
+<ul>
+<li>No signatory can gain by withdrawing unilaterally</li>
+<li>No non-signatory can gain by joining</li>
+<li>Thus, there is <strong>no incentive to re-negotiate</strong></li>
+</ul>
+</section>
+<section id="critical-participation-level-k" class="level3">
+<h3 class="anchored" data-anchor-id="critical-participation-level-k">Critical participation level <span class="math inline">\(k^*\)</span></h3>
+<p>The crucial question is, what is the critical participation level <span class="math inline">\(k^*\)</span>, such that the agreement is self-enforcing?</p>
+<p>Suppose there are <span class="math inline">\(k\)</span> signatories.</p>
+<ul>
+<li><p>In a tragedy dilemma, non-signatories will defect in Stage 3.</p></li>
+<li><p>Signatories have an incentive to abate if <span class="math inline">\(kb-c \geq 0\)</span>.</p></li>
+<li><p>Rearranging yields: if <span class="math inline">\(k \geq c/b\)</span>, signatories abate.</p></li>
+<li><p>Let <span class="math inline">\(k^0\)</span> be the smallest integer greater than or equal to <span class="math inline">\(c/b\)</span>.</p></li>
+<li><p>Suppose there are <span class="math inline">\(k^0\)</span> signatories.</p></li>
+<li><p>No non-signatory would want to join the agreement.</p></li>
+<li><p>Thus, the critical participation level is</p></li>
+</ul>
+<p><span class="math display">\[\frac{c}{b}+1 \geq k^* \geq \frac{c}{b}\]</span></p>
+<div id="21fbcebf" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_agreement_payoffs(N, b, c, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    kstar <span class="op">=</span> <span class="bu">int</span>(np.ceil(c<span class="op">/</span>b))<span class="op">;</span> <span class="bu">print</span>(kstar)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    Ns_other <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    bS <span class="op">=</span> ((Ns_other<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">&lt;</span> <span class="dv">0</span>)<span class="op">*</span><span class="dv">0</span> <span class="op">+</span> ((Ns_other<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">&gt;=</span> <span class="dv">0</span>)<span class="op">*</span>((np.arange(N)<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    bN <span class="op">=</span> ((Ns_other)<span class="op">*</span>b <span class="op">-</span> c <span class="op">&lt;</span> <span class="dv">0</span>)<span class="op">*</span><span class="dv">0</span> <span class="op">+</span> ((Ns_other)<span class="op">*</span>b <span class="op">-</span> c <span class="op">&gt;=</span> <span class="dv">0</span>)<span class="op">*</span>np.arange(N)<span class="op">*</span>b</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    a.plot(Ns_other, bS, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Signatories'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    a.plot(Ns_other, bN, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Non-signatories'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other signatories'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="agreements-turn-tragedy-into-divergence" class="level3">
+<h3 class="anchored" data-anchor-id="agreements-turn-tragedy-into-divergence">Agreements turn tragedy into divergence</h3>
+<p><strong>Full participation in an agreement is difficult</strong> (only possible if costs are astronomical). This holds for many generalizations (e.g., non-linear payoff functions/cost functions).</p>
+<div id="de13d1ec" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>,<span class="dv">3</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plot_agreement_payoffs(<span class="dv">8</span>, <span class="dv">1</span>, <span class="fl">3.5</span>, ax<span class="op">=</span>axs[<span class="dv">0</span>])<span class="op">;</span> axs[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">8</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plot_payoffs(<span class="dv">8</span>, <span class="dv">1</span>, <span class="fl">3.5</span>, ax<span class="op">=</span>axs[<span class="dv">1</span>])<span class="op">;</span> axs[<span class="dv">1</span>].set_ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">8</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03.02-StrategicInteractions_files/figure-html/cell-14-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="threshold-public-goods" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="threshold-public-goods"><span class="header-section-number">7.5</span> Threshold Public Goods</h2>
+<p><strong>Is the tragedy dilemma the game we are playing?</strong></p>
+<div id="fig-climate-tipping-risks" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-climate-tipping-risks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/02.02-ClimateTippingRisks.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-climate-tipping-risks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: Climate tipping risks
+</figcaption>
+</figure>
+</div>
+<section id="lets-play-again" class="level4">
+<h4 class="anchored" data-anchor-id="lets-play-again">Let’s play again</h4>
+<ul>
+<li>You are given two choices: <strong>abate</strong> climate change or continue to <strong>pollute</strong> the atmosphere.</li>
+<li>You gain 100 Euros (of averated damages) for each person that chooses <em>abate</em>.</li>
+<li>If you choose <em>abate</em>, you must pay 250 Euros.</li>
+<li>If not all choose to <em>abate</em>, the climate will tip, and everybody will lose 350 Euros.</li>
+</ul>
+<p>What would you choose?</p>
+<div id="2cf3f378" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[&quot;remove-input&quot;]" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+        <iframe width="100%" height="450" src="https://ars.particify.de/p/57584395/series/03.02-05-ThresholdGame/1" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+</section>
+<section id="threshold-dilemma-game" class="level3">
+<h3 class="anchored" data-anchor-id="threshold-dilemma-game">Threshold dilemma game</h3>
+<p>In general, we can model a threshold public goods game as follows:</p>
+<ul>
+<li>There are <span class="math inline">\(N\)</span>-actors.</li>
+<li>Each actor can contribute an amount <span class="math inline">\(c\)</span> (by <em>abating</em>) to the public good, or they contribute nothing and <em>pollute</em>.</li>
+<li>Each contributed unit brings a benefit <span class="math inline">\(b_u\)</span> (of averted linear damages) to all actors.</li>
+<li>If the collective does not contribute at least a critical threshold amount <span class="math inline">\(T_\text{crit}\)</span>, all actors experience a <em>catastrophic</em> impact <span class="math inline">\(m\)</span> of non-linear tipping damages.</li>
+</ul>
+<p><strong>How does the threshold dilemma map onto the tragedy dilemma?</strong> For simplicity, let’s assume actors have two actions:</p>
+<ul>
+<li>Contributing a fair amount to avert the collapse, <span class="math inline">\(c=T_\text{crit}/N\)</span></li>
+<li>Contributing nothing.</li>
+</ul>
+<p>The unit benefit <span class="math inline">\(b_u\)</span> relates to a benefit <span class="math inline">\(b\)</span> from abating from the tragedy dilemma by <span class="math display">\[b=b_u c = b_u T_\text{crit}/N\]</span></p>
+<div id="af59a09a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_threshold_payoff(N, bu, Tc, m, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>Tc<span class="op">/</span>N<span class="op">;</span> b<span class="op">=</span>bu<span class="op">*</span>c</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    Na_other <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    bA <span class="op">=</span> (Na_other<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">-</span> m<span class="op">*</span>(Na_other<span class="op">+</span><span class="dv">1</span><span class="op">&lt;</span>N)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    bP <span class="op">=</span> Na_other<span class="op">*</span>b <span class="op">-</span> m<span class="op">*</span>(Na_other<span class="op">&lt;</span>N)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bA, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Abate'</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bP, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Pollute'</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Contribution thresholds turn tragedy into coordination challenge</strong> (<a href="#fig-threshold-payoffs" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>).</p>
+<div id="cell-fig-threshold-payoffs" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_threshold_payoff(<span class="dv">5</span>, <span class="fl">0.5</span>, <span class="dv">50</span>, <span class="dv">6</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-threshold-payoffs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-threshold-payoffs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03.02-StrategicInteractions_files/figure-html/fig-threshold-payoffs-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-threshold-payoffs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Payoffs from the thresholds game.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Nations are good at solving coordination challenges via international conferences and agreements. The <strong>Montreal Protocol</strong> on Substances that Deplete the Ozone Layer is the landmark multilateral environmental agreement that regulates the production and consumption of nearly 100 artificial chemicals referred to as ozone-depleting substances (ODS). When released into the atmosphere, those chemicals damage the stratospheric ozone layer, Earth’s protective shield that protects humans and the environment from harmful levels of ultraviolet radiation from the sun. Adopted on 16 September 1987, the Protocol is, to date, one of the rare treaties to achieve universal ratification. [Source | <a href="https://www.unep.org/ozonaction/who-we-are/about-montreal-protocol">UNEP</a>]</p>
+<section id="conditions-for-coordination" class="level4">
+<h4 class="anchored" data-anchor-id="conditions-for-coordination">Conditions for coordination</h4>
+<p>Under what conditions on the parameters does a threshold turn a tragedy dilemma into a coordination challenge?</p>
+<p>The benefit of a cooperating actor choosing to abate when all others choose to abate is <span class="math display">\[R^i(\mathsf{A, A}) = N b_u \frac{T_c}{N} - \frac{T_c}{N}  \]</span></p>
+<div id="90d336b9" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bAA(N, bu, Tc, m): <span class="cf">return</span> N<span class="op">*</span>bu<span class="op">*</span>Tc<span class="op">/</span>N <span class="op">-</span> Tc<span class="op">/</span>N</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The benefit of a <em>polluter</em>, when all others choose <em>abate</em> is <span class="math display">\[R^i(\mathsf{P, A}) = (N-1)b_u \frac{T_c}{N} - m\]</span></p>
+<div id="cdac3b6d" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bPA(N, bu, Tc, m): <span class="cf">return</span> (N<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>bu<span class="op">*</span>Tc<span class="op">/</span>N <span class="op">-</span> m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When all other actors <em>pollute</em>, there is no incentive to abate (because the collapse happens anyway). But when all other actors <em>abate</em>, there is an incentive to <em>abate</em> if</p>
+<p><span class="math display">\[R^i(\mathsf{A,A}) &gt; R^i(\mathsf{P, A}).\]</span></p>
+<p>Rearranging yields, <span class="math display">\[m^* = \frac{1-b_u}{N} T^*_c.\]</span></p>
+<div id="f356fb33" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>bu<span class="op">=</span><span class="fl">0.5</span><span class="op">;</span> N <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Varying parameters  </span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>ms <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">201</span>)<span class="op">;</span> </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>Ts <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">251</span>)<span class="op">;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>TT, MM <span class="op">=</span> np.meshgrid(Ts, ms)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the plot nice</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> plt.colormaps[<span class="st">'PiYG'</span>]<span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> BoundaryNorm([<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>], ncolors<span class="op">=</span>cmap.N, clip<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># do the plot</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>cb <span class="op">=</span> plt.pcolormesh(TT, MM, bAA(N, bu, TT, MM)<span class="op">&gt;</span>bPA(N, bu, TT, MM), cmap<span class="op">=</span>cmap, norm<span class="op">=</span>norm)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># make the plot nice (again)</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(cb, ticks<span class="op">=</span>[<span class="fl">0.25</span>, <span class="fl">0.75</span>])<span class="op">;</span> </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>cbar.ax.set_yticklabels([<span class="st">'Tragedy'</span>, <span class="st">'Coordination'</span>])</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Threshold'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Impact'</span>)<span class="op">;</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.plot(Ts, Ts<span class="op">/</span>N<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>bu))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03.02-StrategicInteractions_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="uncertainty" class="level3">
+<h3 class="anchored" data-anchor-id="uncertainty">Uncertainty</h3>
+<p>What if there is uncertainty? We will consider two kinds of uncertainty:</p>
+<ul>
+<li>Impact uncertainty: We don’t know exactly how bad it is going to be</li>
+<li>Threshold uncertainty: We don’t know exactly where the threshold lies</li>
+</ul>
+<section id="impact-uncertainty" class="level4">
+<h4 class="anchored" data-anchor-id="impact-uncertainty">Impact uncertainty</h4>
+<p>Assume the impact <span class="math inline">\(m\)</span> is uncertain.</p>
+<p>The impact <span class="math inline">\(m\)</span> is distributed according to a probability distribution.</p>
+<p>Expected value theory underlying game theory suggests that decision-makers will only care about the expected value.</p>
+<p>Thus, as long as <span class="math inline">\(m_\text{certain} = \mathbb E[m_\text{uncertain}]\)</span>, the model remains unchanged.</p>
+<p>Here, we consider a very simple distribution of <span class="math inline">\(Pr(m)\)</span>. There is a <span class="math inline">\(1/3\)</span> chance of a small impact <span class="math inline">\(m_\text{certain} - \Delta m\)</span>, a <span class="math inline">\(1/3\)</span> chance of a medium impact <span class="math inline">\(m=m_\text{certain}\)</span>, and a <span class="math inline">\(1/3\)</span> chance of a large impact <span class="math inline">\(m=m_\text{certain} + \Delta m\)</span>. Obviously, the expected value is <span class="math inline">\(m_\text{certain}\)</span>.</p>
+<div id="fe81b8c1" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_uncertainimpacts_payoffs(N, bu, Tc, m, delta_m<span class="op">=</span><span class="dv">2</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>Tc<span class="op">/</span>N<span class="op">;</span> b<span class="op">=</span>bu<span class="op">*</span>c<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    Na_other_fair <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    bPl <span class="op">=</span> Na_other_fair<span class="op">*</span>b <span class="op">-</span> (m<span class="op">-</span>delta_m)<span class="op">*</span>(Na_other_fair<span class="op">&lt;</span>N)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    bPc <span class="op">=</span> Na_other_fair<span class="op">*</span>b <span class="op">-</span> m<span class="op">*</span>(Na_other_fair<span class="op">&lt;</span>N)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    bPh <span class="op">=</span> Na_other_fair<span class="op">*</span>b <span class="op">-</span> (m<span class="op">+</span>delta_m)<span class="op">*</span>(Na_other_fair<span class="op">&lt;</span>N)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    bAl <span class="op">=</span> (Na_other_fair<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">-</span> (m<span class="op">-</span><span class="dv">2</span>)<span class="op">*</span>(Na_other_fair<span class="op">+</span><span class="dv">1</span><span class="op">&lt;</span>N)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    bAc <span class="op">=</span> (Na_other_fair<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">-</span> m<span class="op">*</span>(Na_other_fair<span class="op">+</span><span class="dv">1</span><span class="op">&lt;</span>N)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    bAh <span class="op">=</span> (Na_other_fair<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">-</span> (m<span class="op">+</span><span class="dv">2</span>)<span class="op">*</span>(Na_other_fair<span class="op">+</span><span class="dv">1</span><span class="op">&lt;</span>N)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    bP <span class="op">=</span> np.mean([bPl, bPc, bPh], axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    bA <span class="op">=</span> np.mean([bAl, bAc, bAh], axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    col1 <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>] </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    col2 <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">1</span>]</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bAc, <span class="st">'.-'</span>, color<span class="op">=</span>col1, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bAl, <span class="st">'.--'</span>, color<span class="op">=</span>col1, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bAh, <span class="st">'.-.'</span>, color<span class="op">=</span>col1, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bPc, <span class="st">'.-'</span>, color<span class="op">=</span>col2, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bPl, <span class="st">'.--'</span>, color<span class="op">=</span>col2, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bPh, <span class="st">'.-.'</span>, color<span class="op">=</span>col2, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bA, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Average abate'</span>, color<span class="op">=</span>col1)</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bP, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Average pollute'</span>, color<span class="op">=</span>col2)</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoffs'</span>)</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    a.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="29f2e661" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_uncertainimpacts_payoffs(N<span class="op">=</span><span class="dv">5</span>, bu<span class="op">=</span><span class="fl">0.5</span>, Tc<span class="op">=</span><span class="dv">50</span>, m<span class="op">=</span><span class="dv">6</span>, delta_m<span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03.02-StrategicInteractions_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Thus, impact uncertainty does not change the outcome of our model.</p>
+</section>
+<section id="threshold-uncertainty" class="level4">
+<h4 class="anchored" data-anchor-id="threshold-uncertainty">Threshold uncertainty</h4>
+<p>Empirically, there is considerable uncertainty about the critical threshold <span class="math inline">\(T_\text{crit}\)</span> (<a href="#fig-climate-tipping-risks" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>).</p>
+<p>Suppose, the threshold <span class="math inline">\(T_\text{crit}\)</span> is uncertain:</p>
+<ul>
+<li>with <span class="math inline">\(p=1/3\)</span> it is at <span class="math inline">\(T_\text{crit,low} = T_\text{crit,certain} - 10\)</span></li>
+<li>with <span class="math inline">\(p=1/3\)</span> it is at <span class="math inline">\(T_\text{crit,mid} = T_\text{crit,certain}\)</span></li>
+<li>with <span class="math inline">\(p=1/3\)</span> it is at <span class="math inline">\(T_\text{crit,high} = T_\text{crit,certain} + 10\)</span></li>
+</ul>
+<p>Thus, expected value of the threshold remains the same.</p>
+<div id="373f2b38" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_uncertainthresholds_payoff(N, bu, Tc, m, ax<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>Tc<span class="op">/</span>N<span class="op">;</span> b<span class="op">=</span>bu<span class="op">*</span>c</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    Na_other_fair <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    bD <span class="op">=</span> Na_other_fair<span class="op">*</span>b <span class="op">-</span> m<span class="op">*</span>(Na_other_fair<span class="op">&lt;</span>N)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    bC <span class="op">=</span> (Na_other_fair<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">-</span> m<span class="op">*</span>(Na_other_fair<span class="op">+</span><span class="dv">1</span><span class="op">&lt;</span>N)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    bL <span class="op">=</span> (Na_other_fair<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">-</span> m<span class="op">*</span>(Na_other_fair<span class="op">+</span><span class="dv">1</span><span class="op">&lt;</span>N)    </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    bH <span class="op">=</span> (Na_other_fair<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c <span class="op">-</span> m<span class="op">*</span>(Na_other_fair<span class="op">&lt;</span>N)    </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    bA <span class="op">=</span> np.mean([bC, bL, bH], axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bA, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Average abate'</span>)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bD, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Pollute'</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bC, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Abate - Center threshold'</span>, color<span class="op">=</span><span class="st">'grey'</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bL, <span class="st">'.--'</span>, label<span class="op">=</span><span class="st">'Abate - Low threshold'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bH, <span class="st">'.-.'</span>, label<span class="op">=</span><span class="st">'Abate - High threshold'</span>, color<span class="op">=</span><span class="st">'lightgrey'</span>)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Threshold uncertainty reverts the coordination challenge back to a tragedy</strong></p>
+<div id="fb61773e" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plot_uncertainthresholds_payoff(N<span class="op">=</span><span class="dv">5</span>, bu<span class="op">=</span><span class="fl">0.5</span>, Tc<span class="op">=</span><span class="dv">50</span>, m<span class="op">=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03.02-StrategicInteractions_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Threshold uncertainty raises the cost of averting collapse. Essentially, this is <strong>because low thresholds cannot compensate for high thresholds</strong>. High thresholds cause collapse, making actors worse off than those with medium thresholds. However, low thresholds cannot make actors better off than medium thresholds.</p>
+</section>
+<section id="threshold-dilemmas-summary" class="level4">
+<h4 class="anchored" data-anchor-id="threshold-dilemmas-summary">Threshold dilemmas summary</h4>
+<p>Contribution thresholds can turn tragedy into a coordination challenge - given a sufficiently severe collapse impact and sufficiently low threshold.</p>
+<p><strong>Uncertainty is important</strong>: Impact uncertainty has no effect - But threshold uncertainty can revert the coordination challenge back to tragedy.</p>
+</section>
+<section id="experimental-evidence" class="level4">
+<h4 class="anchored" data-anchor-id="experimental-evidence">Experimental evidence</h4>
+<p>Our model allows us to make <strong>predictions</strong> about how actors behave in threshold public goods games across the four (two by two) treatments of uncertainty:</p>
+<ol type="1">
+<li><strong>Impact uncertainty has no effect</strong>. Certainty and Impact uncertainty should yield the same behavior (abating), just as Threshold uncertainty and Threshold+Impact uncertainty should yield the same behavior (polluting).</li>
+<li><strong>Threshold uncertainty has an effect</strong>. The certainty and impact uncertainty treatment should yield a different behavior than the treatments with threshold uncertainty.</li>
+</ol>
+<p>Both hypotheses are confirmed by the experimental evidence (<a href="#fig-BarrettDannenberg2012" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>) <span class="citation" data-cites="BarrettDannenberg2012">(<a href="References.html#ref-BarrettDannenberg2012" role="doc-biblioref">Barrett &amp; Dannenberg, 2012</a>)</span>.</p>
+<div id="fig-BarrettDannenberg2012" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BarrettDannenberg2012-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/03.02-BarrettDannenberg.dio.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BarrettDannenberg2012-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: Experimental evidence on threshold public goods games
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="learning-goals-revisited" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">7.6</span> Learning goals <strong>revisited</strong></h2>
+<p>In this chapter,</p>
+<p>we applied game theory to model multi-agent action situations.</p>
+<p>We resolved games by defining and finding Nash equilibria.</p>
+<p>We described and analyzed the dimensions of a social dilemma.</p>
+<p>We introduced and analyzed two special kinds of games: <em>agreement games</em> and <em>threshold public goods</em>.</p>
+<ul>
+<li>Agreement games can turn tragedies into divergence dilemmas.</li>
+<li>Threshold public goods can turn tragedies into coordination challenges - given enough certainty about where the threshold lies.</li>
+</ul>
+<section id="overall-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="overall-limitations">Overall limitations</h3>
+<p>Our equilibrium game-theoretic model left it <strong>unclear where the strategies come from</strong> or from which process they arise.</p>
+<p>The models in this chapter did <strong>not explicitly consider environmental dynamics</strong>.</p>
+<p>The <strong>consequences</strong> for the actors were assumed to be <strong>experienced immediately</strong>.</p>
+</section>
+<section id="bibliographic-remarks" class="level3">
+<h3 class="anchored" data-anchor-id="bibliographic-remarks">Bibliographic remarks</h3>
+<p>The fear and greed dimensions of a social dilemma are inspired by <span class="citation" data-cites="MacyFlache2002">(<a href="References.html#ref-MacyFlache2002" role="doc-biblioref">Macy &amp; Flache, 2002</a>)</span>.</p>
+<p>The name of the four social dilemma types is inspired by <span class="citation" data-cites="OstromEtAl2002">(<a href="References.html#ref-OstromEtAl2002" role="doc-biblioref">Ostrom et al., 2002</a>)</span>, who talks about the <em>drama of the commons</em>. Commons may sometimes be a <em>tragedy</em>, sometimes a <em>comedy</em>, often something in between.</p>
+<p>International environmental agreement games are coined by <span class="citation" data-cites="Barrett1994 Barrett2005">(<a href="References.html#ref-Barrett1994" role="doc-biblioref">Barrett, 1994</a>, <a href="References.html#ref-Barrett2005" role="doc-biblioref">2005</a>)</span>.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-AnderiesJanssen2016" class="csl-entry" role="listitem">
+Anderies, J. M., &amp; Janssen, M. A. (2016). <em>Sustaining the commons</em>. Independent. <a href="https://dlc.dlib.indiana.edu/dlc/handle/10535/8839">https://dlc.dlib.indiana.edu/dlc/handle/10535/8839</a>
+</div>
+<div id="ref-Barrett1994" class="csl-entry" role="listitem">
+Barrett, S. (1994). Self-<span>Enforcing International Environmental Agreements</span>. <em>Oxford Economic Papers</em>, <em>46</em>(Supplement_1), 878–894. <a href="https://doi.org/10.1093/oep/46.Supplement_1.878">https://doi.org/10.1093/oep/46.Supplement_1.878</a>
+</div>
+<div id="ref-Barrett2005" class="csl-entry" role="listitem">
+Barrett, S. (2005). <em>Environment and <span>Statecraft</span>: <span>The Strategy</span> of <span>Environmental Treaty-Making</span></em>. Oxford University Press. <a href="https://doi.org/10.1093/0199286094.001.0001">https://doi.org/10.1093/0199286094.001.0001</a>
+</div>
+<div id="ref-BarrettDannenberg2012" class="csl-entry" role="listitem">
+Barrett, S., &amp; Dannenberg, A. (2012). Climate negotiations under scientific uncertainty. <em>Proceedings of the National Academy of Sciences</em>, <em>109</em>(43), 17372–17376. <a href="https://doi.org/10.1073/pnas.1208417109">https://doi.org/10.1073/pnas.1208417109</a>
+</div>
+<div id="ref-HoffmanYoeli2022" class="csl-entry" role="listitem">
+Hoffman, M., &amp; Yoeli, E. (2022). <em>Hidden <span>Games</span>: <span>The Surprising Power</span> of <span>Game Theory</span> to <span>Explain Irrational Human Behaviour</span></em>. Hachette UK.
+</div>
+<div id="ref-MacyFlache2002" class="csl-entry" role="listitem">
+Macy, M. W., &amp; Flache, A. (2002). Learning dynamics in social dilemmas. <em>Proceedings of the National Academy of Sciences</em>, <em>99</em>(suppl_3), 7229–7236. <a href="https://doi.org/10.1073/pnas.092080099">https://doi.org/10.1073/pnas.092080099</a>
+</div>
+<div id="ref-Nowak2006" class="csl-entry" role="listitem">
+Nowak, M. A. (2006). Five <span>Rules</span> for the <span>Evolution</span> of <span>Cooperation</span>. <em>Science</em>. <a href="https://doi.org/10.1126/science.1133755">https://doi.org/10.1126/science.1133755</a>
+</div>
+<div id="ref-OstromEtAl2002" class="csl-entry" role="listitem">
+Ostrom, E., Dietz, T., Dolšak, N., Stern, P. C., Stonich, S., &amp; Weber, E. U. (Eds.). (2002). <em>The drama of the commons</em>. National Academies Press. <a href="http://www.nap.edu/catalog/10287">http://www.nap.edu/catalog/10287</a>
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03.01-SequentialDecisions.html" class="pagination-link" aria-label="Sequential Decisions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequential Decisions</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03.03-DynamicInteractions.html" class="pagination-link" aria-label="Dynamic Interactions">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Interactions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

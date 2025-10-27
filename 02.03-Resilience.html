@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,7 +78,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="./02.02-TippingElements.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7f1cf6fc70090d11f60898f9e7f80fa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dda8909163e0b4f3670ba323ebd66e56.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,10 +125,10 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -185,7 +186,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
@@ -592,14 +594,14 @@ window.Quarto = {
 <p>How to formalize these concepts?</p>
 <p>We start by importing the necessary libraries and setting up the plotting environment.</p>
 <div id="197f617c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, fixed</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="robustness-resilience" class="level3">
 <h3 class="anchored" data-anchor-id="robustness-resilience">Robustness resilience</h3>
@@ -635,11 +637,11 @@ window.Quarto = {
 <p><span class="math display">\[G(x) = \frac{c}{2}x^2 - \frac{1}{4}x^4.\]</span></p>
 <p>Converting the potential function into Python yields,</p>
 <div id="6a7de20b-cd23-4dc1-9e56-d9b02c3f4db1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_robustness(x, c): <span class="cf">return</span> c<span class="op">/</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_robustness(x, c): <span class="cf">return</span> c<span class="op">/</span><span class="dv">2</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We devise a function to plot the potential function, togehter with the system’s equilibirum points and their stability (if <span class="math inline">\(c&gt;0\)</span>, <span class="math inline">\(x_e=0\)</span> is stable and <span class="math inline">\(x_e = \sqrt{c}\)</span> and <span class="math inline">\(x_e= -\sqrt{c}\)</span> are unstable; if <span class="math inline">\(c&lt;0\)</span>, <span class="math inline">\(x_e=0\)</span> is unstable; see the <a href="./02.02ex-TippingElements.html">exercise on Tipping Elements</a>).</p>
 <div id="1a3ddfcf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_robustness_potential(c<span class="op">=</span><span class="dv">2</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_robustness_potential(c<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    xs<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">101</span>)<span class="op">;</span> plt.plot(xs, G_robustness(xs, c), <span class="st">'--'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"System state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"Potential </span><span class="dv">$</span><span class="vs">G</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -650,10 +652,10 @@ window.Quarto = {
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        plt.scatter(<span class="dv">0</span>, G_robustness(<span class="dv">0</span>, c), s<span class="op">=</span><span class="dv">200</span>,  color<span class="op">=</span><span class="st">'blue'</span>)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        plt.scatter(<span class="dv">0</span>, G_robustness(<span class="dv">0</span>, c), s<span class="op">=</span><span class="dv">200</span>,  c<span class="op">=</span><span class="st">'w'</span>, edgecolor<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="e310c85d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_potential()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -671,11 +673,11 @@ window.Quarto = {
 <p>The new stochastic or nosiy udpate equation <span class="math inline">\(F_N(x_t)\)</span> is composed of the orignial <strong>deterministic map <span class="math inline">\(F_D\)</span>, plus a stochastic random variable <span class="math inline">\(\eta_{t}\)</span></strong> of mean zero. The paramter <span class="math inline">\(n\)</span> regulates the <strong>strength</strong> of the noise term.</p>
 <p>We model the shocks by a <strong>normally distributed</strong> random variable <span class="math inline">\(n_{t}\)</span> with mean zero and unit variance. The corresponding Python function is,</p>
 <div id="cdd21d90-2fbd-493b-ac41-90f0e832a3d7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_robustness_noise(x, c, n): <span class="cf">return</span> x <span class="op">+</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> c<span class="op">*</span>x <span class="op">+</span> n<span class="op">*</span>np.random.randn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_robustness_noise(x, c, n): <span class="cf">return</span> x <span class="op">+</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> c<span class="op">*</span>x <span class="op">+</span> n<span class="op">*</span>np.random.randn()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We define a plotting function to illustrate the system dynamics under stochasticity. It also shows the basin of attraction, i.e., the region where the system state converges to the stable fixed point under the purely deterministic dynamics.</p>
 <div id="b7d2630e-17d9-4fff-97b8-ba56858a6109" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.1</span>, c<span class="op">=</span><span class="fl">1.0</span>, xinit<span class="op">=</span><span class="fl">0.5</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.1</span>, c<span class="op">=</span><span class="fl">1.0</span>, xinit<span class="op">=</span><span class="fl">0.5</span>):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    iters<span class="op">=</span><span class="dv">250</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span><span class="bu">dict</span>(c<span class="op">=</span>c, n<span class="op">=</span>noiselevel)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -689,11 +691,11 @@ window.Quarto = {
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    plt.plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'time steps'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'system state'</span>)<span class="op">;</span>  <span class="co"># makes plot nice</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    plt.fill_between([<span class="dv">0</span>, iters], [<span class="op">-</span>np.sqrt(c), <span class="op">-</span>np.sqrt(c)],  [np.sqrt(c), np.sqrt(c)], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="dv">0</span>,<span class="dv">250</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="dv">0</span>,<span class="dv">250</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If the noise level is low, the system is resilient to shocks and remains in the basin of attraction.</p>
 <div id="9be67255" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -704,8 +706,8 @@ window.Quarto = {
 </div>
 <p>However, if the noise level is high, the system can escape the basin of attraction and diverge.</p>
 <div id="e28d30a2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -761,20 +763,20 @@ window.Quarto = {
 <p><span class="math display">\[c(a; b, s, l) = b + \left(1+\tanh\big(s(a-l)\big)\right)\frac{(2-b)}{2}.\]</span></p>
 <p>In Python, this function is implemented as,</p>
 <div id="2b0550ae" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cfunc(n, base, loc, steep): <span class="cf">return</span> base <span class="op">+</span> ((<span class="dv">1</span><span class="op">+</span>np.tanh(steep<span class="op">*</span>(n<span class="op">-</span>loc))))<span class="op">*</span>(<span class="dv">2</span><span class="op">-</span>base)<span class="op">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cfunc(n, base, loc, steep): <span class="cf">return</span> base <span class="op">+</span> ((<span class="dv">1</span><span class="op">+</span>np.tanh(steep<span class="op">*</span>(n<span class="op">-</span>loc))))<span class="op">*</span>(<span class="dv">2</span><span class="op">-</span>base)<span class="op">/</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Visualizing the function c(a) for different parameters yields</p>
 <div id="f3b5a8cf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_cfunc(n, base<span class="op">=</span><span class="fl">0.25</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="dv">5</span>): </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_cfunc(n, base<span class="op">=</span><span class="fl">0.25</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="dv">5</span>): </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    plt.plot(n, cfunc(n, base, loc, steep), label<span class="op">=</span><span class="ss">f"b=</span><span class="sc">{</span>base<span class="sc">}</span><span class="ss">, l=</span><span class="sc">{</span>loc<span class="sc">}</span><span class="ss">, s=</span><span class="sc">{</span>steep<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"Noise level </span><span class="dv">$</span><span class="vs">n</span><span class="dv">$</span><span class="vs">"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"Control function </span><span class="dv">$</span><span class="vs">c</span><span class="kw">(</span><span class="vs">n</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r"Noise level </span><span class="dv">$</span><span class="vs">n</span><span class="dv">$</span><span class="vs">"</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r"Control function </span><span class="dv">$</span><span class="vs">c</span><span class="kw">(</span><span class="vs">n</span><span class="kw">)</span><span class="dv">$</span><span class="vs">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="96ce2bfc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">101</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">101</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.6</span>, loc<span class="op">=</span><span class="fl">0.6</span>, steep<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.4</span>, loc<span class="op">=</span><span class="fl">0.8</span>, steep<span class="op">=</span><span class="dv">8</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plot_cfunc(n, base<span class="op">=</span><span class="fl">0.2</span>, loc<span class="op">=</span><span class="fl">1.0</span>, steep<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">2.05</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">0.05</span>, <span class="fl">2.05</span>)<span class="op">;</span> plt.legend()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -785,12 +787,12 @@ window.Quarto = {
 </div>
 <p>We include this feedback mechanism in the dynamic systems update,</p>
 <div id="65100b2a-5a5c-423b-9a1d-56d6495fa5d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_adaptation_noise(x, n, base, loc, steep): </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> cfunc(n,base,loc,steep)<span class="op">*</span>x <span class="op">+</span> n<span class="op">*</span>np.random.randn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_adaptation_noise(x, n, base, loc, steep): </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> cfunc(n,base,loc,steep)<span class="op">*</span>x <span class="op">+</span> n<span class="op">*</span>np.random.randn()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>and define a plotting function which illustrates the feedback mechansim of how the control parameter <span class="math inline">\(c\)</span> responds to the noise strength <span class="math inline">\(a\)</span> together with the time evolution of the system under stochasticity.</p>
 <div id="beea9b81-433b-44d7-b746-81dacb907f34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.75</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.75</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    iters<span class="op">=</span><span class="dv">250</span><span class="op">;</span> xinit <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span> ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">2.01</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span><span class="bu">dict</span>(n<span class="op">=</span>noiselevel, base<span class="op">=</span>base, loc<span class="op">=</span>loc, steep<span class="op">=</span>steep)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -819,11 +821,11 @@ window.Quarto = {
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    cval <span class="op">=</span> cfunc(<span class="op">**</span>params)</span>
 <span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    plt.fill_between([<span class="dv">0</span>, iters], [<span class="op">-</span>np.sqrt(cval), <span class="op">-</span>np.sqrt(cval)],</span>
 <span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>                     [np.sqrt(cval), np.sqrt(cval)], <span class="op">**</span>basinstyle)</span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="dv">0</span>,<span class="dv">250</span>)<span class="op">;</span> plt.ylim(ylim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="dv">0</span>,<span class="dv">250</span>)<span class="op">;</span> plt.ylim(ylim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For a small noise level <span class="math inline">\(n\)</span>, the system is resilient to shocks and remains in the basin of attraction, independent of the designed feedback mechanism.</p>
 <div id="6c047d35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -834,8 +836,8 @@ window.Quarto = {
 </div>
 <p>For large noise leves, the location <span class="math inline">\(l\)</span> where the feedback mechanism kicks in becomes crucial. If <span class="math inline">\(l\)</span> is too large, the system cannot adapt to the shocks and diverges.</p>
 <div id="5032c7d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.4</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.4</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -846,8 +848,8 @@ window.Quarto = {
 </div>
 <p>Decreasing the location <span class="math inline">\(l\)</span> allows the system to adapt to the shocks and remain in the basin of attraction.</p>
 <div id="633658c2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.2</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.35</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.2</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -893,12 +895,12 @@ window.Quarto = {
 <p>where <span class="math inline">\(\eta\)</span> represents the noise term with mean zero and <span class="math inline">\(n\)</span> the strength of the stochasticity. As before, <span class="math inline">\(\tau\)</span> represents the typical time scale of the system, and thus, inverse strength of the system’s change, and <span class="math inline">\(a\)</span> is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength). The parameter <span class="math inline">\(c\)</span> represents the external driver that can push the system over the tipping point.</p>
 <p>Again, we model the shocks by a normally distributed random variable <span class="math inline">\(\eta_{t}\)</span> with mean zero and unit variance. The corresponding Python function is,</p>
 <div id="7f6d2a43" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_tipmod_noise(x, drive, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="fl">0.1</span>, noiselevel<span class="op">=</span><span class="dv">0</span>): </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> (x <span class="op">-</span> shape<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> drive <span class="op">+</span> noiselevel<span class="op">*</span>np.random.randn())<span class="op">/</span>timescale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> F_tipmod_noise(x, drive, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="fl">0.1</span>, noiselevel<span class="op">=</span><span class="dv">0</span>): </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> (x <span class="op">-</span> shape<span class="op">*</span>x<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> drive <span class="op">+</span> noiselevel<span class="op">*</span>np.random.randn())<span class="op">/</span>timescale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We define a plotting function to illustrate the system dynamics over time under stochasticity. We set the default values for the shape parameter <span class="math inline">\(a=1\)</span> and the timescale paramter <span class="math inline">\(\tau=2\)</span>.</p>
 <div id="aba33f10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>, initalstate<span class="op">=</span><span class="fl">0.5</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>, initalstate<span class="op">=</span><span class="fl">0.5</span>):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    iters<span class="op">=</span><span class="dv">2500</span><span class="op">;</span> params<span class="op">=</span><span class="bu">dict</span>(drive<span class="op">=</span>drive, shape<span class="op">=</span>shape, timescale<span class="op">=</span>timescale, noiselevel<span class="op">=</span>noiselevel)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> initalstate  <span class="co"># re-storing the initial values</span></span>
@@ -911,12 +913,12 @@ window.Quarto = {
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    plt.plot(trajectory, <span class="st">'purple'</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">1.4</span>, <span class="fl">1.4</span>)</span>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Time steps $t$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'System state $x$'</span>)<span class="op">;</span>  <span class="co"># makes plot nice</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(trajectory)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(trajectory)<span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>With the right system characteristics (i.e., its parameters) we observe a noise induced transition between the two stable states.</p>
 <div id="f9a3f441" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> <span class="co"># fixing the random seed for reproducibility</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -927,7 +929,7 @@ window.Quarto = {
 </div>
 <p>Without noise, the system converges and remains to the positive equilibrium point.</p>
 <div id="761fc119" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plot_transformation_trajectory(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -945,11 +947,11 @@ window.Quarto = {
 <p><span class="math display">\[G(x) = - \frac{1}{\tau} \left(\frac{1}{2}x^2 - \frac{1}{4}ax^4 + cx\right).\]</span></p>
 <p>In Python, we have,</p>
 <div id="5c4d73ee" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_tipmod(x, drive, shape, timescale): <span class="cf">return</span> <span class="op">-</span> (x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span> <span class="op">-</span> shape<span class="op">*</span>x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span> <span class="op">+</span> drive<span class="op">*</span>x)<span class="op">/</span>timescale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G_tipmod(x, drive, shape, timescale): <span class="cf">return</span> <span class="op">-</span> (x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span> <span class="op">-</span> shape<span class="op">*</span>x<span class="op">**</span><span class="dv">4</span><span class="op">/</span><span class="dv">4</span> <span class="op">+</span> drive<span class="op">*</span>x)<span class="op">/</span>timescale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To visualize the potential function, we define</p>
 <div id="5b7937c2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tipmod_potential(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="fl">1.0</span>, timescale<span class="op">=</span><span class="dv">2</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tipmod_potential(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="fl">1.0</span>, timescale<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    xs<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>, <span class="dv">501</span>)<span class="op">;</span> plt.ylim(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>)<span class="op">;</span> </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    plt.plot(xs, G_tipmod(xs, drive, shape, timescale), color<span class="op">=</span><span class="st">'k'</span>)</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r'Potential </span><span class="dv">$</span><span class="vs">G</span><span class="kw">(</span><span class="vs">x</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> plt.xlabel(<span class="vs">r'System state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>)</span>
@@ -957,10 +959,10 @@ window.Quarto = {
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  numerically find and plot equilibrium points</span></span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    drive_ <span class="op">=</span> shape<span class="op">*</span>xs<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xs</span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    xeq <span class="op">=</span> xs[np.isclose(drive_<span class="op">-</span>drive, <span class="fl">0.0</span>, atol<span class="op">=</span><span class="fl">0.02</span>)]</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(xeq, G_tipmod(xeq, drive, shape, timescale), <span class="st">'o'</span>, ms<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'k'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(xeq, G_tipmod(xeq, drive, shape, timescale), <span class="st">'o'</span>, ms<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'k'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="5408a681" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plot_tipmod_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plot_tipmod_potential()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -974,7 +976,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="transformation-bifurcation-diagram">Transformation | Bifurcation diagram</h4>
 <p>We also visualize the bifurcation diagram (see <a href="./02.02-TippingElements.html">Tipping Elements</a>) to understand the system’s stability and the location of the tipping point.</p>
 <div id="1a237b85" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_bifurcation_tipmod(shape<span class="op">=</span><span class="fl">1.0</span>, timescale<span class="op">=</span><span class="fl">2.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">1.4</span>, <span class="fl">1.4</span>]):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_bifurcation_tipmod(shape<span class="op">=</span><span class="fl">1.0</span>, timescale<span class="op">=</span><span class="fl">2.0</span>, cextent<span class="op">=</span>[<span class="op">-</span><span class="fl">1.4</span>, <span class="fl">1.4</span>]):</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    xe<span class="op">=</span>np.linspace(<span class="op">*</span>cextent, <span class="dv">1001</span>) <span class="co"># equilibrium points</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    driver <span class="op">=</span> shape<span class="op">*</span>xe<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> xe <span class="co"># parameter c</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(driver, xe, <span class="st">"--"</span>, color<span class="op">=</span><span class="st">'k'</span>)<span class="op">;</span> <span class="co"># equilibrim point</span></span>
@@ -985,10 +987,10 @@ window.Quarto = {
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    plt.plot(driver[cond], xe[cond], <span class="st">"."</span>, c<span class="op">=</span><span class="st">'green'</span>)</span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r'External driver </span><span class="dv">$</span><span class="vs">c</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> plt.ylabel(<span class="vs">r'Equilibrium points </span><span class="dv">$</span><span class="vs">x_e</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    plt.xlim(cextent)<span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    plt.xlim(cextent)<span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="bea70c59" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plot_bifurcation_tipmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plot_bifurcation_tipmod()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1003,7 +1005,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="transformation-combined-analysis">Transformation | Combined analysis</h3>
 <p>Putting all together shows us how potential, bifurcation diagramm and the noisy trajectories interact.</p>
 <div id="e4c5a249-1000-4c81-8826-ccda5d2f7f3e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tranformation(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>, initalstate<span class="op">=</span><span class="fl">0.5</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tranformation(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>, initalstate<span class="op">=</span><span class="fl">0.5</span>):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    ax1 <span class="op">=</span> fig.add_subplot(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
@@ -1026,11 +1028,11 @@ window.Quarto = {
 <span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    ax2.scatter(np.ones_like(traj)<span class="op">*</span>drive, traj,</span>
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>                alpha<span class="op">=</span><span class="fl">0.5</span>, s<span class="op">=</span><span class="dv">40</span>, c<span class="op">=</span>np.arange(<span class="bu">len</span>(traj)), cmap<span class="op">=</span><span class="st">'plasma_r'</span>,zorder<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we can reanalyze our sitation from above. <strong>When there is one fixed point dominating (i.e., having a larger basin of attraction), we observe a noise-induced transition to that fixed point</strong>. The timeseries is shown in the potential and the bifurcation diagram with time going from light to dark colors.</p>
 <div id="235d8cbb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> plot_tranformation(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> plot_tranformation(drive<span class="op">=-</span><span class="fl">0.3</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1041,7 +1043,7 @@ window.Quarto = {
 </div>
 <p>Where there is only one stable fixed point, also the stochastic system will evolve around that state.</p>
 <div id="5754db72" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plot_tranformation(drive<span class="op">=-</span><span class="fl">0.42</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plot_tranformation(drive<span class="op">=-</span><span class="fl">0.42</span>, noiselevel<span class="op">=</span><span class="fl">0.15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1052,7 +1054,7 @@ window.Quarto = {
 </div>
 <p>We observe bistable flickering when both fixed points are stable and the noise is not too small and not too large.</p>
 <div id="15240103" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> plot_tranformation(drive<span class="op">=</span><span class="dv">0</span>, noiselevel<span class="op">=</span><span class="fl">0.45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)<span class="op">;</span> plot_tranformation(drive<span class="op">=</span><span class="dv">0</span>, noiselevel<span class="op">=</span><span class="fl">0.45</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1081,7 +1083,7 @@ window.Quarto = {
 <p>How can we capture this phenomenon using a <strong>quantitative model</strong>?</p>
 <p>Let’s reuse the robustness resilience model, the deterministic subcritical pitch-fork bifurcation, <span class="math inline">\(\Delta x = x^3 - cx,\)</span> to illustrate that phenomenon.</p>
 <div id="bde67abd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_potential()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plot_robustness_potential()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1095,14 +1097,14 @@ window.Quarto = {
 <p>To do so, we have to <strong>define</strong> a notion of <strong>convergence</strong>.</p>
 <p>Let’s look an exemplary trajectory:</p>
 <div id="6e13c5d1-9717-4e6f-adb6-16a9f1bae466" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="op">-</span><span class="fl">1.2</span><span class="op">;</span> x <span class="op">=</span> <span class="fl">1.0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="op">-</span><span class="fl">1.2</span><span class="op">;</span> x <span class="op">=</span> <span class="fl">1.0</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> [x]</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    x_ <span class="op">=</span> F_robustness_noise(x, c<span class="op">=</span><span class="fl">1.2</span>, n<span class="op">=</span><span class="dv">0</span>) <span class="co"># n=0 noiseless</span></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    trajectory.append(x_)</span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x_</span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> np.array(trajectory)</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1114,7 +1116,7 @@ window.Quarto = {
 <p>When it reached the equilibirum, it does not change any further.</p>
 <p>Investigating the change between timesteps on a logarithmic axis,</p>
 <div id="d83d50d0-b360-449d-bff3-12810a62c596" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.plot(np.<span class="bu">abs</span>(trajectory[<span class="dv">0</span>:<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> trajectory[<span class="dv">1</span>:]))<span class="op">;</span> plt.yscale(<span class="st">'log'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.plot(np.<span class="bu">abs</span>(trajectory[<span class="dv">0</span>:<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> trajectory[<span class="dv">1</span>:]))<span class="op">;</span> plt.yscale(<span class="st">'log'</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1126,7 +1128,7 @@ window.Quarto = {
 <p>we find, the changes do become smaller.</p>
 <p>But it is sufficient for us to set a <strong>threshold tolerance level</strong>, below which we want to consider a trajectory as converged. Let’s use <span class="math inline">\(10^{-9}\)</span>.</p>
 <div id="75d092ef-bb8a-4de0-a503-4cac2ba4db8a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_trajectory(xinit, c, threshold<span class="op">=</span><span class="fl">10e-9</span>, maxiter<span class="op">=</span><span class="dv">10000</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_trajectory(xinit, c, threshold<span class="op">=</span><span class="fl">10e-9</span>, maxiter<span class="op">=</span><span class="dv">10000</span>):</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> xinit</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    trajectory <span class="op">=</span> [x]</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(maxiter): </span>
@@ -1135,12 +1137,12 @@ window.Quarto = {
 <span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.<span class="bu">abs</span>(x<span class="op">-</span>x_) <span class="op">&lt;</span> threshold:  <span class="co"># &lt;-- HERE</span></span>
 <span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
 <span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x_</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(trajectory)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(trajectory)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note, we still keep a maximum number of iterations to not get stuck here, should the threshold never be reached.</p>
 <p>Now, plotting the simulated trajectory, we observe that it automatically stopped when the threshold was reached.</p>
 <div id="7405c2db-bc5c-4fd8-a2a9-18ed17ceda84" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>plt.plot(simulate_trajectory(xinit<span class="op">=</span><span class="fl">1.0</span>, c<span class="op">=</span><span class="fl">1.2</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>plt.plot(simulate_trajectory(xinit<span class="op">=</span><span class="fl">1.0</span>, c<span class="op">=</span><span class="fl">1.2</span>))<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1151,7 +1153,7 @@ window.Quarto = {
 </div>
 <p>Using this threshold, we can set up our simulation,</p>
 <div id="3a662dff-6c26-4087-a48c-44de000d9672" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>eps <span class="op">=</span> <span class="fl">10e-9</span>  <span class="co"># The numberical threshold to be use for a small quantity</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>eps <span class="op">=</span> <span class="fl">10e-9</span>  <span class="co"># The numberical threshold to be use for a small quantity</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>cvs <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span>eps, <span class="fl">0.8</span>, <span class="dv">501</span>)  <span class="co"># The external parameters a to be varried</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>average_lens <span class="op">=</span> []</span>
@@ -1161,11 +1163,11 @@ window.Quarto = {
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    lens <span class="op">=</span> [<span class="bu">len</span>(simulate_trajectory(xinit, c, threshold<span class="op">=</span>eps, </span>
 <span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                                    maxiter<span class="op">=</span><span class="dv">10000</span>)) <span class="cf">for</span> xinit <span class="kw">in</span> xs]</span>
 <span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">max</span>(lens) <span class="op">&lt;</span> <span class="dv">10000</span></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    average_lens.append(np.mean(lens))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    average_lens.append(np.mean(lens))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>to demonstrate the phenomenon of <strong>critical slowing down</strong>,</p>
 <div id="ab0a1b36-b1b0-46e4-a273-43d7cbb96141" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.plot(cvs, average_lens, <span class="st">'.'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'&lt;Timesteps to convergence&gt;'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'External drive $c$'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.plot(cvs, average_lens, <span class="st">'.'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'&lt;Timesteps to convergence&gt;'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'External drive $c$'</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1187,7 +1189,7 @@ window.Quarto = {
 <p>where <span class="math inline">\(\eta\)</span> represents the noise term with mean zero and <span class="math inline">\(n\)</span> the strength of the stochasticity. As before, <span class="math inline">\(\tau\)</span> represents the typical time scale of the system, and thus, inverse strength of the system’s change, and <span class="math inline">\(a\)</span> is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength). The parameter <span class="math inline">\(c\)</span> represents the external driver that can push the system over the tipping point.</p>
 <p>We create a synthetic time series, along which we slighlty <strong>reduce the resilience</strong> of one equilibirum by changing the drive parameter <span class="math inline">\(c\)</span> <strong>with each iteration step</strong>.</p>
 <div id="5bbdf6be-83d7-43b7-b913-50924385c92f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>xinit<span class="op">=-</span><span class="fl">1.1</span>  <span class="co"># the system's initial condition</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>xinit<span class="op">=-</span><span class="fl">1.1</span>  <span class="co"># the system's initial condition</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>iters<span class="op">=</span><span class="dv">1000</span>  <span class="co"># how long to simulate</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>params<span class="op">=</span><span class="bu">dict</span>(b<span class="op">=</span><span class="fl">0.5</span>,c<span class="op">=</span><span class="fl">0.5</span>,d<span class="op">=</span><span class="fl">0.05</span>) <span class="co"># other parameter values</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1202,10 +1204,10 @@ window.Quarto = {
 <span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.<span class="bu">abs</span>(x)<span class="op">&gt;</span><span class="dv">3</span>: <span class="cf">break</span>  <span class="co"># stop the simulation when x becomes too large</span></span>
 <span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    trajectory.append(x_)  <span class="co"># storing the new state in the container</span></span>
 <span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x_  <span class="co"># the new state of the system `x_` becomes the current state `x`</span></span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    c <span class="op">+=</span> <span class="fl">0.00038</span>  <span class="co"># we slightly increase c (i.e., reduce the resilience)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    c <span class="op">+=</span> <span class="fl">0.00038</span>  <span class="co"># we slightly increase c (i.e., reduce the resilience)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="282e2658" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'time step t'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'system state x'</span>)<span class="op">;</span>  <span class="co"># makes plot nice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'time step t'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'system state x'</span>)<span class="op">;</span>  <span class="co"># makes plot nice</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1220,18 +1222,18 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="scatter-plot">Scatter plot</h4>
 <p>To <strong>visualize the autocorrelation</strong>, (lag-1 temporal autocorrelation or AR(1) to be specific), we create a scatter plot of 200 points of our time series versus the 200 points of our time series at the next time step (lag-1). In this case, 200 is the size of our data <strong>window</strong>.</p>
 <div id="ed46e640" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatter_autocorrelation(start<span class="op">=</span><span class="dv">0</span>): </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatter_autocorrelation(start<span class="op">=</span><span class="dv">0</span>): </span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="fl">2.8</span>))  <span class="co"># creates the two axes</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">0</span>].scatter(trajectory[start:start<span class="op">+</span><span class="dv">200</span>], trajectory[start<span class="op">+</span><span class="dv">1</span>:start<span class="op">+</span><span class="dv">201</span>], s<span class="op">=</span><span class="dv">10</span>, c<span class="op">=</span><span class="st">'blue'</span>)<span class="op">;</span> </span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">0</span>].set_xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x_{t</span><span class="op">+</span><span class="vs">1}</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> axs[<span class="dv">0</span>].set_ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="vs">x_{t}</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> <span class="co"># makes first axis nice </span></span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].plot(trajectory, <span class="st">'k'</span>)<span class="op">;</span>  <span class="co"># plot the time series</span></span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].fill_betweenx([<span class="op">-</span><span class="fl">1.25</span>, <span class="fl">1.5</span>], [start, start], [start<span class="op">+</span><span class="dv">200</span>, start<span class="op">+</span><span class="dv">200</span>], color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># show window</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].set_xlabel(<span class="st">'time steps'</span>)<span class="op">;</span> axs[<span class="dv">1</span>].set_ylabel(<span class="vs">r'system state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> axs[<span class="dv">1</span>].set_xlim(<span class="dv">0</span>, <span class="dv">1000</span>) <span class="co"># makes axis nice</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    axs[<span class="dv">1</span>].set_xlabel(<span class="st">'time steps'</span>)<span class="op">;</span> axs[<span class="dv">1</span>].set_ylabel(<span class="vs">r'system state </span><span class="dv">$</span><span class="vs">x</span><span class="dv">$</span><span class="vs">'</span>)<span class="op">;</span> axs[<span class="dv">1</span>].set_xlim(<span class="dv">0</span>, <span class="dv">1000</span>) <span class="co"># makes axis nice</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>How do we see the <strong>autocorrelation</strong> in this plot?</p>
 <div id="8fcf4f47" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1243,7 +1245,7 @@ window.Quarto = {
 <p>The autocorrelation is the <strong>correlation</strong> between the time series and a <strong>lagged version</strong> of itself. Thus, it is the correlation between the x-axis and the y-axis of the scatter plot on the left.</p>
 <p>Then we <strong>slide</strong> our window of 200 system points <strong>through our time series</strong>. How does the scatter plot change? And what does the mean for the autocorrleation?</p>
 <div id="18c971b6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">310</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">310</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1253,7 +1255,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="b53fd0db" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">620</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>scatter_autocorrelation(start<span class="op">=</span><span class="dv">620</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1269,7 +1271,7 @@ window.Quarto = {
 <p>To quantify our visual understanding, we finally calculate the lag-1 temporal autocorrelation.</p>
 <p>For that, we use the <code>numpy.corrcoef</code> function. Thus, the <strong>correlation matrix</strong> between the time series points from index 0 to 200 and from index 1 to 201 is given by,</p>
 <div id="916fb8b5-3390-48b7-8dcd-c6220d236b20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(trajectory[<span class="dv">0</span>:<span class="dv">200</span>], trajectory[<span class="dv">1</span>:<span class="dv">201</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(trajectory[<span class="dv">0</span>:<span class="dv">200</span>], trajectory[<span class="dv">1</span>:<span class="dv">201</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>array([[1.        , 0.20713096],
        [0.20713096, 1.        ]])</code></pre>
@@ -1277,18 +1279,18 @@ window.Quarto = {
 </div>
 <p>Thus, we have to <strong>extract one of the off-diagonal elements</strong>,</p>
 <div id="02cd6c40-f69d-4bde-b5cb-a35de609fe2e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(trajectory[<span class="dv">0</span>:<span class="dv">200</span>], trajectory[<span class="dv">1</span>:<span class="dv">201</span>])[<span class="dv">0</span>,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(trajectory[<span class="dv">0</span>:<span class="dv">200</span>], trajectory[<span class="dv">1</span>:<span class="dv">201</span>])[<span class="dv">0</span>,<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.2071309613708747</code></pre>
 </div>
 </div>
 <p><strong>Sliding through the time series</strong> from the beginning until the 600nd time step,</p>
 <div id="e07a83ee-aa4a-4440-808c-b74099362837" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>AR1 <span class="op">=</span> [np.corrcoef(trajectory[start:start<span class="op">+</span><span class="dv">200</span>], trajectory[start<span class="op">+</span><span class="dv">1</span>:start<span class="op">+</span><span class="dv">201</span>])[<span class="dv">0</span>,<span class="dv">1</span>]</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">for</span> start <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">599</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>AR1 <span class="op">=</span> [np.corrcoef(trajectory[start:start<span class="op">+</span><span class="dv">200</span>], trajectory[start<span class="op">+</span><span class="dv">1</span>:start<span class="op">+</span><span class="dv">201</span>])[<span class="dv">0</span>,<span class="dv">1</span>]</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">for</span> start <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">599</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="2bcf1ee2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plt.plot(AR1)<span class="op">;</span> plt.ylabel(<span class="st">'AR(1)'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'Time step $t$'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plt.plot(AR1)<span class="op">;</span> plt.ylabel(<span class="st">'AR(1)'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'Time step $t$'</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1393,13 +1395,14 @@ Reyers, B., Moore, M.-L., Haider, L. J., &amp; Schlüter, M. (2022). The contrib
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

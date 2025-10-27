@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,7 +78,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="./03.01-SequentialDecisions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7f1cf6fc70090d11f60898f9e7f80fa6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dda8909163e0b4f3670ba323ebd66e56.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,7 +125,7 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -142,7 +143,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -184,7 +185,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/CSMofHEI_Logo.drawio.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems Modeling of Human-Environment Interactions</a> 
@@ -531,7 +533,7 @@ window.Quarto = {
 <p>Life is a game. At least in theory.</p>
 </blockquote>
 <div id="b300ce00-d25e-47bf-9de7-837af77dfdde" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> BoundaryNorm</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, fixed</span>
@@ -539,7 +541,7 @@ window.Quarto = {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Game theory in itself is diverse. Here, we focus on <strong>normal-form games</strong> with the following elements.</p>
 <ul>
@@ -588,7 +590,7 @@ window.Quarto = {
 </ul>
 <p>We visualize these payoffs as a function of the number of other abating actors.</p>
 <div id="ada4a33e" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_payoffs(N, b, c, ax<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_payoffs(N, b, c, ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    Na_other <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    bA <span class="op">=</span> (Na_other<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>b <span class="op">-</span> c</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    bP <span class="op">=</span> Na_other<span class="op">*</span>b</span>
@@ -596,10 +598,10 @@ window.Quarto = {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bA, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Abate'</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bP, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Pollute'</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="165f9caf" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plot_payoffs(N<span class="op">=</span><span class="dv">100</span>, b<span class="op">=</span><span class="dv">1</span>, c<span class="op">=</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plot_payoffs(N<span class="op">=</span><span class="dv">100</span>, b<span class="op">=</span><span class="dv">1</span>, c<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -654,7 +656,7 @@ window.Quarto = {
 <p><strong>However, everyone would be better off if everyone would behave cooperatively.</strong></p>
 <p>The game of abating and polluting is also a social dilemma for some values of the parameters <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>.</p>
 <div id="79ef6e96" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_payoffs(N<span class="op">=</span><span class="dv">3</span>, b<span class="op">=</span><span class="fl">0.55</span>, c<span class="op">=</span><span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_payoffs(N<span class="op">=</span><span class="dv">3</span>, b<span class="op">=</span><span class="fl">0.55</span>, c<span class="op">=</span><span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -773,7 +775,7 @@ Figure&nbsp;7.1: Dimensions of a social dilemma with ordinal payoffs and Nash eq
 </ul>
 <p><span class="math display">\[\frac{c}{b}+1 \geq k^* \geq \frac{c}{b}\]</span></p>
 <div id="21fbcebf" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_agreement_payoffs(N, b, c, ax<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_agreement_payoffs(N, b, c, ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    kstar <span class="op">=</span> <span class="bu">int</span>(np.ceil(c<span class="op">/</span>b))<span class="op">;</span> <span class="bu">print</span>(kstar)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    Ns_other <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
@@ -783,16 +785,16 @@ Figure&nbsp;7.1: Dimensions of a social dilemma with ordinal payoffs and Nash eq
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    a.plot(Ns_other, bS, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Signatories'</span>)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    a.plot(Ns_other, bN, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Non-signatories'</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other signatories'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other signatories'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="agreements-turn-tragedy-into-divergence" class="level3">
 <h3 class="anchored" data-anchor-id="agreements-turn-tragedy-into-divergence">Agreements turn tragedy into divergence</h3>
 <p><strong>Full participation in an agreement is difficult</strong> (only possible if costs are astronomical). This holds for many generalizations (e.g., non-linear payoff functions/cost functions).</p>
 <div id="de13d1ec" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>,<span class="dv">3</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">11</span>,<span class="dv">3</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plot_agreement_payoffs(<span class="dv">8</span>, <span class="dv">1</span>, <span class="fl">3.5</span>, ax<span class="op">=</span>axs[<span class="dv">0</span>])<span class="op">;</span> axs[<span class="dv">0</span>].set_ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">8</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plot_payoffs(<span class="dv">8</span>, <span class="dv">1</span>, <span class="fl">3.5</span>, ax<span class="op">=</span>axs[<span class="dv">1</span>])<span class="op">;</span> axs[<span class="dv">1</span>].set_ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">8</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plot_payoffs(<span class="dv">8</span>, <span class="dv">1</span>, <span class="fl">3.5</span>, ax<span class="op">=</span>axs[<span class="dv">1</span>])<span class="op">;</span> axs[<span class="dv">1</span>].set_ylim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">8</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4</code></pre>
 </div>
@@ -852,7 +854,7 @@ Figure&nbsp;7.2: Climate tipping risks
 </ul>
 <p>The unit benefit <span class="math inline">\(b_u\)</span> relates to a benefit <span class="math inline">\(b\)</span> from abating from the tragedy dilemma by <span class="math display">\[b=b_u c = b_u T_\text{crit}/N\]</span></p>
 <div id="af59a09a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_threshold_payoff(N, bu, Tc, m, ax<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_threshold_payoff(N, bu, Tc, m, ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>Tc<span class="op">/</span>N<span class="op">;</span> b<span class="op">=</span>bu<span class="op">*</span>c</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    Na_other <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
@@ -862,11 +864,11 @@ Figure&nbsp;7.2: Climate tipping risks
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    _, a <span class="op">=</span> plt.subplots() <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> (<span class="va">None</span>, ax)</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bA, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Abate'</span>)</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other, bP, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Pollute'</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Contribution thresholds turn tragedy into coordination challenge</strong> (<a href="#fig-threshold-payoffs" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>).</p>
 <div id="cell-fig-threshold-payoffs" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_threshold_payoff(<span class="dv">5</span>, <span class="fl">0.5</span>, <span class="dv">50</span>, <span class="dv">6</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_threshold_payoff(<span class="dv">5</span>, <span class="fl">0.5</span>, <span class="dv">50</span>, <span class="dv">6</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="fig-threshold-payoffs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -886,17 +888,17 @@ Figure&nbsp;7.3: Payoffs from the thresholds game.
 <p>Under what conditions on the parameters does a threshold turn a tragedy dilemma into a coordination challenge?</p>
 <p>The benefit of a cooperating actor choosing to abate when all others choose to abate is <span class="math display">\[R^i(\mathsf{A, A}) = N b_u \frac{T_c}{N} - \frac{T_c}{N}  \]</span></p>
 <div id="90d336b9" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bAA(N, bu, Tc, m): <span class="cf">return</span> N<span class="op">*</span>bu<span class="op">*</span>Tc<span class="op">/</span>N <span class="op">-</span> Tc<span class="op">/</span>N</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bAA(N, bu, Tc, m): <span class="cf">return</span> N<span class="op">*</span>bu<span class="op">*</span>Tc<span class="op">/</span>N <span class="op">-</span> Tc<span class="op">/</span>N</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The benefit of a <em>polluter</em>, when all others choose <em>abate</em> is <span class="math display">\[R^i(\mathsf{P, A}) = (N-1)b_u \frac{T_c}{N} - m\]</span></p>
 <div id="cdac3b6d" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bPA(N, bu, Tc, m): <span class="cf">return</span> (N<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>bu<span class="op">*</span>Tc<span class="op">/</span>N <span class="op">-</span> m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bPA(N, bu, Tc, m): <span class="cf">return</span> (N<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>bu<span class="op">*</span>Tc<span class="op">/</span>N <span class="op">-</span> m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>When all other actors <em>pollute</em>, there is no incentive to abate (because the collapse happens anyway). But when all other actors <em>abate</em>, there is an incentive to <em>abate</em> if</p>
 <p><span class="math display">\[R^i(\mathsf{A,A}) &gt; R^i(\mathsf{P, A}).\]</span></p>
 <p>Rearranging yields, <span class="math display">\[m^* = \frac{1-b_u}{N} T^*_c.\]</span></p>
 <div id="f356fb33" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>bu<span class="op">=</span><span class="fl">0.5</span><span class="op">;</span> N <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Varying parameters  </span></span>
@@ -916,7 +918,7 @@ Figure&nbsp;7.3: Payoffs from the thresholds game.
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>cbar.ax.set_yticklabels([<span class="st">'Tragedy'</span>, <span class="st">'Coordination'</span>])</span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Threshold'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Impact'</span>)<span class="op">;</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.plot(Ts, Ts<span class="op">/</span>N<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>bu))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.plot(Ts, Ts<span class="op">/</span>N<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>bu))<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -942,7 +944,7 @@ Figure&nbsp;7.3: Payoffs from the thresholds game.
 <p>Thus, as long as <span class="math inline">\(m_\text{certain} = \mathbb E[m_\text{uncertain}]\)</span>, the model remains unchanged.</p>
 <p>Here, we consider a very simple distribution of <span class="math inline">\(Pr(m)\)</span>. There is a <span class="math inline">\(1/3\)</span> chance of a small impact <span class="math inline">\(m_\text{certain} - \Delta m\)</span>, a <span class="math inline">\(1/3\)</span> chance of a medium impact <span class="math inline">\(m=m_\text{certain}\)</span>, and a <span class="math inline">\(1/3\)</span> chance of a large impact <span class="math inline">\(m=m_\text{certain} + \Delta m\)</span>. Obviously, the expected value is <span class="math inline">\(m_\text{certain}\)</span>.</p>
 <div id="fe81b8c1" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_uncertainimpacts_payoffs(N, bu, Tc, m, delta_m<span class="op">=</span><span class="dv">2</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_uncertainimpacts_payoffs(N, bu, Tc, m, delta_m<span class="op">=</span><span class="dv">2</span>, ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>Tc<span class="op">/</span>N<span class="op">;</span> b<span class="op">=</span>bu<span class="op">*</span>c<span class="op">;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    Na_other_fair <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
@@ -975,10 +977,10 @@ Figure&nbsp;7.3: Payoffs from the thresholds game.
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bP, <span class="st">'.-'</span>, label<span class="op">=</span><span class="st">'Average pollute'</span>, color<span class="op">=</span>col2)</span>
 <span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoffs'</span>)</span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    a.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    a.legend()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="29f2e661" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_uncertainimpacts_payoffs(N<span class="op">=</span><span class="dv">5</span>, bu<span class="op">=</span><span class="fl">0.5</span>, Tc<span class="op">=</span><span class="dv">50</span>, m<span class="op">=</span><span class="dv">6</span>, delta_m<span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_uncertainimpacts_payoffs(N<span class="op">=</span><span class="dv">5</span>, bu<span class="op">=</span><span class="fl">0.5</span>, Tc<span class="op">=</span><span class="dv">50</span>, m<span class="op">=</span><span class="dv">6</span>, delta_m<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1000,7 +1002,7 @@ Figure&nbsp;7.3: Payoffs from the thresholds game.
 </ul>
 <p>Thus, expected value of the threshold remains the same.</p>
 <div id="373f2b38" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_uncertainthresholds_payoff(N, bu, Tc, m, ax<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_uncertainthresholds_payoff(N, bu, Tc, m, ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>Tc<span class="op">/</span>N<span class="op">;</span> b<span class="op">=</span>bu<span class="op">*</span>c</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    Na_other_fair <span class="op">=</span> np.arange(<span class="dv">0</span>, N)</span>
@@ -1020,11 +1022,11 @@ Figure&nbsp;7.3: Payoffs from the thresholds game.
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bL, <span class="st">'.--'</span>, label<span class="op">=</span><span class="st">'Abate - Low threshold'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    a.plot(Na_other_fair, bH, <span class="st">'.-.'</span>, label<span class="op">=</span><span class="st">'Abate - High threshold'</span>, color<span class="op">=</span><span class="st">'lightgrey'</span>)</span>
 <span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    a.legend()<span class="op">;</span> a.set_xlabel(<span class="st">'Number of other actors abating'</span>)<span class="op">;</span> a.set_ylabel(<span class="st">'Payoff'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Threshold uncertainty reverts the coordination challenge back to a tragedy</strong></p>
 <div id="fb61773e" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plot_uncertainthresholds_payoff(N<span class="op">=</span><span class="dv">5</span>, bu<span class="op">=</span><span class="fl">0.5</span>, Tc<span class="op">=</span><span class="dv">50</span>, m<span class="op">=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plot_uncertainthresholds_payoff(N<span class="op">=</span><span class="dv">5</span>, bu<span class="op">=</span><span class="fl">0.5</span>, Tc<span class="op">=</span><span class="dv">50</span>, m<span class="op">=</span><span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1166,13 +1168,14 @@ Ostrom, E., Dietz, T., Dolšak, N., Stern, P. C., Stonich, S., &amp; Weber, E. U
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

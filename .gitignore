@@ -1,6 +1,0 @@
-*.DS_Store
-.ipynb_checkpoints/
-.quarto/
-__output/
-__scripts/
-__slides/
