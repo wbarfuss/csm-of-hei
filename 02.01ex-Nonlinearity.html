@@ -410,10 +410,7 @@ window.Quarto = {
   <ul>
   <li><a href="#model-1-human-nature-interactions" id="toc-model-1-human-nature-interactions" class="nav-link active" data-scroll-target="#model-1-human-nature-interactions">Model 1 | Human-Nature interactions</a></li>
   <li><a href="#model-2-lotka-volterra-equations" id="toc-model-2-lotka-volterra-equations" class="nav-link" data-scroll-target="#model-2-lotka-volterra-equations">Model 2 | Lotka-Volterra equations</a></li>
-  <li><a href="#model-3-extended-lotka-volterra-model" id="toc-model-3-extended-lotka-volterra-model" class="nav-link" data-scroll-target="#model-3-extended-lotka-volterra-model">Model 3 | Extended Lotka-Volterra model</a>
-  <ul class="collapse">
-  <li><a href="#optional-step-eigenvalues-at-the-equilibrium-points" id="toc-optional-step-eigenvalues-at-the-equilibrium-points" class="nav-link" data-scroll-target="#optional-step-eigenvalues-at-the-equilibrium-points">Optional step | Eigenvalues at the equilibrium points</a></li>
-  </ul></li>
+  <li><a href="#model-3-extended-lotka-volterra-model-optional" id="toc-model-3-extended-lotka-volterra-model-optional" class="nav-link" data-scroll-target="#model-3-extended-lotka-volterra-model-optional">Model 3 | Extended Lotka-Volterra model [Optional]</a></li>
   </ul>
 </nav>
     </div>
@@ -439,7 +436,7 @@ window.Quarto = {
 </header>
 
 
-<div id="0adc073b" class="cell" data-execution_count="1">
+<div id="0adc073b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -460,24 +457,24 @@ y_{t+1} &amp;= y_t + b x_t
 </figure>
 </div>
 <p>Now, you will use Python’s <code>sympy</code> library to investigate this question. <code>sympy</code> is a powerful library for symbolic mathematics. It allows you to define variables and equations symbolically, and then solve these equations symbolically. This is very useful for investigating the properties of mathematical models.</p>
-<div id="5388f732" class="cell" data-execution_count="4">
+<div id="5388f732" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>First, we define the symbols for the variables in the model:</p>
-<div id="164035cb" class="cell" data-execution_count="5">
+<div id="164035cb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x, y, a, b <span class="op">=</span> sp.symbols(<span class="st">'x y a b'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="step-1-coefficient-matrix" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-coefficient-matrix">Step 1: Coefficient matrix</h4>
 <p>Formulate a <code>sympy.Matrix</code> object <code>A</code> that represents the coefficient matrix of the system of equations, <span class="math inline">\(\mathbf x_{t+1} = A \mathbf x_t\)</span>.</p>
-<div id="ef647205" class="cell" data-execution_count="6">
+<div id="ef647205" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-2-calculate-the-eigenvalues-of-the-matrix-a" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-calculate-the-eigenvalues-of-the-matrix-a">Step 2: Calculate the eigenvalues of the matrix A</h4>
 <p>Now, calculate the eigenvalues of the matrix <code>A</code> using the <code>A.eigenvals()</code> method.</p>
-<div id="70f2deff" class="cell" data-execution_count="8">
+<div id="70f2deff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -500,7 +497,7 @@ y_{t+1} &amp;= y_t + b x_t
 <section id="model-2-the-lotka-volterra-equations" class="level4">
 <h4 class="anchored" data-anchor-id="model-2-the-lotka-volterra-equations">Model 2 | The Lotka-Volterra equations</h4>
 <p>You will use the following set of parameters as default values:</p>
-<div id="9b71fdc0" class="cell" data-execution_count="12">
+<div id="9b71fdc0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># Growth rate of prey</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> <span class="fl">0.02</span>  <span class="co"># Rate at which predators destroy prey</span></span>
@@ -515,27 +512,27 @@ y_{t+1} &amp;= y_t + b x_t
 <section id="step-1-implement-the-model" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-implement-the-model">Step 1 | Implement the model</h4>
 <p>Write a function called <code>lotkavolterra</code> that implements the update of the Lotka-Volterra equations.</p>
-<div id="2b2a6925" class="cell" data-execution_count="13">
+<div id="2b2a6925" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Write (or copy-paste-and-adjust) an <code>iterate_model</code> function that iterates a dynamic systems model forward in time, given an initial state and a function (plus its parameters) that updates the state.</p>
-<div id="74a131c4" class="cell" data-execution_count="15">
+<div id="74a131c4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Write (or copy-paste-and-adjust) a <code>plot_stock_evolution</code> function that plots the time series of the state variables. Label the two-dimensional output of our system as “Natural environment” and “Human society”.</p>
-<div id="9a365f28" class="cell" data-execution_count="17">
+<div id="9a365f28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-2-plot-the-time-series" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-plot-the-time-series">Step 2 | Plot the time series</h4>
 <p>Visualize the time series of the natural environment and the human society for the default parameter values for 100 time steps.</p>
-<div id="c3141a97" class="cell" data-execution_count="21">
+<div id="c3141a97" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You should observe oscillations in the time series of the natural environment and the human society. Crucially, natural environment and human socitey values (almost) never become negative.</p>
 <p>Optional | Feel free to interact with the time series plot using the <code>interact</code> function.</p>
-<div id="b56229e5" class="cell" data-execution_count="54">
+<div id="b56229e5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -550,11 +547,11 @@ y_{t+1} &amp;= y_t + b x_t
 <li><code>ax=None</code>: the axis object to plot on</li>
 <li><code>**update_params</code>: additional keyword arguments for the <code>update_func</code></li>
 </ul>
-<div id="d1ad7882" class="cell" data-execution_count="56">
+<div id="d1ad7882" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Visualize the dynamics of the Lotka-Volterra equations in the phase space for the default parameter values and an <code>xextent</code> of 70.</p>
-<div id="65b4df8a" class="cell">
+<div id="65b4df8a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, adjust the <code>plot_flow_trajectory</code> function from the lecture material to visualize the trajectory of the system in the phase space next to the time series plot. The updated <code>plot_flow_trajectory</code> function should take the following arguments (and default values):</p>
@@ -567,16 +564,16 @@ y_{t+1} &amp;= y_t + b x_t
 <li><code>nr_points=11</code>: the number of points in the phase space plot</li>
 <li><code>**update_params</code>: additional keyword arguments for the <code>update_func</code></li>
 </ul>
-<div id="29ffc493" class="cell">
+<div id="29ffc493" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Visualize a trajectory from the initial values (<span class="math inline">\(x_0 = 28, y_0=5\)</span>) of the system in the phase space next to the time series plot for the default parameter values and 250 time steps. The <code>xextent</code> should be 70.</p>
-<div id="f7127bb8" class="cell">
+<div id="f7127bb8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You should observe that the system diverges with ossiclations around an equilibrium point that are more complex than simple sin and cosin fuctions.</p>
 <p>Optional | Feel free to interact with plot using the <code>interact</code> function.</p>
-<div id="fa2915a1" class="cell" data-execution_count="150">
+<div id="fa2915a1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>But where exactly are the equilibirum points of the system?</p>
@@ -585,11 +582,11 @@ y_{t+1} &amp;= y_t + b x_t
 <h4 class="anchored" data-anchor-id="step-4-equilibrium-points">Step 4 | Equilibrium points</h4>
 <p>Calculate the analytical solutions for the equilibrium points <span class="math inline">\(x_e\)</span> of the Lotka-Volterra system, i.e., how <span class="math inline">\(x_e\)</span> and <span class="math inline">\(y_e\)</span> depend on the parameters <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\delta\)</span>, and <span class="math inline">\(\gamma\)</span>.</p>
 <p>You can do this either by hand or using the <code>sympy</code> library.</p>
-<div id="4794581c" class="cell" data-execution_count="152">
+<div id="4794581c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You should have found two equilibrium points. Include both in the visualization of the phase space trajectory from the initial values (<span class="math inline">\(x_0 = 28, y_0=5\)</span>) for the default parameter values and 250 time steps. The <code>xextent</code> should be 70.</p>
-<div id="0ac1dc47" class="cell">
+<div id="0ac1dc47" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -615,16 +612,16 @@ J = \begin{bmatrix}
 <section id="step-6-eigenvalues-at-the-equilibrium-points" class="level4">
 <h4 class="anchored" data-anchor-id="step-6-eigenvalues-at-the-equilibrium-points">Step 6 | Eigenvalues at the equilibrium points</h4>
 <p>Compute the eigenvalues of the Jacobian matrix at the two equilibrium points using the symbolic mathematics library <code>sympy</code>.</p>
-<div id="fafee44f" class="cell" data-execution_count="154">
+<div id="fafee44f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Similarly as in the first model, you should observe that for positive parameter values, you always have to take the square root of a negative number, leading to complex numbers which indicates that the system oscillates around the equilibrium points.</p>
 <p>In the basic Lotka-Volterra model, the natural environment would grow indefinitely without human society, which is not very realistic. Therefore, we will now refine the model, make the growth of the natural environment logistic.</p>
 </section>
 </section>
-<section id="model-3-extended-lotka-volterra-model" class="level2">
-<h2 class="anchored" data-anchor-id="model-3-extended-lotka-volterra-model">Model 3 | Extended Lotka-Volterra model</h2>
-<p>We extent the Lotka-Volerra model such that the natural environment has a finite carrying capacity <span class="math inline">\(C\)</span> and its natural growth follows the logistic map,</p>
+<section id="model-3-extended-lotka-volterra-model-optional" class="level2">
+<h2 class="anchored" data-anchor-id="model-3-extended-lotka-volterra-model-optional">Model 3 | Extended Lotka-Volterra model [Optional]</h2>
+<p>Although Model 3 is optional, I highly recommend that you work through it, as it reinforces your understanding of the concepts introduced in the lecture and applied above. In Model 3, we extent the Lotka-Volerra model such that the natural environment has a finite carrying capacity <span class="math inline">\(C\)</span> and its natural growth follows the logistic map,</p>
 <p><span class="math display">\[\begin{align}
 \Delta x &amp;= x_{t+1} - x_t = \alpha x_t (1 - \frac{x_t}{C}) - \beta x_t y_t, \\
 \Delta y &amp;= y_{t+1} - y_t = \delta x_t y_t - \gamma y_t.
@@ -640,20 +637,20 @@ J = \begin{bmatrix}
 <section id="step-2-visualize-the-dynamics-in-the-phase-space" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-visualize-the-dynamics-in-the-phase-space">Step 2 | Visualize the dynamics in the phase space</h4>
 <p>For the default parameters and a carrying capacity of <span class="math inline">\(C=40\)</span>, visualize a trajectory of the dynamics of the extended Lotka-Volterra equations in the phase space, using the <code>plot_flow_trajectory</code> function from above. The initial values should be <span class="math inline">\(x_0 = 40\)</span> and <span class="math inline">\(y_0=0.001\)</span>, representing a natural environment in equilibirum and a human society that is just starting to grow. Simulate the system for 250 time steps. Set the <code>xextent</code> to 50, and the <code>yextent</code> to 3.</p>
-<div id="de161ec3" class="cell" data-execution_count="165">
+<div id="de161ec3" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Briefly describe and interpret the dynamics you observe in the markdown cell below.</p>
 <p>…</p>
 <p>Last, plot the evolution of the human society trajectory alone. What do you observe?</p>
-<div id="33857cb8" class="cell">
+<div id="33857cb8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="optional-step-eigenvalues-at-the-equilibrium-points" class="level3">
-<h3 class="anchored" data-anchor-id="optional-step-eigenvalues-at-the-equilibrium-points">Optional step | Eigenvalues at the equilibrium points</h3>
+<section id="step-3-eigenvalues-at-the-equilibrium-points" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-eigenvalues-at-the-equilibrium-points">Step 3 | Eigenvalues at the equilibrium points</h4>
 <p>Use <code>sympy</code> to calculate the eigenvalues at the equilibirum points. What do they tell about the stability of the system?</p>
-<div id="d637be7a" class="cell">
+<div id="d637be7a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
