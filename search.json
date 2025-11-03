@@ -997,49 +997,49 @@
   {
     "objectID": "02.02ex-TippingElements.html",
     "href": "02.02ex-TippingElements.html",
-    "title": "Appendix A — Ex | Tipping elements",
+    "title": "Ex | Tipping elements",
     "section": "",
-    "text": "A.1 Robustness of the tipping elements model\nOpen the latest version on the &gt;web&lt;, &gt;Github&lt; or in &gt;GoogleColab&lt;\nIn this exercise, we will investigate the robustness of the tipping elements model. We will do this changing the functional forms of the reinforcing and balancing feedback loops.\n\\[\\Delta x =  (x^3 - ax^5 + c) \\frac{1}{\\tau},\\]\nwhere, as in the model of the lecture, \\(\\tau\\) represents the typical time scale of the system, and thus, inverse strength of the system’s change, and \\(a\\) is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength). Compare this form with the one in the lecture. What is the difference?",
+    "text": "Robustness of the tipping elements model\nOpen the latest version on the &gt;web&lt;, &gt;Github&lt; or in &gt;GoogleColab&lt;\nIn this exercise, we will investigate the robustness of the tipping elements model. We will do this changing the functional forms of the reinforcing and balancing feedback loops.\n\\[\\Delta x =  (x^3 - ax^5 + c) \\frac{1}{\\tau},\\]\nwhere, as in the model of the lecture, \\(\\tau\\) represents the typical time scale of the system, and thus, inverse strength of the system’s change, and \\(a\\) is a parameter that determines the strength of the balancing feedback loop in relation to the reinforcing feedback loop (with unit stength). Compare this form with the one in the lecture. What is the difference?",
     "crumbs": [
       "Appendices",
       "Exercises",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Ex | Tipping elements</span>"
+      "Ex | Tipping elements"
     ]
   },
   {
     "objectID": "02.02ex-TippingElements.html#robustness-of-the-tipping-elements-model",
     "href": "02.02ex-TippingElements.html#robustness-of-the-tipping-elements-model",
-    "title": "Appendix A — Ex | Tipping elements",
+    "title": "Ex | Tipping elements",
     "section": "",
     "text": "02.02-TippingModel.dio.png\n\n\n\n\n\nStep 1 | Time evolution\nImplement the update_function for this new model in Python.\n\n# ...\n\nShowcae the bistability of this model by plotting the time evoltion of the system state for different initial conditions.\n\n# ...\n\nVisualize the same inital conditions in a cobweb plot.\n\n# ...\n\n\n\nStep 2 | Bifurcation analysis\nConduct a bifurcation analysis accodring to the one in the lecture, including the calculation and plotting of the equilibirum points and their stability.\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 3 | Potential function\nDerive and plot the potential function for this model\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 4 | Conclusion\nBriefly summarize what your findings mean for the robustness of the tipping elements model.\n…",
     "crumbs": [
       "Appendices",
       "Exercises",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Ex | Tipping elements</span>"
+      "Ex | Tipping elements"
     ]
   },
   {
     "objectID": "02.02ex-TippingElements.html#the-subcritical-pitchfork-bifurcation",
     "href": "02.02ex-TippingElements.html#the-subcritical-pitchfork-bifurcation",
-    "title": "Appendix A — Ex | Tipping elements",
-    "section": "A.2 The subcritical pitchfork bifurcation",
-    "text": "A.2 The subcritical pitchfork bifurcation\nBifurcation theory orders different kinds of bifurcations. A so-called subcritical pitchfork bifurcation is defined as one where an unstable equilibrium point split into three, two unstable and one stable. Its difference equation (in normal form) is given by\n\\[\\Delta x =x^3 - cx,\\]\nwhere \\(c\\) is a parameter that controls the system’s stability and \\(x\\) is the system state.\nYour task is to implement this model and conduct a bifurcation analysis. We will also use this model in the next lecture.\n\nStep 1 | Stability analysis\nFind the critical thresholds of the parameter \\(c\\) at which bifurcations occur and study the stability of each equilibrium point in dependence of the parameter value.\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 2 | Bifurcation diagramm\nDraw an analytical bifurcation diagram of this model for \\(-1&lt;c&lt;2\\), showing the equilibrium points and their stability.\n\n# ...\n\nNow, you should be able to observe why this bifurcation is called a pitchfork bifurcation.\n\n\nStep 3 | Potential function\nDerive and plot the potential function for this model. Also include the equilibirum points and their stability.\n\n# ...",
+    "title": "Ex | Tipping elements",
+    "section": "The subcritical pitchfork bifurcation",
+    "text": "The subcritical pitchfork bifurcation\nBifurcation theory orders different kinds of bifurcations. A so-called subcritical pitchfork bifurcation is defined as one where an unstable equilibrium point split into three, two unstable and one stable. Its difference equation (in normal form) is given by\n\\[\\Delta x =x^3 - cx,\\]\nwhere \\(c\\) is a parameter that controls the system’s stability and \\(x\\) is the system state.\nYour task is to implement this model and conduct a bifurcation analysis. We will also use this model in the next lecture.\n\nStep 1 | Stability analysis\nFind the critical thresholds of the parameter \\(c\\) at which bifurcations occur and study the stability of each equilibrium point in dependence of the parameter value.\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 2 | Bifurcation diagramm\nDraw an analytical bifurcation diagram of this model for \\(-1&lt;c&lt;2\\), showing the equilibrium points and their stability.\n\n# ...\n\nNow, you should be able to observe why this bifurcation is called a pitchfork bifurcation.\n\n\nStep 3 | Potential function\nDerive and plot the potential function for this model. Also include the equilibirum points and their stability.\n\n# ...",
     "crumbs": [
       "Appendices",
       "Exercises",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Ex | Tipping elements</span>"
+      "Ex | Tipping elements"
     ]
   },
   {
     "objectID": "02.02ex-TippingElements.html#another-kind-of-bifurcation-in-the-logistic-map",
     "href": "02.02ex-TippingElements.html#another-kind-of-bifurcation-in-the-logistic-map",
-    "title": "Appendix A — Ex | Tipping elements",
-    "section": "A.3 Another kind of bifurcation in the logistic map",
-    "text": "A.3 Another kind of bifurcation in the logistic map\nIn this exercise we will investigate another kind of bifurcation in the logistic map. Let’s revisit the logistic map in the form, \\[x_{t+1} = cx_{t}(1-x_{t}),\\] where \\(c&gt;0\\).\n\nStep 1 | Stability analysis\nFind the critical thresholds of the parameter \\(c\\) at which bifurcations occur and study the stability of each equilibrium point in dependence of the parameter value.\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 2 | Simulations\nSimulate the model with several selected values of to confirm the results of analysis.\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 3 | Bifurcation diagramm\nDraw (simulate) a bifurcation diagram of this model for \\(0&lt;c&lt;4\\).\n\n# ...\n\n\n\nStep 4 | Sensitivity to initial conditions\nDraw two trajectories from almost the same but a different initial condition for a paramter value \\(3.7&lt;c&lt;4.0\\). Draw the two trajectories ontop of each other with different color and linestyle.\n\n# ...\n\nYou should see that the trajectories diverge after a while. This is called sensitive dependence on initial conditions, a key property of so-called chaotic systems.",
+    "title": "Ex | Tipping elements",
+    "section": "Another kind of bifurcation in the logistic map",
+    "text": "Another kind of bifurcation in the logistic map\nIn this exercise we will investigate another kind of bifurcation in the logistic map. Let’s revisit the logistic map in the form, \\[x_{t+1} = cx_{t}(1-x_{t}),\\] where \\(c&gt;0\\).\n\nStep 1 | Stability analysis\nFind the critical thresholds of the parameter \\(c\\) at which bifurcations occur and study the stability of each equilibrium point in dependence of the parameter value.\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 2 | Simulations\nSimulate the model with several selected values of to confirm the results of analysis.\n\n# ...\n\n…\n\n# ...\n\n\n\nStep 3 | Bifurcation diagramm\nDraw (simulate) a bifurcation diagram of this model for \\(0&lt;c&lt;4\\).\n\n# ...\n\n\n\nStep 4 | Sensitivity to initial conditions\nDraw two trajectories from almost the same but a different initial condition for a paramter value \\(3.7&lt;c&lt;4.0\\). Draw the two trajectories ontop of each other with different color and linestyle.\n\n# ...\n\nYou should see that the trajectories diverge after a while. This is called sensitive dependence on initial conditions, a key property of so-called chaotic systems.",
     "crumbs": [
       "Appendices",
       "Exercises",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Ex | Tipping elements</span>"
+      "Ex | Tipping elements"
     ]
   },
   {
