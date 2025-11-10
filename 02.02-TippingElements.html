@@ -456,7 +456,7 @@ window.Quarto = {
 </header>
 
 
-<p><a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2025/2026 | &gt;&gt; Open the latest version on the <a href="https://wbarfuss.github.io/csm-of-hei/02.02-TippingElements.html">&gt;web&lt;</a>, <a href="https://github.com/wbarfuss/csm-of-hei/blob/main/02.02-TippingElements.ipynb">&gt;Github&lt;</a> or in <a href="https://colab.research.google.com/github/wbarfuss/csm-of-hei/blob/main/02.02-TippingElements.ipynb">&gt;GoogleColab&lt;</a> &lt;&lt;<br> ▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong></p>
+<p>▶ <strong>Complex Systems Modeling of Human-Environment Interactions</strong><br>&gt;&gt; Open the latest version on the <a href="https://wbarfuss.github.io/csm-of-hei/02.02-TippingElements.html"><em>web</em></a>, <a href="https://github.com/wbarfuss/csm-of-hei/blob/main/02.02-TippingElements.ipynb"><em>Github</em></a> or in <a href="https://colab.research.google.com/github/wbarfuss/csm-of-hei/blob/main/02.02-TippingElements.ipynb"><em>GoogleColab</em></a> &lt;&lt;<br> <a href="https://wbarfuss.github.io">Wolfram Barfuss</a> | <a href="https://www.uni-bonn.de">University of Bonn</a> | 2025/2026</p>
 <section id="motivation" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">3.1</span> Motivation</h2>
 <p>Think of the term “tipping point” in the context of sustainability. What do you associated with it? What does it mean? What are examples of tipping points in the context of human-environment interactions?</p>
@@ -539,7 +539,7 @@ window.Quarto = {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.style <span class="im">as</span> style<span class="op">;</span> style.use(<span class="st">'seaborn-v0_8'</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'figure.figsize'</span>] <span class="op">=</span> (<span class="fl">7.8</span>, <span class="fl">2.5</span>)<span class="op">;</span> plt.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">300</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>]  <span class="co"># get the first color of the default color cycle</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> plt.rcParams[<span class="st">'axes.prop_cycle'</span>].by_key()[<span class="st">'color'</span>][<span class="dv">0</span>] <span class="co"># get the first color of the default color cycle</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.facecolor'</span>] <span class="op">=</span> <span class="st">'white'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.color'</span>] <span class="op">=</span> <span class="st">'gray'</span><span class="op">;</span> plt.rcParams[<span class="st">'grid.linewidth'</span>] <span class="op">=</span> <span class="fl">0.25</span><span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also inlcude some keys functions to simulate dynamic systems from <a href="./02.01-Nonlinearity.html">02.01-Nonlinearity</a>.</p>
@@ -714,7 +714,7 @@ window.Quarto = {
 </section>
 <section id="step-2-stability" class="level3">
 <h3 class="anchored" data-anchor-id="step-2-stability">Step 2 | Stability</h3>
-<p>Computing the derivative of the update function <span class="math inline">\(F(x_t) = x + \frac{1}{\tau}(x - ax^3 + c)\)</span> , we find,</p>
+<p>Computing the derivative of the update function <span class="math inline">\(F(x) = x + \frac{1}{\tau}(x - ax^3 + c)\)</span> , we find,</p>
 <p><span class="math display">\[\frac{dF}{dx} = 1+\frac{1}{\tau} (1 - 3ax^2).\]</span></p>
 <p>We create a Python function to plot the whether an equilibrium point is stable or not using the <code>np.logical_and</code> function.</p>
 <div id="403ffaa5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
@@ -864,8 +864,8 @@ Figure&nbsp;3.1: Conceptual Regime Shift
 </ol>
 <div id="241fa65e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_hysteresis():</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=-</span><span class="dv">1</span><span class="op">;</span> xs <span class="op">=</span> [] <span class="co"># inital condition and container for the system state</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    cvs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.8</span>, <span class="fl">0.8</span>, <span class="dv">101</span>)<span class="op">;</span>  <span class="co"># values of parameter a to go through</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=-</span><span class="dv">1</span><span class="op">;</span> xs <span class="op">=</span> [] <span class="co"># initial condition and container for the system state</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    cvs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.8</span>, <span class="fl">0.8</span>, <span class="dv">101</span>)<span class="op">;</span>  <span class="co"># values of parameter c to go through</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    cvs <span class="op">=</span> np.concatenate((cvs, cvs[::<span class="op">-</span><span class="dv">1</span>]))<span class="op">;</span> <span class="co"># first we go up, then we go back down</span></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> cvs: <span class="co"># looping through all parameter values</span></span>
@@ -910,7 +910,7 @@ Figure&nbsp;3.2: Hysteresis of the Antarctic Ice Sheet
 <li>We constructed a <strong>potential function</strong> and examined its role in bifurcation analysis. It highlights where attractors are located and how the system may transition between states.</li>
 <li>We discussed the phenomenon of <strong>hysteresis</strong> and its implications for <strong>sustainability transitions</strong>. It describes the history- or path-dependent behavior of a system, where returning to an original state may require more than simply reversing parameter changes.</li>
 </ul>
-<p>In the <a href="./02.02ex-TippingElements.html">exercises for this lecture</a>, you will conduct bifurcation analyses of three different systems.</p>
+<p>In the <a href="https://wbarfuss.github.io/csm-of-hei/02.02ex-TippingElements.html">exercises for this lecture</a>, you will conduct bifurcation analyses of three different systems.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
