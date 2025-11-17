@@ -428,8 +428,6 @@ window.Quarto = {
   <li><a href="#robustness-resilience" id="toc-robustness-resilience" class="nav-link" data-scroll-target="#robustness-resilience">Robustness resilience</a></li>
   <li><a href="#adaptation-resilience" id="toc-adaptation-resilience" class="nav-link" data-scroll-target="#adaptation-resilience">Adaptation resilience</a></li>
   <li><a href="#transformation-resilience" id="toc-transformation-resilience" class="nav-link" data-scroll-target="#transformation-resilience">Transformation resilience</a></li>
-  <li><a href="#transformation-combined-analysis" id="toc-transformation-combined-analysis" class="nav-link" data-scroll-target="#transformation-combined-analysis">Transformation | Combined analysis</a></li>
-  <li><a href="#transformation-real-world-examples" id="toc-transformation-real-world-examples" class="nav-link" data-scroll-target="#transformation-real-world-examples">Transformation | Real-world examples</a></li>
   </ul></li>
   <li><a href="#quantifying-resilience" id="toc-quantifying-resilience" class="nav-link" data-scroll-target="#quantifying-resilience"><span class="header-section-number">4.3</span> Quantifying resilience</a>
   <ul class="collapse">
@@ -705,6 +703,13 @@ window.Quarto = {
 <p>However, if the noise level is high, the system can escape the basin of attraction and diverge.</p>
 <div id="e28d30a2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> plot_robustness_noise(noiselevel<span class="op">=</span><span class="fl">0.3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02.03-Resilience_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>The level of <strong>resilience</strong> of the system is the width between the unstable fixed points. This quantity gives the maximum magnitude of a shock the system can still tolerate.</p>
 </section>
@@ -815,7 +820,7 @@ window.Quarto = {
 </div>
 <p>For a small noise level <span class="math inline">\(n\)</span>, the system is resilient to shocks and remains in the basin of attraction, independent of the designed feedback mechanism.</p>
 <div id="6c047d35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)<span class="op">;</span> plot_adaptation_noise(noiselevel<span class="op">=</span><span class="fl">0.01</span>, base<span class="op">=</span><span class="fl">0.5</span>, loc<span class="op">=</span><span class="fl">0.5</span>, steep<span class="op">=</span><span class="fl">5.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -990,9 +995,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-</section>
-<section id="transformation-combined-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="transformation-combined-analysis">Transformation | Combined analysis</h3>
+<section id="transformation-combined-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="transformation-combined-analysis">Transformation | Combined analysis</h4>
 <p>Putting all together shows us how potential, bifurcation diagramm and the noisy trajectories interact.</p>
 <div id="e4c5a249-1000-4c81-8826-ccda5d2f7f3e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_tranformation(drive<span class="op">=-</span><span class="fl">0.3</span>, shape<span class="op">=</span><span class="dv">1</span>, timescale<span class="op">=</span><span class="dv">2</span>, noiselevel<span class="op">=</span><span class="fl">0.0</span>, initalstate<span class="op">=</span><span class="fl">0.5</span>):</span>
@@ -1055,11 +1059,12 @@ window.Quarto = {
 </div>
 <p>These results show that richness of phenomena that our relativly simple model can explain.</p>
 </section>
-<section id="transformation-real-world-examples" class="level3">
-<h3 class="anchored" data-anchor-id="transformation-real-world-examples">Transformation | Real-world examples</h3>
+<section id="transformation-real-world-examples" class="level4">
+<h4 class="anchored" data-anchor-id="transformation-real-world-examples">Transformation | Real-world examples</h4>
 <p>In the <strong>mobility sector</strong>, moving away from system where private cars dominate to a system where public transportation, cycling, and walking are the primary modes of transportation can be seen as an example of transformation resilience. This shift requires a fundamental reorganization of the transportation system, including changes in infrastructure, policies, and social norms. While this transformation is challenging, it can lead to significant benefits, such as reduced traffic congestion, air pollution, and greenhouse gas emissions.</p>
 <p>In the <strong>energy sector</strong>, transitioning from fossil fuels to renewable energy sources, such as solar, wind, and hydropower, is another example of transformation resilience. This shift requires a fundamental reorganization of the energy system, including changes in energy production, distribution, and consumption. While this transformation is complex and costly, it can lead to significant benefits, such as reduced greenhouse gas emissions, air pollution, and dependence on finite resources.</p>
 <p>In the <strong>agriculture sector</strong>, transitioning from conventional farming practices to regenerative agriculture is another example of transformation resilience. This shift requires a fundamental reorganization of the food system, including changes in farming methods, land use, and food production. While this transformation is challenging, it can lead to significant benefits, such as improved soil health, biodiversity, and food security.</p>
+</section>
 </section>
 </section>
 <section id="quantifying-resilience" class="level2" data-number="4.3">

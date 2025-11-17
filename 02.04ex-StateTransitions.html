@@ -449,7 +449,7 @@ window.Quarto = {
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pt <span class="op">=</span> <span class="fl">0.05</span> <span class="co"># transformation probability</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>po <span class="op">=</span> <span class="fl">0.01</span> <span class="co"># overusage probability (relapse to prosperous state)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Tip: Self-transitions are not shown in the diagram, but they are possible.</p>
+<p>Tip: Self-transitions are not shown in the diagram, but they are possible and take up all the remaining probability mass.</p>
 <div id="50f5c91d" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T = ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -489,9 +489,9 @@ window.Quarto = {
 <div id="48214062" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>You should realize, that we cannot visulaize the average of the ensemble in a single line plot, as we did in the lecture, because the state space has three states.</p>
-<p>Takeing the average of the numerical values representing the states does not make sense in this case. For example, if the risky state is represented by the number 1, the sustainable state by the number 0, and the degraded state by the number 2, the average of the ensemble could not distinguish between all probability in the risky state and 50% in the sustainable and degraded state.</p>
-<p>But we still can visualize the evolution of the distribution of the ensemble at each time step.</p>
+<p>You should realize that we cannot visualize the ensemble average in a single line plot, as we did in the lecture, because the state space has three states.</p>
+<p>Taking the average of the numerical values representing the states does not make sense in this case. For example, if the risky state is represented by the number 1, the sustainable state by 0, and the degraded state by 2, the ensemble average could not distinguish between the probabilities in the risky state and the 50% in the sustainable and degraded states.</p>
+<p>But we can still visualize the evolution of the ensemble distribution at each time step.</p>
 <p>To do so, we need to transform our ensemble of 300 stochastic runs into a distribution of the ensemble at each time step. We can do so by counting the number of state visits in the ensemble at each time step. The <code>numpy.histogram</code> function can help us with this task. Suppose that the ensemble is stored in the variable <code>ensemble</code> with shape <code>(300, 100)</code>. Then, the following code snippet will count the number of visits of each state in the ensemble at the first time step:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stochastic_evolution <span class="op">=</span> np.array([np.histogram(samp, bins<span class="op">=</span><span class="dv">3</span>, <span class="bu">range</span><span class="op">=</span>(<span class="dv">0</span>,<span class="dv">2</span>))[<span class="dv">0</span>] <span class="cf">for</span> samp <span class="kw">in</span> ensemble.T])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The loop through <code>ensemble.T</code> iterates through each time step. The <code>np.histogram</code> function counts the number of visits of each state in the ensemble at each time step. The <code>bins=3</code> argument specifies that we have three states, and the <code>range=(0,2)</code> argument specifies that the states’ numerical representations are in the range from 0 to 2. The <code>[0]</code> at the end of the list comprehension extracts the counts of the states from the histogram function.</p>
@@ -534,7 +534,9 @@ window.Quarto = {
 <p>How does the result compare to the time-evolution above?</p>
 <p>Does the system reach the stationary distribution at the end?</p>
 <p>If not, what does that say about the time evolution simulations above?</p>
+<blockquote class="blockquote">
 <p>…</p>
+</blockquote>
 </section>
 <section id="step-3.1-symbolic-solution" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.1-symbolic-solution">Step 3.1 | Symbolic solution</h3>
@@ -543,7 +545,9 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Interpret your result</p>
+<blockquote class="blockquote">
 <p>…</p>
+</blockquote>
 
 
 </section>
