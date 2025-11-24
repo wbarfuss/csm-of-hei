@@ -418,13 +418,14 @@ window.Quarto = {
 </header>
 
 
-<p>The Markov Decision Process below illustrates the tension between opting for a cautious policy, a short-term risky policy, and a sustainable transformation policy with potential overuse and rebound effects.</p>
+<p>Open the latest version on the <a href="https://wbarfuss.github.io/csm-of-hei/03.01ex-SequentialDecisions.html"><em>web</em></a>, <a href="https://github.com/wbarfuss/csm-of-hei/blob/main/03.01ex-SequentialDecisions.ipynb"><em>Github</em></a> or in <a href="https://colab.research.google.com/github/wbarfuss/csm-of-hei/blob/main/03.01ex-SequentialDecisions.ipynb"><em>GoogleColab</em></a></p>
+<p>The Markov Decision Process below illustrates the tension between a cautious policy, a short-term, risky policy, and a sustainable transformation policy that may lead to overuse and rebound effects.</p>
 <p>The environments consists of three states, <span class="math inline">\(\mathcal S = \{\mathsf{s, r, d}\}\)</span>, a <strong>s</strong>ustainable, a <strong>r</strong>isky, and a <strong>d</strong>egraded state.</p>
 <p>In each state, the agent has three actions to choose from, <span class="math inline">\(\mathcal A = \{\mathsf{l, t, h}\}\)</span>, a <strong>l</strong>ow-intensity action toward the environment, a <strong>t</strong>ransformation action, and a <strong>h</strong>igh-instensity action toward the environment.</p>
 <p>Immediate rewards <span class="math inline">\(r\)</span> and transition probabilities <span class="math inline">\(p\)</span> are written on the transition arrows as <span class="math inline">\(p | r\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03.01ex-SequentialDecisions_files/figure-html/f9056334-1-03.01-ExcerciseExample.dio.png" class="img-fluid figure-img"></p>
+<p><img src="03.01ex-SequentialDecisions_files/figure-html/f9056334-2-81b7b4de-55df-4b44-bf18-9b243972d85c.png" class="img-fluid figure-img"></p>
 <figcaption>03.01-ExcerciseExample.dio.png</figcaption>
 </figure>
 </div>
@@ -435,29 +436,29 @@ window.Quarto = {
 <p>However, the transition to the sustainable state requires investment into the transformation technology and thus lower immediate wellbeing during the transition (transition reward <span class="math inline">\(r_t &lt; r_l\)</span>).</p>
 <p>It also may not guarantee to stay within the risky state and may cause Nature to degrade (with probability <span class="math inline">\(p_d\)</span>).</p>
 <p><strong>Rebound effects.</strong> At the sustainable state, however, there is the risk of overusing the transformation technology (if another action than the low-intensity is taken) since this yields the highest overuse reward <span class="math inline">\(r_o\)</span>, which risks (with probability <span class="math inline">\(p_o\)</span>) the relapse back into the risky environmental state.</p>
-<div id="9422a274" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="1">
+<div id="9422a274" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="step-1-transition-and-rewards-tensors" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-transition-and-rewards-tensors">Step 1 | Transition and rewards tensors</h2>
 <p>Transform the description of the MDP into two <code>Python</code> functions that can be called with the model parameters and return a transition and reward tensor, respectively. Make sure to write these functions to be used both with <code>numpy</code> and <code>sympy</code>.</p>
-<div id="37da3113" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="2">
+<div id="37da3113" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Test that both functions work and check that the transition tensors are proper probability distributions for three exemplary parameter combinations.</p>
-<div id="26a93942" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="3">
+<div id="26a93942" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-2-state-values" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-state-values">Step 2 | State values</h2>
 <p>Write a <code>Python</code> function to numerically compute the MDP’s state values, given a <code>policy_Xsa,</code> a <code>transitions_Tsas</code> tensor, a <code>rewards_Rsas</code> tensor, and a discount factor <code>dcf.</code></p>
-<div id="3fb64d7a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="4">
+<div id="3fb64d7a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Test that your function works with some arbitrary values for the <code>policy_Xsa,</code> <code>transitions_Tsas</code> tensor, <code>rewards_Rsas</code> tensors, and discount factor <code>dcf.</code></p>
-<div id="1a23e4f8" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="5">
+<div id="1a23e4f8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -465,41 +466,41 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="step-3-policies">Step 3 | Policies</h2>
 <p>Formulate four different policies and represent them in <code>Python</code>:</p>
 <p>The <strong>cautious policy</strong> always chooses the low-intensity action.</p>
-<div id="f8441d6a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="6">
+<div id="f8441d6a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <strong>risky policy</strong> chooses the high-intensity action in the risky and sustainable state and the low-intensity action in the degraded state.</p>
-<div id="556846c3" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="7">
+<div id="556846c3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <strong>transformation policy</strong> chooses the transformation action in the risky state and the low-intensity action in the sustainable and degraded state.</p>
-<div id="ef87f039" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="16">
+<div id="ef87f039" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <strong>overuse policy</strong> chooses the transformation action in the risky and sustainable state and the low-intensity action in the degraded state.</p>
-<div id="a47a4a3b" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="8">
+<div id="a47a4a3b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-4-optimal-policy" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-optimal-policy">Step 4 | Optimal policy</h2>
 <p>What are the state values of the risky state for all the four policies at the parameter combination <span class="math inline">\(p_c=0.2\)</span>, <span class="math inline">\(p_r=0.01\)</span>, <span class="math inline">\(p_t=0.04\)</span>, <span class="math inline">\(p_d=0.005\)</span>, <span class="math inline">\(p_o=0.02\)</span>, <span class="math inline">\(\gamma=0.98\)</span>, <span class="math inline">\(r_o=1.2\)</span>, <span class="math inline">\(r_s=1.0\)</span>, <span class="math inline">\(r_h=0.9\)</span>, <span class="math inline">\(r_l=0.7\)</span>, <span class="math inline">\(r_t=0.65\)</span>, <span class="math inline">\(r_d=0.0\)</span>?</p>
-<div id="b0118454" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="9">
+<div id="b0118454" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pc <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span> pr <span class="op">=</span> <span class="fl">0.01</span><span class="op">;</span> pt <span class="op">=</span> <span class="fl">0.04</span><span class="op">;</span> pd <span class="op">=</span> <span class="fl">0.005</span><span class="op">;</span> po <span class="op">=</span> <span class="fl">0.02</span><span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ro <span class="op">=</span> <span class="fl">1.2</span><span class="op">;</span> rs <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span> rh <span class="op">=</span> <span class="fl">0.9</span><span class="op">;</span> rl <span class="op">=</span> <span class="fl">0.7</span><span class="op">;</span> rt <span class="op">=</span> <span class="fl">0.65</span><span class="op">;</span> rd <span class="op">=</span> <span class="fl">0.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="839f3f40" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="10">
+<div id="839f3f40" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Which is, therefore, the optimal policy for that parameter combination?</p>
-<div id="37da12ba" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="11">
+<div id="37da12ba" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-5-optimal-policies-with-uncertainty" class="level2">
 <h2 class="anchored" data-anchor-id="step-5-optimal-policies-with-uncertainty">Step 5 | Optimal policies with uncertainty</h2>
 <p>Given the other above parameters, how does the optimal policy change with a varying discount factor <span class="math inline">\(\gamma\)</span>? Create a plot that shows the state values of the risky state for the four policies at <span class="math inline">\(\gamma \in [0.001, 0.9999]\)</span> and interpret your result.</p>
-<div id="b7dd8b5b" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="12">
+<div id="b7dd8b5b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 

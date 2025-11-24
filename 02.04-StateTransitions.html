@@ -506,7 +506,7 @@ Figure&nbsp;5.2: Land-cover transitions in Brazilian Amazon
 <li><strong>Simulate</strong> and <strong>visualize</strong> <em>Markov chain models</em> stochastically, with ensembles, and via its state distribution</li>
 <li><strong>Compute</strong> the <em>stationary distribution</em> of a Markov chain model numerically, analytically and explain the conditions for its existence to understand the long-term behavior of the model.</li>
 <li><strong>Investigate</strong> the <em>transient behavior</em> of a Markov chain model to understand the short-term behavior of the model.</li>
-<li><strong>Compute</strong> the <em>typical timesacle</em> of a Marko chain transition to relate the model to real-world systems.</li>
+<li><strong>Compute</strong> the <em>typical timescale</em> of a Marko chain transition to relate the model to real-world systems.</li>
 </ul>
 </section>
 </section>
@@ -626,12 +626,13 @@ Figure&nbsp;5.4: Noise induced transitions
 <h3 class="anchored" data-anchor-id="ensemble-simulation">Ensemble simulation</h3>
 <p>Let’s repeat the previous simulation to create an <strong>ensemble of stochastic simulation runs</strong>. Let’s assume we want an ensemble of 100 runs.</p>
 <div id="525199f2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ensemble <span class="op">=</span> []</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    state <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    trajectory <span class="op">=</span> simulate_markov_chain(T, state, <span class="dv">500</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    ensemble.append(trajectory)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ensemble <span class="op">=</span> np.array(ensemble)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ensemble <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    state <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    trajectory <span class="op">=</span> simulate_markov_chain(T, state, <span class="dv">500</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    ensemble.append(trajectory)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ensemble <span class="op">=</span> np.array(ensemble)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>It is always a good idea to investigate the object one has just created for consistency, for instance, checking the shape of the ensemble.</p>
 <div id="c35550e2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
@@ -794,7 +795,7 @@ p_{t+1}({s'}) = \sum_s p_t(s) T(s, s'),
 <p><span class="math inline">\(\displaystyle \left[\begin{matrix}1 - p_{c} &amp; p_{c}\\p_{r} &amp; 1 - p_{r}\end{matrix}\right]\)</span></p>
 </div>
 </div>
-<p>Applying the <code>.eigentvects()</code> method</p>
+<p>Applying the <code>.eigenvects()</code> method</p>
 <div id="d4b80fdb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>T_.T.eigenvects()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -861,7 +862,7 @@ p_{t+1}({s'}) = \sum_s p_t(s) T(s, s'),
 <p>Two assumptions—the finite number of states and no simple cycle—almost always hold.</p>
 <p><strong>Ergodicity</strong> can be violated. However, in practice, it is often possible to ensure ergodicity by adding a tiny transition probability between states that are not directly connected. This tiny transition probability can justified by our lack of knowledge about the system.</p>
 <p>Thus, the <strong>assumption of fixed transition probabilities</strong> between states is the least likely to be valid. When history is important, something must alter the transition probabilities.</p>
-<p><strong>For example</strong>, take the issue of assisting families in <strong>escaping poverty</strong>. The forces that create social inequality have proven immune to policy interventions. In Markov models, interventions that change families’ <strong>states</strong>—such as special programs for underperforming students or a one-day food drive—can provide temporary boosts. They cannot change the long-run equilibrium. In contrast, interventions that provide resources and training to improve people’s ability to keep jobs, and therefore their <strong>probability</strong> of moving from employed to unemployed, could change long-run outcomes <span class="citation" data-cites="Page2018">(<a href="References.html#ref-Page2018" role="doc-biblioref">Page, 2018</a>)</span>.</p>
+<p><strong>For example</strong>, take the issue of assisting families in <strong>escaping poverty</strong>. The forces that create social inequality have proven immune to policy interventions. In Markov models, interventions that change families’ <strong>states</strong>—such as special programs for underperforming students or a one-day food drive—can provide temporary boosts. They cannot change the long-run equilibrium. In contrast, interventions that provide resources and training to improve people’s ability to keep jobs, and therefore their <strong>probability</strong> of moving from unemployed to employed, could change long-run outcomes <span class="citation" data-cites="Page2018">(<a href="References.html#ref-Page2018" role="doc-biblioref">Page, 2018</a>)</span>.</p>
 <p>We investigated the long-run behavior of the Markov chain model. But <strong>what about the short-term behavior</strong>?</p>
 </section>
 </section>
@@ -1063,11 +1064,11 @@ Figure&nbsp;5.5: Timescales
 <section id="learning-goals-revisited" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="learning-goals-revisited"><span class="header-section-number">5.7</span> Learning goals revisited</h2>
 <ul>
-<li>We introduced the <em>components of a Markov chain model</em> and covered how the model relates to gernal dynamic system models to place this model in the context of integrated nature-society models.</li>
-<li>We simulated and visualized <em>Markov chain models</em> in multiple ways: stochastically, with ensembles, and via its state distribution to understand how the model behaves.</li>
-<li>We computed the <em>stationary distribution</em> of a Markov chain model numerically, analytically and explain the conditions for its existence to understand the long-term behavior of the model.</li>
+<li>We introduced the <em>components of a Markov chain model</em> and covered how the model relates to general dynamic system models to place this model in the context of integrated nature-society models.</li>
+<li>We simulated and visualized <em>Markov chain models</em> in multiple ways: stochastically, with ensembles, and via their state distribution to understand how the model behaves.</li>
+<li>We computed the <em>stationary distribution</em> of a Markov chain model numerically, analytically, and explained the conditions for its existence to understand the long-term behavior of the model.</li>
 <li>We investigated the <em>transient behavior</em> of a Markov chain model to understand the short-term behavior of the model.</li>
-<li>We computed the <em>typical timesacle</em> of a Marko chain transition to relate the model to real-world systems.</li>
+<li>We computed the <em>typical timescale</em> of a Markov chain transition to relate the model to real-world systems.</li>
 </ul>
 <p>The <a href="https://wbarfuss.github.io/csm-of-hei/02.04ex-StateTransitions.html">exercises for this lecture</a> will investigate a three-state Markov chain, exploring the transition between a risky, degraded and sustainable state.</p>
 

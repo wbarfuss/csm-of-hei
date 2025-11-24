@@ -106,6 +106,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -366,9 +395,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
   <li><a href="#control-flow" id="toc-control-flow" class="nav-link" data-scroll-target="#control-flow">Control flow</a></li>
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
-  <li><a href="#recap-eigenvectors-and-eigenvalues" id="toc-recap-eigenvectors-and-eigenvalues" class="nav-link" data-scroll-target="#recap-eigenvectors-and-eigenvalues">Recap | Eigenvectors and eigenvalues</a></li>
   <li><a href="#exercise-sustainability-systems-science-generator" id="toc-exercise-sustainability-systems-science-generator" class="nav-link" data-scroll-target="#exercise-sustainability-systems-science-generator">Exercise 📝: Sustainability Systems Science Generator</a></li>
   <li><a href="#saving-notebooks" id="toc-saving-notebooks" class="nav-link" data-scroll-target="#saving-notebooks">Saving notebooks</a></li>
+  <li><a href="#recap-eigenvectors-and-eigenvalues" id="toc-recap-eigenvectors-and-eigenvalues" class="nav-link" data-scroll-target="#recap-eigenvectors-and-eigenvalues">Recap | Eigenvectors and eigenvalues</a></li>
   </ul>
 </nav>
     </div>
@@ -941,35 +970,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="recap-eigenvectors-and-eigenvalues" class="level3">
-<h3 class="anchored" data-anchor-id="recap-eigenvectors-and-eigenvalues">Recap | Eigenvectors and eigenvalues</h3>
-<section id="deepdive-recap-eev" class="level4">
-<h4 class="anchored" data-anchor-id="deepdive-recap-eev">🚧 DeepDive | Recap EEV</h4>
-<p>To represent a vector ( x ) using the eigenvectors of a matrix ( A ) as a basis, follow these steps:</p>
-<section id="eigenvalue-and-eigenvector-decomposition" class="level5">
-<h5 class="anchored" data-anchor-id="eigenvalue-and-eigenvector-decomposition">1. <strong>Eigenvalue and Eigenvector Decomposition</strong>:</h5>
-<p>If ( A ) is a square matrix, and it has a full set of linearly independent eigenvectors, we can decompose it as: [ A = V V^{-1} ] where: - ( V ) is the matrix whose columns are the eigenvectors of ( A ), - ( ) is the diagonal matrix containing the corresponding eigenvalues of ( A ), - ( V^{-1} ) is the inverse of ( V ) (assuming the eigenvectors are linearly independent).</p>
-</section>
-<section id="using-eigenvectors-as-a-basis" class="level5">
-<h5 class="anchored" data-anchor-id="using-eigenvectors-as-a-basis">2. <strong>Using Eigenvectors as a Basis</strong>:</h5>
-<p>The eigenvectors of ( A ) form a basis for the vector space. To represent ( x ) in this new basis, express ( x ) as a linear combination of the eigenvectors of ( A ).</p>
-<p>Let ( v_1, v_2, , v_n ) be the eigenvectors of ( A ). You want to express: [ x = c_1 v_1 + c_2 v_2 + + c_n v_n ] where ( c_1, c_2, , c_n ) are the scalar coefficients that correspond to the projection of ( x ) onto each eigenvector ( v_i ).</p>
-</section>
-<section id="find-the-coefficients-c" class="level5">
-<h5 class="anchored" data-anchor-id="find-the-coefficients-c">3. <strong>Find the Coefficients ( c )</strong>:</h5>
-<p>If ( V ) is the matrix whose columns are the eigenvectors of ( A ), then you can find the coefficients ( c ) by solving the following equation: [ x = V c ] where ( c = [c_1, c_2, , c_n]^T ).</p>
-<p>To solve for ( c ), multiply both sides by ( V^{-1} ): [ c = V^{-1} x ] Thus, the coefficients ( c ) represent the vector ( x ) in the eigenvector basis.</p>
-</section>
-<section id="reconstructing-x-from-the-eigenvector-basis" class="level5">
-<h5 class="anchored" data-anchor-id="reconstructing-x-from-the-eigenvector-basis">4. <strong>Reconstructing ( x ) from the Eigenvector Basis</strong>:</h5>
-<p>Once you have the coefficients ( c ), you can reconstruct ( x ) as: [ x = V c ] where ( V ) is the matrix of eigenvectors and ( c ) is the vector of coefficients.</p>
-</section>
-<section id="summary" class="level5">
-<h5 class="anchored" data-anchor-id="summary">Summary:</h5>
-<p>To represent ( x ) in the eigenvector basis of ( A ): 1. Compute the matrix ( V ) of eigenvectors of ( A ). 2. Find the coefficients ( c = V^{-1} x ). 3. ( x ) can then be written as ( x = V c ), where ( c ) represents ( x ) in the eigenvector basis.</p>
-</section>
-</section>
-</section>
 <section id="exercise-sustainability-systems-science-generator" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-sustainability-systems-science-generator">Exercise 📝: Sustainability Systems Science Generator</h2>
 <p>There are many word combinations in the literature that broadly refer to the kind of science we will be exploring in this course. Take, for example, the word combination,</p>
@@ -982,8 +982,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="saving-notebooks" class="level2">
 <h2 class="anchored" data-anchor-id="saving-notebooks">Saving notebooks</h2>
 <p>The easiest way to save a notebook as a PDF file for sharing is to print it via your browser’s print dialogue.</p>
+<hr>
+</section>
+<section id="recap-eigenvectors-and-eigenvalues" class="level2">
+<h2 class="anchored" data-anchor-id="recap-eigenvectors-and-eigenvalues">Recap | Eigenvectors and eigenvalues</h2>
+<p>To represent a vector <span class="math inline">\(\boldsymbol{x}\)</span> using the eigenvectors of a matrix <span class="math inline">\(\boldsymbol{A}\)</span> as a basis, follow these steps:</p>
+<section id="eigenvalue-and-eigenvector-decomposition" class="level5">
+<h5 class="anchored" data-anchor-id="eigenvalue-and-eigenvector-decomposition">1. Eigenvalue and Eigenvector Decomposition:</h5>
+<p>If <span class="math inline">\(\boldsymbol{A}\)</span> is a square matrix, and it has a complete set of linearly independent eigenvectors, we can decompose it as:</p>
+<p><span class="math display">\[\boldsymbol{A} = \boldsymbol{V \Lambda V}^{-1}\]</span></p>
+<p>where: - <span class="math inline">\(\boldsymbol{V}\)</span> is the matrix whose columns are the eigenvectors of <span class="math inline">\(\boldsymbol{A}\)</span>, - <span class="math inline">\(\boldsymbol{\Lambda}\)</span> is the diagonal matrix containing the corresponding eigenvalues of <span class="math inline">\(\boldsymbol{A}\)</span>, - <span class="math inline">\(\boldsymbol{V}^{-1}\)</span> is the inverse of <span class="math inline">\(\boldsymbol{V}\)</span> (assuming the eigenvectors are linearly independent).</p>
+</section>
+<section id="using-eigenvectors-as-a-basis" class="level5">
+<h5 class="anchored" data-anchor-id="using-eigenvectors-as-a-basis">2. Using Eigenvectors as a Basis:</h5>
+<p>The eigenvectors of <span class="math inline">\(\boldsymbol{A}\)</span> form a basis for the vector space. To represent <span class="math inline">\(\boldsymbol{x}\)</span> in this new basis, express <span class="math inline">\(\boldsymbol{x}\)</span> as a linear combination of the eigenvectors of <span class="math inline">\(\boldsymbol{A}\)</span>.</p>
+<p>Let <span class="math inline">\(\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_n\)</span> be the eigenvectors of <span class="math inline">\(\boldsymbol{A}\)</span>. You want to express:</p>
+<p><span class="math display">\[\boldsymbol{x} = c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 + \dots + c_n \boldsymbol{v}_n,\]</span></p>
+<p>where <span class="math inline">\(c_1, c_2, \dots, c_n\)</span> are the scalar coefficients that correspond to the projection of <span class="math inline">\(\boldsymbol{x}\)</span> onto each eigenvector <span class="math inline">\(\boldsymbol{v}_i\)</span>.</p>
+</section>
+<section id="find-the-coefficients-boldsymbolc" class="level5">
+<h5 class="anchored" data-anchor-id="find-the-coefficients-boldsymbolc">3. Find the Coefficients <span class="math inline">\(\boldsymbol{c}\)</span>:</h5>
+<p>If <span class="math inline">\(\boldsymbol{V}\)</span> is the matrix whose columns are the eigenvectors of <span class="math inline">\(\boldsymbol{A}\)</span>, then you can find the coefficients <span class="math inline">\(\boldsymbol{c}\)</span> by solving the following equation:</p>
+<p><span class="math display">\[\boldsymbol{x} = \boldsymbol{V} \boldsymbol{c},\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{c} = [c_1, c_2, \dots, c_n]^T\)</span>. To solve for <span class="math inline">\(\boldsymbol{c}\)</span>, multiply both sides by <span class="math inline">\(\boldsymbol{V}^{-1}\)</span>:</p>
+<p><span class="math display">\[\boldsymbol{c} = \boldsymbol{V}^{-1} \boldsymbol{x}.\]</span></p>
+<p>Thus, the coefficients <span class="math inline">\(\boldsymbol{c}\)</span> represent the vector <span class="math inline">\(\boldsymbol{x}\)</span> in the eigenvector basis.</p>
+</section>
+<section id="reconstructing-boldsymbolx-from-the-eigenvector-basis" class="level5">
+<h5 class="anchored" data-anchor-id="reconstructing-boldsymbolx-from-the-eigenvector-basis">4. Reconstructing <span class="math inline">\(\boldsymbol{x}\)</span> from the Eigenvector Basis:</h5>
+<p>Once you have the coefficients <span class="math inline">\(\boldsymbol{c}\)</span>, you can reconstruct <span class="math inline">\(\boldsymbol{x}\)</span> as:</p>
+<p><span class="math display">\[ \boldsymbol{x} = \boldsymbol{V} \boldsymbol{c}\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{V}\)</span> is the matrix of eigenvectors and <span class="math inline">\(\boldsymbol{c}\)</span> is the vector of coefficients.</p>
+</section>
+<section id="summary" class="level5">
+<h5 class="anchored" data-anchor-id="summary">Summary:</h5>
+<p>To represent <span class="math inline">\(\boldsymbol{x}\)</span> in the eigenvector basis of <span class="math inline">\(\boldsymbol{A}\)</span>: 1. Compute the matrix <span class="math inline">\(\boldsymbol{V}\)</span> of eigenvectors of <span class="math inline">\(\boldsymbol{A}\)</span>. 2. Find the coefficients <span class="math inline">\(\boldsymbol{c} = \boldsymbol{V}^{-1} \boldsymbol{x}\)</span>. 3. <span class="math inline">\(\boldsymbol{x}\)</span> can then be written as <span class="math inline">\(\boldsymbol{x} = \boldsymbol{V} \boldsymbol{c}\)</span>, where <span class="math inline">\(\boldsymbol{c}\)</span> represents <span class="math inline">\(\boldsymbol{x}\)</span> in the eigenvector basis.</p>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
