@@ -6,16 +6,16 @@ dependencies:
   - python # =3.11
   - numpy
   - matplotlib # =3.8.0
-  - ipympl
   - sympy
   - scipy
   - pandas
   - jupyterlab
   - ipywidgets
+  - ipympl
   - jupyterlab-slideshow
-  - nb-clean # to clean notebook files for better version control
   - jupyterlab-git # optional for a nicer git interface in JupyterLab
   - jupytext  # optional
+  - nb-clean # to clean notebook files for better version control
   - pip
   - pip:
     - nbdev # optional
