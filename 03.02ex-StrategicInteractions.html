@@ -424,8 +424,9 @@ window.Quarto = {
 </header>
 
 
+<p>Open the latest version on the <a href="https://wbarfuss.github.io/csm-of-hei/03.02ex-StrategicInteractions.html"><em>web</em></a>, <a href="https://github.com/wbarfuss/csm-of-hei/blob/main/03.02ex-StrategicInteractions.ipynb"><em>Github</em></a> or in <a href="https://colab.research.google.com/github/wbarfuss/csm-of-hei/blob/main/03.02ex-StrategicInteractions.ipynb"><em>GoogleColab</em></a></p>
 <p>This exercise will revisit the tragedy dilemma, agreements, and threshold public goods but use slightly different modeling assumptions. Doing so will give us a more robust understanding of the strategic interactions in multi-agent action situations.</p>
-<div id="f03e6f49" class="cell" data-execution_count="1">
+<div id="f03e6f49" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -441,14 +442,14 @@ R_d &amp;= \frac{r c N_c}{N},
 <section id="step-1.1-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="step-1.1-visualization">Step 1.1 | Visualization</h3>
 <p>Plot the payoff functions for cooperators and defectors as a function of <span class="math inline">\(N_c\)</span> for different values of <span class="math inline">\(r\)</span>. Compare the results to the tragedy dilemma model presented in the lecture.</p>
-<div id="241bc20e" class="cell" data-execution_count="2">
+<div id="241bc20e" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-1.2-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="step-1.2-conditions">Step 1.2 | Conditions</h3>
 <p>Give the conditions the parameters must hold for this model to be a tragedy dilemma.</p>
-<div id="31674e21" class="cell" data-execution_count="5">
+<div id="31674e21" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -456,7 +457,7 @@ R_d &amp;= \frac{r c N_c}{N},
 <section id="step-2-agreements" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-agreements">Step 2 | Agreements</h2>
 <p>Apply the reasoning from the lecture to compute how the critical participation levels depend on the parameters of the model <span class="math inline">\(r\)</span>, <span class="math inline">\(c\)</span>, and <span class="math inline">\(N\)</span>.</p>
-<div id="eefa3c08" class="cell" data-execution_count="6">
+<div id="eefa3c08" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -471,8 +472,8 @@ R_p(N_a; r, c, q_c, m, N) &amp;= (1 - q_c (N_\mathsf{p}+1)/N) \cdot (rcN_\mathsf
 <p>where <span class="math inline">\(N_a\)</span> is the number of other actors abating and <span class="math inline">\(N_p\)</span> is the number of other actors polluting. Thus, it must hold that the total number of actors <span class="math inline">\(N = N_a + N_p + 1\)</span>. Furthermore, <span class="math inline">\(r\)</span> is the synergy factor, <span class="math inline">\(c\)</span> is the cost of cooperation, <span class="math inline">\(q_c\)</span> is the probability of collapse if all actors pollute, and <span class="math inline">\(m\)</span> is the catastrophic impact.</p>
 <section id="step-3.1-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.1-visualization">Step 3.1 | Visualization</h3>
-<p>Plot the payoff functions for abating and polluting actors as a function of <span class="math inline">\(N_a\)</span> for <span class="math inline">\(f=4\)</span>, <span class="math inline">\(c=5\)</span>, <span class="math inline">\(m=-5\)</span> <span class="math inline">\(qc=0.4\)</span>, and <span class="math inline">\(N=5\)</span>. Compare the results to the threshold public goods model presented in the lecture.</p>
-<div id="e1e1dea9" class="cell" data-execution_count="7">
+<p>Plot the payoff functions for abating and polluting actors as a function of <span class="math inline">\(N_a\)</span> for <span class="math inline">\(r=4\)</span>, <span class="math inline">\(c=5\)</span>, <span class="math inline">\(m=-5\)</span> <span class="math inline">\(qc=0.4\)</span>, and <span class="math inline">\(N=5\)</span>. Compare the results to the threshold public goods model presented in the lecture.</p>
+<div id="e1e1dea9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -486,15 +487,15 @@ R_p(N_a; r, c, q_c, m, N) &amp;= (1 - q_c (N_\mathsf{p}+1)/N) \cdot (rcN_\mathsf
 </ol>
 <p>Solve the conditions for the collapse impact <span class="math inline">\(m\)</span>.</p>
 <p>You may do this by hand or by using the sympy library. I recommend the latter.</p>
-<div id="12bccaa2" class="cell" data-execution_count="10">
+<div id="12bccaa2" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Visualize the critical conditions for the collapse impact <span class="math inline">\(m\)</span> as a function of <span class="math inline">\(q_c\)</span> for <span class="math inline">\(r=1.2\)</span>, <span class="math inline">\(c=5\)</span>, and <span class="math inline">\(N=2\)</span>. Interpret the results briefly.</p>
-<div id="bd18b94a" class="cell" data-execution_count="27">
+<div id="bd18b94a" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Visualize the critical conditions for the collapse impact <span class="math inline">\(m\)</span> as a function of <span class="math inline">\(N \in [2, 3, \dots, 15]\)</span> for <span class="math inline">\(r=3\)</span>, <span class="math inline">\(c=5\)</span>, and <span class="math inline">\(qc=0.5\)</span>. Interpret the results briefly.</p>
-<div id="49a26564" class="cell" data-execution_count="30">
+<div id="49a26564" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
