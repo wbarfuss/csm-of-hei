@@ -725,7 +725,7 @@ Figure&nbsp;7.2: Dimensions of a social dilemma with ordinal payoffs and Nash eq
 </section>
 <section id="agreement-participation-game" class="level3">
 <h3 class="anchored" data-anchor-id="agreement-participation-game">Agreement participation game</h3>
-<p>Generally, in this model, the agreement mandates that all signatories <em>abate</em> if at least <span class="math inline">\(k^*\)</span> actors sign the agreement. Then, at</p>
+<p>Generally, in this model, the agreement mandates that all signatories act together if at least <span class="math inline">\(k^*\)</span> actors sign the agreement. Then, at</p>
 <ul>
 <li>Stage 1: Every actor chooses whether or not to sign the agreement. At</li>
 <li>Stage 2: The signatories choose jointly whether to abate or pollute. Finally, at</li>
@@ -845,7 +845,7 @@ Figure&nbsp;7.3: Climate tipping risks
 <h3 class="anchored" data-anchor-id="contribution-thresholds-turn-tragedy-into-coordination-challenge">Contribution thresholds turn tragedy into coordination challenge</h3>
 <p>When not all other actor are abating, each individual actor has an incentive to pollute. However, when all other actors abate, the remaining actor has an incentive to abate as well (<a href="#fig-threshold-payoffs" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>). Thus, contribution thresholds turn a tragedy into a coordination challenge.</p>
 <div id="cell-fig-threshold-payoffs" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_threshold_payoff(<span class="dv">5</span>, <span class="fl">0.5</span>, <span class="dv">50</span>, <span class="dv">6</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_threshold_payoff(N<span class="op">=</span><span class="dv">5</span>, bu<span class="op">=</span><span class="fl">0.5</span>, Tc<span class="op">=</span><span class="dv">50</span>, m<span class="op">=</span><span class="dv">6</span>)<span class="op">;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="fig-threshold-payoffs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -895,7 +895,7 @@ Figure&nbsp;7.4: Payoffs from the thresholds game.
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>cbar.ax.set_yticklabels([<span class="st">'Tragedy'</span>, <span class="st">'Coordination'</span>])</span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Threshold'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'Impact'</span>)<span class="op">;</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.plot(Ts, Ts<span class="op">/</span>N<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>bu))<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.plot(Ts, Ts<span class="op">/</span>N<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>bu))<span class="op">;</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
