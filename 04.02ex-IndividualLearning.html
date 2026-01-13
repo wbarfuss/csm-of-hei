@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -65,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./04.03ex-LearningDynamics.html" rel="next">
 <link href="./04.01ex-BehavioralAgency.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -74,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-dda8909163e0b4f3670ba323ebd66e56.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -247,12 +246,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Individual learning</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.03-LearningDynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Learning dynamics</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -339,12 +332,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Ex | Individual Learning</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.03ex-LearningDynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ex | Learning Dynamics</span></a>
-  </div>
-</li>
       </ul>
   </li>
       </ul>
@@ -359,8 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#task-1-learning-the-risky-policy" id="toc-task-1-learning-the-risky-policy" class="nav-link active" data-scroll-target="#task-1-learning-the-risky-policy">Task 1 | Learning the risky policy</a></li>
-  <li><a href="#task-2-ecological-public-good" id="toc-task-2-ecological-public-good" class="nav-link" data-scroll-target="#task-2-ecological-public-good">Task 2 | Ecological public good</a></li>
+  <li><a href="#learning-the-risky-policy" id="toc-learning-the-risky-policy" class="nav-link active" data-scroll-target="#learning-the-risky-policy">Learning the risky policy</a></li>
   </ul>
 </nav>
     </div>
@@ -386,6 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>Open the latest version on the <a href="https://wbarfuss.github.io/csm-of-hei/04.02ex-IndividualLearning.html"><em>web</em></a>, <a href="https://github.com/wbarfuss/csm-of-hei/blob/main/04.02ex-IndividualLearning.ipynb"><em>Github</em></a> or in <a href="https://colab.research.google.com/github/wbarfuss/csm-of-hei/blob/main/04.02ex-IndividualLearning.ipynb"><em>GoogleColab</em></a></p>
 <div id="fa0ea364-2170-4bab-bd8a-480a9362953e" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
@@ -393,8 +380,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> copy <span class="im">import</span> deepcopy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="task-1-learning-the-risky-policy" class="level2">
-<h2 class="anchored" data-anchor-id="task-1-learning-the-risky-policy">Task 1 | Learning the risky policy</h2>
+<section id="learning-the-risky-policy" class="level2">
+<h2 class="anchored" data-anchor-id="learning-the-risky-policy">Learning the risky policy</h2>
 <p>In the lecture, we explored how the agent learns a cautious policy within the risk-reward dilemma. Investigate the learning process for parameter combinations that make the risky policy optimal (<code>DiscountFactor=0.6</code>, <code>CollapseProbability=0.1</code>, <code>RecoveryProbability=0.1</code>, <code>SafeReward=0.5</code>, <code>RiskyReward=1.0</code>, <code>DegradedReward=0.0</code>). What parameters of the learning process, such as learning rate and choice intensity, allow the agent to consistently learn the risky policy?</p>
 <div id="7e734d17-9ab1-4708-90f6-55aaeb02ecc0" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -403,18 +390,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="47d7adb2-c4a9-427d-9b1a-8e60e860c819" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="task-2-ecological-public-good" class="level2">
-<h2 class="anchored" data-anchor-id="task-2-ecological-public-good">Task 2 | Ecological public good</h2>
-<p>Implement the ecological public good from Lecture <a href="./03.02ex-StrategicInteractions.html">03.03</a> as a reinforcement learning environment. Ensure your <code>EcologicalPublicGood</code> class inherits from the base Environment class.</p>
-<div id="05b5df67-dd17-47e1-b25e-0dfb7cb62c22" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Let two agents learn in it and visualize the learning process.</p>
-<div id="8afd4848-886a-4783-81ae-3cd28c89792f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Briefly discuss your findings.</p>
 
 
 </section>
@@ -827,9 +802,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04.03ex-LearningDynamics.html" class="pagination-link" aria-label="Ex | Learning Dynamics">
-        <span class="nav-page-text">Ex | Learning Dynamics</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
