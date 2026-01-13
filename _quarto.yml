@@ -35,7 +35,7 @@ book:
       chapters:
         - 04.01-BehavioralAgency.ipynb
         - 04.02-IndividualLearning.ipynb
-        - 04.03-LearningDynamics.ipynb
+        # - 04.03-CollectiveLearning.ipynb
     - References.ipynb
   appendices:
     - part: Exercises
@@ -50,7 +50,7 @@ book:
       - 03.03ex-DynamicInteractions.ipynb
       - 04.01ex-BehavioralAgency.ipynb
       - 04.02ex-IndividualLearning.ipynb
-      - 04.03ex-LearningDynamics.ipynb
+      # - 04.03ex-CollectiveLearning.ipynb
 
 format:
   html:
