@@ -60,10 +60,21 @@ nb-clean check --remove-all-notebook-metadata --remove-empty-cells --preserve-ce
 
 To clean the notebooks and remove unnecessary metadata, replace `check` with `clean` in the command above.
 
-This repository uses [pre-commit](https://pre-commit.com) to ensure that all notebooks commited to git adhere to the standards from the command above and are as git-friendly as possible. To install the pre-commit hooks, run the following command:
+This repository uses [pre-commit](https://pre-commit.com) to clean every notebook before it is committed to git. Two hooks run in order:
+
+1. `nb-clean`, with the settings from the command above.
+2. `tools/strip_nb_png_metadata.py`, which removes the Matplotlib version stored inside each figure and the random ids of interactive widgets. Without it, re-running a notebook under a new Matplotlib version changes every figure in git, even when the pixels are identical.
+
+To install the hooks, run the following command:
 
 ```bash
 pre-commit install --allow-missing-config
+```
+
+The hooks then run on every `git commit`. If a hook modifies a file, the commit stops; stage the changes with `git add` and commit again. To clean all notebooks at once, run:
+
+```bash
+pre-commit run --all-files
 ```
 
 <!-- #TODO: write about Python environments -->
