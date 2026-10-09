@@ -23,3 +23,14 @@ repos:
         entry: python3 tools/strip_nb_png_metadata.py
         language: system
         files: \.ipynb$
+      - id: forbid-generated
+        name: forbid PDFs, draw.io backups and build folders
+        entry: generated files must not be committed (see CONTRIBUTING.md)
+        language: fail
+        files: (\.pdf|\.bkp)$|^__(output|scripts|slides)/
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=3000]
+      - id: check-merge-conflict
