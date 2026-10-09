@@ -23,6 +23,11 @@ repos:
         entry: python3 tools/strip_nb_png_metadata.py
         language: system
         files: \.ipynb$
+      - id: shrink-drawio-png
+        name: re-export draw.io PNGs wider than 2000 px
+        entry: python3 tools/shrink_drawio_png.py
+        language: system
+        files: \.(dio|drawio)\.png$
       - id: forbid-generated
         name: forbid PDFs, draw.io backups and build folders
         entry: generated files must not be committed (see CONTRIBUTING.md)

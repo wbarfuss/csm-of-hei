@@ -68,6 +68,7 @@ If a hook modifies a file, the commit stops; stage the changes with `git add` an
 |---|---|
 | `nb-clean` | Removes notebook metadata, empty cells, and execution counts; keeps outputs and the `slideshow` and `tags` cell metadata. |
 | `strip-png-metadata` | Runs `tools/strip_nb_png_metadata.py`. Removes the Matplotlib version stored inside each figure and the random ids of interactive widgets. Without it, re-running a notebook under a new Matplotlib version changes every figure in git, even when the pixels are identical. |
+| `shrink-drawio-png` | Runs `tools/shrink_drawio_png.py`. Re-exports draw.io PNGs (`*.dio.png`, `*.drawio.png`) wider than 2000 px at 2000 px, using the draw.io desktop app. The diagram stays embedded and editable; the whitespace around it is kept. 2000 px is enough for a projector, high-resolution screens, and the PDF. Multi-page diagrams are skipped. If draw.io is not installed at `/Applications/draw.io.app`, set the `DRAWIO` environment variable to its executable. |
 | `forbid-generated` | Rejects PDFs, draw.io backups (`.bkp`), and anything in `__output/`, `__scripts/`, `__slides/`. These are build outputs. |
 | `check-added-large-files` | Rejects new files larger than 3 MB. Files already tracked are not checked when they change. |
 | `check-merge-conflict` | Rejects files that still contain merge-conflict markers. |
