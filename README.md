@@ -14,70 +14,12 @@ relevance to issues in sustainability science.
 
 ## Integrated writing and reproducibility
 
-The following steps are entirely optional for readers who want to focus on the learning goals and are not interested in the development of these lecture notes.
-
 These lecture notes are written in [Jupyter](https://jupyter.org) Notebooks, which are a popular format for interactive computing. Notebooks contain code, math, and text. The code is written in [Python](https://www.python.org), a general-purpose programming language widely used in scientific computing and other fields.
 
 Scholarly writing practices, such as citations and cross-references, are facilitated by [Quarto](https://quarto.org), a powerful scientific and technical publishing system. Quarto also allows you to view these lecture notes in various formats, such as HTML and PDF. 
 
 
-### Rendering the lecture notes
-
-Assuming you have installed the [Quarto CLI](https://quarto.org/docs/get-started/) and cloned or copied the [repository](https://github.com/wbarfuss/csm-of-hei) to your local machine, you can render these lecture notes by running the following command in the terminal:
-
-```{python}
-#| output: false
-!quarto render .
-```
-
-The comment `#| output: false` is a Quarto directive that prevents the output of this cell from being displayed in the rendered documents. This is useful for keeping these readable.
-
-### Readme file
-
-These lecture notes are made open-source and hosted in a [GitHub repository](https://github.com/wbarfuss/csm-of-hei). To convert this `index.ipynb` file (which is required in the Quarto Book project type) into the repository's README file, one may execute the following commands:
-
-```{python}
-!quarto convert index.ipynb # convert into Quarto markdown
-!tail -n +10 index.qmd > README.md  # remove some metadata+
-!rm index.qmd  # remove the intermediate file
-```
-
-### GitHub Pages
-
-After configuring the [settings](https://quarto.org/docs/publishing/github-pages.html#publish-command) for GitHub Pages, one can publish the web version of these lecture notes by running the following command (at the root of the cleaned main branch):
-
-```bash
-quarto publish gh-pages
-```
-
-### nb-clean and pre-commit hooks
-
-To check the notebooks for unnecessary metadata and clean them up, you can run the following command:
-
-```bash
-nb-clean check --remove-all-notebook-metadata --remove-empty-cells --preserve-cell-outputs --preserve-cell-metadata slideshow tags -- index.ipynb
-```
-
-To clean the notebooks and remove unnecessary metadata, replace `check` with `clean` in the command above.
-
-This repository uses [pre-commit](https://pre-commit.com) to clean every notebook before it is committed to git. Two hooks run in order:
-
-1. `nb-clean`, with the settings from the command above.
-2. `tools/strip_nb_png_metadata.py`, which removes the Matplotlib version stored inside each figure and the random ids of interactive widgets. Without it, re-running a notebook under a new Matplotlib version changes every figure in git, even when the pixels are identical.
-
-To install the hooks, run the following command:
-
-```bash
-pre-commit install --allow-missing-config
-```
-
-The hooks then run on every `git commit`. If a hook modifies a file, the commit stops; stage the changes with `git add` and commit again. To clean all notebooks at once, run:
-
-```bash
-pre-commit run --all-files
-```
-
-<!-- #TODO: write about Python environments -->
+Instructions for rendering these lecture notes yourself, and the conventions of the repository, are in [CONTRIBUTING.md](https://github.com/wbarfuss/csm-of-hei/blob/main/CONTRIBUTING.md).
 
 ## Acknowledgements
 I am grateful to all the students I had the pleasure of working with on this material. Their feedback has been, is, and will continue to be essential for shaping this content. I would also like to thank my teachers and mentors, who have influenced my thinking. I am thankful to all contributors and creators of the many open-source projects these notes build upon, such as the Python language and its ecosystem, Jupyter, and Quarto. Furthermore, I acknowledge many helpers who may use some form of generative AI, such as ChatGPT, Perplexity, GitHub Copilot, and Grammarly. All remaining errors remain my own.
