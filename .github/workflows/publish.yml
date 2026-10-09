@@ -1,0 +1,54 @@
+# Renders the book (web + PDF) from the committed notebook outputs and deploys
+# it to GitHub Pages. Notebooks are not executed. See CONTRIBUTING.md.
+name: Publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - uses: pre-commit/action@v3.0.1
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install jupyter
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.8.27
+          tinytex: true
+      - run: quarto render .
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: __output
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

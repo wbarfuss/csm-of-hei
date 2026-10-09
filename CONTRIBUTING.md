@@ -42,11 +42,15 @@ rm index.qmd                      # remove the intermediate file
 
 ## Publishing to GitHub Pages
 
-After configuring the [settings](https://quarto.org/docs/publishing/github-pages.html#publish-command) for GitHub Pages, one can publish the web version of these lecture notes by running the following command (at the root of the cleaned main branch):
+Publishing is automatic. Every push to `main` runs the workflow `.github/workflows/publish.yml` on GitHub, which:
 
-```bash
-quarto publish gh-pages
-```
+1. runs all pre-commit hooks as a check (job `checks`);
+2. renders the book, web version and PDF, with `quarto render .`, using the outputs stored in the notebooks; notebooks are not executed (job `build`);
+3. deploys the result to <https://wbarfuss.github.io/csm-of-hei/> (job `deploy`).
+
+The workflow can also be started by hand under *Actions → Publish → Run workflow* on GitHub. The repository setting *Settings → Pages → Source* must be *GitHub Actions*.
+
+Do not use `quarto publish gh-pages`. It commits every rendered site, including the book PDF, to a `gh-pages` branch, which made the repository grow by about 60 MB per publish.
 
 ## Git conventions: pre-commit hooks
 
