@@ -16,3 +16,10 @@ repos:
           - tags
           - slideshow
           - --
+  - repo: local
+    hooks:
+      - id: strip-png-metadata
+        name: strip PNG metadata and widget ids from notebook outputs
+        entry: python3 tools/strip_nb_png_metadata.py
+        language: system
+        files: \.ipynb$
