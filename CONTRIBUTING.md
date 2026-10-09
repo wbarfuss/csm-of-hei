@@ -87,6 +87,17 @@ SKIP=check-added-large-files git commit -m "..."
 
 The same works for `forbid-generated`. If a PDF should be tracked permanently (for example a vector figure), add an `exclude:` pattern for it to the `forbid-generated` hook in `.pre-commit-config.yaml` instead of skipping the hook each time.
 
+### Screenshots pasted into draw.io diagrams
+
+A screenshot pasted into draw.io is stored at its full resolution inside the diagram, often 3–4 times larger than it is drawn. The `shrink-drawio-png` hook does not change this. After pasting large images, run:
+
+```bash
+python3 tools/shrink_drawio_embedded_images.py --dry-run images/x.dio.png  # show planned changes
+python3 tools/shrink_drawio_embedded_images.py images/x.dio.png
+```
+
+It reduces each embedded image to twice the size at which it is drawn (or more, if the PNG export uses a larger scale), and re-renders the PNG at its current width. All pages and the diagram structure are kept. It requires ImageMagick (`magick`) and draw.io.
+
 ### Checking notebooks manually
 
 To check a notebook with the same `nb-clean` settings outside of a commit:
