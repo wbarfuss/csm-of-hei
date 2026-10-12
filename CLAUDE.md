@@ -24,3 +24,9 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
 - Uncommitted changes in a notebook are not necessarily intended edits.
   Re-running cells, running build cells, and saving with some editors also
   change notebooks. Compare against `HEAD` and ask before committing them.
+
+## Terminology in the text
+
+- "lecture notes" for the written material ("these lecture notes", "the first part of these lecture notes"). Not "book", although Quarto builds it as one.
+- "course" for the teaching event: lectures, workshops, exam ("toward the end of the course").
+

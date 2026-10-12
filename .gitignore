@@ -1,8 +1,10 @@
 /.quarto/
+/videos/
 /__output/
 /__slides/
 /__scripts/
 /SOLUTIONS/
+
 
 /images/.$*.bkp
 *__pycache__/
