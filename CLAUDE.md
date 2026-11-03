@@ -24,6 +24,11 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
 - Uncommitted changes in a notebook are not necessarily intended edits.
   Re-running cells, running build cells, and saving with some editors also
   change notebooks. Compare against `HEAD` and ask before committing them.
+- Slides and lecture notes (HTML/PDF) render from the same cells. Slide type
+  `skip` shows a cell only in the lecture notes. Content between the fence cells
+  `::: {.content-hidden unless-profile="interactive"}` and `:::` (both `skip`)
+  shows only in the slides. Prefer one version that works in both (e.g. a
+  different heading) over two separate versions.
 
 ## Terminology in the text
 
@@ -41,7 +46,8 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
   than simulating forward?", "How does the stability analysis extend to
   multi-dimensional systems?").
 - Never reuse a symbol for two meanings in one lecture. General matrix entries
-  are $A_{ij}$, so that $a, b, \dots$ stay free for model parameters.
+  are $A_{ij}$, so that $a, b, \dots$ stay free for model parameters. When
+  renaming a symbol, also update the exercise notebook (`XX.YYex`).
 - When a new symbol relates to an earlier one, state the relation where it is
   used (e.g. "$a = 1-r < 0$").
 - Show derivations step by step; do not write "solve" or "yields" over a
@@ -52,4 +58,14 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
 - Refer to DeepDives as "the DeepDives", not "below": slides skip them.
 - For a model with a common textbook name in another form, use the descriptive
   name in the text and give the textbook form in a footnote.
+- A lecture has 90 minutes. When revising, estimate the time per section. Cut
+  content that repeats an idea in a different framing (e.g. a section on
+  oscillations from delays right after the cases for $|a|$). Optional material
+  goes into a DeepDive, not onto the slides.
+- Code cells stay visible in the slides: they are executed live in class.
+- Place an abstract claim where students can already see it concretely (e.g.
+  "changing the feedback strength beats changing the stock" right after the
+  experiment with halved and doubled rates and the closed-form solution).
+- Show a model's equations on the slide. A check question ("Is this a linear
+  system?") can lead into the next section.
 
