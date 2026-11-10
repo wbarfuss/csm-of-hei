@@ -3,13 +3,14 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python # =3.11
+  - python=3.11
   - numpy
   - matplotlib # =3.8.0
   - sympy
   - scipy
   - pandas
-  - jupyterlab
+  - jupyterlab>=4.5,<4.6 # jupyterlab-myst 2.7 is not yet compatible with 4.6
+  - jupyterlab-myst
   - ipywidgets
   - ipympl
   - jupyterlab-slideshow
@@ -17,8 +18,11 @@ dependencies:
   - jupytext  # optional
   - nb-clean # to clean notebook files for better version control
   - pip
+  - setuptools<81 # pyCRLD's setup.py needs pkg_resources, removed in newer setuptools
+  - wheel
   - pip:
-    - nbdev # optional
+    - --no-build-isolation # use the setuptools above when building pyCRLD
+    # - nbdev # optional
     - pre-commit # for https://nbdev.fast.ai/tutorials/pre_commit.html
-    - jupyter_copilot # optional
+    # - jupyter_copilot # optional
     - git+https://github.com/barfusslab/pyCRLD.git

@@ -40,8 +40,10 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
 - Learning goals go in a `::: {.callout-tip}` box ("After this lecture, students
   will be able to:"). "Learning goals revisited" is prose in the past tense
   ("We defined ...", "We analyzed ..."), not nested bullets.
-- Bibliographical remarks go in a footnote to the opening statement of the
-  lecture, not in a section at the end.
+- Bibliographical and historical remarks that are general, or that shaped the
+  lecture as a whole, go in a footnote to the opening statement, not in a
+  section at the end. A source for a specific definition, result, or figure is
+  cited in the text where it is used.
 - Open each major transition with the question it answers ("Can we do better
   than simulating forward?", "How does the stability analysis extend to
   multi-dimensional systems?").
@@ -62,7 +64,10 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
   content that repeats an idea in a different framing (e.g. a section on
   oscillations from delays right after the cases for $|a|$). Optional material
   goes into a DeepDive, not onto the slides.
-- Code cells stay visible in the slides: they are executed live in class.
+- Code cells stay visible in the slides: they are executed live in class. Never
+  set a code cell to `skip` or `notes` to save space. A code cell copied from an
+  earlier lecture is not walked through line by line, so it may overflow the
+  slide height.
 - Place an abstract claim where students can already see it concretely (e.g.
   "changing the feedback strength beats changing the stock" right after the
   experiment with halved and doubled rates and the closed-form solution).
