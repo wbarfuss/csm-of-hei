@@ -44,6 +44,10 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
   lecture as a whole, go in a footnote to the opening statement, not in a
   section at the end. A source for a specific definition, result, or figure is
   cited in the text where it is used.
+- Footnote labels must be unique across all notebooks, exercises included. The
+  PDF merges every chapter into one document, and a reused label makes every
+  reference show the last definition. Prefix labels with the chapter topic
+  (e.g. `[^tipping-tau]`, `[^resilience-sources]`).
 - Open each major transition with the question it answers ("Can we do better
   than simulating forward?", "How does the stability analysis extend to
   multi-dimensional systems?").
