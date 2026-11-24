@@ -13,6 +13,13 @@ rendering, publishing, the Python environment, and the pre-commit hooks.
   have no effect there, so layout has to be fixed in the content itself.
 - The build cells at the end of each lecture notebook are markdown on purpose.
   Never commit them as code cells or with output.
+- Figures in exercise notebooks (`XX.YYex`) are embedded as cell attachments,
+  not linked from `images/`. Students download and work on the exercise file
+  alone, so the figure has to travel with it. Lecture notebooks link figures
+  from `images/`. Each exercise figure also has a copy in `images/` (e.g.
+  `images/03.01-ExcerciseExample.dio.png`) that no notebook links. Keep that
+  copy identical in content to the embedded attachment: when you change one,
+  re-export the other.
 - Whitespace around draw.io figures is intended (it centers them in slides).
   Do not crop it.
 - Never commit PDFs, `.bkp` files, or anything in `__output/`, `__scripts/`,
